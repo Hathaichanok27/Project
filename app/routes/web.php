@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin/home', 'HomeController@adminhome')->name('admin.home')->middleware('is_admin');
 Route::get('superadmin/home', 'HomeController@superadminHome')->name('superadmin.home')->middleware('is_superadmin');
+
+Route::resource('roombookings', RoombookingController::class);
