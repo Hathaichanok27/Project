@@ -43,7 +43,7 @@ class HomeController extends Controller
      */
     public function superadminhome()
     {
-        return view('superadminhome');
+        return view('superadminroombookings.index');
     }
 
 }
