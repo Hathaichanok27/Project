@@ -85,6 +85,7 @@
                 </div>
 
                 <div class="links">
+                    <a href="{{ route('roombookings.index') }}">bookingroom</a>
                     <a href="{{ route('roommedias.index') }}">mediaroom</a>
                 </div>
             </div>
