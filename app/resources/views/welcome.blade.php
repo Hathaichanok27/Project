@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href=""></a>
+                    <a href="{{ route('roommedias.index') }}">mediaroom</a>
                 </div>
             </div>
         </div>
