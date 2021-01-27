@@ -26,7 +26,7 @@
                             </div>
                             <h5 class="text-semibold">ห้องสื่อศึกษาเดี่ยว</h5>
                             <p class="mb-15">ห้องศึกษาเดี่ยวให้บริการเครื่องสำหรับรับชมสื่อมัลติเมียเดีย<br>เป็นเวลา 3 ชม. กำหนดผู้ใช้ 1-2 คน</p>
-                            <a href="http://roombooking.lib.buu.ac.th/index.php/room/rooms?zone=1&type=2" class="btn bg-primary-400">รายการห้อง <i class="fas fa-search"></i></a>
+                            <a href="{{ route('mediasingles.index') }}" class="btn bg-primary-400">รายการห้อง <i class="fas fa-search"></i></a>
                         </div>
                     </div>
                 </div>
