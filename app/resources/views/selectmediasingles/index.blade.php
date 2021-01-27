@@ -83,7 +83,7 @@
                             <input type="checkbox" ng-model="userOwnerMedia" id="userOwnerMedia" ng-change="addUserOwnerMedia()" class="ng-pristine ng-untouched ng-valid ng-empty"> 
                             <label for="userOwnerMedia">Netflix</label>
                             <br><br>
-                            <a href="" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true">ถัดไป <i class="fas fa-chevron-right"></i></a>
+                            <a href="{{ route('confirmmediasingles.index') }}" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true">ถัดไป <i class="fas fa-chevron-right"></i></a>
                         </div>
 		            </div>
                 </div>
