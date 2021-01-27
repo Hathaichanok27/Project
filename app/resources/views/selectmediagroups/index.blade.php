@@ -79,12 +79,11 @@
                                 <ul class="media-list ng-hide" ng-show="selectedMedia.length">
                                     <!-- ngRepeat: item in selectedMedia -->
                                 </ul>
-                                </div>
-                                    <input type="checkbox" ng-model="userOwnerMedia" id="userOwnerMedia" ng-change="addUserOwnerMedia()" class="ng-pristine ng-untouched ng-valid ng-empty"> 
-                                    <label for="userOwnerMedia">Netflix</label>
-                                    <br><br>
-                                    <button class="btn btn-primary btn-lg btn-block"  ng-click="submitSelected()">ถัดไป <i class="fas fa-chevron-right"></i></button>
                             </div>
+                            <input type="checkbox" ng-model="userOwnerMedia" id="userOwnerMedia" ng-change="addUserOwnerMedia()" class="ng-pristine ng-untouched ng-valid ng-empty"> 
+                            <label for="userOwnerMedia">Netflix</label>
+                            <br><br>
+                            <a href="{{ route('confirmmediagroups.index') }}" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true">ถัดไป <i class="fas fa-chevron-right"></i></a>
                         </div>
 		            </div>
                 </div>
