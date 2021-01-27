@@ -92,7 +92,7 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li><a href=""><i class="fas fa-home"></i> หน้าแรก</a></li>
+                    <li><a href="{{ route('superadminroombookings.index') }}"><i class="fas fa-home"></i> หน้าแรก</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-couch"></i> รายการห้อง <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">ชั้น 3 (3rd Floor)</a></li>
