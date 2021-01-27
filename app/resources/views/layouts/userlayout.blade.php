@@ -77,7 +77,7 @@
                             <li><a href="{{ route('mediasingles.index') }}">ชั้น 6 - ห้องสื่อศึกษาเดี่ยว</a></li>
                         </ul>
                     </li>
-                    <li><a href=""><i class="fas fa-bookmark"></i> การจองของฉัน</a></li>
+                    <li><a href="{{ route('mybookings.index') }}"><i class="fas fa-bookmark"></i> การจองของฉัน</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>

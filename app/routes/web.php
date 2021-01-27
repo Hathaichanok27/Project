@@ -31,3 +31,4 @@ Route::resource('selectmediagroups', SelectmediagroupController::class);
 Route::resource('selectmediasingles', SelectmediasingleController::class);
 Route::resource('confirmmediagroups', ConfirmmediagroupController::class);
 Route::resource('confirmmediasingles', ConfirmmediasingleController::class);
+Route::resource('mybookings', MybookingController::class);
