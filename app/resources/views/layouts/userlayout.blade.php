@@ -12,7 +12,7 @@
         <link href="{{ asset('css/color.css') }}" rel="stylesheet">
         <link href="{{ asset('css/components.css') }}" rel="stylesheet">
         <link href="{{ asset('css/core.css') }}" rel="stylesheet">
-        <link href="{{ asset('fonts/roboto.css') }}" rel="stylesheet"> 
+        <link href="{{ asset('css/roboto.css') }}" rel="stylesheet"> 
         <link href="{{ asset('icomoon/styles.css') }}" rel="stylesheet">
 
         <script type="text/javascript"> 
