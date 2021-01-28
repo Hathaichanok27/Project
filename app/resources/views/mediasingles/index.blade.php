@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="text-uppercase text-semibold mb-10" style="color:#e74c3c">
-                <h4><i class="fa fa-refresh"></i> จำนวนคิวที่รออยู่ <span class="ng-binding">0</span> คิว</h4>
+                <h4><i class="fas fa-sync-alt"></i> จำนวนคิวที่รออยู่ <span class="ng-binding">0</span> คิว</h4>
             </div>
             <div class="row">
                 <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
