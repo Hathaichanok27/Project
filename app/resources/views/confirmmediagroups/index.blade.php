@@ -4,10 +4,10 @@
 	<div class="page-container">
 		<div class="container">
 			<div class="page-title">
-                <h4><i class="fas fa-search"></i> เลือกสื่อที่จะรับชมอย่างน้อย 1 อย่าง</h4>
+                <h4><i class="fas fa-id-card"></i> สรุปข้อมูลการจองและข้อมูลผู้จอง</h4>
                 <ul class="breadcrumb breadcrumb-caret position-right">
-                    <li><a href="{{ route('roommedias.index') }}">หน้าแรก</a></li>
-                    <li><a href="">ชั้น 6</a></li>
+					<li><a href="{{ route('roombookings.index') }}">หน้าแรก</a></li>
+                    <li><a href="{{ route('roommedias.index') }}">ชั้น 6</a></li>
                     <li><a href="{{ route('mediagroups.index') }}">ห้องสื่อศึกษากลุ่ม</a></li>
                     <li><a href="{{ route('selectmediagroups.index') }}">เลือกสื่อ</a></li>
                     <li class="active">สรุปข้อมูล</li>
