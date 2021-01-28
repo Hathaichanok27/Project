@@ -4,19 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Roombooking</title>
-        
         <link  rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">   
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/fontawesome.js') }}"></script>
         <link  rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
         <link  rel="stylesheet" href="{{ asset('css/color.css') }}">
         <link  rel="stylesheet" href="{{ asset('css/components.css') }}">
         <link  rel="stylesheet" href="{{ asset('css/core.css') }}">
         <link  rel="stylesheet" href="{{ asset('fonts/roboto.css') }}"> 
         <link  rel="stylesheet" href="{{ asset('icomoon/styles.css') }}">
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/fontawesome.js') }}"></script>
 
         <script type="text/javascript"> 
             function display_c(){
