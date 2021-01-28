@@ -6,8 +6,8 @@
 			<div class="page-title">
                 <h4><i class="fas fa-users"></i> ห้องสื่อศึกษาเดี่ยว - ชั้น 6</h4>
                 <ul class="breadcrumb breadcrumb-caret position-right">
-                    <li><a href="{{ route('roommedias.index') }}">หน้าแรก</a></li>
-                    <li><a href="">ชั้น 6</a></li>
+                    <li><a href="{{ route('roombookings.index') }}">หน้าแรก</a></li>
+                    <li><a href="{{ route('roommedias.index') }}">ชั้น 6</a></li>
                     <li class="active">ห้องสื่อศึกษาเดี่ยว</li>
                 </ul>   
                 <div class="heading-elements">
