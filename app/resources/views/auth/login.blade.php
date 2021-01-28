@@ -5,7 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">
+                    <div class="text-center">
+						    <div class="icon-object border-slate-300 text-slate-300">
+                                <i class="icon-reading"></i>
+                            </div>
+							<h5 class="content-group">เข้าสู่ระบบเพื่อทำการจอง</h5>
+                            <small class="display-block">Enter your credentials below</small>
+						</div>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
