@@ -33,7 +33,7 @@ class HomeController extends Controller
      */
     public function adminhome()
     {
-        return view('adminhome');
+        return view('adminroombookings.index');
     }
 
     /**
