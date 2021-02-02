@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class QueuelistController extends Controller
+class QueuelistmediasingleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class QueuelistController extends Controller
      */
     public function index()
     {
-        return view('queuelists.index');
+        return view('queuelistmediasingles.index');
     }
 
     /**
