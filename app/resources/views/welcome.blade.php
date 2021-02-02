@@ -85,8 +85,11 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('roombookings.index') }}">bookingroom</a>
+                    <a href="{{ route('superadminroombookings.index') }}">superadmin</a>
+                    <a href="{{ route('adminroombookings.index') }}">admin</a>
+                    <a href="{{ route('roombookings.index') }}">user</a>
                     <a href="{{ route('roommedias.index') }}">mediaroom</a>
+                    
                 </div>
             </div>
         </div>
