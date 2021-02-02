@@ -6,8 +6,8 @@
 			<div class="page-title">
                 <h4><i class="fas fa-users"></i> ห้องสื่อศึกษาเดี่ยว - ชั้น 6</h4>
                 <ul class="breadcrumb breadcrumb-caret position-right">
-                    <li><a href="{{ route('roommedias.index') }}">หน้าแรก</a></li>
-                    <li><a href="">ชั้น 6</a></li>
+                    <li><a href="{{ route('roombookings.index') }}">หน้าแรก</a></li>
+                    <li><a href="{{ route('roommedias.index') }}">ชั้น 6</a></li>
                     <li class="active">ห้องสื่อศึกษาเดี่ยว</li>
                 </ul>   
                 <div class="heading-elements">
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="text-uppercase text-semibold mb-10" style="color:#e74c3c">
-                <h4><i class="fa fa-refresh"></i> จำนวนคิวที่รออยู่ <span class="ng-binding">0</span> คิว</h4>
+                <h4><i class="fas fa-sync-alt"></i> จำนวนคิวที่รออยู่ <span class="ng-binding">0</span> คิว</h4>
             </div>
             <div class="row">
                 <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
