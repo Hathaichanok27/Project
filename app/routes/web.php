@@ -28,6 +28,14 @@ Route::resource('superadminroombookings', SuperadminroombookingController::class
 Route::resource('manageadmins', ManageadminController::class);
 Route::resource('managerooms', ManageroomController::class);
 
+//Admin
+Route::resource('adminroombookings', AdminroombookingController::class);
+Route::resource('adminroommedias', AdminroommediaController::class);
+Route::resource('adminroommediastaffs', AdminroommediastaffController::class);
+Route::resource('queuelistmediagroups', QueuelistmediagroupController::class);
+Route::resource('queuelistmediasingles', QueuelistmediasingleController::class);
+Route::resource('reports', ReportController::class);
+
 //User
 Route::resource('roombookings', RoombookingController::class);
 Route::resource('roommedias', RoommediaController::class);
@@ -39,5 +47,3 @@ Route::resource('confirmmediagroups', ConfirmmediagroupController::class);
 Route::resource('confirmmediasingles', ConfirmmediasingleController::class);
 Route::resource('mybookings', MybookingController::class);
 Route::resource('orderbookings', OrderbookingController::class);
-Route::resource('queuelists', QueuelistController::class);
-Route::resource('reports', ReportController::class);
