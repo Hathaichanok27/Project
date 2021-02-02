@@ -39,3 +39,5 @@ Route::resource('confirmmediagroups', ConfirmmediagroupController::class);
 Route::resource('confirmmediasingles', ConfirmmediasingleController::class);
 Route::resource('mybookings', MybookingController::class);
 Route::resource('orderbookings', OrderbookingController::class);
+Route::resource('queuelists', QueuelistController::class);
+Route::resource('reports', ReportController::class);
