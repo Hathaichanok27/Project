@@ -12,8 +12,8 @@
         <link href="{{ asset('css/color.css') }}" rel="stylesheet">
         <link href="{{ asset('css/components.css') }}" rel="stylesheet">
         <link href="{{ asset('css/core.css') }}" rel="stylesheet">
-        <link href="{{ asset('fonts/roboto.css') }}" rel="stylesheet"> 
         <link href="{{ asset('icomoon/styles.css') }}" rel="stylesheet">
+        <!-- <link href="{{ asset('fonts/roboto.css') }}" rel="stylesheet">  -->
 
         <script type="text/javascript"> 
             function display_c(){
@@ -48,7 +48,7 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#"> BUU-MRBS</i></a>
+                    <a class="navbar-brand" href="#"><i class="far fa-calendar-alt"></i> BUU-MRBS</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     @guest
@@ -86,7 +86,7 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('superadminroombookings.index') }}"><i class="fas fa-home"></i> หน้าแรก</a></li>
+                    <li><a href="{{ route('adminroombookings.index') }}"><i class="fas fa-home"></i> หน้าแรก</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-couch"></i> รายการห้อง <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">ชั้น 3 (3rd Floor)</a></li>
@@ -99,8 +99,8 @@
                             <li><a href="#">ชั้น 6 - ห้องสื่อศึกษาเดี่ยว</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ route('manageadmins.index') }}"><i class="fas fa-wrench"></i> สำหรับเจ้าหน้าที่</a></li>
-                    <li><a href="{{ route('managerooms.index') }}"><i class="fas fa-bars"></i> รายการการใช้ห้อง</a></li>
+                    <li><a href="{{ route('adminroommediastaffs.index') }}"><i class="fas fa-user-tie"></i> สำหรับเจ้าหน้าที่</a></li>
+                    <li><a href="{{ route('reports.index') }}"><i class="fas fa-file"></i> รายการการใช้ห้อง</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>

@@ -49,7 +49,7 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#"> BUU-MRBS</i></a>
+                    <a class="navbar-brand" href="#"><i class="far fa-calendar-alt"></i> BUU-MRBS</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     @guest
