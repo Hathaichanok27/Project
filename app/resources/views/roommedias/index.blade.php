@@ -8,12 +8,12 @@
                 <div class="col-md-4 col-md-offset-2">
                     <div class="panel border-grey">
                         <div class="panel-body text-center">
-                            <div class="icon-object border-danger text-danger">
+                            <div class="icon-object border-warning text-warning">
                                 <i class="fas fa-users"></i>
                             </div>
                             <h5 class="text-semibold">ห้องสื่อศึกษากลุ่ม</h5>
                             <p class="mb-15">ห้องศึกษากลุ่มมัลติมีเดีย ให้บริการรับชมสื่อมัลติมีเดีย<br>เป็นเวลา 3 ชม. กำหนดผู้ใช้ขั้นต่ำ 3 คน</p>
-                            <a href="{{ route('mediagroups.index') }}" class="btn bg-danger-400">รายการห้อง <i class="fas fa-search"></i></a>
+                            <a href="{{ route('mediagroups.index') }}" class="btn bg-warning-400">รายการห้อง <i class="fas fa-search"></i></a>
                         </div>
                     </div>
                 </div>

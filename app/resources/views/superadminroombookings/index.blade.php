@@ -8,12 +8,12 @@
                 <div class="col-md-4 col-md-offset-2">
                     <div class="panel border-grey">
                         <div class="panel-body text-center">
-                            <div class="icon-object border-danger text-danger">
+                            <div class="icon-object border-warning text-warning">
                                 <i class="fas fa-users"></i>
                             </div>
                             <h5 class="text-semibold">ห้องประชุม</h5>
                             <p class="mb-15">ให้บริการห้องประชุม<br>เป็นเวลา 2 ชม.</p>
-                            <a href="" class="btn bg-danger-400">ไปที่ <i class="fas fa-angle-double-right"></i></a>
+                            <a href="" class="btn bg-warning-400">ไปที่ <i class="fas fa-angle-double-right"></i></a>
                         </div>
                     </div>
                 </div>
