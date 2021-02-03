@@ -26,7 +26,7 @@
                             </div>
                             <h5 class="text-semibold">ห้องสื่อศึกษา</h5>
                             <p class="mb-15">ให้บริการเครื่องรับชมสื่อมัลติเมียเดีย<br>เป็นเวลา 3 ชม.</p>
-                            <a href="" class="btn bg-primary-400">ไปที่ <i class="fas fa-angle-double-right"></i></a>
+                            <a href="{{ route('superadminroommedias.index') }}" class="btn bg-primary-400">ไปที่ <i class="fas fa-angle-double-right"></i></a>
                         </div>
                     </div>
                 </div>

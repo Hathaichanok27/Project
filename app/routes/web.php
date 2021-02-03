@@ -25,6 +25,7 @@ Route::get('superadmin/home', 'HomeController@superadminHome')->name('superadmin
 
 //Superadmin
 Route::resource('superadminroombookings', SuperadminroombookingController::class);
+Route::resource('superadminroommedias', SuperadminroommediaController::class);
 Route::resource('manageadmins', ManageadminController::class);
 Route::resource('managerooms', ManageroomController::class);
 
