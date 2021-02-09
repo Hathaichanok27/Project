@@ -61,7 +61,6 @@
                 </div>
                 <div class="col-sm-3">
                     <select class="form-control" id="time_end" name="time_end">
-                        <option value="08.00">08:00</option>
                         <option value="08.30">08:30</option>
                         <option value="09.00">09:00</option>
                         <option value="09.30">09:30</option>
@@ -86,6 +85,7 @@
                         <option value="19.00">19:00</option>
                         <option value="19.30">19:30</option>
                         <option value="20.00">20:00</option>
+                        <option value="20.30">20:30</option>
                     </select>
                 </div>
             </div> 
@@ -107,12 +107,14 @@
             <div class="form-group">
                 <label class="col-sm-1 control-label" for="room">Room: </label>
                 <div class="col-sm-6">
+                    @if
                     <select class="form-control" id="room" name="room">
                         <option value="room-1">room 1</option>
                         <option value="room-2">room 2</option>
                         <option value="room-3">room 3</option>
                         <option value="room-4">room 4</option>
                         <option value="room-5">room 5</option>
+                        <option value="room-6">room 6</option>
                     </select>
                 </div>
             </div>    
