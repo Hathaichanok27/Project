@@ -107,7 +107,6 @@
             <div class="form-group">
                 <label class="col-sm-1 control-label" for="room">Room: </label>
                 <div class="col-sm-6">
-                    @if
                     <select class="form-control" id="room" name="room">
                         <option value="room-1">room 1</option>
                         <option value="room-2">room 2</option>
