@@ -13,7 +13,7 @@
                             </div>
                             <h5 class="text-semibold">ห้องประชุม</h5>
                             <p class="mb-15">ให้บริการห้องประชุม<br>เป็นเวลา 2 ชม.</p>
-                            <a href="http://www.lib.buu.ac.th/roombooking/day.php" class="btn bg-warning-400">ไปที่ <i class="fas fa-angle-double-right"></i></a>
+                            <a href="{{ route('roommeetings.index') }}" class="btn bg-warning-400">ไปที่ <i class="fas fa-angle-double-right"></i></a>
                         </div>
                     </div>
                 </div>
