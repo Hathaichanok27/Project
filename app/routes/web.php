@@ -42,8 +42,6 @@ Route::resource('roombookings', RoombookingController::class);
 Route::resource('roommedias', RoommediaController::class);
 Route::resource('mediagroups', MediagroupController::class);
 Route::resource('mediasingles', MediasingleController::class);
-Route::resource('selectmediagroups', SelectmediagroupController::class);
-Route::resource('selectmediasingles', SelectmediasingleController::class);
 Route::resource('confirmmediagroups', ConfirmmediagroupController::class);
 Route::resource('confirmmediasingles', ConfirmmediasingleController::class);
 Route::resource('mybookings', MybookingController::class);
