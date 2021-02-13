@@ -79,7 +79,7 @@
 							</div>
 						</div>
 					</div>
-					<button class="btn btn-success btn-lg btn-block" id="btnconfirm"> ยืนยันการจอง <i class="fas fa-check"></i></button>
+					<a href="{{ route('orderbookings.index') }}" class="btn btn-success btn-lg btn-block" id="btnconfirm"> ยืนยันการจอง <i class="fas fa-check"></i></a>
 				</div>
 			</div>
 		</div>
