@@ -9,7 +9,6 @@
                     <li><a href="{{ route('roombookings.index') }}">หน้าแรก</a></li>
                     <li><a href="{{ route('roommedias.index') }}">ชั้น 6</a></li>
                     <li><a href="{{ route('mediasingles.index') }}">ห้องสื่อศึกษาเดี่ยว</a></li>
-                    <li><a href="{{ route('selectmediasingles.index') }}">เลือกสื่อ</a></li>
                     <li class="active">สรุปข้อมูล</li>
                 </ul>   
             </div>
@@ -44,18 +43,10 @@
 						<div class="panel-heading" style="padding-bottom:0px;">
 							<h5 class="panel-title"><i class="fas fa-info-circle"></i> สื่อที่เลือกรับชม</h5>
 						</div>
-						<hr style="margin:15px 0 0 0;">
-						<ul class="media-list">
-							<li class="media bottom-line-dashed">
-								<div class="media-left">
-									<a href="javascript:;" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-xs"><i class="fab fa-youtube"></i></a>
-								</div>
-								<div class="media-body">
-									<a href="javascript:;" class="text-success">นำสื่อมาด้วยตนเอง</a>
-									<span class="display-block text-muted"><span class="status-mark border-red position-left"></span> Bring your own media</span>
-								</div>
-							</li>
-						</ul>
+						<hr style="margin:15px 1 0 0;">
+						<div class="form-group">
+							<h6 class="panel-title text-center"><i class="fas fa-tv"></i> Netflix</h6>		
+						</div>
 					</div>
 				</div>
 			
