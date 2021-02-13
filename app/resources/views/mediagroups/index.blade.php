@@ -11,7 +11,7 @@
                     <li class="active">ห้องสื่อศึกษากลุ่ม</li>
                 </ul>   
                 <div class="heading-elements">
-                    <a href="{{ route('selectmediagroups.index') }}" class="btn btn-lg btn-labeled btn-labeled-right bg-danger heading-btn">จองคิวใช้บริการ <b><i class="fa fa-calendar"></i></b></a>
+                    <a href="{{ route('confirmmediagroups.index') }}" class="btn btn-lg btn-labeled btn-labeled-right bg-danger heading-btn">จองคิวใช้บริการ <b><i class="fa fa-calendar"></i></b></a>
                 </div>
             </div>
             <div class="text-uppercase text-semibold mb-10" style="color:#e74c3c">
