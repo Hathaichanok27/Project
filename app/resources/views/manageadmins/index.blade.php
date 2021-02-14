@@ -25,7 +25,6 @@
                     <th style="text-align:center">No</th>
                     <th style="text-align:center">Name</th>
                     <th style="text-align:center">Email</th>
-                    <th style="text-align:center">Roles</th>
                     <th style="text-align:center" width="280px">Action</th>
                 </tr>
 
@@ -34,7 +33,6 @@
                     <td>{{ ++$i }}</td>
                     <td>{{ $manageadmin->name }}</td>
                     <td>{{ $manageadmin->email }}</td>
-                    <td>{{ $manageadmin->roles }}</td>
                     <td>
                         <form action="{{ route('manageadmins.destroy',$manageadmin->id) }}" method="POST">
 

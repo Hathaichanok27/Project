@@ -43,7 +43,6 @@ class ManageadminController extends Controller
             'email' => 'required',
             'password' => 'required',
             'confirm_password' => 'required',
-            'roles' => 'required',
         ]);
 
         Manageadmin::create($request->all());
@@ -88,7 +87,6 @@ class ManageadminController extends Controller
             'email' => 'required',
             'password' => 'required',
             'confirm_password' => 'required',
-            'roles' => 'required',
         ]);
 
         $manageadmin->update($request->all());

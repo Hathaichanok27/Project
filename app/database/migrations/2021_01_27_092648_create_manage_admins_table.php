@@ -19,7 +19,6 @@ class CreateManageAdminsTable extends Migration
             $table->string('email')->unique();
             $table->string('password')->MD5();
             $table->string('confirm_password')->MD5();
-            $table->string('roles');
             $table->timestamps();
         });
     }

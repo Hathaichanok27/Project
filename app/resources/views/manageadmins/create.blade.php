@@ -49,13 +49,6 @@
                             <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password">
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Roles:</strong>
-                            <input type="text" name="roles" class="form-control" placeholder="Admin">
-                        </div>
-                    </div>
-
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
