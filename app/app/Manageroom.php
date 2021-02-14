@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Manageroom extends Model
 {
     protected $fillable = [
-        'name', 'description','capacity','email_admin'
+        'area_floor','room_type','room_name','capacity',
     ];
 }

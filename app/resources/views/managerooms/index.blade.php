@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-left">
-                        <h2>Room Managements</h2>
+                        <h2>จัดการห้อง</h2>
                     </div>
                     <div class="pull-right">
-                        <a class="btn btn-primary" href="{{ route('managerooms.create') }}"> Add <i class="fas fa-plus-circle"></i></a>
+                        <a class="btn btn-primary" href="{{ route('managerooms.create') }}">เพิ่มห้อง <i class="fas fa-plus-circle"></i></a>
                     </div>
                 </div>
         </div>
@@ -22,18 +22,20 @@
 
             <table class="table table-bordered">
                 <tr>
-                    <th style="text-align:center">Name</th>
-                    <th style="text-align:center">Description</th>
-                    <th style="text-align:center">Capacity</th>
-                    <th style="text-align:center">Room Admin Email</th>
-                    <th style="text-align:center" width="280px">Action</th>
+                    <th style="text-align:center">ชั้น</th>
+                    <th style="text-align:center">ประเภท</th>
+                    <th style="text-align:center">ชื่่อห้อง</th>
+                    <th style="text-align:center">คำอธิบาย</th>
+                    <th style="text-align:center">ความจุ</th>
+                    <th style="text-align:center" width="280px">การกระทำ</th>
                 </tr>
                 @foreach ($managerooms as $manageroom)
                 <tr>
-                    <td>{{ $manageroom->name }}</td>
+                    <td>{{ $manageroom->area_floor }}</td>
+                    <td>{{ $manageroom->room_type }}</td>
+                    <td>{{ $manageroom->room_name }}</td>
                     <td>{{ $manageroom->description }}</td>
                     <td>{{ $manageroom->capacity }}</td>
-                    <td>{{ $manageroom->email_admin }}</td>
                     <td style="text-align:center">
                         <form action="{{ route('managerooms.destroy',$manageroom->id) }}" method="POST">
 

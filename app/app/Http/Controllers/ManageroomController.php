@@ -39,10 +39,10 @@ class ManageroomController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'description' => 'required',
+            'area_floor' => 'required',
+            'room_type' => 'required',
+            'room_name' => 'required',
             'capacity' => 'required',
-            'email_admin'  => 'required',
         ]);
 
         Manageroom::create($request->all());
@@ -83,10 +83,10 @@ class ManageroomController extends Controller
     public function update(Request $request, Manageroom $manageroom)
     {
         $request->validate([
-            'name' => 'required',
-            'description' => 'required',
+            'area_floor' => 'required',
+            'room_type' => 'required',
+            'room_name' => 'required',
             'capacity' => 'required',
-            'email_admin'  => 'required',
         ]);
 
         $manageroom->update($request->all());
