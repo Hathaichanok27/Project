@@ -12,7 +12,7 @@
                         <a class="btn btn-primary" href="{{ route('managerooms.create') }}">เพิ่มห้อง <i class="fas fa-plus-circle"></i></a>
                     </div>
                 </div>
-        </div>
+            </div>
 
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">
