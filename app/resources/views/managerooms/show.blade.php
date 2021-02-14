@@ -3,11 +3,13 @@
 @section('content')
     <div class="page-container">
 		<div class="container">
-            <div class="pull-left"> 
-                <h2>ข้อมูลห้อง</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('managerooms.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
+            <div class="row">   
+                <div class="pull-left"> 
+                    <h2>ข้อมูลห้อง</h2>
+                </div>
+                <div class="pull-right">
+                    <a class="btn btn-primary" href="{{ route('managerooms.index') }}" title="Go back"><i class="fas fa-backward "></i></a>
+                </div>
             </div>
 
             <div class="row">

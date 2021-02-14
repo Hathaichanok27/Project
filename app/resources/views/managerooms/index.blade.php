@@ -38,9 +38,7 @@
                     <td>{{ $manageroom->capacity }}</td>
                     <td style="text-align:center">
                         <form action="{{ route('managerooms.destroy',$manageroom->id) }}" method="POST">
-
                             <a href="{{ route('managerooms.show',$manageroom->id) }}" class="btn btn-info" role="button" aria-pressed="true"><i class="far fa-sticky-note fa-lg"></i></a>
-
                             <a href="{{ route('managerooms.edit',$manageroom->id) }}" class="btn btn-primary" role="button" aria-pressed="true"><i class="far fa-edit fa-lg"></i></a>
 
                             @csrf

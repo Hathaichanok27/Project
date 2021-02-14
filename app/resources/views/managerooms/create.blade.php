@@ -3,11 +3,13 @@
 @section('content')
     <div class="page-container">
 		<div class="container">
-			<div class="pull-left">
-                <h2>เพิ่มห้อง</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('managerooms.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
+            <div class="row">
+                <div class="pull-left">
+                    <h2>เพิ่มห้อง</h2>
+                </div>
+                <div class="pull-right">
+                    <a class="btn btn-primary" href="{{ route('managerooms.index') }}" title="Go back"><i class="fas fa-backward "></i> </a>
+                </div>
             </div>
 
             @if ($errors->any())
@@ -20,6 +22,7 @@
                     </ul>
                 </div>
             @endif
+            
             <form action="{{ route('managerooms.store') }}" method="POST" >
                 @csrf
 
@@ -68,7 +71,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary">ยืนยัน</button>
+                        <button type="submit" class="btn btn-success">ยืนยัน</button>
                     </div>
                 </div>
             </form>

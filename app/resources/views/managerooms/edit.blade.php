@@ -3,11 +3,13 @@
 @section('content')
     <div class="page-container">
 		<div class="container">
-			<div class="pull-left"> 
-                <h2>แก้ไขห้อง</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('managerooms.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
+            <div class="row">  
+                <div class="pull-left"> 
+                    <h2>แก้ไขห้อง</h2>
+                </div>
+                <div class="pull-right">
+                    <a class="btn btn-primary" href="{{ route('managerooms.index') }}" title="Go back"><i class="fas fa-backward "></i> </a>
+                </div>
             </div>
 
             @if ($errors->any())
@@ -26,7 +28,7 @@
                 @method('PUT')
 
                 <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>ชั้น:</strong>
                             <select class="form-control" id="area_floor" name="area_floor">
@@ -54,7 +56,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>ชื่อห้อง:</strong>
-                            <input type="text" name="room_name" class="form-control" placeholder="ชื่อห้อง">
+                            <input type="text" name="room_name" value="{{ $manageroom->room_name }}" class="form-control" placeholder="ชื่อห้อง">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -66,11 +68,11 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>ความจุ:</strong>
-                            <input type="text" name="capacity" value="{{ $manageroom->capacity }}" class="form-control" placeholder="ความจุ">
+                            <input type="text" name="capacity" value="{{ $manageroom->capacity }}" class="form-control">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">ยืนยัน</button>
+                        <button type="submit" class="btn btn-success">ยืนยัน</button>
                     </div>
                 </div>
             </form>
