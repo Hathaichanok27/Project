@@ -3,11 +3,13 @@
 @section('content')
     <div class="page-container">    
 		<div class="container">
-            <div class="pull-left">
-                <h2>Add New Admin</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('manageadmins.index') }}"> Back</a>
+            <div class="row">
+                <div class="pull-left">
+                    <h2>เพิ่มเจ้าหน้าที่</h2>
+                </div>
+                <div class="pull-right">
+                    <a class="btn btn-primary" href="{{ route('manageadmins.index') }}" title="Go back"><i class="fas fa-backward "></i></a>
+                </div>
             </div>
 
             @if ($errors->any())
@@ -27,30 +29,30 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Name:</strong>
-                            <input type="text" name="name" class="form-control" placeholder="Name">
+                            <strong>ชื่อ:</strong>
+                            <input type="text" name="name" class="form-control" placeholder="ชื่อ นามสกุล">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Email:</strong>
-                            <input type="text" name="email" class="form-control" placeholder="Email">
+                            <strong>อีเมล:</strong>
+                            <input type="text" name="email" class="form-control" placeholder="example@email.com">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Password:</strong>
-                            <input type="password" name="password" class="form-control" placeholder="Password">
+                            <strong>รหัสผ่าน:</strong>
+                            <input type="password" name="password" class="form-control" placeholder="******">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Confirm Password:</strong>
-                            <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password">
+                            <strong>ยืนยันรหัสผ่าน:</strong>
+                            <input type="password" name="confirm_password" class="form-control" placeholder="******">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-success">ยืนยัน</button>
                     </div>
                 </div>
             </form>
