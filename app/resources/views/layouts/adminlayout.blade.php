@@ -95,8 +95,8 @@
                             <li><a href="#">ชั้น 5 - เฉพาะอาจารย์</a></li>
                             <li><a href="#">ชั้น 6 - Mini Home Theatre</a></li>
                             <li><a href="#">ชั้น 6 - Karaoke</a></li>
-                            <li><a href="#">ชั้น 6 - ห้องสื่อศึกษากลุ่ม</a></li>
                             <li><a href="#">ชั้น 6 - ห้องสื่อศึกษาเดี่ยว</a></li>
+                            <li><a href="#">ชั้น 6 - ห้องสื่อศึกษากลุ่ม</a></li>
                         </ul>
                     </li>
                     <li><a href="{{ route('adminroommediastaffs.index') }}"><i class="fas fa-user-tie"></i> สำหรับเจ้าหน้าที่</a></li>
