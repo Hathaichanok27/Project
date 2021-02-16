@@ -51,5 +51,7 @@ Route::resource('roommeetings', RoommeetingController::class);
 Route::resource('managemeetrooms', ManagemeetroomController::class);
 Route::resource('reservemeets', ReservemeetController::class);
 Route::resource('bookingmeetrooms', BookingmeetroomController::class);
+Route::resource('detailreserves', DetailreserveController::class);
+Route::resource('detailmeetrooms', DetailmeetroomController::class);
 
 

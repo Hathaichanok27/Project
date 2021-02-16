@@ -35,7 +35,6 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li><a href="javascript:;" ng-click="bookInfoModal(q.book_id)"><i class="icon-info22"></i> รายละเอียด</a></li>
-                                        <li><a href="javascript:;" ng-click="sendMsgModal(q.book_id)"><i class="icon-bubble-lines3"></i> ส่งข้อความแจ้งเตือน</a></li>
                                         <li class="divider"></li>
                                     </ul>
                                 </li>
@@ -47,3 +46,4 @@
         </div>
     </div>
 @endsection
+

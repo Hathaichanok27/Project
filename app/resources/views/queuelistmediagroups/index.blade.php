@@ -48,6 +48,26 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <td class="ng-binding">1</td>
+                        <td><a href="#" ng-click="startWizard(q.username)" class="ng-binding">60160039</a></td>
+                        <td class="ng-binding">นัฐวัฒน์ อิ่มเทศ</td>
+                        <td class="ng-binding">11.30 - wednesday 30 December 2020</td>
+                        <td class="ng-binding">02.00 hours</td>
+                        <td class="ng-binding"> - </td>
+                        <td class="text-center">
+                            <ul class="icons-list">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="javascript:;" ng-click="bookInfoModal(q.book_id)"><i class="icon-info22"></i> รายละเอียด</a></li>
+                                        <li><a href="javascript:;" ng-click="sendMsgModal(q.book_id)"><i class="icon-bubble-lines3"></i> ส่งข้อความแจ้งเตือน</a></li>
+                                        <li class="divider"></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tbody>
+                    <tbody>
                         <!-- ngRepeat: q in waitingQueueList | filter:searchFilterWaiting -->
                     </tbody>
                 </table>
