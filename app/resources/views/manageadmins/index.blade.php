@@ -42,13 +42,13 @@
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger"> <i class="far fa-trash-alt fa-lg"></i></button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to Delete?');" id="btnDelete"><i class="far fa-trash-alt fa-lg"></i></button>
                         </form>
                     </td>
                 </tr>
                 @endforeach
             </table>
-        {!! $manageadmins ?? ''->links() !!}  
+        {!! $manageadmins->links() !!}  
         </div>
     </div>    
 @endsection
