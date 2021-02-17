@@ -22,14 +22,14 @@
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="javascript:;" class="media-left">
-                                <img src="http://roombooking.lib.buu.ac.th/assets/images/icon_color_tv.png" class="img-circle img-lg" alt="">
+                                <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
                                 <h6 class="media-heading"><b class="ng-binding">STV-01</b></h6>
                                 <span class="text-muted countdown" data-endtime="2020-12-23 16:39:13">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" ng-class="{'label-danger':room.room_status == 0,
+                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
                                                                                                 'label-success':room.room_status == 1,
                                                                                                 'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
@@ -40,14 +40,14 @@
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="javascript:;" class="media-left">
-                                <img src="http://roombooking.lib.buu.ac.th/assets/images/icon_color_tv.png" class="img-circle img-lg" alt="">
+                                <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
                                 <h6 class="media-heading"><b class="ng-binding">STV-02</b></h6>
                                 <span class="text-muted countdown" data-endtime="2020-12-23 16:39:13">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" ng-class="{'label-danger':room.room_status == 0,
+                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
                                                                                                 'label-success':room.room_status == 1,
                                                                                                 'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
@@ -58,128 +58,21 @@
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="javascript:;" class="media-left">
-                                <img src="http://roombooking.lib.buu.ac.th/assets/images/icon_color_tv.png" class="img-circle img-lg" alt="">
+                                <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
                                 <h6 class="media-heading"><b class="ng-binding">STV-03</b></h6>
                                 <span class="text-muted countdown" data-endtime="2020-12-23 16:39:13">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" ng-class="{'label-danger':room.room_status == 0,
-                                                                                                'label-success':room.room_status == 1,
-                                                                                                'label-warning': room.room_status == 2}">ว่าง</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
-                    <div class="panel panel-body border-grey">
-                        <div class="media">
-                            <a href="javascript:;" class="media-left">
-                                <img src="http://roombooking.lib.buu.ac.th/assets/images/icon_color_tv.png" class="img-circle img-lg" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-04</b></h6>
-                                <span class="text-muted countdown" data-endtime="2020-12-23 16:39:13">00 : 00 : 00</span>
-                            </div>
-                            <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" ng-class="{'label-danger':room.room_status == 0,
-                                                                                                'label-success':room.room_status == 1,
-                                                                                                'label-warning': room.room_status == 2}">ว่าง</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
-                    <div class="panel panel-body border-grey">
-                        <div class="media">
-                            <a href="javascript:;" class="media-left">
-                                <img src="http://roombooking.lib.buu.ac.th/assets/images/icon_color_tv.png" class="img-circle img-lg" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-05</b></h6>
-                                <span class="text-muted countdown" data-endtime="2020-12-23 16:39:13">00 : 00 : 00</span>
-                            </div>
-                            <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" ng-class="{'label-danger':room.room_status == 0,
+                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
                                                                                                 'label-success':room.room_status == 1,
                                                                                                 'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
-                    <div class="panel panel-body border-grey">
-                        <div class="media">
-                            <a href="javascript:;" class="media-left">
-                                <img src="http://roombooking.lib.buu.ac.th/assets/images/icon_color_tv.png" class="img-circle img-lg" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-06</b></h6>
-                                <span class="text-muted countdown" data-endtime="2020-12-23 16:39:13">00 : 00 : 00</span>
-                            </div>
-                                <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" ng-class="{'label-danger':room.room_status == 0,
-                                                                                                'label-success':room.room_status == 1,
-                                                                                                'label-warning': room.room_status == 2}">ว่าง</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
-                    <div class="panel panel-body border-grey">
-                        <div class="media">
-                            <a href="javascript:;" class="media-left">
-                                <img src="http://roombooking.lib.buu.ac.th/assets/images/icon_color_tv.png" class="img-circle img-lg" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-07</b></h6>
-                                <span class="text-muted countdown" data-endtime="2020-12-23 16:39:13">00 : 00 : 00</span>
-                            </div>
-                            <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" ng-class="{'label-danger':room.room_status == 0,
-                                                                                                'label-success':room.room_status == 1,
-                                                                                                'label-warning': room.room_status == 2}">ว่าง</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
-                    <div class="panel panel-body border-grey">
-                        <div class="media">
-                            <a href="javascript:;" class="media-left">
-                                <img src="http://roombooking.lib.buu.ac.th/assets/images/icon_color_tv.png" class="img-circle img-lg" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-08</b></h6>
-                                <span class="text-muted countdown" data-endtime="2020-12-23 16:39:13">00 : 00 : 00</span>
-                            </div>
-                            <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" ng-class="{'label-danger':room.room_status == 0,
-                                                                                                'label-success':room.room_status == 1,
-                                                                                                'label-warning': room.room_status == 2}">ว่าง</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
-                    <div class="panel panel-body border-grey">
-                        <div class="media">
-                            <a href="javascript:;" class="media-left">
-                                <img src="http://roombooking.lib.buu.ac.th/assets/images/icon_color_tv.png" class="img-circle img-lg" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-09</b></h6>
-                                <span class="text-muted countdown" data-endtime="2020-12-23 16:39:13">00 : 00 : 00</span>
-                            </div>
-                            <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" ng-class="{'label-danger':room.room_status == 0,
-                                                                                                'label-success':room.room_status == 1,
-                                                                                                'label-warning': room.room_status == 2}">ว่าง</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
+                 
             </div> 
         </div>     
     </div>
