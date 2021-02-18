@@ -48,7 +48,7 @@ class ManageadminController extends Controller
         Manageadmin::create($request->all());
 
         return redirect()->route('manageadmins.index')
-                        ->with('success','Manageadmin created successfully.');
+                        ->with('success','Created admin successfully.');
     }
 
     /**
@@ -92,7 +92,7 @@ class ManageadminController extends Controller
         $manageadmin->update($request->all());
 
         return redirect()->route('manageadmins.index')
-                        ->with('success','Manageadmin updated successfully');
+                        ->with('success','Updated admin successfully');
     }
 
     /**
@@ -106,6 +106,6 @@ class ManageadminController extends Controller
         $manageadmin->delete();
 
         return redirect()->route('manageadmins.index')
-                        ->with('success','Manageadmin deleted successfully');
+                        ->with('success','Deleted admin successfully');
     }
 }

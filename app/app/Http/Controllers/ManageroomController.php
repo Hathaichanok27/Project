@@ -42,13 +42,14 @@ class ManageroomController extends Controller
             'area_floor' => 'required',
             'room_type' => 'required',
             'room_name' => 'required',
+            'description' => 'required',
             'capacity' => 'required',
         ]);
 
         Manageroom::create($request->all());
 
         return redirect()->route('managerooms.index')
-                        ->with('success','Manageroom created successfully.');
+                        ->with('success','Created room successfully.');
     }
 
     /**
@@ -86,13 +87,14 @@ class ManageroomController extends Controller
             'area_floor' => 'required',
             'room_type' => 'required',
             'room_name' => 'required',
+            'description' => 'required',
             'capacity' => 'required',
         ]);
 
         $manageroom->update($request->all());
 
         return redirect()->route('managerooms.index')
-                        ->with('success','Manageroom updated successfully');
+                        ->with('success','Update room successfully');
     }
 
     /**
@@ -106,6 +108,6 @@ class ManageroomController extends Controller
         $manageroom->delete();
 
         return redirect()->route('managerooms.index')
-                        ->with('success','Manageroom deleted successfully');
+                        ->with('success','Deleted room successfully');
     }
 }
