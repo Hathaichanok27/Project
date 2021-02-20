@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="pull-right">
-                        <a class="btn btn-primary" href="{{ route('manageadmins.create') }}">เพิ่มแอดมิน <i class="fas fa-plus-circle"></i></a>
+                        <a class="btn btn-primary" href="{{ route('manageadmins.create') }}">เพิ่มเจ้าหน้าที่ <i class="fas fa-plus-circle"></i></a>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                     <th style="text-align:center">ลำดับ</th>
                     <th style="text-align:center">ชื่อ</th>
                     <th style="text-align:center">อีเมล</th>
-                    <th style="text-align:center" width="280px">จัดการเจ้าหน้าที่</th>
+                    <th style="text-align:center" width="280px">การกระทำ</th>
                 </tr>
 
                 @foreach ($manageadmins as $manageadmin)
