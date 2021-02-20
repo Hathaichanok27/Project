@@ -101,7 +101,7 @@
                         </ul>
                     </li>
                     <li><a href="{{ route('manageadmins.index') }}"><i class="fas fa-wrench"></i> จัดการเจ้าหน้าที่</a></li>
-                    <li><a href="{{ route('managerooms.index') }}"><i class="fas fa-bars"></i> จัดการห้อง</a></li>
+                    <li><a href="{{ route('rooms.index') }}"><i class="fas fa-bars"></i> จัดการห้อง</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
