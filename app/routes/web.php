@@ -24,13 +24,13 @@ Route::get('admin/home', 'HomeController@adminhome')->name('admin.home')->middle
 Route::get('superadmin/home', 'HomeController@superadminHome')->name('superadmin.home')->middleware('is_superadmin');
 
 //Superadmin
-Route::resource('superadminroombookings', SuperadminroombookingController::class)->middleware('auth')->middleware('is_admin');
+Route::resource('superadminroombookings', SuperadminroombookingController::class)->middleware('auth')->middleware('is_superadmin');
 Route::resource('superadminroommedias', SuperadminroommediaController::class);
 Route::resource('manageadmins', ManageadminController::class);
-Route::resource('managerooms', ManageroomController::class);
+Route::resource('rooms', RoomController::class);
 
 //Admin
-Route::resource('adminroombookings', AdminroombookingController::class)->middleware('auth')->middleware('is_superadmin');
+Route::resource('adminroombookings', AdminroombookingController::class)->middleware('auth')->middleware('is_admin');
 Route::resource('adminroommedias', AdminroommediaController::class);
 Route::resource('adminroommediastaffs', AdminroommediastaffController::class);
 Route::resource('queuelistmediagroups', QueuelistmediagroupController::class);
