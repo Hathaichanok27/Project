@@ -37,7 +37,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>อีเมล:</strong>
-                            <input type="text" name="email" value="{{ $manageadmin->email }}"class="form-control">
+                            <input type="email" name="email" value="{{ $manageadmin->email }}"class="form-control">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">

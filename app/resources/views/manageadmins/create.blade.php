@@ -36,7 +36,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>อีเมล:</strong>
-                            <input type="text" name="email" class="form-control" placeholder="example@email.com">
+                            <input type="email" name="email" class="form-control" placeholder="example@email.com">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
