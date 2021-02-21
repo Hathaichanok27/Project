@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Confirmmediasingle;
 use Illuminate\Http\Request;
 
 class ConfirmmediasingleController extends Controller
@@ -13,7 +14,10 @@ class ConfirmmediasingleController extends Controller
      */
     public function index()
     {
-        return view('confirmmediasingles.index');
+        $confirmmediasingles = Confirmmediasingle::paginate(5);
+
+        return view('confirmmediasingles.index',compact('confirmmediasingles'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -23,7 +27,7 @@ class ConfirmmediasingleController extends Controller
      */
     public function create()
     {
-        //
+        return view('confirmmediasingles.create');
     }
 
     /**
@@ -34,7 +38,16 @@ class ConfirmmediasingleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'username' => 'required',
+            'user_fullname' => 'required',
+            'room_type' => 'required',
+            'room_floor' => 'required',
+            'book_status' => 'required',
+        ]);
+        
+        Confirmmediasingle::create($request->all());
+        return redirect()->route('mybookings.index');
     }
 
     /**
