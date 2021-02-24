@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class confirmmediagroup extends Model
+class Confirmmediagroup extends Model
 {
     protected $fillable = [
         'user_fullname', 'username', 'user_telnum', 'user_email',
