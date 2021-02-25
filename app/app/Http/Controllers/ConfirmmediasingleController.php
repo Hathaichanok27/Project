@@ -41,6 +41,7 @@ class ConfirmmediasingleController extends Controller
         $request->validate([
             'username' => 'required',
             'user_fullname' => 'required',
+            'user_telnum' => 'required',
             'room_type' => 'required',
             'room_floor' => 'required',
             'book_status' => 'required',
