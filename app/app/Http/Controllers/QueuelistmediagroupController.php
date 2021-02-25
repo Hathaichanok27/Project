@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Confirmmediagroup;
 use Illuminate\Http\Request;
 
 class QueuelistmediagroupController extends Controller
@@ -13,7 +14,10 @@ class QueuelistmediagroupController extends Controller
      */
     public function index()
     {
-        return view('queuelistmediagroups.index');
+        $confirmmediagroups = Confirmmediagroup::paginate(5);
+        
+        return view('queuelistmediagroups.index',compact('confirmmediagroups'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
