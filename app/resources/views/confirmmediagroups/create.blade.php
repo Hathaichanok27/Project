@@ -88,7 +88,7 @@
 									<input type="text" class="form-control" name="user_telnum">
 								</div>	
 							</div>
-								
+							
 							<div class="col-xs-12 col-sm-12 col-md-12 text-center">
 								<br>
 								<button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน <i class="fas fa-check"></i></button>
