@@ -85,7 +85,7 @@
 								</div>
 								<div class="form-group">
 									<label class="text-semibold">เบอร์โทรศัพท์มือถือ: *</label>
-									<input type="text" class="form-control" name="user_telnum">
+									<input type="text" class="form-control" name="user_telnum" placeholder="xxx-xxx-xxxx">
 								</div>	
 							</div>
 								
