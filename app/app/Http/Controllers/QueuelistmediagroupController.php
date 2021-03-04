@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Confirmmediagroup;
+// use App\Confirmmediagroup;
+use App\queuelistmediagroup;
 use Illuminate\Http\Request;
 
 class QueuelistmediagroupController extends Controller
@@ -14,9 +15,14 @@ class QueuelistmediagroupController extends Controller
      */
     public function index()
     {
-        $confirmmediagroups = Confirmmediagroup::paginate(5);
+        // $confirmmediagroups = Confirmmediagroup::paginate(5);
         
-        return view('queuelistmediagroups.index',compact('confirmmediagroups'))
+        // return view('queuelistmediagroups.index',compact('confirmmediagroups'))
+        //     ->with('i', (request()->input('page', 1) - 1) * 5);
+
+        $queuelistmediagroups = Queuelistmediagroup::paginate(5);
+        
+        return view('queuelistmediagroups.index',compact('queuelistmediagroups'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -38,18 +44,28 @@ class QueuelistmediagroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'username' => 'required',
+            'user_fullname' => 'required',
+            'user_telnum' => 'required',
+            'book_createtime' => 'required',
+        ]);
+
+        Room::create($request->all());
+
+        return redirect()->route('queuelistmediagroups.index')
+                        ->with('success','Created booking successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  App\queuelistmediagroup $queuelistmediagroup
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Queuelistmediagroup $queuelistmediagroup)
     {
-        //
+        return view('queuelistmediagroups.show',compact('queuelistmediagroup'));
     }
 
     /**

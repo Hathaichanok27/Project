@@ -56,9 +56,9 @@ class ConfirmmediagroupController extends Controller
      * @param  \App\Confirmmediagroup  $confirmmediagroup
      * @return \Illuminate\Http\Response
      */
-    public function show(Confirmmediagroup $confirmmediagroup)
+    public function show($id)
     {
-        return view('confirmmediagroup.show',compact('confirmmediagroup'));
+        // return view('confirmmediagroup.show',compact('confirmmediagroup'));
     }
 
     /**
