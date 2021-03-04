@@ -17,7 +17,7 @@ class CreateConfirmMediaSinglesTable extends Migration
             $table->id();
             $table->string('username');
             $table->string('user_fullname');
-            $table->string('user_telnum')->nullable();
+            $table->string('user_telnum');
             $table->string('user_email')->unique()->nullable();
             $table->string('room_type');
             $table->string('room_floor');
