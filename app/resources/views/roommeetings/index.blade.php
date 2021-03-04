@@ -1,6 +1,5 @@
 @extends('layouts.userlayout')
 
-
 @section('content')
 	<div class="page-container">
 		<div class="container">
@@ -30,7 +29,8 @@
                     </select>
                 </div>
             </div>
-            <div id='calendar'></div>
+
+            
         </div>     
     </div>
 @endsection

@@ -55,5 +55,3 @@ Route::resource('reservemeets', ReservemeetController::class);
 Route::resource('detailmeetrooms', DetailmeetroomController::class);
 
 Route::resource('users', UserController::class);
-Route::get('fullcalender', [FullCalenderController::class, 'index']);
-Route::post('fullcalenderAjax', [FullCalenderController::class, 'ajax']);
