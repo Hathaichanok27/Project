@@ -28,7 +28,7 @@
                 var year = x.getFullYear();
                 if (month < 10 ){month = '0' + month;}
                 if (day < 10 ){day = '0' + day;}
-                var x1 = day + '-' + month + '-' + year;
+                var x1 = day + '/' + month + '/' + year;
                 
                 // time part 
                 var hour = x.getHours();
