@@ -4,7 +4,7 @@
     <div class="page-container">
 		<div class="container">
 			<div class="page-title">
-				<h4><i class="fa fa-home"></i> <span class="text-semibold"> รายการคิว</span></h4>  
+				<h5><i class="fa fa-home"></i> <span class="text-semibold"> รายการคิว</span></h5>  
                 <ul class="breadcrumb breadcrumb-caret position-right">
 					<li><a href="{{ route('adminroombookings.index') }}">หน้าแรก</a></li>
                     <li><a href="{{ route('adminroommediastaffs.index') }}">สำหรับเจ้าหน้าที่</a></li>
@@ -75,7 +75,7 @@
                                                                 <li class="divider"></li>
                                                                 <li><a href="" data-toggle="modal" data-target="#myModal3_{{ $i }}" style="color:#26A65B;"><i class="fas fa-sign-in-alt"></i> เข้าห้อง</a></li>                                                                
                                                                 <li class="divider"></li>
-                                                                <li><a href="" data-toggle="modal" data-target="#myModal4_{{ $i }}" style="color:#e74c3c;"><i class="fas fa-times"></i> ยกเลิกการจอง</a></li>                                                                
+                                                                <li><a href="" data-toggle="modal" data-target="#myModal6_{{ $i }}" style="color:#e74c3c;"><i class="fas fa-times"></i> ยกเลิกการจอง</a></li>                                                                
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -99,7 +99,7 @@
                                                 <div class="panel panel-white" style="margin-bottom:0px;">
                                                     <div class="panel-heading">
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">รายละเอียดผู้ใช้</h4>
+                                                        <h5 class="modal-title">รายละเอียดผู้ใช้</h5>
                                                     </div>
                                                 </div>
                                                 <div class="modal-body">
@@ -141,7 +141,7 @@
                                                 <div class="panel panel-primary" style="margin-bottom:0px;">
                                                     <div class="panel-heading">
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title"><i class="fas fa-envelope"></i> ส่งข้อความแจ้งเตือนถึงผู้ใช้</h4>
+                                                        <h5 class="modal-title"><i class="fas fa-envelope"></i> ส่งข้อความแจ้งเตือนถึงผู้ใช้</h5>
                                                     </div>
                                                 </div>
                                                 <div class="modal-body">
@@ -153,9 +153,10 @@
                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
                                                             <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $confirmmediagroup->book_createtime }}</p>
-                                                            <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
+                                                            <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>  
                                                         </div>  
-                                                    </div>     
+                                                    </div>
+
                                                 </div>
                                                 <div class="panel-body">
                                                     <div class="content-group">
@@ -174,19 +175,19 @@
                                     </div>
                                 </div>
                                 <!-- Modal3 -->
-                                <div class="modal fade" id="myModal3_<?php echo $o?>" role="dialog">
+                                <div class="modal fade" id="myModal3_<?php echo $o?>" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-body" style="padding:0px;">
                                                 <div class="panel panel-white" style="margin-bottom:0px;">
                                                     <div class="panel-heading">
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">การดำเนินการ</h4>
+                                                        <h5 class="modal-title" id="myModalLabel">การดำเนินการ</h5>
                                                     </div>
                                                 </div>
                                                 <div class="modal-body">
                                                     <h6 class="form-wizard-title text-semibold">
-                                                        <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                        <span class="form-wizard-count">1</span>
                                                         ข้อมูลผู้จองห้อง
                                                         <small class="display-block">ข้อมูลการจอง</small>
                                                     </h6>
@@ -210,14 +211,88 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal" disabled="">ย้อนกลับ</button>
-                                                    <button type="button" class="btn btn-info" data-dismiss="modal">ถัดไป</button>
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal" data-toggle="modal" data-target="#myModal4_{{ $i }}">ถัดไป</button>
                                                 </div>
                                             </div>                       
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Modal4 -->
-                                <div class="modal fade" id="myModal4_<?php echo $o?>" role="dialog">
+                                <!-- Modal4 --><!-- TAB CONTENT Model3 -->
+                                <div class="modal" id="myModal4_<?php echo $o?>" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body" style="padding:0px;">
+                                                <div class="panel panel-white" style="margin-bottom:0px;">
+                                                    <div class="panel-heading">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h5 class="modal-title" id="myModalLabel">การดำเนินการ</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h6 class="form-wizard-title text-semibold">
+                                                        <span class="form-wizard-count">2</span>
+                                                        เลือกห้องที่จะให้บริการ
+                                                        <small class="display-block">เลือกห้องที่มีสถานะ "ว่าง" เพื่อให้บริการแก่ผู้ใช้</small>
+                                                    </h6>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="panel panel-body">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $confirmmediagroup->book_createtime }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
+                                                                    </div>  
+                                                                    
+                                                                    <div class="panel panel-body-1">
+                                                                        <div class="selectroom">
+                                                                            <div class="col-md-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
+                                                                                <div class="panel panel-body room-item" oncontextmenu="return false;" ng-mousedown="selecteRoom(room)">
+                                                                                    <div class="media">
+                                                                                        <div class="media-body">
+                                                                                            <div class="media-right">
+                                                                                                <span class="label label-lg ng-binding label-success" ng-class="{'label-danger':room.room_status == 0,
+                                                                                                                        'label-success':room.room_status == 1,
+                                                                                                                        'label-warning': room.room_status == 2}">ว่าง</span>
+                                                                                            </div>
+                                                                                            <h6 class="media-heading ng-binding">STV-01</h6>
+                                                                                            <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
+                                                                                            <ul class="icons-list bottom-right-menu">
+                                                                                                <li class="dropdown">
+                                                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
+                                                                                                    <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
+                                                                                                        <li><a href="javascript:;" ng-click="returnReady(room)" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="icon-shuffle"></i> คืนสถานะ</a></li>
+                                                                                                        <li><a href="javascript:;" ng-click="returnRoom(room)" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="icon-exit"></i> คืนห้อง</a></li>
+                                                                                                        <li><a href="javascript:;" ng-click="closeRoom(room)" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="icon-blocked"></i> งดใช้งาน</a></li>
+                                                                                                    </ul>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" >ย้อนกลับ</button>
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal" data-target="#myModal5_{{ $i }}">ถัดไป</button>
+                                                </div>
+                                            </div>                       
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal6 -->
+                                <div class="modal fade" id="myModal6_<?php echo $o?>" role="dialog">
                                     <div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="true" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="true" data-animation="pop" data-timer="null" style="display: block; margin-top: -145px;">
                                         <div class="sa-icon sa-error" style="display: none;">
                                             <span class="sa-x-mark">
