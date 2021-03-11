@@ -55,7 +55,7 @@
 					<div class="col-12 col-md-6">
 						<div class="panel panel-flat border-grey">
 							<div class="panel-heading" style="padding-bottom:0px;">
-								<h5 class="panel-title"><i class="fas fa-user-tie"></i> ข้อมูลผู้ขอจองคิวให้ห้อง</h5>
+								<h5 class="panel-title"><i class="fas fa-user-tie"></i> ข้อมูลผู้ขอจองคิวใช้ห้อง</h5>
 							</div>
 							<hr style="margin:15px 0 0 0;">
 							<div class="panel-body">
