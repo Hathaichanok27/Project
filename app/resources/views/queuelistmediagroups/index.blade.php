@@ -60,9 +60,9 @@
                                         @foreach($confirmmediagroups as $confirmmediagroup)
                                             <tr>
                                                 <td style="text-align:center">{{ ++$i }}</td>
-                                                <td><a href="{{ route('queuelistmediagroups.show',$confirmmediagroup->id) }}">{{ $confirmmediagroup->username }}</td>
+                                                <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                <td>{{ $confirmmediagroup->book_createtime }}</td>
+                                                <td>{{ $confirmmediagroup->created_at->format('d/m/Y H:i:s') }}</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td class="text-center">
@@ -156,19 +156,16 @@
                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>  
                                                         </div>  
                                                     </div>
-
                                                 </div>
                                                 <div class="panel-body">
                                                     <div class="content-group">
-                                                        <div class="form-group">
-                                                            <label for="message-text" class="col-form-label">ข้อความที่ต้องการส่ง:</label>
-                                                            <textarea rows="4" cols="4" class="form-control" id="message-text" placeholder="การจองห้องจะได้รับบริการในเวลา ... โปรดติดต่อเจ้าหน้าที่ชั้น 6 ค่ะ"></textarea>
-                                                        </div>
+                                                        <label for="message-text" class="content-group">ข้อความที่ต้องการส่ง:</label>
+                                                        <textarea rows="4" cols="4" class="form-control" id="message-text" placeholder="การจองห้องจะได้รับบริการในเวลา ... โปรดติดต่อเจ้าหน้าที่ชั้น 6 ค่ะ"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-link" data-dismiss="modal">ปิด</button>
-                                                    <button type="submit" class="btn btn-primary" ng-click="doSendMsg(bookInfo.book.book_id)">ส่งข้อความ</button>
+                                                    <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="doSendMsg(bookInfo.book.book_id)">ส่งข้อความ</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -247,31 +244,30 @@
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $confirmmediagroup->book_createtime }}</p>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                     </div>  
-                                                                    
-                                                                    <div class="panel panel-body-1">
-                                                                        <div class="selectroom">
-                                                                            <div class="col-md-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
-                                                                                <div class="panel panel-body room-item" oncontextmenu="return false;" ng-mousedown="selecteRoom(room)">
-                                                                                    <div class="media">
-                                                                                        <div class="media-body">
-                                                                                            <div class="media-right">
-                                                                                                <span class="label label-lg ng-binding label-success" ng-class="{'label-danger':room.room_status == 0,
-                                                                                                                        'label-success':room.room_status == 1,
-                                                                                                                        'label-warning': room.room_status == 2}">ว่าง</span>
-                                                                                            </div>
-                                                                                            <h6 class="media-heading ng-binding">STV-01</h6>
-                                                                                            <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                            <ul class="icons-list bottom-right-menu">
-                                                                                                <li class="dropdown">
-                                                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
-                                                                                                    <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                        <li><a href="javascript:;" ng-click="returnReady(room)" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="icon-shuffle"></i> คืนสถานะ</a></li>
-                                                                                                        <li><a href="javascript:;" ng-click="returnRoom(room)" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="icon-exit"></i> คืนห้อง</a></li>
-                                                                                                        <li><a href="javascript:;" ng-click="closeRoom(room)" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="icon-blocked"></i> งดใช้งาน</a></li>
-                                                                                                    </ul>
-                                                                                                </li>
-                                                                                            </ul>
+                                                                    <hr>
+                                                                    <div class="selectroom">
+                                                                        <div class="col-md-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
+                                                                            <div class="panel panel-body room-item" oncontextmenu="return false;" ng-mousedown="selecteRoom(room)">
+                                                                                <div class="media">
+                                                                                    <div class="media-body">
+                                                                                        <div class="media-right">
+                                                                                            <span class="label label-success">ว่าง</span>
+                                                                                            <!-- <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
+                                                                                                                                                    'label-success':room.room_status == 1,
+                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span> -->
                                                                                         </div>
+                                                                                        <h6 class="media-heading">STV-01</h6>
+                                                                                        <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
+                                                                                        <ul class="icons-list bottom-right-menu">
+                                                                                            <li class="dropdown">
+                                                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
+                                                                                                <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
+                                                                                                    <li><a href="javascript:;" ng-click="returnReady(room)" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="icon-shuffle"></i> คืนสถานะ</a></li>
+                                                                                                    <li><a href="javascript:;" ng-click="returnRoom(room)" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="icon-exit"></i> คืนห้อง</a></li>
+                                                                                                    <li><a href="javascript:;" ng-click="closeRoom(room)" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="icon-blocked"></i> งดใช้งาน</a></li>
+                                                                                                </ul>
+                                                                                            </li>
+                                                                                        </ul>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -284,8 +280,54 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal" >ย้อนกลับ</button>
-                                                    <button type="button" class="btn btn-info" data-dismiss="modal" data-target="#myModal5_{{ $i }}">ถัดไป</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" data-target="#myModal4_">ย้อนกลับ</button>
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal" data-target="#myModal5_">ถัดไป</button>
+                                                </div>
+                                            </div>                       
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal5 --><!-- TAB CONTENT Model4 -->
+                                <div class="modal" id="myModal5_<?php echo $o?>" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body" style="padding:0px;">
+                                                <div class="panel panel-white" style="margin-bottom:0px;">
+                                                    <div class="panel-heading">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h5 class="modal-title" id="myModalLabel">การดำเนินการ</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h6 class="form-wizard-title text-semibold">
+                                                        <span class="form-wizard-count">3</span>
+                                                        ยืนยันการทำรายการ
+                                                        <small class="display-block">ตรวจสอบความถูกต้องและยืนยันการทำรายการ</small>
+                                                    </h6>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="panel panel-body">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $confirmmediagroup->book_createtime }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
+                                                                    </div>  
+                                                                    
+                
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">ย้อนกลับ</button>
+                                                    <button type="button" class="btn btn-success" data-dismiss="modal">ยืนยัน</button>
                                                 </div>
                                             </div>                       
                                         </div>
