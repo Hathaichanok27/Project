@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Confirmmediagroup;
-//use App\queuelistmediagroup;
+use App\Queuelistmediagroup;
 use Illuminate\Http\Request;
 
 class QueuelistmediagroupController extends Controller
@@ -44,28 +44,18 @@ class QueuelistmediagroupController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'username' => 'required',
-            'user_fullname' => 'required',
-            'user_telnum' => 'required',
-            'book_createtime' => 'required',
-        ]);
-
-        Room::create($request->all());
-
-        return redirect()->route('queuelistmediagroups.index')
-                        ->with('success','Created booking successfully.');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  App\queuelistmediagroup $queuelistmediagroup
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Queuelistmediagroup $queuelistmediagroup)
+    public function show($id)
     {
-        return view('queuelistmediagroups.show',compact('queuelistmediagroup'));
+        //
     }
 
     /**
