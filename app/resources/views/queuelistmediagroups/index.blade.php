@@ -144,7 +144,7 @@
                                                         <li class="dropdown">
                                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
                                                             <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a href="" data-toggle="modal" data-target="#myModal1"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
+                                                                <li><a href=""  data-toggle="modal" data-target="#myModal1_{{ $i }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
                                                                 <li><a href="" data-toggle="modal" data-target="#myModal2"><i class="fas fa-comment-dots"></i> ส่งข้อความแจ้งเตือน</a></li>
                                                                 <li class="divider"></li>
                                                                 <li><a href="" data-toggle="modal" data-target="#myModal3" style="color:#26A65B;"><i class="fas fa-sign-in-alt"></i> เข้าห้อง</a></li>                                                                
@@ -314,9 +314,10 @@
                             </div>
                         </div>
                     </div> 
-                    <div class="tab-content-model">
+                    <div class="tab-content-model"><?php $o=1?>
+                    @foreach($confirmmediagroups as $confirmmediagroup)
                         <!-- Modal1 -->
-                        <div class="modal fade" id="myModal1" role="dialog">
+                        <div class="modal fade" id="myModal1_<?php echo $o?>" role="dialog">
                             <div class="modal-dialog">
                                 <!-- Modal content-->
                                 <div class="modal-content">
@@ -358,7 +359,8 @@
                                     </div>                       
                                 </div>
                             </div>
-                        </div>
+                        </div><?php $o++;?>
+                        @endforeach
                         <!-- Modal2 -->
                         <div class="modal fade" id="myModal2" role="dialog">
                             <div class="modal-dialog">
@@ -470,6 +472,26 @@
                         </div>
                     </div>
                 </div>  
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal{{ $i }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ $i }}" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel{{ $i }}">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ $confirmmediagroup->user_fullname }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>       

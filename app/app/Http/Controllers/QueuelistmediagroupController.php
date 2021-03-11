@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-// use App\Confirmmediagroup;
-use App\queuelistmediagroup;
+use App\Confirmmediagroup;
+//use App\queuelistmediagroup;
 use Illuminate\Http\Request;
 
 class QueuelistmediagroupController extends Controller
@@ -15,15 +15,15 @@ class QueuelistmediagroupController extends Controller
      */
     public function index()
     {
-        // $confirmmediagroups = Confirmmediagroup::paginate(5);
+         $confirmmediagroups = Confirmmediagroup::paginate(5);
         
-        // return view('queuelistmediagroups.index',compact('confirmmediagroups'))
-        //     ->with('i', (request()->input('page', 1) - 1) * 5);
+         return view('queuelistmediagroups.index',compact('confirmmediagroups'))
+             ->with('i', (request()->input('page', 1) - 1) * 5);
 
-        $queuelistmediagroups = Queuelistmediagroup::paginate(5);
+        //$queuelistmediagroups = Queuelistmediagroup::paginate(5);
         
-        return view('queuelistmediagroups.index',compact('queuelistmediagroups'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        //return view('queuelistmediagroups.index',compact('queuelistmediagroups'))
+         //   ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
