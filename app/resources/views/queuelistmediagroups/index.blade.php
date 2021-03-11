@@ -141,7 +141,7 @@
                                                 <div class="panel panel-primary" style="margin-bottom:0px;">
                                                     <div class="panel-heading">
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">ส่งข้อความแจ้งเตือนถึงผู้ใช้</h4>
+                                                        <h4 class="modal-title"><i class="fas fa-envelope"></i> ส่งข้อความแจ้งเตือนถึงผู้ใช้</h4>
                                                     </div>
                                                 </div>
                                                 <div class="modal-body">
@@ -159,9 +159,9 @@
                                                 </div>
                                                 <div class="panel-body">
                                                     <div class="content-group">
-                                                        <p class="content-group-sm text-muted">ข้อความที่ต้องการส่ง : </p>
                                                         <div class="form-group">
-                                                            <textarea rows="4" cols="4" class="form-control" placeholder=""></textarea>
+                                                            <label for="message-text" class="col-form-label">ข้อความที่ต้องการส่ง:</label>
+                                                            <textarea rows="4" cols="4" class="form-control" id="message-text" placeholder="การจองห้องจะได้รับบริการในเวลา ... โปรดติดต่อเจ้าหน้าที่ชั้น 6 ค่ะ"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -200,8 +200,8 @@
                                                                     <div class="media-body">
                                                                         <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : 1 นาทีที่แล้ว</p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">1</strong></p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $confirmmediagroup->book_createtime }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                     </div>  
                                                                 </div>
                                                             </div>
@@ -210,7 +210,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal" disabled="">ย้อนกลับ</button>
-                                                    <button type="button" class="btn btn-info" data-dismiss="modal" onclick="$('#enterroom_wizard').bootstrapWizard('show',1)">ถัดไป</button>
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal">ถัดไป</button>
                                                 </div>
                                             </div>                       
                                         </div>
