@@ -62,7 +62,11 @@
                                                 <td style="text-align:center">{{ ++$i }}</td>
                                                 <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                <td>{{ $confirmmediagroup->created_at->format('d/m/Y H:i') }}</td>
+                                                <td><?php $origin = date_create($confirmmediagroup->created_at->format('d/m/Y H:i') );
+$target = date_create('2021-03-12 ');
+$interval = date_diff($origin, $target);
+echo $interval->format('%h:%i:%s');
+?><BR>{{ $confirmmediagroup->created_at->format('d/m/Y H:i') }}</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td class="text-center">
@@ -208,7 +212,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal" disabled="">ย้อนกลับ</button>
-                                                    <button type="button" class="btn btn-info" data-dismiss="modal" data-toggle="modal" data-target="#myModal4_{{ $i }}">ถัดไป</button>
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal" data-toggle="modal" data-target="#myModal4_<?php echo $o?>">ถัดไป</button>
                                                 </div>
                                             </div>                       
                                         </div>
@@ -351,7 +355,8 @@
                                         <p>ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                         <div class="sa-button-container">
                                             <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">ใช่, ยกเลิกการจอง</button>
+                                            <button type="button" onclick="myFunction({{ $confirmmediagroup->id }})">ใช่, ยกเลิกการจอง</button>
+                                            <!--<button type="button" class="btn btn-danger" data-dismiss="modal">ใช่, ยกเลิกการจอง</button>-->
                                             <!-- <button class="btn btn-danger" data-id="{{ $confirmmediagroup->id }}" data-action="{{ route('queuelistmediagroups.destroy',$confirmmediagroup->id) }}" onclick="deleteConfirmation({{$confirmmediagroup->id}})"> Delete</button> -->
                                         </div>
                                     </div>
@@ -364,7 +369,18 @@
         </div> 
     </div> 
 @endsection 
-
+<script type="text/javascript">
+function myFunction(id) {
+    alert(id)
+     $.ajax({type: "GET",url: '/queuelistmediagroups/'+id,
+	//success: function(response){
+		//if(response == 1){
+		//document.getElementById("img"+Users_Quarter_Id+'_'+Users_Sub_Quarter_Id).innerHTML = '<img src="/theme/icon/check(24).png">';
+		//}
+	//}
+    });
+}
+</script>
 <!-- <script type="text/javascript">
     function deleteConfirmation(myModal6_<?php echo $o?>) {
         swal({
