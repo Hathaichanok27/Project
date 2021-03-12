@@ -14,6 +14,8 @@
         <link href="{{ asset('css/core.css') }}" rel="stylesheet">
         <link href="{{ asset('icomoon/styles.css') }}" rel="stylesheet">
         <!-- <link href="{{ asset('fonts/roboto.css') }}" rel="stylesheet">  -->
+
+        <!-- date time -->
         <script type="text/javascript"> 
             function display_c(){
                 var refresh=1000; // Refresh rate in milli seconds
