@@ -13,9 +13,9 @@
                     <li class="active">รายการคิว</li>
 				</ul>
 				<div class="heading-elements">
-                    <a href="" data-toggle="modal" data-target="#myModal01" class="btn btn-lg btn-labeled btn-labeled-left bg-success heading-btn">เข้าห้อง <b><i class="fas fa-sign-in-alt"></i></b></a>
-                    <a href="" data-toggle="modal" data-target="#myModal02" class="btn btn-lg btn-labeled btn-labeled-right bg-danger heading-btn">คืนห้อง <b><i class="fas fa-sign-out-alt"></i></b></a>
-                    <a href="" data-toggle="modal" data-target="#myModal03" class="btn btn-lg btn-labeled btn-labeled-right bg-primary heading-btn">จัดการห้อง <b><i class="fas fa-cog"></i></b></a>
+                    <a href="" data-toggle="modalheading" data-target="#myModalheading1" class="btn btn-lg btn-labeled btn-labeled-left bg-success heading-btn">เข้าห้อง <b><i class="fas fa-sign-in-alt"></i></b></a>
+                    <a href="" data-toggle="modalheading" data-target="#myModalheading2" class="btn btn-lg btn-labeled btn-labeled-right bg-danger heading-btn">คืนห้อง <b><i class="fas fa-sign-out-alt"></i></b></a>
+                    <a href="" data-toggle="modalheading" data-target="#myModalheading3" class="btn btn-lg btn-labeled btn-labeled-right bg-primary heading-btn">จัดการห้อง <b><i class="fas fa-cog"></i></b></a>
                 </div>
 			</div>
         </div>
@@ -62,7 +62,7 @@
                                                 <td style="text-align:center">{{ ++$i }}</td>
                                                 <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                <td>{{ $confirmmediagroup->created_at->format('d/m/Y H:i:s') }}</td>
+                                                <td>{{ $confirmmediagroup->created_at->format('d/m/Y H:i') }}</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td class="text-center">
@@ -118,7 +118,7 @@
                                                                     <div class="media-body">
                                                                         <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $confirmmediagroup->book_createtime }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $confirmmediagroup->created_at->format('d/m/Y H:i') }}</p>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                     </div>  
                                                                 </div>
@@ -280,8 +280,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal" data-target="#myModal4_">ย้อนกลับ</button>
-                                                    <button type="button" class="btn btn-info" data-dismiss="modal" data-target="#myModal5_">ถัดไป</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" data-target="#myModal4_{{ $i }}">ย้อนกลับ</button>
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal" data-target="#myModal5_{{ $i }}">ถัดไป</button>
                                                 </div>
                                             </div>                       
                                         </div>
@@ -351,7 +351,8 @@
                                         <p>ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                         <div class="sa-button-container">
                                             <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
-                                            <button type="button" class="confirm" data-dismiss="modal">ใช่, ยกเลิกการจอง</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">ใช่, ยกเลิกการจอง</button>
+                                            <!-- <button class="btn btn-danger" data-id="{{ $confirmmediagroup->id }}" data-action="{{ route('queuelistmediagroups.destroy',$confirmmediagroup->id) }}" onclick="deleteConfirmation({{$confirmmediagroup->id}})"> Delete</button> -->
                                         </div>
                                     </div>
                                 </div>
@@ -363,3 +364,43 @@
         </div> 
     </div> 
 @endsection 
+
+<!-- <script type="text/javascript">
+    function deleteConfirmation(myModal6_<?php echo $o?>) {
+        swal({
+            title: "Delete?",
+            text: "ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?",
+            type: "warning",
+            showCancelButton: !0,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: !0
+        }).then(function (e) {
+
+            if (e.value === true) {
+                var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+                $.ajax({
+                    type: 'POST',
+                    url: "{{url('/users')}}/" + id,
+                    data: {_token: CSRF_TOKEN},
+                    dataType: 'JSON',
+                    success: function (results) {
+
+                        if (results.success === true) {
+                            swal("Done!", results.message, "success");
+                        } else {
+                            swal("Error!", results.message, "error");
+                        }
+                    }
+                });
+
+            } else {
+                e.dismiss;
+            }
+
+        }, function (dismiss) {
+            return false;
+        })
+    }
+</script> -->
