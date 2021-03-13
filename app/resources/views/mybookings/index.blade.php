@@ -33,7 +33,7 @@
                                 <td>{{ $confirmmediasingle->room_type }}</td>
                                 <td>{{ $confirmmediasingle->room_floor }}</td>
                                 <td>{{ $confirmmediasingle->room_name }}</td>
-                                <td>{{ $confirmmediasingle->book_createtime }}</td>
+                                <td>{{ $confirmmediasingle->created_at->format('d/m/Y H:i') }}</td>
                                 <td>{{ $confirmmediasingle->book_starttime }}</td>
                                 <td>{{ $confirmmediasingle->book_endtime }}</td>
                                 <td style="text-align:center">{{ $confirmmediasingle->username }}</td>
@@ -58,7 +58,7 @@
                                 <td>{{ $confirmmediagroup->room_type }}</td>
                                 <td>{{ $confirmmediagroup->room_floor }}</td>
                                 <td>{{ $confirmmediagroup->room_name }}</td>
-                                <td>{{ $confirmmediagroup->book_createtime }}</td>
+                                <td>{{ $confirmmediagroup->created_at->format('d/m/Y H:i') }}</td>
                                 <td>{{ $confirmmediagroup->book_starttime }}</td>
                                 <td>{{ $confirmmediagroup->book_endtime }}</td>
                                 <td style="text-align:center">{{ $confirmmediagroup->username }}</td>

@@ -67,10 +67,10 @@
                                                     $origin = date_create($confirmmediagroup->created_at->format('H:i'));
                                                     $target = date_create('now');
                                                     $interval = date_diff($origin, $target);
-                                                    echo $interval->format('%i นาทีที่แล้ว');
+                                                    echo $interval->format('%H.%i นาทีที่แล้ว');
                                                     // echo $target->format('H:i');
                                                 ?>
-                                                <!-- <BR>{{ $confirmmediagroup->created_at->format('d/m/Y H:i') }}  -->
+                                                <!-- <BR>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}  -->
                                                 </td>
                                                 <td></td>
                                                 <td></td>
@@ -95,6 +95,145 @@
                                 </table>
                             </div>
                         </div>
+                        <!-- Tab2 -->
+				    	<div class="tab-pane active" id="label-tab2" style="padding:0px;">
+                            <div class="panel panel-flat">
+                                <div class="datatable-header" style="padding:12px;">
+                                    <div id="qTable_filter" class="dataTables_filter">
+                                        <label>
+                                            <span>Filter:</span> 
+                                            <input type="search" class="ng-pristine ng-untouched ng-valid ng-empty" placeholder="Type to filter..." aria-controls="qTable" ng-model="searchFilterWaiting">
+                                        </label>
+                                    </div>
+                                </div>
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr class="bg-grey">
+                                            <th>คิวที่</th>
+                                            <th>บัญชีผู้ใช้</th>
+                                            <th>ชื่อ - นามสกุล</th>
+                                            <th>เริ่มใช้งานเมื่อ</th>
+                                            <th>หมดเวลาในอีก</th>
+                                            <th class="text-center">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($confirmmediagroups as $confirmmediagroup)
+                                            <tr>
+                                                <td style="text-align:center">{{ ++$i }}</td>
+                                                <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
+                                                <td>{{ $confirmmediagroup->user_fullname }}</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="text-center">
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="" data-toggle="modal" data-target="#myModal1_{{ $i }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Tab3 -->
+				    	<div class="tab-pane active" id="label-tab3" style="padding:0px;">
+                            <div class="panel panel-flat">
+                                <div class="datatable-header" style="padding:12px;">
+                                    <div id="qTable_filter" class="dataTables_filter">
+                                        <label>
+                                            <span>Filter:</span> 
+                                            <input type="search" class="ng-pristine ng-untouched ng-valid ng-empty" placeholder="Type to filter..." aria-controls="qTable" ng-model="searchFilterWaiting">
+                                        </label>
+                                    </div>
+                                </div>
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr class="bg-grey">
+                                            <th>คิวที่</th>
+                                            <th>บัญชีผู้ใช้</th>
+                                            <th>ชื่อ - นามสกุล</th>
+                                            <th>จองคิวเมื่อ</th>
+                                            <th>เวลาที่ต้องรอ</th>
+                                            <th class="text-center">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($confirmmediagroups as $confirmmediagroup)
+                                            <tr>
+                                                <td style="text-align:center">{{ ++$i }}</td>
+                                                <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
+                                                <td>{{ $confirmmediagroup->user_fullname }}</td>
+                                                <td>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}</td>
+                                                <td></td>
+                                                <td class="text-center">
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="" data-toggle="modal" data-target="#myModal1_{{ $i }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Tab4 -->
+				    	<div class="tab-pane active" id="label-tab4" style="padding:0px;">
+                            <div class="panel panel-flat">
+                                <div class="datatable-header" style="padding:12px;">
+                                    <div id="qTable_filter" class="dataTables_filter">
+                                        <label>
+                                            <span>Filter:</span> 
+                                            <input type="search" class="ng-pristine ng-untouched ng-valid ng-empty" placeholder="Type to filter..." aria-controls="qTable" ng-model="searchFilterWaiting">
+                                        </label>
+                                    </div>
+                                </div>
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr class="bg-grey">
+                                            <th>คิวที่</th>
+                                            <th>บัญชีผู้ใช้</th>
+                                            <th>ชื่อ - นามสกุล</th>
+                                            <th>จองคิวเมื่อ</th>
+                                            <th>เวลาที่ต้องรอ</th>
+                                            <th class="text-center">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($confirmmediagroups as $confirmmediagroup)
+                                            <tr>
+                                                <td style="text-align:center">{{ ++$i }}</td>
+                                                <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
+                                                <td>{{ $confirmmediagroup->user_fullname }}</td>
+                                                <td>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}</td>
+                                                <td></td>
+                                                <td class="text-center">
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="" data-toggle="modal" data-target="#myModal1_{{ $i }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div> 
                         
                     </div> 
                     <div class="tab-content-model">
@@ -245,7 +384,7 @@
                                                         <div class="col-md-12">
                                                             <div class="panel panel-body">
                                                                 <div class="media">
-                                                                    <div class="media-left">
+                                                                    <!-- <div class="media-left">
                                                                         <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
                                                                     </div>
                                                                     <div class="media-body">
@@ -254,17 +393,17 @@
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                     </div>  
-                                                                    <hr>
+                                                                    <hr> -->
                                                                     <div class="selectroom">
-                                                                        <div class="col-md-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
-                                                                            <div class="panel panel-body room-item" oncontextmenu="return false;" ng-mousedown="selecteRoom(room)">
+                                                                        <!-- STV-01 -->
+                                                                        <div class="col-md-4">
+                                                                            <div class="panel panel-body room-item">
                                                                                 <div class="media">
                                                                                     <div class="media-body">
                                                                                         <div class="media-right">
-                                                                                            <span class="label label-success">ว่าง</span>
-                                                                                            <!-- <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
+                                                                                            <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
                                                                                                                                                     'label-success':room.room_status == 1,
-                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span> -->
+                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span>
                                                                                         </div>
                                                                                         <h6 class="media-heading">STV-01</h6>
                                                                                         <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
@@ -272,9 +411,9 @@
                                                                                             <li class="dropdown">
                                                                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
                                                                                                 <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                    <li><a href="javascript:;" ng-click="returnReady(room)" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="icon-shuffle"></i> คืนสถานะ</a></li>
-                                                                                                    <li><a href="javascript:;" ng-click="returnRoom(room)" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="icon-exit"></i> คืนห้อง</a></li>
-                                                                                                    <li><a href="javascript:;" ng-click="closeRoom(room)" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="icon-blocked"></i> งดใช้งาน</a></li>
+                                                                                                    <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
+                                                                                                    <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
+                                                                                                    <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
                                                                                                 </ul>
                                                                                             </li>
                                                                                         </ul>
@@ -282,8 +421,8 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+                                                                        
                                                                     </div>
-
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -375,18 +514,18 @@
         </div> 
     </div> 
 @endsection 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 function myFunction(id) {
     alert(id)
-     $.ajax({type: "GET",url: '/queuelistmediagroups/'+id,
-	//success: function(response){
-		//if(response == 1){
-		//document.getElementById("img"+Users_Quarter_Id+'_'+Users_Sub_Quarter_Id).innerHTML = '<img src="/theme/icon/check(24).png">';
-		//}
-	//}
+        $.ajax({type: "GET",url: '/queuelistmediagroups/'+id,
+	    success: function(response){
+            if(response == 1){
+                document.getElementById("img"+Users_Quarter_Id+'_'+Users_Sub_Quarter_Id).innerHTML = '<img src="/theme/icon/check(24).png">';
+            }
+	    }
     });
 }
-</script>
+</script> -->
 <!-- <script type="text/javascript">
     function deleteConfirmation(myModal6_<?php echo $o?>) {
         swal({
