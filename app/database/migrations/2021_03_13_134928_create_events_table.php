@@ -16,9 +16,8 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->dateTime('start');
-            $table->dateTime('end');
-            $table->timestamps();
+            $table->dateTime('start_event');
+            $table->dateTime('end_event');
         });
     }
  

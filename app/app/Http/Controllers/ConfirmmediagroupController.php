@@ -92,6 +92,9 @@ class ConfirmmediagroupController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $confirmmediagroups = Confirmmediagroup::find($id);
+        $confirmmediagroups->delete();
+
+        return redirect('/queuelistmediagroups/')->with('success','Data Deleted');
     }
 }

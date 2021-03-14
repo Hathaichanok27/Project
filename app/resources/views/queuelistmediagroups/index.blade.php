@@ -394,10 +394,12 @@
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                     </div>  
                                                                     <hr> -->
+                                                                    <input type="text" id="myText" name="input" value="">
                                                                     <div class="selectroom">
                                                                         <!-- STV-01 -->
+                                                                        <?php for($s=1;$s<=9;$s++){?>
                                                                         <div class="col-md-4">
-                                                                            <div class="panel panel-body room-item">
+                                                                            <div class="panel panel-body room-item" id="div_media<?php echo $s?>" onclick="myFunction(<?php echo $s?>)">
                                                                                 <div class="media">
                                                                                     <div class="media-body">
                                                                                         <div class="media-right">
@@ -405,7 +407,7 @@
                                                                                                                                                     'label-success':room.room_status == 1,
                                                                                                                                                     'label-warning': room.room_status == 2}">ว่าง</span>
                                                                                         </div>
-                                                                                        <h6 class="media-heading">STV-01</h6>
+                                                                                        <h6 class="media-heading">STV-0<?php echo $s?></h6>
                                                                                         <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
                                                                                         <ul class="icons-list bottom-right-menu">
                                                                                             <li class="dropdown">
@@ -421,6 +423,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+                                                                            <?php }?>
                                                                         <!-- STV-02 -->
                                                                         <div class="col-md-4">
                                                                             <div class="panel panel-body room-item">
@@ -725,6 +728,17 @@
 @endsection 
 
 <script>
+function myFunction(input) {
+    document.getElementById("myText").value = input;
+    document.getElementById("div_media"+input).style.backgroundColor = "#00bcd46e";
+  <?php for($s=1;$s<=9;$s++){?>
+  if(input != <?php echo $s?>){ 
+    document.getElementById("div_media<?php echo $s?>").style.backgroundColor = "transparent";
+  }
+  <?php }?>
+  //div_media
+  //alert(input);
+}
 // Get the modal
 var modal = document.getElementById('$id');
 
