@@ -20,10 +20,10 @@ class QueuelistmediagroupController extends Controller
          return view('queuelistmediagroups.index',compact('confirmmediagroups'))
              ->with('i', (request()->input('page', 1) - 1) * 5);
 
-        //$queuelistmediagroups = Queuelistmediagroup::paginate(5);
+        // $queuelistmediagroups = Queuelistmediagroup::paginate(5);
         
-        //return view('queuelistmediagroups.index',compact('queuelistmediagroups'))
-         //   ->with('i', (request()->input('page', 1) - 1) * 5);
+        // return view('queuelistmediagroups.index',compact('queuelistmediagroups'))
+        //    ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -33,7 +33,7 @@ class QueuelistmediagroupController extends Controller
      */
     public function create()
     {
-        //
+        return view('queuelistmediagroups.create');
     }
 
     /**
@@ -44,7 +44,19 @@ class QueuelistmediagroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'username' => 'required',
+            'user_fullname' => 'required',
+            'user_telnum' => 'required',
+            'room_type' => 'required',
+            'room_floor' => 'required',
+            'room_name' => 'required',
+            'book_status' => 'required',
+        ]);
+
+        Queuelistmediagroup::create($request->all());
+        return redirect()->route('queuelistmediagroups.index')
+                        ->with('success','Booking successfully.');
     }
 
     /**

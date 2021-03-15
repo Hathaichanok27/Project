@@ -240,7 +240,7 @@
                         <?php $o=1?>
                             @foreach($confirmmediagroups as $confirmmediagroup)
                                 <!-- Modal1 -->
-                                <div class="modal fade" id="myModal1_<?php echo $o?>" role="dialog">
+                                <div class="modal" id="myModal1_<?php echo $o?>" role="dialog">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-body" style="padding:0px;">
@@ -283,7 +283,7 @@
                                     </div>
                                 </div>
                                 <!-- Modal2 -->
-                                <div class="modal fade" id="myModal2_<?php echo $o?>" role="dialog">
+                                <div class="modal" id="myModal2_<?php echo $o?>" role="dialog">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-body" style="padding:0px;">
@@ -321,7 +321,7 @@
                                     </div>
                                 </div>
                                 <!-- Modal3 -->
-                                <div class="modal fade" id="myModal3_<?php echo $o?>" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal" id="myModal3_<?php echo $o?>" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-body" style="padding:0px;">
@@ -395,242 +395,34 @@
                                                                     </div>  
                                                                     <hr> -->
                                                                     <input type="text" id="myText" name="input" value="">
-                                                                    <div class="selectroom">
-                                                                        <!-- STV-01 -->
-                                                                        <?php for($s=1;$s<=9;$s++){?>
-                                                                        <div class="col-md-4">
-                                                                            <div class="panel panel-body room-item" id="div_media<?php echo $s?>" onclick="myFunction(<?php echo $s?>)">
-                                                                                <div class="media">
-                                                                                    <div class="media-body">
-                                                                                        <div class="media-right">
-                                                                                            <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
-                                                                                                                                                    'label-success':room.room_status == 1,
-                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span>
-                                                                                        </div>
-                                                                                        <h6 class="media-heading">STV-0<?php echo $s?></h6>
-                                                                                        <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                        <ul class="icons-list bottom-right-menu">
-                                                                                            <li class="dropdown">
-                                                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
-                                                                                                <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
+                                                                        <div class="selectroom">
+                                                                            <?php for($s=1; $s<=9; $s++){?>
+                                                                                <div class="col-md-4">
+                                                                                    <div class="panel panel-body room-item" id="div_media<?php echo $s?>" onclick="myFunction(<?php echo $s?>)">
+                                                                                        <div class="media">
+                                                                                            <div class="media-body">
+                                                                                                <div class="media-right">
+                                                                                                    <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
+                                                                                                                                                            'label-success':room.room_status == 1,
+                                                                                                                                                            'label-warning': room.room_status == 2}">ว่าง</span>
+                                                                                                </div>
+                                                                                                <h6 class="media-heading">STV-0<?php echo $s?></h6>
+                                                                                                <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
+                                                                                                <ul class="icons-list bottom-right-menu">
+                                                                                                    <li class="dropdown">
+                                                                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
+                                                                                                        <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
+                                                                                                            <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
+                                                                                                            <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
+                                                                                                            <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
+                                                                                                        </ul>
+                                                                                                    </li>
                                                                                                 </ul>
-                                                                                            </li>
-                                                                                        </ul>
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                        </div>
-                                                                            <?php }?>
-                                                                        <!-- STV-02 -->
-                                                                        <div class="col-md-4">
-                                                                            <div class="panel panel-body room-item">
-                                                                                <div class="media">
-                                                                                    <div class="media-body">
-                                                                                        <div class="media-right">
-                                                                                            <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
-                                                                                                                                                    'label-success':room.room_status == 1,
-                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span>
-                                                                                        </div>
-                                                                                        <h6 class="media-heading">STV-02</h6>
-                                                                                        <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                        <ul class="icons-list bottom-right-menu">
-                                                                                            <li class="dropdown">
-                                                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
-                                                                                                <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- STV-03 -->
-                                                                        <div class="col-md-4">
-                                                                            <div class="panel panel-body room-item">
-                                                                                <div class="media">
-                                                                                    <div class="media-body">
-                                                                                        <div class="media-right">
-                                                                                            <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
-                                                                                                                                                    'label-success':room.room_status == 1,
-                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span>
-                                                                                        </div>
-                                                                                        <h6 class="media-heading">STV-03</h6>
-                                                                                        <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                        <ul class="icons-list bottom-right-menu">
-                                                                                            <li class="dropdown">
-                                                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
-                                                                                                <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- STV-04 -->
-                                                                        <div class="col-md-4">
-                                                                            <div class="panel panel-body room-item">
-                                                                                <div class="media">
-                                                                                    <div class="media-body">
-                                                                                        <div class="media-right">
-                                                                                            <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
-                                                                                                                                                    'label-success':room.room_status == 1,
-                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span>
-                                                                                        </div>
-                                                                                        <h6 class="media-heading">STV-04</h6>
-                                                                                        <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                        <ul class="icons-list bottom-right-menu">
-                                                                                            <li class="dropdown">
-                                                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
-                                                                                                <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- STV-05 -->
-                                                                        <div class="col-md-4">
-                                                                            <div class="panel panel-body room-item">
-                                                                                <div class="media">
-                                                                                    <div class="media-body">
-                                                                                        <div class="media-right">
-                                                                                            <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
-                                                                                                                                                    'label-success':room.room_status == 1,
-                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span>
-                                                                                        </div>
-                                                                                        <h6 class="media-heading">STV-05</h6>
-                                                                                        <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                        <ul class="icons-list bottom-right-menu">
-                                                                                            <li class="dropdown">
-                                                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
-                                                                                                <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- STV-06 -->
-                                                                        <div class="col-md-4">
-                                                                            <div class="panel panel-body room-item">
-                                                                                <div class="media">
-                                                                                    <div class="media-body">
-                                                                                        <div class="media-right">
-                                                                                            <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
-                                                                                                                                                    'label-success':room.room_status == 1,
-                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span>
-                                                                                        </div>
-                                                                                        <h6 class="media-heading">STV-06</h6>
-                                                                                        <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                        <ul class="icons-list bottom-right-menu">
-                                                                                            <li class="dropdown">
-                                                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
-                                                                                                <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- STV-07 -->
-                                                                        <div class="col-md-4">
-                                                                            <div class="panel panel-body room-item">
-                                                                                <div class="media">
-                                                                                    <div class="media-body">
-                                                                                        <div class="media-right">
-                                                                                            <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
-                                                                                                                                                    'label-success':room.room_status == 1,
-                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span>
-                                                                                        </div>
-                                                                                        <h6 class="media-heading">STV-07</h6>
-                                                                                        <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                        <ul class="icons-list bottom-right-menu">
-                                                                                            <li class="dropdown">
-                                                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
-                                                                                                <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- STV-08 -->
-                                                                        <div class="col-md-4">
-                                                                            <div class="panel panel-body room-item">
-                                                                                <div class="media">
-                                                                                    <div class="media-body">
-                                                                                        <div class="media-right">
-                                                                                            <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
-                                                                                                                                                    'label-success':room.room_status == 1,
-                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span>
-                                                                                        </div>
-                                                                                        <h6 class="media-heading">STV-08</h6>
-                                                                                        <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                        <ul class="icons-list bottom-right-menu">
-                                                                                            <li class="dropdown">
-                                                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
-                                                                                                <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- STV-09 -->
-                                                                        <div class="col-md-4">
-                                                                            <div class="panel panel-body room-item">
-                                                                                <div class="media">
-                                                                                    <div class="media-body">
-                                                                                        <div class="media-right">
-                                                                                            <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
-                                                                                                                                                    'label-success':room.room_status == 1,
-                                                                                                                                                    'label-warning': room.room_status == 2}">ว่าง</span>
-                                                                                        </div>
-                                                                                        <h6 class="media-heading">STV-09</h6>
-                                                                                        <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                        <ul class="icons-list bottom-right-menu">
-                                                                                            <li class="dropdown">
-                                                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
-                                                                                                <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                    <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+                                                                            <?php }?>                                                                       
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -639,8 +431,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal" data-target="#myModal4_{{ $i }}">ย้อนกลับ</button>
-                                                    <button type="button" class="btn btn-info" data-dismiss="modal" data-target="#myModal5_{{ $i }}">ถัดไป</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myModal3_<?php echo $o?>">ย้อนกลับ</button>
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal" data-toggle="modal" data-target="#myModal5_<?php echo $o?>">ถัดไป</button>
                                                 </div>
                                             </div>                       
                                         </div>
@@ -675,25 +467,33 @@
                                                                         <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
-                                                                    </div>  
-                                                                    
-                
-
+                                                                    </div>
+                                                                </div>
+                                                            </div>  
+                                                            <div class="panel panel-body">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h4 class="media-heading text-bold">STV-0<?php echo $s?></h4>
+                                                                        หมดเวลา  <b style="color:#F62459">0:00</b>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">ย้อนกลับ</button>
-                                                    <button type="button" class="btn btn-success" data-dismiss="modal">ยืนยัน</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myModal4_<?php echo $o?>">ย้อนกลับ</button>
+                                                    <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal">ยืนยัน</button>
                                                 </div>
                                             </div>                       
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Modal6 -->
-                                <div class="modal fade" id="myModal6_<?php echo $o?>" role="dialog">
+                                <div class="modal" id="myModal6_<?php echo $o?>" role="dialog">
                                     <div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="true" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="true" data-animation="pop" data-timer="null" style="display: block; margin-top: -145px;">
                                         <div class="sa-icon sa-error" style="display: none;">
                                             <span class="sa-x-mark">
@@ -731,7 +531,7 @@
 function myFunction(input) {
     document.getElementById("myText").value = input;
     document.getElementById("div_media"+input).style.backgroundColor = "#00bcd46e";
-  <?php for($s=1;$s<=9;$s++){?>
+  <?php for($s=1; $s<=9; $s++){?>
   if(input != <?php echo $s?>){ 
     document.getElementById("div_media<?php echo $s?>").style.backgroundColor = "transparent";
   }
@@ -739,6 +539,9 @@ function myFunction(input) {
   //div_media
   //alert(input);
 }
+</script>
+
+<script>
 // Get the modal
 var modal = document.getElementById('$id');
 
