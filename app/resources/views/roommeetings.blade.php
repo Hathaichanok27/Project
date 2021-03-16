@@ -45,7 +45,7 @@ event.allDay = false;
 selectable: true,
 selectHelper: true,
 select: function (start, end, allDay) {
-var title = prompt('Event Title:');
+var title = prompt('reservemeets.index');
 if (title) {
 var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
 var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");

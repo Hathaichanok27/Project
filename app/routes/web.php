@@ -67,7 +67,7 @@ Route::post('fullcalendar/delete','FullCalendarController@destroy');*/
 
 
 
-Route::get('fullcalendar','RoomController@index1');
-Route::post('fullcalendar/create','RoomController@create1');
-Route::post('fullcalendar/update','FullCalendarController@update');
-Route::post('fullcalendar/delete','FullCalendarController@destroy');
+Route::get('fullcalendar','CalendarController@index');
+Route::post('fullcalendar/create','CalendarController@create');
+Route::post('fullcalendar/update','CalendarController@update');
+Route::post('fullcalendar/delete','CalendarController@destroy');

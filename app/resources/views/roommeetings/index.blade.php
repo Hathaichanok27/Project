@@ -76,7 +76,7 @@ var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
 var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
 $.ajax({
 url: SITEURL + '/fullcalendar/update',
-data: 'title=' + event.title + '&amp;start=' + start + '&amp;end=' + end + '&amp;id=' + event.id,
+data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
 type: "POST",
 success: function (response) {
 displayMessage("Updated Successfully");
@@ -88,8 +88,8 @@ var deleteMsg = confirm("Do you really want to delete?");
 if (deleteMsg) {
 $.ajax({
 type: "POST",
-url: SITEURL + 'fullcalendar/delete',
-data: "&amp;id=" + event.id,
+url: SITEURL + '/fullcalendar/delete',
+data: "&id=" + event.id,
 success: function (response) {
 if(parseInt(response) > 0) {
 $('#calendar').fullCalendar('removeEvents', event.id);

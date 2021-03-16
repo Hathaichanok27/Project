@@ -1,14 +1,19 @@
 <?php
-   
+
 namespace App\Http\Controllers;
-   
-use App\Event;
+
 use Illuminate\Http\Request;
+
+use App\Events;
 use Redirect,Response;
-   
-class FullCalenderController extends Controller
+
+class CalendarController extends Controller
 {
- 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         if(request()->ajax()) 
@@ -17,29 +22,26 @@ class FullCalenderController extends Controller
          $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
          $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
  
-         $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
+         $data = Events::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
          return Response::json($data);
+         print_r($data);
         }
         return view('roommeetings');
     }
-    
-   
     public function create(Request $request)
     {  
         $insertArr = [ 'title' => $request->title,
                        'start' => $request->start,
                        'end' => $request->end
                     ];
-        $event = Event::insert($insertArr);   
+        $event = Events::insert($insertArr);   
         return Response::json($event);
     }
-     
- 
     public function update(Request $request)
     {   
         $where = array('id' => $request->id);
         $updateArr = ['title' => $request->title,'start' => $request->start, 'end' => $request->end];
-        $event  = Event::where($where)->update($updateArr);
+        $event  = Events::where($where)->update($updateArr);
  
         return Response::json($event);
     } 
@@ -47,10 +49,9 @@ class FullCalenderController extends Controller
  
     public function destroy(Request $request)
     {
-        $event = Event::where('id',$request->id)->delete();
+        $event = Events::where('id',$request->id)->delete();
    
         return Response::json($event);
     }    
- 
- 
+
 }
