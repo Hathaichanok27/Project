@@ -15,10 +15,10 @@ class QueuelistmediagroupController extends Controller
      */
     public function index()
     {
-         $confirmmediagroups = Confirmmediagroup::paginate(5);
+        $confirmmediagroups = Confirmmediagroup::paginate(5);
         
-         return view('queuelistmediagroups.index',compact('confirmmediagroups'))
-             ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('queuelistmediagroups.index',compact('confirmmediagroups'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
 
         // $queuelistmediagroups = Queuelistmediagroup::paginate(5);
         
@@ -33,7 +33,7 @@ class QueuelistmediagroupController extends Controller
      */
     public function create()
     {
-        return view('queuelistmediagroups.create');
+        return view('queuelistmediagroups.index');
     }
 
     /**
