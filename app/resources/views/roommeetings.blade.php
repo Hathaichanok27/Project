@@ -15,7 +15,7 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
 <body>
  
-  <div class="container">rt
+  <div class="container">test
       <div class="response"></div>
       <div id='calendar'></div>  
   </div>
@@ -32,7 +32,7 @@ headers: {
 });
 var calendar = $('#calendar').fullCalendar({
 editable: true,
-events: SITEURL + '/fullcalendar',
+events: SITEURL + "/fullcalendar",
 displayEventTime: true,
 editable: true,
 eventRender: function (event, element, view) {
@@ -50,12 +50,11 @@ if (title) {
 var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
 var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
 $.ajax({
-url: SITEURL + '/fullcalendar/create',
+url: SITEURL + "/fullcalendar/create",
 data: 'title=' + title + '&start=' + start + '&end=' + end,
 type: "POST",
 success: function (data) {
- // alert(data);
-
+    //alert(data);
 displayMessage("Added Successfully");
 }
 });
@@ -88,7 +87,7 @@ var deleteMsg = confirm("Do you really want to delete?");
 if (deleteMsg) {
 $.ajax({
 type: "POST",
-url: SITEURL + 'fullcalendar/delete',
+url: SITEURL + '/fullcalendar/delete',
 data: "&amp;id=" + event.id,
 success: function (response) {
 if(parseInt(response) > 0) {

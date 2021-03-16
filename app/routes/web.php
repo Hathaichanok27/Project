@@ -60,7 +60,14 @@ Route::resource('detailmeetrooms', DetailmeetroomController::class);
 Route::resource('users', UserController::class);
 
 //fullcalender
-Route::get('fullcalendar','FullCalendarController@index');
+/*Route::get('fullcalendar','FullCalendarController@index');
 Route::post('fullcalendar/create','FullCalendarController@create');
+Route::post('fullcalendar/update','FullCalendarController@update');
+Route::post('fullcalendar/delete','FullCalendarController@destroy');*/
+
+
+
+Route::get('fullcalendar','RoomController@index1');
+Route::post('fullcalendar/create','RoomController@create1');
 Route::post('fullcalendar/update','FullCalendarController@update');
 Route::post('fullcalendar/delete','FullCalendarController@destroy');

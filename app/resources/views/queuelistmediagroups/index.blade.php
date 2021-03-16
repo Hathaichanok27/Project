@@ -240,6 +240,13 @@
                         <?php $o=1?>
                             @foreach($confirmmediagroups as $confirmmediagroup)
                                 <!-- Modal1 -->
+                                <?php 
+                                                    $origin = date_create($confirmmediagroup->created_at->format('H:i'));
+                                                    $target = date_create('now');
+                                                    $interval = date_diff($origin, $target);
+                                                   // echo $interval->format('%H.%i นาทีที่แล้ว');
+                                                    // echo $target->format('H:i');
+                                                ?>
                                 <div class="modal" id="myModal1_<?php echo $o?>" role="dialog">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -394,11 +401,11 @@
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                     </div>  
                                                                     <hr> -->
-                                                                    <input type="text" id="myText" name="input" value="">
+                                                                    <input type="text" id="myText_{{ $confirmmediagroup->id }}" name="input" value="">
                                                                         <div class="selectroom">
                                                                             <?php for($s=1; $s<=9; $s++){?>
                                                                                 <div class="col-md-4">
-                                                                                    <div class="panel panel-body room-item" id="div_media<?php echo $s?>" onclick="myFunction(<?php echo $s?>)">
+                                                                                    <div class="panel panel-body room-item" id="div_media<?php echo $s?>_{{ $confirmmediagroup->id }}" onclick="myFunction(<?php echo $s?>,{{ $confirmmediagroup->id }})">
                                                                                         <div class="media">
                                                                                             <div class="media-body">
                                                                                                 <div class="media-right">
@@ -476,7 +483,7 @@
                                                                         <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
                                                                     </div>
                                                                     <div class="media-body">
-                                                                        <h4 class="media-heading text-bold">STV-0<?php echo $s?></h4>
+                                                                        <h4 class="media-heading text-bold" id="STV_media_{{ $confirmmediagroup->id }}" ></h4>
                                                                         หมดเวลา  <b style="color:#F62459">0:00</b>
                                                                     </div>
                                                                 </div>
@@ -528,12 +535,13 @@
 @endsection 
 
 <script>
-function myFunction(input) {
-    document.getElementById("myText").value = input;
-    document.getElementById("div_media"+input).style.backgroundColor = "#00bcd46e";
+function myFunction(input,id) {
+    document.getElementById("myText_"+id).value = input;
+    document.getElementById("STV_media_"+id).innerHTML = 'STV-0'+input;
+    document.getElementById("div_media"+input+"_"+id).style.backgroundColor = "#00bcd46e";
   <?php for($s=1; $s<=9; $s++){?>
   if(input != <?php echo $s?>){ 
-    document.getElementById("div_media<?php echo $s?>").style.backgroundColor = "transparent";
+    document.getElementById("div_media<?php echo $s?>_"+id).style.backgroundColor = "transparent";
   }
   <?php }?>
   //div_media
