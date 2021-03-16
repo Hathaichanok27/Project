@@ -23,10 +23,10 @@
 			<div class="content-wrapper">
 			    <div class="tabbable">   
                     <ul class="nav nav-tabs nav-tabs-highlight" style="margin-bottom: 0px;">
-                        <li class="active"><a href="#label-tab1" data-toggle="tab">รอคิว <span class="label label-warning position-right ng-binding">0</span> </a></li>
-                        <li><a href="#label-tab2" data-toggle="tab">ใช้งานอยู่ <span class="label bg-success position-right ng-binding">0</span></a></li>
-                        <li><a href="#label-tab3" data-toggle="tab">คืนห้องแล้ว <span class="label bg-blue position-right ng-binding">0</span></a></li>
-                        <li><a href="#label-tab4" data-toggle="tab">ถูกยกเลิก <span class="label bg-danger position-right ng-binding">0</span></a></li>
+                        <li class="active"><a href="#label-tab1" data-toggle="tab">รอคิว <span class="label label-warning position-right">0</span> </a></li>
+                        <li><a href="#label-tab2" data-toggle="tab">ใช้งานอยู่ <span class="label bg-success position-right">0</span></a></li>
+                        <li><a href="#label-tab3" data-toggle="tab">คืนห้องแล้ว <span class="label bg-blue position-right">0</span></a></li>
+                        <li><a href="#label-tab4" data-toggle="tab">ถูกยกเลิก <span class="label bg-danger position-right">0</span></a></li>
                     </ul>
                     <div class="tab-model">
                         <!-- Modal01 -->
@@ -241,12 +241,12 @@
                             @foreach($confirmmediagroups as $confirmmediagroup)
                                 <!-- Modal1 -->
                                 <?php 
-                                                    $origin = date_create($confirmmediagroup->created_at->format('H:i'));
-                                                    $target = date_create('now');
-                                                    $interval = date_diff($origin, $target);
-                                                   // echo $interval->format('%H.%i นาทีที่แล้ว');
-                                                    // echo $target->format('H:i');
-                                                ?>
+                                    $origin = date_create($confirmmediagroup->created_at->format('H:i'));
+                                    $target = date_create('now');
+                                    $interval = date_diff($origin, $target);
+                                    // echo $interval->format('%H.%i นาทีที่แล้ว');
+                                    // echo $target->format('H:i');
+                                ?>
                                 <div class="modal" id="myModal1_<?php echo $o?>" role="dialog">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -313,10 +313,14 @@
                                                         </div>  
                                                     </div>
                                                 </div>
-                                                <div class="panel-body">
-                                                    <div class="content-group">
-                                                        <label for="message-text" class="content-group">ข้อความที่ต้องการส่ง:</label>
-                                                        <textarea rows="4" cols="4" class="form-control" id="message-text" placeholder="การจองห้องจะได้รับบริการในเวลา ... โปรดติดต่อเจ้าหน้าที่ชั้น 6 ค่ะ"></textarea>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="panel-body">
+                                                            <div class="content-group">
+                                                                <label for="message-text" class="content-group">ข้อความที่ต้องการส่ง:</label>
+                                                                <textarea rows="4" cols="4" class="form-control" id="message-text" placeholder="การจองห้องจะได้รับบริการในเวลา ... โปรดติดต่อเจ้าหน้าที่ชั้น 6 ค่ะ"></textarea>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
@@ -483,7 +487,7 @@
                                                                         <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
                                                                     </div>
                                                                     <div class="media-body">
-                                                                        <h4 class="media-heading text-bold" id="STV_media_{{ $confirmmediagroup->id }}" ></h4>
+                                                                        <h4 class="media-heading text-bold" id="STV_media_{{ $confirmmediagroup->id }}"></h4>
                                                                         หมดเวลา  <b style="color:#F62459">0:00</b>
                                                                     </div>
                                                                 </div>
