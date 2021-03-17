@@ -18,7 +18,7 @@
                 <h4><i class="fas fa-sync-alt"></i> จำนวนคิวที่รออยู่ <span class="ng-binding">0</span> คิว</h4>
             </div>
             <div class="row">
-                <!-- STV-01 -->
+                <!-- STV-1 -->
                 <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
                     <div class="panel panel-body border-grey">
                         <div class="media">
@@ -26,7 +26,7 @@
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-01</b></h6>
+                                <h6 class="media-heading"><b class="ng-binding">STV-1</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                 </div> 
-                <!-- STV-02 -->
+                <!-- STV-2 -->
                 <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
                     <div class="panel panel-body border-grey">
                         <div class="media">
@@ -45,7 +45,7 @@
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-02</b></h6>
+                                <h6 class="media-heading"><b class="ng-binding">STV-2</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- STV-03 -->
+                <!-- STV-3 -->
                 <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
                     <div class="panel panel-body border-grey">
                         <div class="media">
@@ -64,7 +64,7 @@
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-03</b></h6>
+                                <h6 class="media-heading"><b class="ng-binding">STV-3</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- STV-04 -->
+                <!-- STV-4 -->
                 <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
                     <div class="panel panel-body border-grey">
                         <div class="media">
@@ -83,7 +83,7 @@
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-04</b></h6>
+                                <h6 class="media-heading"><b class="ng-binding">STV-4</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                 </div> 
-                <!-- STV-05 -->
+                <!-- STV-5 -->
                 <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
                     <div class="panel panel-body border-grey">
                         <div class="media">
@@ -102,7 +102,7 @@
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-05</b></h6>
+                                <h6 class="media-heading"><b class="ng-binding">STV-5</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- STV-06 -->
+                <!-- STV-6 -->
                 <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
                     <div class="panel panel-body border-grey">
                         <div class="media">
@@ -121,7 +121,7 @@
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-06</b></h6>
+                                <h6 class="media-heading"><b class="ng-binding">STV-6</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- STV-07 -->
+                <!-- STV-7 -->
                 <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
                     <div class="panel panel-body border-grey">
                         <div class="media">
@@ -140,7 +140,7 @@
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-07</b></h6>
+                                <h6 class="media-heading"><b class="ng-binding">STV-7</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
@@ -151,7 +151,7 @@
                         </div>
                     </div>
                 </div> 
-                <!-- STV-08 -->
+                <!-- STV-8 -->
                 <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
                     <div class="panel panel-body border-grey">
                         <div class="media">
@@ -159,7 +159,7 @@
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-08</b></h6>
+                                <h6 class="media-heading"><b class="ng-binding">STV-8</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
@@ -170,7 +170,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- STV-09 -->
+                <!-- STV-9 -->
                 <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
                     <div class="panel panel-body border-grey">
                         <div class="media">
@@ -178,7 +178,7 @@
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-09</b></h6>
+                                <h6 class="media-heading"><b class="ng-binding">STV-9</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
