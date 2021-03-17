@@ -113,28 +113,28 @@ class RoomController extends Controller
                         ->with('success','Deleted room successfully');
     }
 
-//----------------------------Fullcalendar-------------------------------------
-//    public function index1()
-  //  {
-    //    if(request()->ajax()) 
-      //  {
- //
-   //      $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
-     //    $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
- //
-   //      $data = Events::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
-     //    return Response::json($data);
-       //  print_r($data);
-        //}
-        //return view('roommeetings');
-    //}
-    //public function create1(Request $request)
-    //{  
-      //  $insertArr = [ 'title' => $request->title,
-        //               'start' => $request->start,
-          //             'end' => $request->end
-            //        ];
-       // $event = Events::insert($insertArr);   
-       // return Response::json($event);
-    //}
+// Fullcalendar
+    public function index1() 
+    {
+        if(request()->ajax()) 
+        {
+ 
+            $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
+            $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
+ 
+            $data = Events::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
+            return Response::json($data);
+            print_r($data);
+        }
+        return view('roommeetings');
+    }
+    
+    public function create1(Request $request)
+    {  
+        $insertArr = [ 'title' => $request->title,
+                      'start' => $request->start,
+                      'end' => $request->end ];
+        $event = Events::insert($insertArr);   
+        return Response::json($event);
+    }
 }
