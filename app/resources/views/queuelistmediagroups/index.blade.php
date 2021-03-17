@@ -460,6 +460,9 @@
                                                         <h5 class="modal-title" id="myModalLabel">การดำเนินการ</h5>
                                                     </div>
                                                 </div>
+                                                <form action="{{ route('queuelistmediagroups.update',$confirmmediagroup->id) }}" method="POST">
+                                                                        @csrf
+                                                                        @method('PUT')
                                                 <div class="modal-body">
                                                     <h6 class="form-wizard-title text-semibold">
                                                         <span class="form-wizard-count">3</span>
@@ -487,14 +490,11 @@
                                                                         <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
                                                                     </div>
                                                                     <div class="media-body">
-                                                                        <form action="{{ route('queuelistmediagroups.update',$confirmmediagroup->id) }}" method="POST">
-                                                                        @csrf
-                                                                        @method('PUT')
+                                                                        
                                                                             <h4 class="media-heading text-bold" id="STV_media_{{ $confirmmediagroup->id }}"></h4>
                                                                             หมดเวลา  <b style="color:#F62459">0:00</b>
-                                                                            <input type="text" name="room_name" id="STV_media_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
+                                                                            <input type="text" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
                                                                             <input type="hidden" name="book_status" value="อนุมัติ">
-                                                                        </form>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -503,8 +503,9 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myModal4_<?php echo $o?>">ย้อนกลับ</button>
-                                                    <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal">ยืนยัน</button>
+                                                    <button type="submit" class="btn btn-success" >ยืนยัน</button>
                                                 </div>
+                                                </form>
                                             </div>                       
                                         </div>
                                     </div>
@@ -553,6 +554,7 @@
 function myFunction(input,id) {
     document.getElementById("myText_"+id).value = input;
     document.getElementById("STV_media_"+id).innerHTML = 'STV-'+input;
+    document.getElementById("STV_room_name_"+id).value = 'STV-'+input;
     document.getElementById("div_media"+input+"_"+id).style.backgroundColor = "#00bcd46e";
   <?php for($s=1; $s<=9; $s++){?>
   if(input != <?php echo $s?>){ 

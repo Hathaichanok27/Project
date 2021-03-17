@@ -99,7 +99,8 @@ class QueuelistmediagroupController extends Controller
      */
     public function update(Request $request, Queuelistmediagroup $confirmmediagroup)
     {
-        $request->validate([
+        print_r($request->input());
+       /* $request->validate([
             'username' => 'required',
             'user_fullname' => 'required',
             'user_telnum' => 'required',
@@ -112,7 +113,7 @@ class QueuelistmediagroupController extends Controller
         $queuelistmediagroup->update($request->all());
 
         return redirect()->route('queuelistmediagroups.index')
-                        ->with('success','Update booking successfully');
+                        ->with('success','Update booking successfully');*/
     }
 
     /**
