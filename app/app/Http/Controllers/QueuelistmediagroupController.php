@@ -54,9 +54,17 @@ class QueuelistmediagroupController extends Controller
             'book_status' => 'required',
         ]);
 
-        Queuelistmediagroup::create($request->all());
-        return redirect()->route('queuelistmediagroups.index')
-                        ->with('success','Booking successfully.');
+        // Queuelistmediagroup::create($request->all());
+        // return redirect()->route('queuelistmediagroups.index')
+        //                 ->with('success','Booking successfully.');
+
+        $bookId = $request->booking_id;
+		Customer::updateOrCreate(['id' => $bookId],['username' => $request->username, 'user_fullname' => $request->user_fullname]);
+		if(empty($request->booking_id))
+			$msg = 'Booking entry created successfully.';
+		else
+			$msg = 'Booking data is updated successfully';
+		return redirect()->route('queuelistmediagroups.index')->with('success',$msg);
     }
 
     /**
@@ -76,7 +84,7 @@ class QueuelistmediagroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Confirmmediagroup $queuelistmediagroup)
+    public function edit(Queuelistmediagroup $confirmmediagroup)
     {
         return view('queuelistmediagroups.index',compact('confirmmediagroup'));
 
@@ -89,7 +97,7 @@ class QueuelistmediagroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Confirmmediagroup $queuelistmediagroup)
+    public function update(Request $request, Queuelistmediagroup $confirmmediagroup)
     {
         $request->validate([
             'username' => 'required',
@@ -115,9 +123,11 @@ class QueuelistmediagroupController extends Controller
      */
     public function destroy($id)
     {
-        $confirmmediagroups = Confirmmediagroup::find($id);
-        $confirmmediagroups->delete();
+        // $confirmmediagroups = Confirmmediagroup::find($id);
+        // $confirmmediagroups->delete();
 
-        return redirect('/queuelistmediagroups')->with('success','Data Deleted');
+        // return redirect('/queuelistmediagroups')->with('success','Data Deleted');
+        $confirmmediagroups = Confirmmediagroup::where('id',$id)->delete();
+		return Response::json($confirmmediagroups);
     }
 }

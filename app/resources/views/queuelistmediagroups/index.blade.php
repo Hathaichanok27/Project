@@ -46,7 +46,7 @@
                                 </div>
                                 <table class="table table-striped table-hover">
                                     <thead>
-                                        <tr class="bg-grey">
+                                        <tr>
                                             <th>คิวที่</th>
                                             <th>บัญชีผู้ใช้</th>
                                             <th>ชื่อ - นามสกุล</th>
@@ -58,7 +58,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach($confirmmediagroups as $confirmmediagroup)
-                                            <tr>
+                                            <tr id="booking_id_{{ $confirmmediagroup->id }}">
                                                 <td style="text-align:center">{{ ++$i }}</td>
                                                 <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
@@ -417,7 +417,7 @@
                                                                                                                                                             'label-success':room.room_status == 1,
                                                                                                                                                             'label-warning': room.room_status == 2}">ว่าง</span>
                                                                                                 </div>
-                                                                                                <h6 class="media-heading">STV-0<?php echo $s?></h6>
+                                                                                                <h6 class="media-heading">STV-<?php echo $s?></h6>
                                                                                                 <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
                                                                                                 <ul class="icons-list bottom-right-menu">
                                                                                                     <li class="dropdown">
@@ -487,8 +487,14 @@
                                                                         <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
                                                                     </div>
                                                                     <div class="media-body">
-                                                                        <h4 class="media-heading text-bold" id="STV_media_{{ $confirmmediagroup->id }}"></h4>
-                                                                        หมดเวลา  <b style="color:#F62459">0:00</b>
+                                                                        <form action="{{ route('queuelistmediagroups.update',$confirmmediagroup->id) }}" method="POST">
+                                                                        @csrf
+                                                                        @method('PUT')
+                                                                            <h4 class="media-heading text-bold" id="STV_media_{{ $confirmmediagroup->id }}"></h4>
+                                                                            หมดเวลา  <b style="color:#F62459">0:00</b>
+                                                                            <input type="text" name="room_name" id="STV_media_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
+                                                                            <input type="hidden" name="book_status" value="อนุมัติ">
+                                                                        </form>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -520,8 +526,13 @@
                                         <h2>Confirmation</h2>
                                         <p>ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                         <div class="sa-button-container">
+                                            <form action="{{ route('queuelistmediagroups.destroy',$confirmmediagroup->id) }}" method="POST">
+                                                <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
+                                                <button type="submit" class="btn btn-danger" id="delete-booking" data-id="{{ $confirmmediagroup->id }}" data-dismiss="modal" data-toggle="modal">ใช่, ยกเลิกการจอง</button>
+                                            </form>
+                                            
                                             <!-- <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
-                                            <button type="button" class="confirm" data-dismiss="modal">ใช่, ยกเลิกการจอง</button> -->
+                                            <button type="button" class="confirm" data-dismiss="modal">ใช่, ยกเลิกการจอง</button> --
                                             <button type="button" onclick="document.getElementById('$id').style.display='none'" class="cancelbtn">ไม่ใช่</button>
                                             <button type="button" onclick="document.getElementById('$id').style.display='none'" class="deletebtn">ใช่, ยกเลิกการจอง</button>
                                             <!-- <button type="button" onclick="myFunction({{ $confirmmediagroup->id }})">ใช่, ยกเลิกการจอง</button> -->
@@ -541,7 +552,7 @@
 <script>
 function myFunction(input,id) {
     document.getElementById("myText_"+id).value = input;
-    document.getElementById("STV_media_"+id).innerHTML = 'STV-0'+input;
+    document.getElementById("STV_media_"+id).innerHTML = 'STV-'+input;
     document.getElementById("div_media"+input+"_"+id).style.backgroundColor = "#00bcd46e";
   <?php for($s=1; $s<=9; $s++){?>
   if(input != <?php echo $s?>){ 
@@ -553,17 +564,50 @@ function myFunction(input,id) {
 }
 </script>
 
+<!-- เข้่าห้อง -->
 <script>
-// Get the modal
-var modal = document.getElementById('$id');
+    $(document).ready(function(){
+        $("form").submit(function(){
+            alert("submitted");
+        });
+    });
+</script>
 
-// When the user clicks anywhere outside of the modal, close it
+<!-- ยกเลิก -->
+<script>
+$('body').on('click', '#delete-booking', function () {
+    var booking_id = $(this).data("id");
+    var token = $("meta[name='csrf-token']").attr("content");
+    confirm("Are You sure want to delete !");
+
+    $.ajax({
+        type: "DELETE",
+        // url: "http://localhost/laravel7crud/public/customers/"+customer_id,
+        url: SITEURL + "/queuelistmediagroups/delete",
+        data: {
+            "id": booking_id,
+            "_token": token,
+        },
+        success: function (data) {
+            $('#msg').html('Customer entry deleted successfully');
+            $("#booking_id_" + booking_id).remove();
+        },
+        error: function (data) {
+            console.log('Error:', data);
+        }
+    });
+});
+</script>
+
+<!-- <script>
+var modal = document.getElementById('$id');
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
-</script>
+</script> -->
+
 <!-- <script type="text/javascript">
 function myFunction(id) {
     alert(id)
