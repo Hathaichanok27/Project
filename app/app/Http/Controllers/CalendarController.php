@@ -19,12 +19,12 @@ class CalendarController extends Controller
         if(request()->ajax()) 
         {
  
-         $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
-         $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
+            $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
+            $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
  
-         $data = Events::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
-         return Response::json($data);
-         print_r($data);
+            $data = Events::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
+            return Response::json($data);
+            print_r($data);
         }
         return view('roommeetings');
     }
@@ -33,7 +33,7 @@ class CalendarController extends Controller
         $insertArr = [ 'title' => $request->title,
                        'start' => $request->start,
                        'end' => $request->end
-                    ];
+                     ];
         $event = Events::insert($insertArr);   
         return Response::json($event);
     }

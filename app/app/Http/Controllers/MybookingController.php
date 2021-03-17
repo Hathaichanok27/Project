@@ -15,8 +15,8 @@ class MybookingController extends Controller
      */
     public function index()
     {
-        $confirmmediasingles = Confirmmediasingle::paginate(5);
-        $confirmmediagroups = Confirmmediagroup::paginate(5);
+        $confirmmediasingles = Confirmmediasingle::paginate();
+        $confirmmediagroups = Confirmmediagroup::paginate();
         
         return view('mybookings.index',compact('confirmmediasingles','confirmmediagroups'))
             ->with('i', (request()->input('page', 1) - 1) * 5);

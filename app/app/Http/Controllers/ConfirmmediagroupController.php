@@ -14,7 +14,7 @@ class ConfirmmediagroupController extends Controller
      */
     public function index()
     {
-        $confirmmediagroups = Confirmmediagroup::paginate(5);
+        $confirmmediagroups = Confirmmediagroup::paginate();
 
         return view('confirmmediagroups.index',compact('confirmmediagroups'))
             ->with('i', (request()->input('page', 1) - 1) * 5);

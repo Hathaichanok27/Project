@@ -14,7 +14,7 @@ class ManageadminController extends Controller
      */
     public function index()
     {
-        $manageadmins = Manageadmin::paginate(5);
+        $manageadmins = Manageadmin::paginate();
 
         return view('manageadmins.index',compact('manageadmins'))
             ->with('i', (request()->input('page', 1) - 1) * 5);

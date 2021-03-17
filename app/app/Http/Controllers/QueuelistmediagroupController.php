@@ -15,7 +15,7 @@ class QueuelistmediagroupController extends Controller
      */
     public function index()
     {
-        $confirmmediagroups = Confirmmediagroup::paginate(5);
+        $confirmmediagroups = Confirmmediagroup::paginate();
         
         return view('queuelistmediagroups.index',compact('confirmmediagroups'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -76,9 +76,10 @@ class QueuelistmediagroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Confirmmediagroup $queuelistmediagroup)
     {
-        //
+        return view('queuelistmediagroups.index',compact('confirmmediagroup'));
+
     }
 
     /**
@@ -88,9 +89,22 @@ class QueuelistmediagroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Confirmmediagroup $queuelistmediagroup)
     {
-        //
+        $request->validate([
+            'username' => 'required',
+            'user_fullname' => 'required',
+            'user_telnum' => 'required',
+            'room_type' => 'required',
+            'room_floor' => 'required',
+            'room_name' => 'required',
+            'book_status' => 'required',
+        ]);
+
+        $queuelistmediagroup->update($request->all());
+
+        return redirect()->route('queuelistmediagroups.index')
+                        ->with('success','Update booking successfully');
     }
 
     /**

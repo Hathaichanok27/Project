@@ -14,7 +14,7 @@ class ConfirmmediasingleController extends Controller
      */
     public function index()
     {
-        $confirmmediasingles = Confirmmediasingle::paginate(5);
+        $confirmmediasingles = Confirmmediasingle::paginate();
 
         return view('confirmmediasingles.index',compact('confirmmediasingles'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
