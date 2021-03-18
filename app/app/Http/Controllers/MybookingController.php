@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Confirmmediasingle;
 use App\Confirmmediagroup;
+use App\Reservemeet;
 use Illuminate\Http\Request;
 
 class MybookingController extends Controller
@@ -17,8 +18,9 @@ class MybookingController extends Controller
     {
         $confirmmediasingles = Confirmmediasingle::paginate();
         $confirmmediagroups = Confirmmediagroup::paginate();
+        $reservemeets = Reservemeet::paginate();
         
-        return view('mybookings.index',compact('confirmmediasingles','confirmmediagroups'))
+        return view('mybookings.index',compact('confirmmediasingles','confirmmediagroups','reservemeets'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -40,16 +42,16 @@ class MybookingController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'username' => 'required',
-            'user_fullname' => 'required',
-            'room_type' => 'required',
-            'room_floor' => 'required',
-            'book_status' => 'required',
-        ]);
-        Confirmmediagroup::create($request->all());
+        // $request->validate([
+        //     'username' => 'required',
+        //     'user_fullname' => 'required',
+        //     'room_type' => 'required',
+        //     'room_floor' => 'required',
+        //     'book_status' => 'required',
+        // ]);
+        // Confirmmediagroup::create($request->all());
 
-        return redirect()->route('mybookings.index');
+        // return redirect()->route('mybookings.index');
     }
 
     /**
