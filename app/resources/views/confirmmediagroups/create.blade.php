@@ -60,7 +60,7 @@
 							<hr style="margin:15px 0 0 0;">
 							<div class="panel-body">
 								<input type="hidden" name="room_type" value="ห้องสื่อศึกษากลุ่ม">
-								<input type="hidden" name="room_floor" value="ชั้น 6">
+								<input type="hidden" name="room_floor" value="6">
 								<input type="hidden" name="book_status" value="รอการอนุมัติ">
 								<!-- <div class="form-group">
 									<strong>ห้อง:</strong>

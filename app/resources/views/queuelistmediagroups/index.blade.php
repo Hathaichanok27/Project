@@ -46,7 +46,7 @@
                                 </div>
                                 <table class="table table-striped table-hover">
                                     <thead>
-                                        <tr>
+                                        <tr class="bg-grey">
                                             <th>คิวที่</th>
                                             <th>บัญชีผู้ใช้</th>
                                             <th>ชื่อ - นามสกุล</th>
@@ -489,8 +489,7 @@
                                                                     <div class="media-left">
                                                                         <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
                                                                     </div>
-                                                                    <div class="media-body">
-                                                                        
+                                                                    <div class="media-body">        
                                                                             <h4 class="media-heading text-bold" id="STV_media_{{ $confirmmediagroup->id }}"></h4>
                                                                             หมดเวลา  <b style="color:#F62459">0:00</b>
                                                                             <input type="hidden" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
@@ -503,7 +502,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myModal4_<?php echo $o?>">ย้อนกลับ</button>
-                                                        <button type="submit" class="btn btn-success" >ยืนยัน</button>
+                                                        <button type="submit" class="btn btn-success">ยืนยัน</button>
                                                     </div>
                                                 </form>
                                             </div>                       
@@ -523,22 +522,22 @@
                                             <span class="sa-body pulseWarningIns"></span>
                                             <span class="sa-dot pulseWarningIns"></span>
                                         </div>
-                                        <div class="sa-icon sa-custom" style="display: none;"></div>
-                                        <h2>Confirmation</h2>
-                                        <p>ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?</p>
-                                        <div class="sa-button-container">
-                                            <form action="{{ route('queuelistmediagroups.destroy',$confirmmediagroup->id) }}" method="POST">
-                                                <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
-                                                <button type="submit" class="btn btn-danger" id="delete-booking" data-id="{{ $confirmmediagroup->id }}" data-dismiss="modal" data-toggle="modal">ใช่, ยกเลิกการจอง</button>
-                                            </form>
-                                            
-                                            <!-- <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
-                                            <button type="button" class="confirm" data-dismiss="modal">ใช่, ยกเลิกการจอง</button> --
-                                            <button type="button" onclick="document.getElementById('$id').style.display='none'" class="cancelbtn">ไม่ใช่</button>
-                                            <button type="button" onclick="document.getElementById('$id').style.display='none'" class="deletebtn">ใช่, ยกเลิกการจอง</button>
-                                            <!-- <button type="button" onclick="myFunction({{ $confirmmediagroup->id }})">ใช่, ยกเลิกการจอง</button> -->
-                                            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">ใช่, ยกเลิกการจอง</button>-->
-                                        </div>
+                                        <form action="{{ route('queuelistmediagroups.update',$confirmmediagroup->id) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="sa-icon sa-custom" style="display: none;"></div>
+                                            <h2>Confirmation</h2>
+                                            <p>ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?</p>
+                                            <div class="sa-button-container">
+                                                <input type="hidden" name="book_status" value="ไม่อนุมัติ">
+                                                <form action="{{ route('queuelistmediagroups.destroy',$confirmmediagroup->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
+                                                    <button type="submit" class="btn btn-danger">ใช่, ยกเลิกการจอง</button>
+                                                </form>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             <?php $o++;?>
@@ -557,101 +556,9 @@ function myFunction(input,id) {
     document.getElementById("STV_room_name_"+id).value = 'STV-'+input;
     document.getElementById("div_media"+input+"_"+id).style.backgroundColor = "#00bcd46e";
     <?php for($s=1; $s<=9; $s++){?>
-    if(input != <?php echo $s?>){ 
-        document.getElementById("div_media<?php echo $s?>_"+id).style.backgroundColor = "transparent";
+        if(input != <?php echo $s?>){ 
+            document.getElementById("div_media<?php echo $s?>_"+id).style.backgroundColor = "transparent";
     }
   <?php }?>
-  //div_media
-  //alert(input);
 }
 </script>
-
-<!-- เข้่าห้อง -->
-<script>
-    $(document).ready(function(){
-        $("form").submit(function(){
-            alert("submitted");
-        });
-    });
-</script>
-
-<!-- ยกเลิก -->
-<script>
-$('body').on('click', '#delete-booking', function () {
-    var booking_id = $(this).data("id");
-    var token = $("meta[name='csrf-token']").attr("content");
-    confirm("Are You sure want to delete !");
-    $.ajax({
-        type: "DELETE",
-        // url: "http://localhost/laravel7crud/public/customers/"+customer_id,
-        url: SITEURL + "/queuelistmediagroups/delete",
-        data: {
-            "id": booking_id,
-            "_token": token,
-        },
-        success: function (data) {
-            $('#msg').html('Customer entry deleted successfully');
-            $("#booking_id_" + booking_id).remove();
-        },
-        error: function (data) {
-            console.log('Error:', data);
-        }
-    });
-});
-</script>
-
-<!-- <script>
-var modal = document.getElementById('$id');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script> -->
-
-<!-- <script type="text/javascript">
-function myFunction(id) {
-    alert(id)
-        $.ajax({type: "GET",url: '/queuelistmediagroups/'+id,
-	    success: function(response){
-            if(response == 1){
-                document.getElementById("img"+Users_Quarter_Id+'_'+Users_Sub_Quarter_Id).innerHTML = '<img src="/theme/icon/check(24).png">';
-            }
-	    }
-    });
-}
-</script> -->
-<!-- <script type="text/javascript">
-    function deleteConfirmation(myModal6_<?php echo $o?>) {
-        swal({
-            title: "Delete?",
-            text: "ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?",
-            type: "warning",
-            showCancelButton: !0,
-            confirmButtonText: "Yes, delete it!",
-            cancelButtonText: "No, cancel!",
-            reverseButtons: !0
-        }).then(function (e) {
-            if (e.value === true) {
-                var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-                $.ajax({
-                    type: 'POST',
-                    url: "{{url('/users')}}/" + id,
-                    data: {_token: CSRF_TOKEN},
-                    dataType: 'JSON',
-                    success: function (results) {
-                        if (results.success === true) {
-                            swal("Done!", results.message, "success");
-                        } else {
-                            swal("Error!", results.message, "error");
-                        }
-                    }
-                });
-            } else {
-                e.dismiss;
-            }
-        }, function (dismiss) {
-            return false;
-        })
-    }
-</script> -->

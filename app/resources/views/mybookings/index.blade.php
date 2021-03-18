@@ -22,8 +22,7 @@
                             <th style="text-align:center">เวลาเริ่มต้น</th>
                             <th style="text-align:center">เวลาสิ้นสุด</th>
                             <th style="text-align:center">สร้างโดย</th>
-                            <!-- <th style="text-align:center">สถานะการอนุมัติ</th> -->
-                            <!-- <th style="text-align:center">การกระทำ</th> -->
+                            <th style="text-align:center">สถานะการอนุมัติ</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,23 +30,13 @@
                             <tr>
                                 <td style="text-align:center">{{ ++$i }}</td>
                                 <td>{{ $confirmmediasingle->room_type }}</td>
-                                <td>{{ $confirmmediasingle->room_floor }}</td>
-                                <td>{{ $confirmmediasingle->room_name }}</td>
+                                <td style="text-align:center">{{ $confirmmediasingle->room_floor }}</td>
+                                <td style="text-align:center">{{ $confirmmediasingle->room_name }}</td>
                                 <td>{{ $confirmmediasingle->created_at->format('d/m/Y H:i') }}</td>
                                 <td>{{ $confirmmediasingle->book_starttime }}</td>
                                 <td>{{ $confirmmediasingle->book_endtime }}</td>
                                 <td style="text-align:center">{{ $confirmmediasingle->username }}</td>
-                                <!-- <td style="text-align:center">{{ $confirmmediasingle->book_status }}</td> -->
-                                <!-- <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li><a href="{{ route('detailreserves.index') }}" ng-click="bookInfoModal(q.book_id)"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </td> -->
+                                <td style="text-align:center">{{ $confirmmediasingle->book_status }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -57,13 +46,13 @@
                             <tr>
                                 <td style="text-align:center">{{ ++$i }}</td>
                                 <td>{{ $confirmmediagroup->room_type }}</td>
-                                <td>{{ $confirmmediagroup->room_floor }}</td>
-                                <td>{{ $confirmmediagroup->room_name }}</td>
+                                <td style="text-align:center">{{ $confirmmediagroup->room_floor }}</td>
+                                <td style="text-align:center">{{ $confirmmediagroup->room_name }}</td>
                                 <td>{{ $confirmmediagroup->created_at->format('d/m/Y H:i') }}</td>
                                 <td>{{ $confirmmediagroup->book_starttime }}</td>
                                 <td>{{ $confirmmediagroup->book_endtime }}</td>
                                 <td style="text-align:center">{{ $confirmmediagroup->username }}</td>
-                                <!-- <td style="text-align:center">{{ $confirmmediagroup->book_status }}</td> -->
+                                <td style="text-align:center">{{ $confirmmediagroup->book_status }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -73,12 +62,13 @@
                             <tr>
                                 <td style="text-align:center">{{ ++$i }}</td>
                                 <td>{{ $reservemeet->room_type }}</td>
-                                <td>{{ $reservemeet->room_floor }}</td>
-                                <td>{{ $reservemeet->room_name }}</td>
+                                <td style="text-align:center">{{ $reservemeet->room_floor }}</td>
+                                <td style="text-align:center">{{ $reservemeet->room_name }}</td>
                                 <td>{{ $reservemeet->created_at->format('d/m/Y H:i') }}</td>
                                 <td>{{ $reservemeet->time_start }}</td>
                                 <td>{{ $reservemeet->time_end }}</td>
-                                <td>{{ $reservemeet->username }}</td>
+                                <td style="text-align:center">{{ $reservemeet->username }}</td>
+                                <td style="text-align:center"></td>
                             </tr>
                         @endforeach
                     </tbody>
