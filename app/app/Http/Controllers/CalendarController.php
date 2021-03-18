@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Events;
+use App\Reservemeet;
 use Redirect,Response;
 
 class CalendarController extends Controller
@@ -21,8 +22,9 @@ class CalendarController extends Controller
  
             $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
             $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
- 
-            $data = Events::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
+            
+            $data = Reservemeet::whereDate('time_start', '>=', $start)->whereDate('time_end',   '<=', $end)->get(['id','time_end as title','time_start as start', 'time_end as end']);
+            //$data = Events::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
             return Response::json($data);
             print_r($data);
         }

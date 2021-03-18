@@ -48,7 +48,7 @@ class ReservemeetController extends Controller
             'room_name' => 'required',
         ]);
         Reservemeet::create($request->all());
-        return redirect()->route('reservemeets.index');
+        return redirect()->route('roommeetings.index');
     }
 
     /**

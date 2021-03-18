@@ -99,21 +99,24 @@ class QueuelistmediagroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Confirmmediagroup $confirmmediagroup)
+    public function update(Request $request, Confirmmediagroup $confirmmediagroup,$id)
     {
         print_r($request->input());
-        
-        // $request->validate([
-        //     'username' => 'required',
+        print_r($id);
+        $where = array('id' => $id);
+        $updateArr = ['room_name' => $request->input('room_name')];
+        $event  = Confirmmediagroup::where($where)->update($updateArr);
+         //$request->validate([
+        //    'username' => 'required',
         //     'user_fullname' => 'required',
         //     'user_telnum' => 'required',
         //     'room_type' => 'required',
         //     'room_floor' => 'required',
-        //     // 'room_name' => 'required',
+        //'room_name' => 'required',
         //     // 'book_status' => 'required',
-        // ]);
+       // ]);
 
-        // $confirmmediagroup->update($request->all());
+        //$confirmmediagroup->update($request->all());
 
         // return redirect()->route('queuelistmediagroups.index')
         //                 ->with('success','Update booking successfully');

@@ -33,7 +33,7 @@ headers: {
 var calendar = $('#calendar').fullCalendar({
 editable: true,
 events: SITEURL + '/fullcalendar',
-displayEventTime: true,
+//isplayEventTime: true,
 editable: true,
 eventRender: function (event, element, view) {
 if (event.allDay === 'true') {
@@ -45,7 +45,7 @@ event.allDay = false;
 selectable: true,
 selectHelper: true,
 select: function (start, end, allDay) {
-open('/reservemeets');
+open('/reservemeets/create','_self');
 /*var title = prompt('Event Title:');
 if (title) {
 var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
