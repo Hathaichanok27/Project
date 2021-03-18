@@ -12,7 +12,7 @@
                                 <i class="fas fa-users"></i>
                             </div>
                             <h5 class="text-semibold">ห้องประชุม</h5>
-                            <p class="mb-15">ให้บริการห้องประชุม<br>เป็นเวลา 2 ชม.</p>
+                            <p class="mb-15">สำหรับเจ้าหน้าที่ จัดการห้องประชุม</p>
                             <a href="" class="btn bg-success-400">ไปที่ <i class="fas fa-angle-double-right"></i></a>
                         </div>
                     </div>
@@ -25,8 +25,8 @@
                                 <i class="fas fa-play"></i>
                             </div>
                             <h5 class="text-semibold">ห้องสื่อศึกษา</h5>
-                            <p class="mb-15">ให้บริการเครื่องรับชมสื่อมัลติเมียเดีย<br>เป็นเวลา 3 ชม.</p>
-                            <a href="{{ route('adminroommedias.index') }}" class="btn bg-danger-400">ไปที่ <i class="fas fa-angle-double-right"></i></a>
+                            <p class="mb-15">สำหรับเจ้าหน้าที่ จัดการห้องสื่อศึกษา</p>
+                            <a href="{{ route('adminroommediastaffs.index') }}" class="btn bg-danger-400">ไปที่ <i class="fas fa-angle-double-right"></i></a>
                         </div>
                     </div>
                 </div>
