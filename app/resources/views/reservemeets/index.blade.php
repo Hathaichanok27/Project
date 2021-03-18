@@ -14,7 +14,7 @@
             <div class="form-group">
                 <label class="col-sm-1 control-label">คำอธิบาย: </label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="description" type="text" placeholder="Description">
+                    <input class="form-control" id="description" type="text" placeholder="จองห้องประชุม">
                 </div>
             </div>
             <br>
