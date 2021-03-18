@@ -40,12 +40,12 @@
                     <label class="col-sm-1 control-label">ชั้น: </label>
                     <div class="col-sm-6">
                         <select class="form-control" name="room_floor">
-                            <option value="ชั้น-3">ชั้น 3</option>
-                            <option value="ชั้น-4">ชั้น 4</option>
-                            <option value="ชั้น-5">ชั้น 5</option>
-                            <option value="ชั้น-5-เฉพาะอาจารย์">ชั้น 5 - เฉพาะอาจารย์</option>
-                            <option value="ชั้น-6-mini-home-theatre">ชั้น 6 - Mini Home Theatre</option>
-                            <option value="ชั้น-6-karaoke">ชั้น 6 - คาราโอเกะ</option>
+                            <option value="3">ชั้น 3</option>
+                            <option value="4">ชั้น 4</option>
+                            <option value="5">ชั้น 5</option>
+                            <option value="5-aj-only">ชั้น 5 - เฉพาะอาจารย์</option>
+                            <option value="6-mini-home-theatre">ชั้น 6 - Mini Home Theatre</option>
+                            <option value="6-karaoke">ชั้น 6 - คาราโอเกะ</option>
                         </select>
                     </div>
                 </div>
@@ -54,12 +54,12 @@
                     <label class="col-sm-1 control-label">ห้อง: </label>
                     <div class="col-sm-6">
                         <select class="form-control" name="room_name">
-                            <option value="ห้อง-1">ห้อง 1</option>
-                            <option value="ห้อง-2">ห้อง 2</option>
-                            <option value="ห้อง-3">ห้อง 3</option>
-                            <option value="ห้อง-4">ห้อง 4</option>
-                            <option value="ห้อง-5">ห้อง 5</option>
-                            <option value="ห้อง-6">ห้อง 6</option>
+                            <option value="1">ห้อง 1</option>
+                            <option value="2">ห้อง 2</option>
+                            <option value="3">ห้อง 3</option>
+                            <option value="4">ห้อง 4</option>
+                            <option value="5">ห้อง 5</option>
+                            <option value="6">ห้อง 6</option>
                         </select>
                     </div>
                 </div>    
