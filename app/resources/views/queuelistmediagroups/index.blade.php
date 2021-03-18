@@ -474,34 +474,23 @@
                                                                 <div class="panel panel-body">
                                                                     <div class="media">
                                                                         <div class="media-left">
-                                                                            <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
                                                                         <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
-                                                                            <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
-                                                                        <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
-                                                                            <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
-                                                                        <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
-                                                                            <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
-                                                                        </div>
-                                                                        <div class="media-body">
-                                                                            <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
-                                                                        </div>
                                                                     </div>
-                                                                </div>  
-                                                            </div>  
-                                                                </div>  
-                                                            </div>  
-                                                                </div>  
-                                                            </div>  
-                                                                </div>  
-                                                                <div class="panel panel-body">
-                                                                    <div class="media">
-                                                                        <div class="media-left">
-                                                                            <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
-                                                                        </div>
-                                                                        <div class="media-body">
+                                                                    <div class="media-body">
+                                                                        <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel panel-body">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        
                                                                             <h4 class="media-heading text-bold" id="STV_media_{{ $confirmmediagroup->id }}"></h4>
                                                                             หมดเวลา  <b style="color:#F62459">0:00</b>
                                                                             <input type="hidden" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
@@ -562,26 +551,19 @@
 @endsection 
 
 <script>
-    function myFunction(input,id) 
-    {
-        document.getElementById("myText_"+id).value = input;
-        document.getElementById("STV_media_"+id).innerHTML = 'STV-'+input;
-        document.getElementById("STV_room_name_"+id).value = 'STV-'+input;
-        document.getElementById("div_media"+input+"_"+id).style.backgroundColor = "#00bcd46e";
-        <?php for($s=1; $s<=9; $s++){?>
-            if(input != <?php echo $s?>){ 
-            if(input != <?php echo $s?>){ 
-            if(input != <?php echo $s?>){ 
-            if(input != <?php echo $s?>){ 
-            if(input != <?php echo $s?>){ 
-        if(input != <?php echo $s?>){ 
-            if(input != <?php echo $s?>){ 
-                document.getElementById("div_media<?php echo $s?>_"+id).style.backgroundColor = "transparent";
-            }
-        <?php }?>
-        // div_media
-        // alert(input);
+function myFunction(input,id) {
+    document.getElementById("myText_"+id).value = input;
+    document.getElementById("STV_media_"+id).innerHTML = 'STV-'+input;
+    document.getElementById("STV_room_name_"+id).value = 'STV-'+input;
+    document.getElementById("div_media"+input+"_"+id).style.backgroundColor = "#00bcd46e";
+    <?php for($s=1; $s<=9; $s++){?>
+    if(input != <?php echo $s?>){ 
+        document.getElementById("div_media<?php echo $s?>_"+id).style.backgroundColor = "transparent";
     }
+  <?php }?>
+  //div_media
+  //alert(input);
+}
 </script>
 
 <!-- เข้่าห้อง -->
@@ -599,7 +581,6 @@ $('body').on('click', '#delete-booking', function () {
     var booking_id = $(this).data("id");
     var token = $("meta[name='csrf-token']").attr("content");
     confirm("Are You sure want to delete !");
-
     $.ajax({
         type: "DELETE",
         // url: "http://localhost/laravel7crud/public/customers/"+customer_id,
@@ -609,7 +590,7 @@ $('body').on('click', '#delete-booking', function () {
             "_token": token,
         },
         success: function (data) {
-            $('#msg').html('Booking entry deleted successfully');
+            $('#msg').html('Customer entry deleted successfully');
             $("#booking_id_" + booking_id).remove();
         },
         error: function (data) {
@@ -651,17 +632,14 @@ function myFunction(id) {
             cancelButtonText: "No, cancel!",
             reverseButtons: !0
         }).then(function (e) {
-
             if (e.value === true) {
                 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-
                 $.ajax({
                     type: 'POST',
                     url: "{{url('/users')}}/" + id,
                     data: {_token: CSRF_TOKEN},
                     dataType: 'JSON',
                     success: function (results) {
-
                         if (results.success === true) {
                             swal("Done!", results.message, "success");
                         } else {
@@ -669,11 +647,9 @@ function myFunction(id) {
                         }
                     }
                 });
-
             } else {
                 e.dismiss;
             }
-
         }, function (dismiss) {
             return false;
         })
