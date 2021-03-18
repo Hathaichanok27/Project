@@ -461,50 +461,61 @@
                                                     </div>
                                                 </div>
                                                 <form action="{{ route('queuelistmediagroups.update',$confirmmediagroup->id) }}" method="POST">
-                                                                        @csrf
-                                                                        @method('PUT')
-                                                <div class="modal-body">
-                                                    <h6 class="form-wizard-title text-semibold">
-                                                        <span class="form-wizard-count">3</span>
-                                                        ยืนยันการทำรายการ
-                                                        <small class="display-block">ตรวจสอบความถูกต้องและยืนยันการทำรายการ</small>
-                                                    </h6>
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="panel panel-body">
-                                                                <div class="media">
-                                                                    <div class="media-left">
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <div class="modal-body">
+                                                        <h6 class="form-wizard-title text-semibold">
+                                                            <span class="form-wizard-count">3</span>
+                                                            ยืนยันการทำรายการ
+                                                            <small class="display-block">ตรวจสอบความถูกต้องและยืนยันการทำรายการ</small>
+                                                        </h6>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="panel panel-body">
+                                                                    <div class="media">
+                                                                        <div class="media-left">
+                                                                            <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
                                                                         <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                            <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                        <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                            <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                        <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                            <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                        </div>
+                                                                        <div class="media-body">
+                                                                            <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="media-body">
-                                                                        <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
-                                                                    </div>
-                                                                </div>
+                                                                </div>  
                                                             </div>  
-                                                            <div class="panel panel-body">
-                                                                <div class="media">
-                                                                    <div class="media-left">
-                                                                        <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
-                                                                    </div>
-                                                                    <div class="media-body">
-                                                                        
+                                                                </div>  
+                                                            </div>  
+                                                                </div>  
+                                                            </div>  
+                                                                </div>  
+                                                                <div class="panel panel-body">
+                                                                    <div class="media">
+                                                                        <div class="media-left">
+                                                                            <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
+                                                                        </div>
+                                                                        <div class="media-body">
                                                                             <h4 class="media-heading text-bold" id="STV_media_{{ $confirmmediagroup->id }}"></h4>
                                                                             หมดเวลา  <b style="color:#F62459">0:00</b>
-                                                                            <input type="text" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
+                                                                            <input type="hidden" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
                                                                             <input type="hidden" name="book_status" value="อนุมัติ">
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myModal4_<?php echo $o?>">ย้อนกลับ</button>
-                                                    <button type="submit" class="btn btn-success" >ยืนยัน</button>
-                                                </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myModal4_<?php echo $o?>">ย้อนกลับ</button>
+                                                        <button type="submit" class="btn btn-success" >ยืนยัน</button>
+                                                    </div>
                                                 </form>
                                             </div>                       
                                         </div>
@@ -551,19 +562,26 @@
 @endsection 
 
 <script>
-function myFunction(input,id) {
-    document.getElementById("myText_"+id).value = input;
-    document.getElementById("STV_media_"+id).innerHTML = 'STV-'+input;
-    document.getElementById("STV_room_name_"+id).value = 'STV-'+input;
-    document.getElementById("div_media"+input+"_"+id).style.backgroundColor = "#00bcd46e";
-  <?php for($s=1; $s<=9; $s++){?>
-  if(input != <?php echo $s?>){ 
-    document.getElementById("div_media<?php echo $s?>_"+id).style.backgroundColor = "transparent";
-  }
-  <?php }?>
-  //div_media
-  //alert(input);
-}
+    function myFunction(input,id) 
+    {
+        document.getElementById("myText_"+id).value = input;
+        document.getElementById("STV_media_"+id).innerHTML = 'STV-'+input;
+        document.getElementById("STV_room_name_"+id).value = 'STV-'+input;
+        document.getElementById("div_media"+input+"_"+id).style.backgroundColor = "#00bcd46e";
+        <?php for($s=1; $s<=9; $s++){?>
+            if(input != <?php echo $s?>){ 
+            if(input != <?php echo $s?>){ 
+            if(input != <?php echo $s?>){ 
+            if(input != <?php echo $s?>){ 
+            if(input != <?php echo $s?>){ 
+        if(input != <?php echo $s?>){ 
+            if(input != <?php echo $s?>){ 
+                document.getElementById("div_media<?php echo $s?>_"+id).style.backgroundColor = "transparent";
+            }
+        <?php }?>
+        // div_media
+        // alert(input);
+    }
 </script>
 
 <!-- เข้่าห้อง -->
@@ -591,7 +609,7 @@ $('body').on('click', '#delete-booking', function () {
             "_token": token,
         },
         success: function (data) {
-            $('#msg').html('Customer entry deleted successfully');
+            $('#msg').html('Booking entry deleted successfully');
             $("#booking_id_" + booking_id).remove();
         },
         error: function (data) {

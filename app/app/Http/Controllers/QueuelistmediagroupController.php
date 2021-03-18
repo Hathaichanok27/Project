@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Confirmmediagroup;
-use App\Queuelistmediagroup;
+// use App\Queuelistmediagroup;
 use Illuminate\Http\Request;
 
 class QueuelistmediagroupController extends Controller
@@ -59,12 +59,14 @@ class QueuelistmediagroupController extends Controller
         //                 ->with('success','Booking successfully.');
 
         $bookId = $request->booking_id;
-		Customer::updateOrCreate(['id' => $bookId],['username' => $request->username, 'user_fullname' => $request->user_fullname]);
-		if(empty($request->booking_id))
-			$msg = 'Booking entry created successfully.';
-		else
-			$msg = 'Booking data is updated successfully';
-		return redirect()->route('queuelistmediagroups.index')->with('success',$msg);
+		Confirmmediagroup::updateOrCreate(['username' => $request->username, 'user_fullname' => $request->user_fullname]);
+		// if(empty($request->booking_id))
+		// 	$msg = 'Booking entry created successfully.';
+		// else
+		// 	$msg = 'Booking data is updated successfully';
+		// return redirect()->route('queuelistmediagroups.index')->with('success',$msg);
+        return response()->json(['success'=>'Booking saved successfully!']);
+
     }
 
     /**
@@ -84,9 +86,9 @@ class QueuelistmediagroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Queuelistmediagroup $confirmmediagroup)
+    public function edit($id)
     {
-        return view('queuelistmediagroups.index',compact('confirmmediagroup'));
+        //
 
     }
 
@@ -97,23 +99,24 @@ class QueuelistmediagroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Queuelistmediagroup $confirmmediagroup)
+    public function update(Request $request, Confirmmediagroup $confirmmediagroup)
     {
         print_r($request->input());
-       /* $request->validate([
-            'username' => 'required',
-            'user_fullname' => 'required',
-            'user_telnum' => 'required',
-            'room_type' => 'required',
-            'room_floor' => 'required',
-            'room_name' => 'required',
-            'book_status' => 'required',
-        ]);
+        
+        // $request->validate([
+        //     'username' => 'required',
+        //     'user_fullname' => 'required',
+        //     'user_telnum' => 'required',
+        //     'room_type' => 'required',
+        //     'room_floor' => 'required',
+        //     // 'room_name' => 'required',
+        //     // 'book_status' => 'required',
+        // ]);
 
-        $queuelistmediagroup->update($request->all());
+        // $confirmmediagroup->update($request->all());
 
-        return redirect()->route('queuelistmediagroups.index')
-                        ->with('success','Update booking successfully');*/
+        // return redirect()->route('queuelistmediagroups.index')
+        //                 ->with('success','Update booking successfully');
     }
 
     /**
