@@ -32,7 +32,7 @@
                                 <td>{{ $confirmmediasingle->room_type }}</td>
                                 <td style="text-align:center">{{ $confirmmediasingle->room_floor }}</td>
                                 <td style="text-align:center">{{ $confirmmediasingle->room_name }}</td>
-                                <td>{{ $confirmmediasingle->created_at->format('d-m-Y H:i') }}</td>
+                                <td>{{ $confirmmediasingle->created_at->format('d/m/Y H:i') }}</td>
                                 <td>{{ $confirmmediasingle->book_starttime }}</td>
                                 <td>{{ $confirmmediasingle->book_endtime }}</td>
                                 <td style="text-align:center">{{ $confirmmediasingle->username }}</td>
@@ -48,13 +48,12 @@
                                 <td>{{ $confirmmediagroup->room_type }}</td>
                                 <td style="text-align:center">{{ $confirmmediagroup->room_floor }}</td>
                                 <td style="text-align:center">{{ $confirmmediagroup->room_name }}</td>
-                                <td>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}</td>
+                                <td>{{ $confirmmediagroup->created_at->format('d/m/Y H:i') }}</td>
                                 <td>{{ $confirmmediagroup->book_starttime }}</td>
                                 <td>{{ $confirmmediagroup->book_endtime }}</td>
                                 <td style="text-align:center">{{ $confirmmediagroup->username }}</td>
-                                <td style="text-align:center"><b style="color:#36bf7d">{{ $confirmmediagroup->book_status }}</b></td>
-                            </tr> 
-                            
+                                <td style="text-align:center">{{ $confirmmediagroup->book_status }}</td>
+                            </tr>
                         @endforeach
                     </tbody>
 
@@ -65,7 +64,7 @@
                                 <td>{{ $reservemeet->room_type }}</td>
                                 <td style="text-align:center">{{ $reservemeet->room_floor }}</td>
                                 <td style="text-align:center">{{ $reservemeet->room_name }}</td>
-                                <td>{{ $reservemeet->created_at->format('d-m-Y H:i') }}</td>
+                                <td>{{ $reservemeet->created_at->format('d/m/Y H:i') }}</td>
                                 <td>{{ $reservemeet->time_start }}</td>
                                 <td>{{ $reservemeet->time_end }}</td>
                                 <td style="text-align:center">{{ $reservemeet->username }}</td>
