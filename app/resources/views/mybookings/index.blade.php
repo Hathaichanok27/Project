@@ -25,6 +25,25 @@
                             <th style="text-align:center">สถานะการอนุมัติ</th>
                         </tr>
                     </thead>
+                    
+                    <!-- ห้องประชุม -->
+                    <tbody>
+                        @foreach($reservemeets as $reservemeet)
+                            <tr>
+                                <td style="text-align:center">{{ ++$i }}</td>
+                                <td>{{ $reservemeet->room_type }}</td>
+                                <td style="text-align:center">{{ $reservemeet->room_floor }}</td>
+                                <td style="text-align:center">{{ $reservemeet->room_name }}</td>
+                                <td>{{ $reservemeet->created_at->format('d-m-Y H:i') }}</td>
+                                <td>{{ $reservemeet->time_start }}</td>
+                                <td>{{ $reservemeet->time_end }}</td>
+                                <td style="text-align:center">{{ $reservemeet->username }}</td>
+                                <td style="text-align:center"><b style="color:#F62459">{{ $reservemeet->book_status }}</b></td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+
+                    <!-- ห้องสื่อศึกษาเดี่ยว -->
                     <tbody>
                         @foreach($confirmmediasingles as $confirmmediasingle)
                             <tr>
@@ -41,6 +60,7 @@
                         @endforeach
                     </tbody>
 
+                    <!-- ห้องสื่อศึกษากลุ่ม -->
                     <tbody>
                         @foreach($confirmmediagroups as $confirmmediagroup)
                             <tr>
@@ -55,22 +75,6 @@
                                 <td style="text-align:center"><b style="color:#F62459">{{ $confirmmediagroup->book_status }}</b></td>
                             </tr> 
                             
-                        @endforeach
-                    </tbody>
-
-                    <tbody>
-                        @foreach($reservemeets as $reservemeet)
-                            <tr>
-                                <td style="text-align:center">{{ ++$i }}</td>
-                                <td>{{ $reservemeet->room_type }}</td>
-                                <td style="text-align:center">{{ $reservemeet->room_floor }}</td>
-                                <td style="text-align:center">{{ $reservemeet->room_name }}</td>
-                                <td>{{ $reservemeet->created_at->format('d-m-Y H:i') }}</td>
-                                <td>{{ $reservemeet->time_start }}</td>
-                                <td>{{ $reservemeet->time_end }}</td>
-                                <td style="text-align:center">{{ $reservemeet->username }}</td>
-                                <td style="text-align:center"><b style="color:#F62459">{{ $reservemeet->book_status }}</b></td>
-                            </tr>
                         @endforeach
                     </tbody>
                 </table>

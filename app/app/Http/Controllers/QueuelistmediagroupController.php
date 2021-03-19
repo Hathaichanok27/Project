@@ -44,6 +44,8 @@ class QueuelistmediagroupController extends Controller
         $updateArr = [
                         'room_name' => $request->input('room_name'),
                         'book_status' => $request->input('book_status'),
+                        'book_starttime' => $request->input('book_starttime'),
+                        'book_endtime' => $request->input('book_endtime'),
                      ];
         $booking  = Confirmmediagroup::where($where)->update($updateArr);
         return redirect()->route('queuelistmediagroups.index');

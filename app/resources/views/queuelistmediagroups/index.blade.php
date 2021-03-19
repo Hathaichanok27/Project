@@ -242,7 +242,6 @@
                     <div class="tab-content-model">
                         <?php $o=1?>
                             @foreach($confirmmediagroups as $confirmmediagroup)
-                                <!-- Modal1 -->
                                 <?php 
                                     $origin = date_create($confirmmediagroup->created_at->format('H:i'));
                                     $target = date_create('now');
@@ -250,6 +249,7 @@
                                     // echo $interval->format('%H.%i นาทีที่แล้ว');
                                     // echo $target->format('H:i');
                                 ?>
+                                <!-- Modal1 -->
                                 <div class="modal" id="myModal1_<?php echo $o?>" role="dialog">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -494,7 +494,13 @@
                                                                         </div>
                                                                         <div class="media-body">        
                                                                             <h4 class="media-heading text-bold" id="STV_media_{{ $confirmmediagroup->id }}"></h4>
-                                                                            หมดเวลา  <b style="color:#F62459">0:00</b>
+                                                                            <?php 
+                                                                                $book_starttime = strtotime('now');
+                                                                                $book_endtime = strtotime('+3 hours', strtotime('now'));
+                                                                            ?>
+                                                                            หมดเวลา  <b style="color:#F62459">{{ date('H:i', $book_endtime) }} น.</b>
+                                                                            <input type="hidden" name="book_starttime" value="{{ date('Y-m-d H:i', $book_starttime) }}">
+                                                                            <input type="hidden" name="book_endtime" value="{{ date('Y-m-d H:i', $book_endtime) }}">
                                                                             <input type="hidden" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
                                                                             <input type="hidden" name="book_status" value="อนุมัติ">
                                                                         </div>
