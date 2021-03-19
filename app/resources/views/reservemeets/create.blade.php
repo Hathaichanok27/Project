@@ -62,7 +62,8 @@
                             <option value="6">ห้อง 6</option>
                         </select>
                     </div>
-                </div>    
+                </div>
+                <input type="hidden" name="book_status" value="รอการอนุมัติ">    
                 <br><br>
                 <button type="submit" class="btn btn-success">ยืนยัน <i class="fas fa-check"></i></button>
                 </div>

@@ -85,20 +85,21 @@ displayMessage("Updated Successfully");
 });
 },
 eventClick: function (event) {
-var deleteMsg = confirm("Do you really want to delete?");
-if (deleteMsg) {
-$.ajax({
-type: "POST",
-url: SITEURL + '/fullcalendar/delete',
-data: "&id=" + event.id,
-success: function (response) {
-if(parseInt(response) > 0) {
-$('#calendar').fullCalendar('removeEvents', event.id);
-displayMessage("Deleted Successfully");
-}
-}
-});
-}
+open('/reservemeets/&id','_self');
+// var deleteMsg = confirm("Do you really want to delete?");
+// if (deleteMsg) {
+// $.ajax({
+// type: "POST",
+// url: SITEURL + '/fullcalendar/delete',
+// data: "&id=" + event.id,
+// success: function (response) {
+// if(parseInt(response) > 0) {
+// $('#calendar').fullCalendar('removeEvents', event.id);
+// displayMessage("Deleted Successfully");
+// }
+// }
+// });
+// }
 }
 });
 });

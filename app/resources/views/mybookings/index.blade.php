@@ -36,7 +36,7 @@
                                 <td>{{ $confirmmediasingle->book_starttime }}</td>
                                 <td>{{ $confirmmediasingle->book_endtime }}</td>
                                 <td style="text-align:center">{{ $confirmmediasingle->username }}</td>
-                                <td style="text-align:center">{{ $confirmmediasingle->book_status }}</td>
+                                <td style="text-align:center"><b style="color:#F62459">{{ $confirmmediasingle->book_status }}</b></td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -52,7 +52,7 @@
                                 <td>{{ $confirmmediagroup->book_starttime }}</td>
                                 <td>{{ $confirmmediagroup->book_endtime }}</td>
                                 <td style="text-align:center">{{ $confirmmediagroup->username }}</td>
-                                <td style="text-align:center"><b style="color:#36bf7d">{{ $confirmmediagroup->book_status }}</b></td>
+                                <td style="text-align:center"><b style="color:#F62459">{{ $confirmmediagroup->book_status }}</b></td>
                             </tr> 
                             
                         @endforeach
@@ -69,7 +69,7 @@
                                 <td>{{ $reservemeet->time_start }}</td>
                                 <td>{{ $reservemeet->time_end }}</td>
                                 <td style="text-align:center">{{ $reservemeet->username }}</td>
-                                <td style="text-align:center"></td>
+                                <td style="text-align:center"><b style="color:#F62459">{{ $reservemeet->book_status }}</b></td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -29,14 +29,15 @@ class ReservemeetController extends Controller
             'room_type' => 'required',
             'room_floor' => 'required',
             'room_name' => 'required',
+            'book_status' => 'required',
         ]);
         Reservemeet::create($request->all());
         return redirect()->route('roommeetings.index');
     }
 
-    public function show($id)
+    public function show(Reservemeet $reservemeet)
     {
-        //
+        return view('reservemeets.show',compact('reservemeet'));
     }
 
     public function edit($id)
@@ -49,8 +50,9 @@ class ReservemeetController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy(Reservemeet $reservemeet)
     {
-        //
+        $reservemeet->delete();
+        return redirect()->route('roommeetings.index');
     }
 }
