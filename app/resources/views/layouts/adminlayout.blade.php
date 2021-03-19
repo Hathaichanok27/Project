@@ -14,7 +14,20 @@
         <link href="{{ asset('css/core.css') }}" rel="stylesheet">
         <link href="{{ asset('icomoon/styles.css') }}" rel="stylesheet">
         <!-- <link href="{{ asset('fonts/roboto.css') }}" rel="stylesheet">  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
+        <!-- filter search -->
+        <script>
+            $(document).ready(function(){
+                $("#myInput").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function() {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
+
         <!-- date time -->
         <script type="text/javascript"> 
             function display_c(){

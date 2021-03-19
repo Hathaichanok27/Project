@@ -12,11 +12,11 @@
                     <li><a href="">ห้องสื่อศึกษากลุ่ม</a></li>
                     <li class="active">รายการคิว</li>
 				</ul>
-				<div class="heading-elements">
+				<!-- <div class="heading-elements">
                     <a href="" data-toggle="modalheading" data-target="#myModalheading1" class="btn btn-lg btn-labeled btn-labeled-left bg-success heading-btn">เข้าห้อง <b><i class="fas fa-sign-in-alt"></i></b></a>
                     <a href="" data-toggle="modalheading" data-target="#myModalheading2" class="btn btn-lg btn-labeled btn-labeled-right bg-danger heading-btn">คืนห้อง <b><i class="fas fa-sign-out-alt"></i></b></a>
                     <a href="" data-toggle="modalheading" data-target="#myModalheading3" class="btn btn-lg btn-labeled btn-labeled-right bg-primary heading-btn">จัดการห้อง <b><i class="fas fa-cog"></i></b></a>
-                </div>
+                </div> -->
 			</div>
         </div>
         <div class="page-content">
@@ -40,7 +40,7 @@
                                     <div id="qTable_filter" class="dataTables_filter">
                                         <label>
                                             <span>Filter:</span> 
-                                            <input type="search" class="ng-pristine ng-untouched ng-valid ng-empty" placeholder="Type to filter..." aria-controls="qTable" ng-model="searchFilterWaiting">
+                                            <input type="search" id="myInput" type="text" placeholder="Type to filter...">
                                         </label>
                                     </div>
                                 </div>
@@ -56,10 +56,11 @@
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="myTable">
                                         @foreach($confirmmediagroups as $confirmmediagroup)
-                                            <tr id="booking_id_{{ $confirmmediagroup->id }}">
-                                                <td style="text-align:center">{{ ++$i }}</td>
+                                            <tr>
+                                                <td hidden>{{ ++$i }}</td>
+                                                <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                 <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
                                                 <td>
@@ -68,7 +69,6 @@
                                                     $target = date_create('now');
                                                     $interval = date_diff($origin, $target);
                                                     echo $interval->format('%H.%i นาทีที่แล้ว');
-                                                    // echo $target->format('H:i');
                                                 ?>
                                                 <!-- <BR>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}  -->
                                                 </td>
@@ -120,7 +120,8 @@
                                     <tbody>
                                         @foreach($confirmmediagroups as $confirmmediagroup)
                                             <tr>
-                                                <td style="text-align:center">{{ ++$i }}</td>
+                                                <td hidden>{{ ++$i }}</td>
+                                                <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                 <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
                                                 <td></td>
@@ -166,7 +167,8 @@
                                     <tbody>
                                         @foreach($confirmmediagroups as $confirmmediagroup)
                                             <tr>
-                                                <td style="text-align:center">{{ ++$i }}</td>
+                                                <td hidden>{{ ++$i }}</td>
+                                                <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                 <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
                                                 <td>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}</td>
@@ -212,7 +214,8 @@
                                     <tbody>
                                         @foreach($confirmmediagroups as $confirmmediagroup)
                                             <tr>
-                                                <td style="text-align:center">{{ ++$i }}</td>
+                                                <td hidden>{{ ++$i }}</td>
+                                                <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                 <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
                                                 <td>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}</td>
@@ -530,12 +533,12 @@
                                             <p>ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                             <div class="sa-button-container">
                                                 <input type="hidden" name="book_status" value="ไม่อนุมัติ">
-                                                <form action="{{ route('queuelistmediagroups.destroy',$confirmmediagroup->id) }}" method="POST">
+                                                <!-- <form action="{{ route('queuelistmediagroups.destroy',$confirmmediagroup->id) }}" method="POST">
                                                     @csrf
-                                                    @method('DELETE')
+                                                    @method('DELETE') -->
                                                     <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
                                                     <button type="submit" class="btn btn-danger">ใช่, ยกเลิกการจอง</button>
-                                                </form>
+                                                <!-- </form> -->
                                             </div>
                                         </form>
                                     </div>
