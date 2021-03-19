@@ -474,22 +474,22 @@
                                                                 <div class="panel panel-body">
                                                                     <div class="media">
                                                                         <div class="media-left">
-                                                                        <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
-                                                                    </div>
-                                                                    <div class="media-body">
-                                                                        <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
+                                                                            <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                        </div>
+                                                                        <div class="media-body">
+                                                                            <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="panel panel-body">
-                                                                <div class="media">
-                                                                    <div class="media-left">
-                                                                        <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
-                                                                    </div>
-                                                                    <div class="media-body">        
+                                                                <div class="panel panel-body">
+                                                                    <div class="media">
+                                                                        <div class="media-left">
+                                                                            <a href=""><i class="icon-tv text-success-400 icon-2x no-edge-top mt-5"></i></a>
+                                                                        </div>
+                                                                        <div class="media-body">        
                                                                             <h4 class="media-heading text-bold" id="STV_media_{{ $confirmmediagroup->id }}"></h4>
                                                                             หมดเวลา  <b style="color:#F62459">0:00</b>
                                                                             <input type="hidden" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
