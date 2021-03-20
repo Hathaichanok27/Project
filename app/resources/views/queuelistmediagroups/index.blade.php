@@ -64,13 +64,12 @@
                                                 <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
                                                 <td>
-                                                <?php 
-                                                    $origin = date_create($confirmmediagroup->created_at->format('H:i'));
-                                                    $target = date_create('now');
-                                                    $interval = date_diff($origin, $target);
-                                                    echo $interval->format('%H.%i นาทีที่แล้ว');
-                                                ?>
-                                                <!-- <BR>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}  -->
+                                                    <?php 
+                                                        $origin = date_create($confirmmediagroup->created_at->format('d-m-Y H:i'));
+                                                        $target = date_create('now');
+                                                        $interval = date_diff($origin, $target);
+                                                        echo $interval->format('%h ชั่วโมง %i นาทีที่แล้ว');
+                                                    ?>
                                                 </td>
                                                 <td></td>
                                                 <td></td>
@@ -243,11 +242,9 @@
                         <?php $o=1?>
                             @foreach($confirmmediagroups as $confirmmediagroup)
                                 <?php 
-                                    $origin = date_create($confirmmediagroup->created_at->format('H:i'));
+                                    $origin = date_create($confirmmediagroup->created_at->format('d-m-Y H:i'));
                                     $target = date_create('now');
                                     $interval = date_diff($origin, $target);
-                                    // echo $interval->format('%H.%i นาทีที่แล้ว');
-                                    // echo $target->format('H:i');
                                 ?>
                                 <!-- Modal1 -->
                                 <div class="modal" id="myModal1_<?php echo $o?>" role="dialog">
@@ -277,7 +274,7 @@
                                                                         <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
                                                                         <!-- <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $confirmmediagroup->created_at->format('H:i') }}</p> -->
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%h ชั่วโมง %i นาทีที่แล้ว') }}</p>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                     </div>  
                                                                 </div>
@@ -311,7 +308,7 @@
                                                         <div class="media-body">
                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                            <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
+                                                            <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%h ชั่วโมง %i นาทีที่แล้ว') }}</p>
                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>  
                                                         </div>  
                                                     </div>
@@ -361,7 +358,7 @@
                                                                     <div class="media-body">
                                                                         <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%h ชั่วโมง %i นาทีที่แล้ว') }}</p>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                     </div>  
                                                                 </div>
@@ -404,7 +401,7 @@
                                                                     <div class="media-body">
                                                                         <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%h ชั่วโมง %i นาทีที่แล้ว') }}</p>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                     </div>  
                                                                     <hr> -->
@@ -482,7 +479,7 @@
                                                                         <div class="media-body">
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%i นาทีที่แล้ว') }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%h ชั่วโมง %i นาทีที่แล้ว') }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                         </div>
                                                                     </div>
