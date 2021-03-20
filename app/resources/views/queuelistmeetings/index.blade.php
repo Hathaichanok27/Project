@@ -51,8 +51,7 @@
                                                 <td>{{ $reservemeet->user_fullname }}</td>
                                                 <td>{{ $reservemeet->time_start }}</td>
                                                 <td>{{ $reservemeet->time_end }}</td>
-                                                <td class="text-center">
-                                                <b style="color:<?php echo $reservemeet->book_status == 'อนุมัติ'?'#26A65B':'#ff8c00'?>">{{$reservemeet->book_status}}</b> </td>    
+                                                <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == 'อนุมัติ'?'#26A65B':'#ff8c00'?>">{{$reservemeet->book_status}}</b></td>    
                                                 <td class="text-center">
                                                     <ul class="icons-list">
                                                         <li class="dropdown">
