@@ -47,12 +47,12 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr class="bg-grey">
-                                            <th>คิวที่</th>
-                                            <th>บัญชีผู้ใช้</th>
-                                            <th>ชื่อ - นามสกุล</th>
-                                            <th>จองคิวเมื่อ</th>
-                                            <th>เวลาที่ต้องรอ</th>
-                                            <th>มาช้า</th>
+                                            <th class="text-center">คิวที่</th>
+                                            <th class="text-center">บัญชีผู้ใช้</th>
+                                            <th class="text-center">ชื่อ - นามสกุล</th>
+                                            <th class="text-center">จองคิวเมื่อ</th>
+                                            <th class="text-center">เวลาที่ต้องรอ</th>
+                                            <th class="text-center">มาช้า</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
@@ -109,11 +109,11 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr class="bg-grey">
-                                            <th>คิวที่</th>
-                                            <th>บัญชีผู้ใช้</th>
-                                            <th>ชื่อ - นามสกุล</th>
-                                            <th>เริ่มใช้งานเมื่อ</th>
-                                            <th>หมดเวลาในอีก</th>
+                                            <th class="text-center">คิวที่</th>
+                                            <th class="text-center">บัญชีผู้ใช้</th>
+                                            <th class="text-center">ชื่อ - นามสกุล</th>
+                                            <th class="text-center">เริ่มใช้งานเมื่อ</th>
+                                            <th class="text-center">หมดเวลาในอีก</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
@@ -156,11 +156,11 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr class="bg-grey">
-                                            <th>คิวที่</th>
-                                            <th>บัญชีผู้ใช้</th>
-                                            <th>ชื่อ - นามสกุล</th>
-                                            <th>จองคิวเมื่อ</th>
-                                            <th>เวลาที่ต้องรอ</th>
+                                            <th class="text-center">คิวที่</th>
+                                            <th class="text-center">บัญชีผู้ใช้</th>
+                                            <th class="text-center">ชื่อ - นามสกุล</th>
+                                            <th class="text-center">จองคิวเมื่อ</th>
+                                            <th class="text-center">เวลาที่ต้องรอ</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
@@ -203,11 +203,11 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr class="bg-grey">
-                                            <th>คิวที่</th>
-                                            <th>บัญชีผู้ใช้</th>
-                                            <th>ชื่อ - นามสกุล</th>
-                                            <th>จองคิวเมื่อ</th>
-                                            <th>เวลาที่ต้องรอ</th>
+                                            <th class="text-center">คิวที่</th>
+                                            <th class="text-center">บัญชีผู้ใช้</th>
+                                            <th class="text-center">ชื่อ - นามสกุล</th>
+                                            <th class="text-center">จองคิวเมื่อ</th>
+                                            <th class="text-center">เวลาที่ต้องรอ</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
