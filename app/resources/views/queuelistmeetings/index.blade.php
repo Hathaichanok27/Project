@@ -17,7 +17,7 @@
 			<div class="content-wrapper">
 			    <div class="tabbable">   
                     <ul class="nav nav-tabs nav-tabs-highlight" style="margin-bottom: 0px;">
-                        <li class="active"><a href="#label-tab1" data-toggle="tab">รายการการคิว <span class="label label-warning position-right"> </span></a></li>
+                        <li class="active"><a href="#label-tab1" data-toggle="tab">รายการคิว <span class="label label-warning position-right"></span></a></li>
                     </ul>
                     <div class="tab-content">
 				    	<div class="tab-pane active" id="label-tab1" style="padding:0px;">
