@@ -197,12 +197,12 @@
                                             <p>ยกเลิกการจองของ {{ $reservemeet->user_fullname }} ?</p>
                                             <div class="sa-button-container">
                                                 <input type="hidden" name="book_status" value="ไม่อนุมัติ">
-                                                <!-- <form action="{{ route('queuelistmeetings.destroy',$reservemeet->id) }}" method="POST">
+                                                <form action="{{ route('queuelistmeetings.destroy',$reservemeet->id) }}" method="POST">
                                                     @csrf
-                                                    @method('DELETE') -->
+                                                    @method('DELETE')
                                                     <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
                                                     <button type="submit" class="btn btn-danger">ใช่, ยกเลิกการจอง</button>
-                                                <!-- </form> -->
+                                                </form>
                                             </div>
                                         </form>
                                     </div>
