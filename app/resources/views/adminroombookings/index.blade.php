@@ -4,7 +4,7 @@
 	<div class="page-container">
 		<div class="container">
 			<div class="row justify-content-center">
-                <h3 class="text-light heading-divided">เลือกบริการ</h3>
+                <h3 class="text-light heading-divided">เลือกบริการ (สำหรับเจ้าหน้าที่)</h3>
                 <div class="col-md-4 col-md-offset-2">
                     <div class="panel border-grey">
                         <div class="panel-body text-center">
@@ -13,7 +13,7 @@
                             </div>
                             <h5 class="text-semibold">ห้องประชุม</h5>
                             <p class="mb-15">สำหรับเจ้าหน้าที่ จัดการห้องประชุม</p>
-                            <a href="" class="btn bg-success-400">ไปที่ <i class="fas fa-angle-double-right"></i></a>
+                            <a href="{{ route('queuelistmeetings.index') }}" class="btn bg-success-400">ไปที่ <i class="fas fa-angle-double-right"></i></a>
                         </div>
                     </div>
                 </div>

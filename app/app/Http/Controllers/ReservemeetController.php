@@ -24,6 +24,7 @@ class ReservemeetController extends Controller
     {
         $request->validate([
             'username' => 'required',
+            'user_fullname' => 'required',
             'time_start' => 'required',
             'time_end' => 'required',
             'room_type' => 'required',

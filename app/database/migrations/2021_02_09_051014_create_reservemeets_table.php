@@ -16,6 +16,7 @@ class CreateReservemeetsTable extends Migration
         Schema::create('reservemeets', function (Blueprint $table) {
             $table->id();
             $table->string('username');
+            $table->string('user_fullname');
             $table->string('room_type');
             $table->string('room_floor');
             $table->string('room_name');

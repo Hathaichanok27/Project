@@ -18,6 +18,7 @@
                     <label class="col-sm-1 control-label">รหัสนิสิต: </label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" readonly="readonly" name="username" value="{{ Auth::user()->username }}">
+                        <input type="hidden" class="form-control" readonly="readonly" name="user_fullname" value="{{ Auth::user()->user_fullname }}">
                     </div>
                 </div>
                 <br>

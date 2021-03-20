@@ -101,7 +101,13 @@
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('adminroombookings.index') }}"><i class="fas fa-home"></i> หน้าแรก</a></li>
-                    <li><a href="{{ route('adminroommediastaffs.index') }}"><i class="fas fa-user-tie"></i> สำหรับเจ้าหน้าที่</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-user-tie"></i> สำหรับเจ้าหน้าที่ <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('queuelistmeetings.index') }}">ห้องประชุม</a></li>
+                            <li><a href="{{ route('queuelistmediagroups.index') }}">ห้องสื่อศึกษากลุ่ม</a></li>
+                            <li><a href="{{ route('queuelistmediasingles.index') }}">ห้องสื่อศึกษาเดี่ยว</a></li>
+                        </ul> 
+                    </li>
                     <li><a href="{{ route('reports.index') }}"><i class="fas fa-file"></i> รายการการใช้ห้อง</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

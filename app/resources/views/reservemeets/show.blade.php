@@ -15,8 +15,26 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>รหัสนิสิต:</strong>
+                        <strong>บัญชีผู้ใช้:</strong>
                         {{ $reservemeet->username }}
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>ชื่อ - นามสกุล:</strong>
+                        {{ $reservemeet->user_fullname }}
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>ชั้น:</strong>
+                        {{ $reservemeet->room_floor }}
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>ห้อง:</strong>
+                        {{ $reservemeet->room_name }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -33,14 +51,8 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>ชั้น:</strong>
-                        {{ $reservemeet->room_floor }}
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>ห้อง:</strong>
-                        {{ $reservemeet->room_name }}
+                        <strong>สถานะการจอง:</strong>
+                        {{ $reservemeet->book_status }}
                     </div>
                 </div>
                 <form action="{{ route('reservemeets.destroy',$reservemeet->id) }}" method="POST">

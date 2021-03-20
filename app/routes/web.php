@@ -25,6 +25,8 @@ Route::resource('adminroommedias', AdminroommediaController::class);
 Route::resource('adminroommediastaffs', AdminroommediastaffController::class);
 Route::resource('queuelistmediagroups', QueuelistmediagroupController::class);
 Route::resource('queuelistmediasingles', QueuelistmediasingleController::class);
+Route::resource('queuelistmeetings', QueuelistmeetingController::class);
+
 Route::resource('reports', ReportController::class);
 
 // User
