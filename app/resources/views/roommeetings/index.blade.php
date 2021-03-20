@@ -79,7 +79,7 @@ $(document).ready(function () {
             });
         },
         eventClick: function (event) {
-            open('/reservemeets/?id' ,'_self');
+            open('/reservemeets/'+ event.id ,'_self');
             // var deleteMsg = confirm("Do you really want to delete?");
             // if (deleteMsg) {
             // $.ajax({

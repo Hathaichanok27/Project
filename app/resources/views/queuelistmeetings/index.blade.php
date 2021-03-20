@@ -51,16 +51,8 @@
                                                 <td>{{ $reservemeet->user_fullname }}</td>
                                                 <td>{{ $reservemeet->time_start }}</td>
                                                 <td>{{ $reservemeet->time_end }}</td>
-                                                <td class="text-center">{{ $reservemeet->book_status }}
-                                                <?php
-                                                    if($reservemeet->book_status == 'อนุมัติ') {
-                                                        echo '<b style="color:#26A65B">$book_tatus</b>';
-                                                    } elseif ($reservemeet->book_status == '0'){
-                                                        echo '<b style="color:#e85110">$book_status</b>';
-                                                    } else {
-                                                        echo '<b style="color:#e74c3c">$book_status</b>';
-                                                    }
-                                                ?>
+                                                <td class="text-center">
+                                                <b style="color:<?php echo $reservemeet->book_status == 'อนุมัติ'?'#26A65B':'#ff8c00'?>">{{$reservemeet->book_status}}</b> </td>    
                                                 <td class="text-center">
                                                     <ul class="icons-list">
                                                         <li class="dropdown">
