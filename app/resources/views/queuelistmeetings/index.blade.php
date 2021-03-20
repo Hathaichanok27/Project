@@ -51,7 +51,16 @@
                                                 <td>{{ $reservemeet->user_fullname }}</td>
                                                 <td>{{ $reservemeet->time_start }}</td>
                                                 <td>{{ $reservemeet->time_end }}</td>
-                                                <td class="text-center"><b style="color:#F62459">{{ $reservemeet->book_status }}</b></td>
+                                                <td class="text-center">{{ $reservemeet->book_status }}
+                                                <?php
+                                                    if($reservemeet->book_status == 'อนุมัติ') {
+                                                        echo '<b style="color:#26A65B">$book_tatus</b>';
+                                                    } elseif ($reservemeet->book_status == '0'){
+                                                        echo '<b style="color:#e85110">$book_status</b>';
+                                                    } else {
+                                                        echo '<b style="color:#e74c3c">$book_status</b>';
+                                                    }
+                                                ?>
                                                 <td class="text-center">
                                                     <ul class="icons-list">
                                                         <li class="dropdown">
@@ -59,9 +68,9 @@
                                                             <ul class="dropdown-menu dropdown-menu-right">
                                                                 <li><a href="" data-toggle="modal" data-target="#myModal1_{{ $i }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
                                                                 <li class="divider"></li>
-                                                                <li><a href="" data-toggle="modal" data-target="#myModal5_{{ $i }}" style="color:#26A65B;"><i class="fas fa-sign-in-alt"></i> เข้าห้อง</a></li>                                                                
+                                                                <li><a href="" data-toggle="modal" data-target="#myModal2_{{ $i }}" style="color:#26A65B;"><i class="fas fa-sign-in-alt"></i> เข้าห้อง</a></li>                                                                
                                                                 <li class="divider"></li>
-                                                                <li><a href="" data-toggle="modal" data-target="#myModal6_{{ $i }}" style="color:#e74c3c;"><i class="fas fa-times"></i> ยกเลิกการจอง</a></li>                                                                
+                                                                <li><a href="" data-toggle="modal" data-target="#myModal3_{{ $i }}" style="color:#e74c3c;"><i class="fas fa-times"></i> ยกเลิกการจอง</a></li>                                                                
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -119,8 +128,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Modal5 --><!-- TAB CONTENT Model4 -->
-                                <div class="modal" id="myModal5_<?php echo $o?>" role="dialog" aria-labelledby="myModalLabel">
+                                <!-- Modal2 -->
+                                <div class="modal" id="myModal2_<?php echo $o?>" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-body" style="padding:0px;">
@@ -167,8 +176,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Modal6 -->
-                                <div class="modal" id="myModal6_<?php echo $o?>" role="dialog">
+                                <!-- Modal3 -->
+                                <div class="modal" id="myModal3_<?php echo $o?>" role="dialog">
                                     <div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="true" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="true" data-animation="pop" data-timer="null" style="display: block; margin-top: -145px;">
                                         <div class="sa-icon sa-error" style="display: none;">
                                             <span class="sa-x-mark">
@@ -206,4 +215,3 @@
         </div>
     </div> 
 @endsection 
-
