@@ -15,41 +15,41 @@
                 </div>
             </div>
             <div class="text-uppercase text-semibold mb-10" style="color:#e74c3c">
-                <h4><i class="fas fa-sync-alt"></i> จำนวนคิวที่รออยู่ <span class="ng-binding">0</span> คิว</h4>
+                <h4><i class="fas fa-sync-alt"></i> จำนวนคิวที่รออยู่ <span>0</span> คิว</h4>
             </div>
             <div class="row">
                 <!-- STV-1 -->
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
+                <div class="col-sm-4">
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="" class="media-left">
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-1</b></h6>
+                                <h6 class="media-heading"><b>STV-1</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
-                                                                                                'label-success':room.room_status == 1,
-                                                                                                'label-warning': room.room_status == 2}">ว่าง</span>
+                                <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
+                                                                                    'label-success':room.room_status == 1,
+                                                                                    'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
                         </div>
                     </div>
                 </div> 
                 <!-- STV-2 -->
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
+                <div class="col-sm-4">
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="" class="media-left">
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-2</b></h6>
+                                <h6 class="media-heading"><b>STV-2</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
+                                <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
                                                                                                 'label-success':room.room_status == 1,
                                                                                                 'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
@@ -57,18 +57,18 @@
                     </div>
                 </div>
                 <!-- STV-3 -->
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
+                <div class="col-sm-4">
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="" class="media-left">
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-3</b></h6>
+                                <h6 class="media-heading"><b>STV-3</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
+                                <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
                                                                                                 'label-success':room.room_status == 1,
                                                                                                 'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
@@ -76,18 +76,18 @@
                     </div>
                 </div>
                 <!-- STV-4 -->
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
+                <div class="col-sm-4">
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="" class="media-left">
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-4</b></h6>
+                                <h6 class="media-heading"><b>STV-4</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
+                                <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
                                                                                                 'label-success':room.room_status == 1,
                                                                                                 'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
@@ -95,18 +95,18 @@
                     </div>
                 </div> 
                 <!-- STV-5 -->
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
+                <div class="col-sm-4">
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="" class="media-left">
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-5</b></h6>
+                                <h6 class="media-heading"><b>STV-5</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
+                                <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
                                                                                                 'label-success':room.room_status == 1,
                                                                                                 'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
@@ -114,18 +114,18 @@
                     </div>
                 </div>
                 <!-- STV-6 -->
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
+                <div class="col-sm-4">
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="" class="media-left">
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-6</b></h6>
+                                <h6 class="media-heading"><b>STV-6</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
+                                <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
                                                                                                 'label-success':room.room_status == 1,
                                                                                                 'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
@@ -133,18 +133,18 @@
                     </div>
                 </div>
                 <!-- STV-7 -->
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
+                <div class="col-sm-4">
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="" class="media-left">
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-7</b></h6>
+                                <h6 class="media-heading"><b>STV-7</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
+                                <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
                                                                                                 'label-success':room.room_status == 1,
                                                                                                 'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
@@ -152,18 +152,18 @@
                     </div>
                 </div> 
                 <!-- STV-8 -->
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
+                <div class="col-sm-4">
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="" class="media-left">
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-8</b></h6>
+                                <h6 class="media-heading"><b>STV-8</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
+                                <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
                                                                                                 'label-success':room.room_status == 1,
                                                                                                 'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
@@ -171,25 +171,24 @@
                     </div>
                 </div>
                 <!-- STV-9 -->
-                <div class="col-sm-4 ng-scope" ng-repeat="room in roomList" repeat-done="updateCountdownTimer()">
+                <div class="col-sm-4">
                     <div class="panel panel-body border-grey">
                         <div class="media">
                             <a href="" class="media-left">
                                 <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading"><b class="ng-binding">STV-9</b></h6>
+                                <h6 class="media-heading"><b>STV-9</b></h6>
                                 <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                             </div>
                             <div class="media-right media-middle">
-                                <span class="label label-lg ng-binding label-success" class="{'label-danger':room.room_status == 0,
+                                <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
                                                                                                 'label-success':room.room_status == 1,
                                                                                                 'label-warning': room.room_status == 2}">ว่าง</span>
                             </div>
                         </div>
                     </div>
-                </div>
-                 
+                </div>  
             </div> 
         </div>     
     </div>
