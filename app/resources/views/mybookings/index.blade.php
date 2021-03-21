@@ -38,7 +38,7 @@
                                 <td>{{ $reservemeet->time_start }}</td>
                                 <td>{{ $reservemeet->time_end }}</td>
                                 <td class="text-center">{{ $reservemeet->username }}</td>
-                                <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == 'อนุมัติ'?'#26A65B':'#ff8c00'?>">{{$reservemeet->book_status}}</b></td>    
+                                <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == '1'?'#26A65B':'#ff8c00'?>">{{$reservemeet->book_status}}</b></td>    
                             </tr>
                         @endforeach
                     </tbody>
@@ -55,7 +55,7 @@
                                 <td>{{ $confirmmediagroup->book_starttime }}</td>
                                 <td>{{ $confirmmediagroup->book_endtime }}</td>
                                 <td class="text-center">{{ $confirmmediagroup->username }}</td>
-                                <td class="text-center"><b style="color:<?php echo $confirmmediagroup->book_status == 'อนุมัติ'?'#26A65B':'#ff8c00'?>">{{$confirmmediagroup->book_status}}</b></td>    
+                                <td class="text-center"><b style="color:<?php echo $confirmmediagroup->book_status == '1'?'#26A65B':'#ff8c00'?>">{{$confirmmediagroup->book_status}}</b></td>    
                             </tr> 
                         @endforeach
                     </tbody>
@@ -72,7 +72,7 @@
                                 <td>{{ $confirmmediasingle->book_starttime }}</td>
                                 <td>{{ $confirmmediasingle->book_endtime }}</td>
                                 <td class="text-center">{{ $confirmmediasingle->username }}</td>
-                                <td class="text-center"><b style="color:<?php echo $confirmmediasingle->book_status == 'อนุมัติ'?'#26A65B':'#ff8c00'?>">{{$confirmmediasingle->book_status}}</b></td>
+                                <td class="text-center"><b style="color:<?php echo $confirmmediasingle->book_status == '1'?'#26A65B':'#ff8c00'?>">{{$confirmmediasingle->book_status}}</b></td>
                             </tr>
                         @endforeach
                     </tbody>

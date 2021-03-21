@@ -61,15 +61,7 @@
 							<div class="panel-body">
 								<input type="hidden" name="room_type" value="ห้องสื่อศึกษากลุ่ม">
 								<input type="hidden" name="room_floor" value="6">
-								<input type="hidden" name="book_status" value="รอการอนุมัติ">
-								<!-- <div class="form-group">
-									<strong>ห้อง:</strong>
-									<select class="form-control" id="room_name" name="room_name">
-										<option value="STV-01">STV-01</option>
-										<option value="STV-02">STV-02</option>
-										<option value="STV-03">STV-03</option>
-									</select>  
-								</div> -->
+								<input type="hidden" name="book_status" value="0">
 								<div class="form-group">
 									<label class="text-semibold">บัญชีผู้ใช้:</label>
 									<input type="text" class="form-control" readonly="readonly" name="username" value="{{ Auth::user()->username }}">

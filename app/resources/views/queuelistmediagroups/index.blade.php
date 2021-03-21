@@ -496,7 +496,7 @@
                                                                             <input type="hidden" name="book_starttime" value="{{ date('Y-m-d H:i', $book_starttime) }}">
                                                                             <input type="hidden" name="book_endtime" value="{{ date('Y-m-d H:i', $book_endtime) }}">
                                                                             <input type="hidden" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
-                                                                            <input type="hidden" name="book_status" value="อนุมัติ">
+                                                                            <input type="hidden" name="book_status" value="1">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -532,7 +532,7 @@
                                             <h2>Confirmation</h2>
                                             <p>ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                             <div class="sa-button-container">
-                                                <input type="hidden" name="book_status" value="ไม่อนุมัติ">
+                                                <input type="hidden" name="book_status" value="2">
                                                 <!-- <form action="{{ route('queuelistmediagroups.destroy',$confirmmediagroup->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE') -->

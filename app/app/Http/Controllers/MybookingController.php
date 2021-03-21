@@ -16,7 +16,7 @@ class MybookingController extends Controller
         $reservemeets = Reservemeet::paginate();
         
         return view('mybookings.index',compact('confirmmediasingles','confirmmediagroups','reservemeets'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', request());
     }
 
     public function create()

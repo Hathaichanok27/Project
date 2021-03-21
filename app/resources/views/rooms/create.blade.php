@@ -61,9 +61,9 @@
                         <div class="form-group">
                             <strong>สถานะ:</strong>
                             <div class="form-check">
-                                <input type="radio" id="room_status0" name="room_status" value="ไม่เปิดใช้งาน"> ไม่เปิดใช้งาน<br>
-                                <input type="radio" id="room_status1" name="room_status" value="ว่าง" checked> ว่าง<br>
-                                <input type="radio" id="room_status2" name="room_status" value="กำลังใช้งาน"> กำลังใช้งาน<br>
+                                <input type="radio" id="room_status0" name="room_status" value="0"> ไม่เปิดใช้งาน<br>
+                                <input type="radio" id="room_status1" name="room_status" value="1" checked> ว่าง<br>
+                                <input type="radio" id="room_status2" name="room_status" value="2"> กำลังใช้งาน<br>
                             </div>
                         </div>
                     </div>

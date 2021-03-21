@@ -51,7 +51,7 @@
                                                 <td>{{ $reservemeet->user_fullname }}</td>
                                                 <td>{{ $reservemeet->time_start }}</td>
                                                 <td>{{ $reservemeet->time_end }}</td>
-                                                <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == 'อนุมัติ'?'#26A65B':'#ff8c00'?>">{{$reservemeet->book_status}}</b></td>    
+                                                <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == '1'?'#26A65B':'#ff8c00'?>">{{$reservemeet->book_status}}</b></td>    
                                                 <td class="text-center">
                                                     <ul class="icons-list">
                                                         <li class="dropdown">
@@ -152,7 +152,7 @@
                                                                             <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น : {{ $reservemeet->time_start }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด : {{ $reservemeet->time_end }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $reservemeet->id }}</strong></p>
-                                                                            <input type="hidden" name="book_status" value="อนุมัติ">
+                                                                            <input type="hidden" name="book_status" value="1">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -187,7 +187,7 @@
                                             <h2>Confirmation</h2>
                                             <p>ยกเลิกการจองของ {{ $reservemeet->user_fullname }} ?</p>
                                             <div class="sa-button-container">
-                                                <input type="hidden" name="book_status" value="ไม่อนุมัติ">
+                                                <input type="hidden" name="book_status" value="2">
                                                 <form action="{{ route('queuelistmeetings.destroy',$reservemeet->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')

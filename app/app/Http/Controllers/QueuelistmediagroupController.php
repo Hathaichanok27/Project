@@ -4,23 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Confirmmediagroup;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class QueuelistmediagroupController extends Controller
 {
     public function index()
     {
-       
-         $confirmmediagroups1 = Confirmmediagroup::select("*")->where("book_status", "=", "รอการอนุมัติ")->get();
-         $confirmmediagroups2 = Confirmmediagroup::select("*")->where("book_status", "=", "อนุมัติ")->get();
-         $confirmmediagroups3 = Confirmmediagroup::select("*")->where("book_status", "=", "รอการอนุมัติ")->get();
-         $confirmmediagroups4 = Confirmmediagroup::select("*")->where("book_status", "=", "รอการอนุมัติ")->get();
+        // 0 รออนุมัติ, 1 อนุมัติ, 2 ยกเลิกการจอง, 3 คืนห้อง
+        $confirmmediagroups1 = Confirmmediagroup::select("*")->where("book_status", "=", "0")->get();
+        $confirmmediagroups2 = Confirmmediagroup::select("*")->where("book_status", "=", "1")->get();
+        $confirmmediagroups3 = Confirmmediagroup::select("*")->where("book_status", "=", "3")->get();
+        $confirmmediagroups4 = Confirmmediagroup::select("*")->where("book_status", "=", "2")->get();
 
-         //print_r($confirmmediagroups);
         return view('queuelistmediagroups.index',compact(['confirmmediagroups1','confirmmediagroups2','confirmmediagroups3','confirmmediagroups4']))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
-        // return view('queuelistmediagroups.index', ['confirmmediagroups' => $confirmmediagroups])
-        //         ->with('i', request());        
+        ->with('i', (request()->input('page', 1) - 1) * 5);   
     }
 
     public function create()
