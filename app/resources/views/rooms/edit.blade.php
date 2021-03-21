@@ -32,8 +32,8 @@
                             <strong>ประเภท:</strong>
                             <select class="form-control" id="room_type" name="room_type">
                                 <option value="ห้องประชุม">ห้องประชุม</option>
-                                <option value="ห้องสื่อศึกษาเดี่ยว">ห้องสื่อศึกษาเดี่ยว</option>
                                 <option value="ห้องสื่อศึกษากลุ่ม">ห้องสื่อศึกษากลุ่ม</option>
+                                <option value="ห้องสื่อศึกษาเดี่ยว">ห้องสื่อศึกษาเดี่ยว</option>
                             </select>  
                         </div>
                     </div>
@@ -47,8 +47,8 @@
                                 <option value="ชั้น 5 - เฉพาะอาจารย์">ชั้น 5 - เฉพาะอาจารย์</option>
                                 <option value="ชั้น 6 - มินิโฮมเธียเตอร์">ชั้น 6 - มินิโฮมเธียเตอร์</option>
                                 <option value="ชั้น 6 - คาราโอเกะ">ชั้น 6 - คาราโอเกะ</option>
-                                <option value="ชั้น 6 - ห้องสื่อศึกษาเดี่ยว">ชั้น 6 - ห้องสื่อศึกษาเดี่ยว</option>
                                 <option value="ชั้น 6 - ห้องสื่อศึกษากลุ่ม">ชั้น 6 - ห้องสื่อศึกษากลุ่ม</option>
+                                <option value="ชั้น 6 - ห้องสื่อศึกษาเดี่ยว">ชั้น 6 - ห้องสื่อศึกษาเดี่ยว</option>
                             </select> 
                         </div>
                     </div>
