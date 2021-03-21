@@ -58,7 +58,8 @@
                                         </tr>
                                     </thead>
                                     <tbody id="myTable1">
-                                        @foreach($confirmmediagroups as $confirmmediagroup)
+                                    <?php if($confirmmediagroups1){?>
+                                        @foreach($confirmmediagroups1 as $confirmmediagroup)
                                             <tr>
                                                 <td hidden>{{ ++$i }}</td>
                                                 <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
@@ -91,6 +92,7 @@
                                                 </td>
                                             </tr>
                                         @endforeach
+                                        <?php }?>
                                     </tbody>
                                 </table>
                             </div>
@@ -119,7 +121,8 @@
                                     </thead>
                                     <tbody id="myTable2">
                                         <?php $i = 0; ?>
-                                        @foreach($confirmmediagroups as $confirmmediagroup)
+                                        <?php if($confirmmediagroups2){?>
+                                        @foreach($confirmmediagroups2 as $confirmmediagroup)
                                             <tr>  
                                                 <td hidden>{{ ++$i }}</td>
                                                 <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
@@ -139,6 +142,7 @@
                                                 </td>
                                             </tr>
                                         @endforeach
+                                        <?php }?>
                                     </tbody>
                                 </table>
                             </div>
@@ -166,7 +170,8 @@
                                     </thead>
                                     <tbody id="myTable3">
                                         <?php $i = 0; ?>
-                                        @foreach($confirmmediagroups as $confirmmediagroup)
+                                        <?php if($confirmmediagroups3){?>
+                                        @foreach($confirmmediagroups3 as $confirmmediagroup)
                                             <tr>
                                                 <td hidden>{{ ++$i }}</td>
                                                 <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
@@ -185,6 +190,7 @@
                                                 </td>
                                             </tr>
                                         @endforeach
+                                        <?php }?>
                                     </tbody>
                                 </table>
                             </div>
@@ -212,7 +218,8 @@
                                     </thead>
                                     <tbody id="myTable4">
                                         <?php $i = 0; ?>
-                                        @foreach($confirmmediagroups as $confirmmediagroup)
+                                        <?php if($confirmmediagroups4){?>
+                                        @foreach($confirmmediagroups4 as $confirmmediagroup)
                                             <tr>
                                                 <td hidden>{{ ++$i }}</td>
                                                 <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
@@ -231,6 +238,7 @@
                                                 </td>
                                             </tr>
                                         @endforeach
+                                        <?php }?>
                                     </tbody>
                                 </table>
                             </div>
@@ -239,7 +247,8 @@
 
                     <div class="tab-content-modal">
                         <?php $o=1?>
-                            @foreach($confirmmediagroups as $confirmmediagroup)
+                        <?php if($confirmmediagroups1){?>
+                            @foreach($confirmmediagroups1 as $confirmmediagroup)
                                 <?php 
                                     $origin = date_create($confirmmediagroup->created_at->format('d-m-Y H:i'));
                                     $target = date_create('now');
@@ -666,6 +675,7 @@
                                 </div>
                             <?php $o++;?>
                         @endforeach
+                        <?php }?>
                     </div>
                 </div>  
             </div>

@@ -30,9 +30,7 @@
                                     <span class="text-muted countdown" data-endtime="2021-01-01 09:00:00">00 : 00 : 00</span>
                                 </div>
                                 <div class="media-right media-middle">
-                                    <span class="label label-lg label-success" class="{'label-danger':{{ $room->room_status }} == 'ไม่เปิดใช้งาน',
-                                                                                        'label-success':{{ $room->room_status }} == 'ว่าง',
-                                                                                        'label-warning':{{ $room->room_status }} == 'กำลังใช้งาน'}">{{ $room->room_status }}</span>
+                                <span class="label label-lg label-<?php echo $room->room_status == 'ว่าง'?'success':''?><?php echo $room->room_status == 'กำลังใช้งาน'?'warning':''?><?php echo $room->room_status == 'ไม่เปิดใช้งาน'?'danger':''?>"> {{ $room->room_status }}</span>
                                 </div>
                             </div>
                         </div>
