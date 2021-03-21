@@ -10,9 +10,14 @@ class QueuelistmediagroupController extends Controller
     public function index()
     {
         $confirmmediagroups = Confirmmediagroup::paginate();
-        
         return view('queuelistmediagroups.index',compact('confirmmediagroups'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+
+        // $confirmmediagroups = Confirmmediagroup::select("*")
+        //             ->where("book_status", "=", "รอการอนุมัติ")
+        //             ->get();
+        // return view('queuelistmediagroups.index', ['confirmmediagroups' => $confirmmediagroups])
+        //         ->with('i', request());        
     }
 
     public function create()

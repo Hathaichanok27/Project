@@ -32,6 +32,7 @@
                         <!-- Modal01 -->
                         
                     </div>
+
                     <div class="tab-content">
                         <!-- Tab1 -->
 				    	<div class="tab-pane active" id="label-tab1" style="padding:0px;">
@@ -236,9 +237,8 @@
                             </div>
                         </div>
                     </div> 
-                        
-                    </div> 
-                    <div class="tab-content-model">
+
+                    <div class="tab-content-modal">
                         <?php $o=1?>
                             @foreach($confirmmediagroups as $confirmmediagroup)
                                 <?php 
@@ -395,16 +395,6 @@
                                                         <div class="col-md-12">
                                                             <div class="panel panel-body">
                                                                 <div class="media">
-                                                                    <!-- <div class="media-left">
-                                                                        <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
-                                                                    </div>
-                                                                    <div class="media-body">
-                                                                        <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%h ชั่วโมง %i นาทีที่แล้ว') }}</p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
-                                                                    </div>  
-                                                                    <hr> -->
                                                                     <input type="text" id="myText_{{ $confirmmediagroup->id }}" name="input" value="">
                                                                         <div class="selectroom">
                                                                             <?php for($s=1; $s<=9; $s++){?>
@@ -423,9 +413,9 @@
                                                                                                     <li class="dropdown">
                                                                                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
                                                                                                         <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                            <li><a href="" onclick="myFunction()" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                            <li><a href="" onclick="myFunction()" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                            <li><a href="" onclick="myFunction()" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
+                                                                                                            <li><a href="" onclick="myFunction()" id="click" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
+                                                                                                            <li><a href="" onclick="myFunction()" id="click" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
+                                                                                                            <li><a href="" onclick="myFunction()" id="click" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
                                                                                                         </ul>
                                                                                                     </li>
                                                                                                 </ul>
@@ -564,7 +554,11 @@ function myFunction(input,id) {
     <?php for($s=1; $s<=9; $s++){?>
         if(input != <?php echo $s?>){ 
             document.getElementById("div_media<?php echo $s?>_"+id).style.backgroundColor = "transparent";
-    }
-  <?php }?>
+        }
+    <?php }?>
+}
+
+function myFunction(input) {
+  document.getElementById("click").value = input;
 }
 </script>
