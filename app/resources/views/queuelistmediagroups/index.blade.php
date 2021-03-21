@@ -117,21 +117,22 @@
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="myTable">
+                                        <?php $i = 0; ?>
                                         @foreach($confirmmediagroups as $confirmmediagroup)
-                                            <tr>
+                                            <tr>  
                                                 <td hidden>{{ ++$i }}</td>
                                                 <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
-                                                <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
+                                                <td><a href="#myModal7_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>{{ $confirmmediagroup->book_starttime }}</td>
+                                                <td>{{ $confirmmediagroup->book_endtime }}</td>
                                                 <td class="text-center">
                                                     <ul class="icons-list">
                                                         <li class="dropdown">
                                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
                                                             <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a href="" data-toggle="modal" data-target="#myModal1_{{ $i }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
+                                                                <li><a href="" data-toggle="modal" data-target="#myModal7_{{ $i }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -160,25 +161,24 @@
                                             <th class="text-center">บัญชีผู้ใช้</th>
                                             <th class="text-center">ชื่อ - นามสกุล</th>
                                             <th class="text-center">จองคิวเมื่อ</th>
-                                            <th class="text-center">เวลาที่ต้องรอ</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="myTable">
+                                        <?php $i = 0; ?>
                                         @foreach($confirmmediagroups as $confirmmediagroup)
                                             <tr>
                                                 <td hidden>{{ ++$i }}</td>
                                                 <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
-                                                <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
+                                                <td><a href="#myModal8_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
                                                 <td>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}</td>
-                                                <td></td>
                                                 <td class="text-center">
                                                     <ul class="icons-list">
                                                         <li class="dropdown">
                                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
                                                             <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a href="" data-toggle="modal" data-target="#myModal1_{{ $i }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
+                                                                <li><a href="" data-toggle="modal" data-target="#myModal8_{{ $i }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -207,25 +207,24 @@
                                             <th class="text-center">บัญชีผู้ใช้</th>
                                             <th class="text-center">ชื่อ - นามสกุล</th>
                                             <th class="text-center">จองคิวเมื่อ</th>
-                                            <th class="text-center">เวลาที่ต้องรอ</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="myTable">
+                                        <?php $i = 0; ?>
                                         @foreach($confirmmediagroups as $confirmmediagroup)
                                             <tr>
                                                 <td hidden>{{ ++$i }}</td>
                                                 <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
-                                                <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
+                                                <td><a href="#myModal9_{{ $i }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                 <td>{{ $confirmmediagroup->user_fullname }}</td>
                                                 <td>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}</td>
-                                                <td></td>
                                                 <td class="text-center">
                                                     <ul class="icons-list">
                                                         <li class="dropdown">
                                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
                                                             <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a href="" data-toggle="modal" data-target="#myModal1_{{ $i }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
+                                                                <li><a href="" data-toggle="modal" data-target="#myModal9_{{ $i }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -273,7 +272,6 @@
                                                                     <div class="media-body">
                                                                         <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                        <!-- <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $confirmmediagroup->created_at->format('H:i') }}</p> -->
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%h ชั่วโมง %i นาทีที่แล้ว') }}</p>
                                                                         <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                     </div>  
@@ -534,6 +532,136 @@
                                                 <!-- </form> -->
                                             </div>
                                         </form>
+                                    </div>
+                                </div>
+                            
+                                <!-- Tab2 Modal7 -->
+                                <div class="modal" id="myModal7_<?php echo $o?>" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body" style="padding:0px;">
+                                                <div class="panel panel-white" style="margin-bottom:0px;">
+                                                    <div class="panel-heading">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h5 class="modal-title">รายละเอียดผู้ใช้</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h6 class="form-wizard-title text-semibold">
+                                                        <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                        ข้อมูลผู้จองห้อง
+                                                        <small class="display-block">ข้อมูลการจอง</small>
+                                                    </h6>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="panel panel-body">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediagroup->book_starttime }}</p>                                                                        
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediagroup->book_endtime }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">ปิด</button>
+                                                </div>
+                                            </div>                       
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tab3 Modal8 -->
+                                <div class="modal" id="myModal8_<?php echo $o?>" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body" style="padding:0px;">
+                                                <div class="panel panel-white" style="margin-bottom:0px;">
+                                                    <div class="panel-heading">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h5 class="modal-title">รายละเอียดผู้ใช้</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h6 class="form-wizard-title text-semibold">
+                                                        <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                        ข้อมูลผู้จองห้อง
+                                                        <small class="display-block">ข้อมูลการจอง</small>
+                                                    </h6>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="panel panel-body">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%h ชั่วโมง %i นาทีที่แล้ว') }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">ปิด</button>
+                                                </div>
+                                            </div>                       
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tab4 Modal9 -->
+                                <div class="modal" id="myModal9_<?php echo $o?>" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body" style="padding:0px;">
+                                                <div class="panel panel-white" style="margin-bottom:0px;">
+                                                    <div class="panel-heading">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h5 class="modal-title">รายละเอียดผู้ใช้</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h6 class="form-wizard-title text-semibold">
+                                                        <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                        ข้อมูลผู้จองห้อง
+                                                        <small class="display-block">ข้อมูลการจอง</small>
+                                                    </h6>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="panel panel-body">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ทำการจองเมื่อ : {{ $interval->format('%h ชั่วโมง %i นาทีที่แล้ว') }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">ปิด</button>
+                                                </div>
+                                            </div>                       
+                                        </div>
                                     </div>
                                 </div>
                             <?php $o++;?>
