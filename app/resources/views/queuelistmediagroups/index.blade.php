@@ -41,7 +41,7 @@
                                     <div id="qTable_filter" class="dataTables_filter">
                                         <label>
                                             <span>Filter:</span> 
-                                            <input type="search" id="myInput" type="text" placeholder="Type to filter...">
+                                            <input type="search" id="myInput1" type="text" placeholder="Type to filter...">
                                         </label>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="myTable">
+                                    <tbody id="myTable1">
                                         @foreach($confirmmediagroups as $confirmmediagroup)
                                             <tr>
                                                 <td hidden>{{ ++$i }}</td>
@@ -102,7 +102,7 @@
                                     <div id="qTable_filter" class="dataTables_filter">
                                         <label>
                                             <span>Filter:</span> 
-                                            <input type="search" class="ng-pristine ng-untouched ng-valid ng-empty" placeholder="Type to filter..." aria-controls="qTable" ng-model="searchFilterWaiting">
+                                            <input type="search" id="myInput2" type="text" placeholder="Type to filter...">
                                         </label>
                                     </div>
                                 </div>
@@ -117,7 +117,7 @@
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="myTable">
+                                    <tbody id="myTable2">
                                         <?php $i = 0; ?>
                                         @foreach($confirmmediagroups as $confirmmediagroup)
                                             <tr>  
@@ -150,7 +150,7 @@
                                     <div id="qTable_filter" class="dataTables_filter">
                                         <label>
                                             <span>Filter:</span> 
-                                            <input type="search" class="ng-pristine ng-untouched ng-valid ng-empty" placeholder="Type to filter..." aria-controls="qTable" ng-model="searchFilterWaiting">
+                                            <input type="search" id="myInput3" type="text" placeholder="Type to filter...">
                                         </label>
                                     </div>
                                 </div>
@@ -164,7 +164,7 @@
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="myTable">
+                                    <tbody id="myTable3">
                                         <?php $i = 0; ?>
                                         @foreach($confirmmediagroups as $confirmmediagroup)
                                             <tr>
@@ -196,7 +196,7 @@
                                     <div id="qTable_filter" class="dataTables_filter">
                                         <label>
                                             <span>Filter:</span> 
-                                            <input type="search" class="ng-pristine ng-untouched ng-valid ng-empty" placeholder="Type to filter..." aria-controls="qTable" ng-model="searchFilterWaiting">
+                                            <input type="search" id="myInput4" type="text" placeholder="Type to filter...">
                                         </label>
                                     </div>
                                 </div>
@@ -210,7 +210,7 @@
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="myTable">
+                                    <tbody id="myTable4">
                                         <?php $i = 0; ?>
                                         @foreach($confirmmediagroups as $confirmmediagroup)
                                             <tr>
