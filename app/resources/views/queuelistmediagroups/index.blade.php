@@ -685,8 +685,4 @@ function myFunction(input,id) {
         }
     <?php }?>
 }
-
-function myFunction(input) {
-  document.getElementById("click").value = input;
-}
 </script>
