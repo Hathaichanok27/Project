@@ -43,13 +43,13 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>รหัสผ่าน:</strong>
-                            <input type="password" name="password" value="{{ $manageadmin->password }}"class="form-control">
+                            <input type="password" name="password" class="form-control">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>ยืนยันรหัสผ่าน:</strong>
-                            <input type="password" name="confirm_password" value="{{ $manageadmin->confirm_password }}"class="form-control">
+                            <input type="password" name="confirm_password" class="form-control">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
