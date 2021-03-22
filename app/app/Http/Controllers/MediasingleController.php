@@ -11,13 +11,13 @@ class MediasingleController extends Controller
     {
         // $rooms = Room::paginate();
         // return view('mediasingles.index', compact('rooms'))
-        //     ->with('i', request());
+        //     ->with('i', (request()->input('page', 1) - 1) * 5);
 
         $rooms = Room::select("*")
                     ->where("room_floor", "=", "ชั้น 6 - ห้องสื่อศึกษาเดี่ยว")
                     ->get();
         return view('mediasingles.index', ['rooms' => $rooms])
-                ->with('i', request());
+                ->with('i', (request()->input('page', 1) - 1) * 5);
 
     }
 

@@ -11,13 +11,13 @@ class MediagroupController extends Controller
     {
         // $rooms = Room::paginate();
         // return view('mediagroups.index', compact('rooms'))
-        //         ->with('i', request());
+        //         ->with('i', (request()->input('page', 1) - 1) * 5);
 
         $rooms = Room::select("*")
                     ->where("room_floor", "=", "ชั้น 6 - ห้องสื่อศึกษากลุ่ม")
                     ->get();
         return view('mediagroups.index', ['rooms' => $rooms])
-                ->with('i', request());
+                ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
