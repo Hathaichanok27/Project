@@ -415,7 +415,7 @@
                                                                                                     </div>
                                                                                                     <h6 class="media-heading">{{ $room->room_name }}</h6>
                                                                                                     <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                                    <ul class="icons-list bottom-right-menu">
+                                                                                                    <!-- <ul class="icons-list bottom-right-menu">
                                                                                                         <li class="dropdown">
                                                                                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
                                                                                                             <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
@@ -424,7 +424,7 @@
                                                                                                                 <li><a href="" onclick="myFunction()" id="click" style="color:#D91E18;" show="$room->room_status==1 || $room->room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
                                                                                                             </ul>
                                                                                                         </li>
-                                                                                                    </ul>
+                                                                                                    </ul> -->
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
