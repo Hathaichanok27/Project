@@ -136,6 +136,8 @@
                                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
                                                                 <ul class="dropdown-menu dropdown-menu-right">
                                                                     <li><a href="" data-toggle="modal" data-target="#myModal7_{{ $confirmmediagroup->id }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
+                                                                    <li class="divider"></li>
+                                                                    <li><a href="" data-toggle="modal" data-target="#myModal8_{{ $confirmmediagroup->id }}" style="color:#0275d8;"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
                                                                 </ul>
                                                             </li>
                                                         </ul>
@@ -175,7 +177,7 @@
                                                 <tr>
                                                     <td hidden>{{ ++$i }}</td>
                                                     <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
-                                                    <td><a href="#myModal8_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
+                                                    <td><a href="#myModal9_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                     <td>{{ $confirmmediagroup->user_fullname }}</td>
                                                     <td>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}</td>
                                                     <td class="text-center">
@@ -183,7 +185,7 @@
                                                             <li class="dropdown">
                                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
                                                                 <ul class="dropdown-menu dropdown-menu-right">
-                                                                    <li><a href="" data-toggle="modal" data-target="#myModal8_{{ $confirmmediagroup->id }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
+                                                                    <li><a href="" data-toggle="modal" data-target="#myModal9_{{ $confirmmediagroup->id }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
                                                                 </ul>
                                                             </li>
                                                         </ul>
@@ -222,7 +224,7 @@
                                                 <tr>
                                                     <td hidden>{{ ++$i }}</td>
                                                     <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
-                                                    <td><a href="#myModal9_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
+                                                    <td><a href="#myModal10_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                     <td>{{ $confirmmediagroup->user_fullname }}</td>
                                                     <td>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}</td>
                                                     <td class="text-center">
@@ -230,7 +232,7 @@
                                                             <li class="dropdown">
                                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
                                                                 <ul class="dropdown-menu dropdown-menu-right">
-                                                                    <li><a href="" data-toggle="modal" data-target="#myModal9_{{ $confirmmediagroup->id }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
+                                                                    <li><a href="" data-toggle="modal" data-target="#myModal10_{{ $confirmmediagroup->id }}"><i class="fas fa-info-circle"></i> รายละเอียด</a></li>
                                                                 </ul>
                                                             </li>
                                                         </ul>
@@ -495,6 +497,7 @@
                                                                                 <input type="hidden" name="book_starttime" value="{{ date('Y-m-d H:i', $book_starttime) }}">
                                                                                 <input type="hidden" name="book_endtime" value="{{ date('Y-m-d H:i', $book_endtime) }}">
                                                                                 <input type="hidden" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
+                                                                                <!-- 1 อนุมัติ -->
                                                                                 <input type="hidden" name="book_status" value="1">
                                                                             </div>
                                                                         </div>
@@ -513,7 +516,7 @@
                                     </div>
                                     <!-- Modal6 -->
                                     <div class="modal" id="myModal6_{{ $confirmmediagroup->id }}" role="dialog">
-                                        <div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="true" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="true" data-animation="pop" data-timer="null" style="display: block; margin-top: -145px;">
+                                        <div class="sweet-alert showSweetAlert visible" data-animation="pop" style="display: block; margin-top: -145px;">
                                             <div class="sa-icon sa-error" style="display: none;">
                                                 <span class="sa-x-mark">
                                                     <span class="sa-line sa-left"></span>
@@ -531,6 +534,7 @@
                                                 <h2>Confirmation</h2>
                                                 <p>ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                                 <div class="sa-button-container">
+                                                    <!-- 2 ยกเลิกการจอง -->
                                                     <input type="hidden" name="book_status" value="2">
                                                     <!-- <form action="{{ route('queuelistmediagroups.destroy',$confirmmediagroup->id) }}" method="POST">
                                                         @csrf
@@ -595,6 +599,34 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Modal8 -->
+                                    <div class="modal" id="myModal8_{{ $confirmmediagroup->id }}" role="dialog">
+                                        <div class="sweet-alert showSweetAlert visible" data-animation="pop" style="display: block; margin-top: -145px;">
+                                            <div class="sa-icon sa-error" style="display: none;">
+                                                <span class="sa-x-mark">
+                                                    <span class="sa-line sa-left"></span>
+                                                    <span class="sa-line sa-right"></span>
+                                                </span>
+                                            </div>
+                                            <div class="sa-icon sa-warning pulseWarning" style="display: block;">
+                                                <span class="sa-body pulseWarningIns"></span>
+                                                <span class="sa-dot pulseWarningIns"></span>
+                                            </div>
+                                            <form action="{{ route('queuelistmediagroups.update',$confirmmediagroup->id) }}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="sa-icon sa-custom" style="display: none;"></div>
+                                                <h2>Confirmation</h2>
+                                                <p>คืนห้องของ {{ $confirmmediagroup->user_fullname }} ?</p>
+                                                <div class="sa-button-container">
+                                                    <!-- 3 คืนห้อง -->
+                                                    <input type="hidden" name="book_status" value="3">
+                                                    <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
+                                                    <button type="submit" class="btn btn-info">ใช่, คืนห้อง</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 @endforeach
                             <?php }?>
 
@@ -605,8 +637,8 @@
                                         $target = date_create('now');
                                         $interval = date_diff($origin, $target);
                                     ?>
-                                    <!-- Tab3 Modal8 -->
-                                    <div class="modal" id="myModal8_{{ $confirmmediagroup->id }}" role="dialog">
+                                    <!-- Tab3 Modal9 -->
+                                    <div class="modal" id="myModal9_{{ $confirmmediagroup->id }}" role="dialog">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-body" style="padding:0px;">
@@ -658,8 +690,8 @@
                                     $target = date_create('now');
                                     $interval = date_diff($origin, $target);
                                 ?>
-                                    <!-- Tab4 Modal9 -->
-                                    <div class="modal" id="myModal9_{{ $confirmmediagroup->id }}" role="dialog">
+                                    <!-- Tab4 Modal10 -->
+                                    <div class="modal" id="myModal10_{{ $confirmmediagroup->id }}" role="dialog">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-body" style="padding:0px;">
