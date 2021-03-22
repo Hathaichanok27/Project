@@ -15,9 +15,17 @@ class QueuelistmediagroupController extends Controller
         $confirmmediagroups2 = Confirmmediagroup::select("*")->where("book_status", "=", "1")->get();
         $confirmmediagroups3 = Confirmmediagroup::select("*")->where("book_status", "=", "3")->get();
         $confirmmediagroups4 = Confirmmediagroup::select("*")->where("book_status", "=", "2")->get();
+        $count1 = count($confirmmediagroups1);
+        $count2 = count($confirmmediagroups1);
+        $count3 = count($confirmmediagroups1);
+        $count4 = count($confirmmediagroups1);
+        print_r($count1);
+        print_r($count2);
+        print_r($count3);
+        print_r($count4);
         $rooms = Room::select("*")->where("room_type", "=", "ห้องสื่อศึกษากลุ่ม")->get();
 
-        return view('queuelistmediagroups.index',compact(['confirmmediagroups1','confirmmediagroups2','confirmmediagroups3','confirmmediagroups4','rooms']))
+        return view('queuelistmediagroups.index',compact(['count1','count2','count3','count4','confirmmediagroups1','confirmmediagroups2','confirmmediagroups3','confirmmediagroups4','rooms']))
         ->with('i', (request()->input('page', 1) - 1) * 5);   
     }
 

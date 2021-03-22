@@ -23,10 +23,10 @@
 			<div class="content-wrapper">
 			    <div class="tabbable">   
                     <ul class="nav nav-tabs nav-tabs-highlight" style="margin-bottom: 0px;">
-                        <li class="active"><a href="#label-tab1" data-toggle="tab">รอคิว <span class="label label-warning position-right">0</span> </a></li>
-                        <li><a href="#label-tab2" data-toggle="tab">ใช้งานอยู่ <span class="label bg-success position-right">0</span></a></li>
-                        <li><a href="#label-tab3" data-toggle="tab">คืนห้องแล้ว <span class="label bg-blue position-right">0</span></a></li>
-                        <li><a href="#label-tab4" data-toggle="tab">ถูกยกเลิก <span class="label bg-danger position-right">0</span></a></li>
+                        <li class="active"><a href="#label-tab1" data-toggle="tab">รอคิว <span class="label label-warning position-right">{{$count1}}</span> </a></li>
+                        <li><a href="#label-tab2" data-toggle="tab">ใช้งานอยู่ <span class="label bg-success position-right">{{$count2}}</span></a></li>
+                        <li><a href="#label-tab3" data-toggle="tab">คืนห้องแล้ว <span class="label bg-blue position-right">{{$count3}}</span></a></li>
+                        <li><a href="#label-tab4" data-toggle="tab">ถูกยกเลิก <span class="label bg-danger position-right">{{$count4}}</span></a></li>
                     </ul>
                     <div class="tab-model">
                         <!-- Modal01 -->
@@ -407,7 +407,7 @@
                                                                             <div class="selectroom">
                                                                                 @foreach($rooms as $room)  
                                                                                     <div class="col-md-4">
-                                                                                        <div class="panel panel-body room-item" id="div_media_{{ $confirmmediagroup->id }}" onclick="myFunction({{ $confirmmediagroup->id }})">
+                                                                                        <div class="panel panel-body room-item" id="div_media_{{$room->id}}_{{ $confirmmediagroup->id }}" onclick="myFunction({{ $room->id }}, {{ $confirmmediagroup->id }})">
                                                                                             <div class="media">
                                                                                                 <div class="media-body">
                                                                                                     <div class="media-right media-middle">
@@ -745,10 +745,10 @@ function myFunction(input,id) {
     document.getElementById("myText_"+id).value = input;
     document.getElementById("STV_media_"+id).innerHTML = 'STV-'+input;
     document.getElementById("STV_room_name_"+id).value = 'STV-'+input;
-    document.getElementById("div_media"+input+"_"+id).style.backgroundColor = "#00bcd46e";
-    <?php for($s=1; $s<=9; $s++){?>
-        if(input != <?php echo $s?>){ 
-            document.getElementById("div_media<?php echo $s?>_"+id).style.backgroundColor = "transparent";
+    document.getElementById("div_media_"+input+"_"+id).style.backgroundColor = "#00bcd46e";
+    <?php foreach($rooms as $room){ ?>
+        if(input != <?php echo $room->id?>){ 
+            document.getElementById("div_media_<?php echo $room->id?>_"+id).style.backgroundColor = "transparent";
         }
     <?php }?>
 }
