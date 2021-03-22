@@ -12,11 +12,6 @@
                     <li><a href="">ห้องสื่อศึกษากลุ่ม</a></li>
                     <li class="active">รายการคิว</li>
 				</ul>
-				<!-- <div class="heading-elements">
-                    <a href="" data-toggle="modalheading" data-target="#myModalheading1" class="btn btn-lg btn-labeled btn-labeled-left bg-success heading-btn">เข้าห้อง <b><i class="fas fa-sign-in-alt"></i></b></a>
-                    <a href="" data-toggle="modalheading" data-target="#myModalheading2" class="btn btn-lg btn-labeled btn-labeled-right bg-danger heading-btn">คืนห้อง <b><i class="fas fa-sign-out-alt"></i></b></a>
-                    <a href="" data-toggle="modalheading" data-target="#myModalheading3" class="btn btn-lg btn-labeled btn-labeled-right bg-primary heading-btn">จัดการห้อง <b><i class="fas fa-cog"></i></b></a>
-                </div> -->
 			</div>
         </div>
         <div class="page-content">
@@ -28,10 +23,6 @@
                         <li><a href="#label-tab3" data-toggle="tab">คืนห้องแล้ว <span class="label bg-blue position-right">{{$count3}}</span></a></li>
                         <li><a href="#label-tab4" data-toggle="tab">ถูกยกเลิก <span class="label bg-danger position-right">{{$count4}}</span></a></li>
                     </ul>
-                    <div class="tab-model">
-                        <!-- Modal01 -->
-                        
-                    </div>
 
                     <div class="tab-content">
                         <!-- Tab1 -->
@@ -411,20 +402,10 @@
                                                                                             <div class="media">
                                                                                                 <div class="media-body">
                                                                                                     <div class="media-right media-middle">
-                                                                                                        <span class="label label-lg label-<?php echo $room->room_status == '0'?'danger':''?><?php echo $room->room_status == '1'?'success':''?><?php echo $room->room_status == '2'?'warning':''?>"> {{ $room->room_status }}</span>
+                                                                                                        <span class="label label-lg label-<?php echo $room->room_status == 'ไม่เปิดใช้งาน'?'danger':''?><?php echo $room->room_status == 'ว่าง'?'success':''?><?php echo $room->room_status == 'กำลังใช้งาน'?'warning':''?>"> {{ $room->room_status }}</span>
                                                                                                     </div>
                                                                                                     <h6 class="media-heading">{{ $room->room_name }}</h6>
-                                                                                                    <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
-                                                                                                    <!-- <ul class="icons-list bottom-right-menu">
-                                                                                                        <li class="dropdown">
-                                                                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
-                                                                                                            <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#8e44ad;" show="$room->room_status==0" class="hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#2980b9;" show="$room->room_status==2" class="hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#D91E18;" show="$room->room_status==1 || $room->room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
-                                                                                                            </ul>
-                                                                                                        </li>
-                                                                                                    </ul> -->
+                                                                                                    <span class="text-muted countdown">00 : 00 : 00</span>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
@@ -496,7 +477,7 @@
                                                                                 <input type="hidden" name="book_endtime" value="{{ date('Y-m-d H:i', $book_endtime) }}">
                                                                                 <input type="hidden" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
                                                                                 <!-- 1 อนุมัติ -->
-                                                                                <input type="hidden" name="book_status" value="1">
+                                                                                <input type="hidden" name="book_status" value="อนุมัติ">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -533,7 +514,7 @@
                                                 <p>ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                                 <div class="sa-button-container">
                                                     <!-- 2 ยกเลิกการจอง -->
-                                                    <input type="hidden" name="book_status" value="2">
+                                                    <input type="hidden" name="book_status" value="ยกเลิกการจอง">
                                                     <!-- <form action="{{ route('queuelistmediagroups.destroy',$confirmmediagroup->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE') -->
@@ -618,7 +599,7 @@
                                                 <p>คืนห้องของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                                 <div class="sa-button-container">
                                                     <!-- 3 คืนห้อง -->
-                                                    <input type="hidden" name="book_status" value="3">
+                                                    <input type="hidden" name="book_status" value="คืนห้อง">
                                                     <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
                                                     <button type="submit" class="btn btn-info">ใช่, คืนห้อง</button>
                                                 </div>

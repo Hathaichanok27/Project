@@ -38,8 +38,7 @@
                                 <td>{{ $reservemeet->time_start }}</td>
                                 <td>{{ $reservemeet->time_end }}</td>
                                 <td class="text-center">{{ $reservemeet->username }}</td>
-                                <!-- 0 รออนุมัติ, 1 อนุมัติ, 2 ยกเลิกการจอง, 3 คืนห้อง -->
-                                <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == '0'?'#f0ad4e':''?><?php echo $reservemeet->book_status == '1'?'#5cb85c':''?><?php echo $reservemeet->book_status == '2'?'#d9534f':''?><?php echo $reservemeet->book_status == '3'?'#0275d8':''?>">{{$reservemeet->book_status}}</b></td>
+                                <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == 'รอการอนุมัติ'?'#f0ad4e':''?><?php echo $reservemeet->book_status == 'อนุมัติ'?'#5cb85c':''?><?php echo $reservemeet->book_status == 'ยกเลิกการจอง'?'#d9534f':''?><?php echo $reservemeet->book_status == 'คืนห้อง'?'#0275d8':''?>">{{$reservemeet->book_status}}</b></td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -56,7 +55,7 @@
                                 <td>{{ $confirmmediagroup->book_starttime }}</td>
                                 <td>{{ $confirmmediagroup->book_endtime }}</td>
                                 <td class="text-center">{{ $confirmmediagroup->username }}</td>
-                                <td class="text-center"><b style="color:<?php echo $confirmmediagroup->book_status == '0'?'#f0ad4e':''?><?php echo $confirmmediagroup->book_status == '1'?'#5cb85c':''?><?php echo $confirmmediagroup->book_status == '2'?'#d9534f':''?><?php echo $confirmmediagroup->book_status == '3'?'#0275d8':''?>">{{$confirmmediagroup->book_status}}</b></td>
+                                <td class="text-center"><b style="color:<?php echo $confirmmediagroup->book_status == 'รอการอนุมัติ'?'#f0ad4e':''?><?php echo $confirmmediagroup->book_status == 'อนุมัติ'?'#5cb85c':''?><?php echo $confirmmediagroup->book_status == 'ยกเลิกการจอง'?'#d9534f':''?><?php echo $confirmmediagroup->book_status == 'คืนห้อง'?'#0275d8':''?>">{{$confirmmediagroup->book_status}}</b></td>
                             </tr> 
                         @endforeach
                     </tbody>
@@ -73,7 +72,7 @@
                                 <td>{{ $confirmmediasingle->book_starttime }}</td>
                                 <td>{{ $confirmmediasingle->book_endtime }}</td>
                                 <td class="text-center">{{ $confirmmediasingle->username }}</td>
-                                <td class="text-center"><b style="color:<?php echo $confirmmediasingle->book_status == '0'?'#f0ad4e':''?><?php echo $confirmmediasingle->book_status == '1'?'#5cb85c':''?><?php echo $confirmmediasingle->book_status == '2'?'#d9534f':''?><?php echo $confirmmediasingle->book_status == '3'?'#0275d8':''?>">{{$confirmmediasingle->book_status}}</b></td>
+                                <td class="text-center"><b style="color:<?php echo $confirmmediasingle->book_status == 'รอการอนุมัติ'?'#f0ad4e':''?><?php echo $confirmmediasingle->book_status == 'อนุมัติ'?'#5cb85c':''?><?php echo $confirmmediasingle->book_status == 'ยกเลิกการจอง'?'#d9534f':''?><?php echo $confirmmediasingle->book_status == 'คืนห้อง'?'#0275d8':''?>">{{$confirmmediasingle->book_status}}</b></td>
                             </tr>
                         @endforeach
                     </tbody>

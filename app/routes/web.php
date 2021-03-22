@@ -26,7 +26,6 @@ Route::resource('adminroommediastaffs', AdminroommediastaffController::class);
 Route::resource('queuelistmediagroups', QueuelistmediagroupController::class);
 Route::resource('queuelistmediasingles', QueuelistmediasingleController::class);
 Route::resource('queuelistmeetings', QueuelistmeetingController::class);
-
 Route::resource('reports', ReportController::class);
 
 // User
@@ -38,22 +37,15 @@ Route::resource('mediasingles', MediasingleController::class);
 Route::resource('confirmmediagroups', ConfirmmediagroupController::class)->middleware('auth');
 Route::resource('confirmmediasingles', ConfirmmediasingleController::class)->middleware('auth');
 Route::resource('mybookings', MybookingController::class);
-Route::resource('orderbookings', OrderbookingController::class);
-Route::resource('detailreserves', DetailreserveController::class);
 
 // Meetingroom
 Route::resource('roommeetings', RoommeetingController::class);
 Route::resource('reservemeets', ReservemeetController::class);
-Route::resource('detailmeetrooms', DetailmeetroomController::class);
 
 // Show user all
 Route::resource('users', UserController::class);
 
 //fullcalender
-// Route::get('fullcalendar','FullCalendarController@index');
-// Route::post('fullcalendar/create','FullCalendarController@create');
-// Route::post('fullcalendar/update','FullCalendarController@update');
-// Route::post('fullcalendar/delete','FullCalendarController@destroy');
 Route::get('fullcalendar','CalendarController@index');
 Route::post('fullcalendar/create','CalendarController@create');
 Route::post('fullcalendar/update','CalendarController@update');

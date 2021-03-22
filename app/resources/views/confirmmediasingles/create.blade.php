@@ -60,8 +60,8 @@
 							<hr style="margin:15px 0 0 0;">
 							<div class="panel-body">
 								<input type="hidden" name="room_type" value="ห้องสื่อศึกษาเดี่ยว">
-								<input type="hidden" name="room_floor" value="ชั้น 6">
-								<input type="hidden" name="book_status" value="0">
+								<input type="hidden" name="room_floor" value="6">
+								<input type="hidden" name="book_status" value="รอการอนุมัติ">
 								<div class="form-group">
 									<label class="text-semibold">บัญชีผู้ใช้:</label>
 									<input type="text" class="form-control" readonly="readonly" name="username" value="{{ Auth::user()->username }}">

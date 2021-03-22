@@ -44,9 +44,9 @@
                             <option value="3">ชั้น 3</option>
                             <option value="4">ชั้น 4</option>
                             <option value="5">ชั้น 5</option>
-                            <option value="5-aj-only">ชั้น 5 - เฉพาะอาจารย์</option>
-                            <option value="6-mini-home-theatre">ชั้น 6 - Mini Home Theatre</option>
-                            <option value="6-karaoke">ชั้น 6 - คาราโอเกะ</option>
+                            <option value="5 - เฉพาะอาจารย์">ชั้น 5 - เฉพาะอาจารย์</option>
+                            <option value="6 - มินิโฮมเธียเตอร์">ชั้น 6 - มินิโฮมเธียเตอร์</option>
+                            <option value="6 - คาราโอเกะ">ชั้น 6 - คาราโอเกะ</option>
                         </select>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                         </select>
                     </div>
                 </div>
-                <input type="hidden" name="book_status" value="0">    
+                <input type="hidden" name="book_status" value="รอการอนุมัติ">    
                 <br><br>
                 <button type="submit" class="btn btn-success">ยืนยัน <i class="fas fa-check"></i></button>
                 </div>
