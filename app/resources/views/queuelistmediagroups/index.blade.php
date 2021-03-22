@@ -12,17 +12,26 @@
                     <li><a href="">ห้องสื่อศึกษากลุ่ม</a></li>
                     <li class="active">รายการคิว</li>
 				</ul>
+				<!-- <div class="heading-elements">
+                    <a href="" data-toggle="modalheading" data-target="#myModalheading1" class="btn btn-lg btn-labeled btn-labeled-left bg-success heading-btn">เข้าห้อง <b><i class="fas fa-sign-in-alt"></i></b></a>
+                    <a href="" data-toggle="modalheading" data-target="#myModalheading2" class="btn btn-lg btn-labeled btn-labeled-right bg-danger heading-btn">คืนห้อง <b><i class="fas fa-sign-out-alt"></i></b></a>
+                    <a href="" data-toggle="modalheading" data-target="#myModalheading3" class="btn btn-lg btn-labeled btn-labeled-right bg-primary heading-btn">จัดการห้อง <b><i class="fas fa-cog"></i></b></a>
+                </div> -->
 			</div>
         </div>
         <div class="page-content">
 			<div class="content-wrapper">
 			    <div class="tabbable">   
                     <ul class="nav nav-tabs nav-tabs-highlight" style="margin-bottom: 0px;">
-                        <li class="active"><a href="#label-tab1" data-toggle="tab">รอคิว <span class="label label-warning position-right">{{$count1}}</span></a></li>
+                        <li class="active"><a href="#label-tab1" data-toggle="tab">รอคิว <span class="label label-warning position-right">{{$count1}}</span> </a></li>
                         <li><a href="#label-tab2" data-toggle="tab">ใช้งานอยู่ <span class="label bg-success position-right">{{$count2}}</span></a></li>
                         <li><a href="#label-tab3" data-toggle="tab">คืนห้องแล้ว <span class="label bg-blue position-right">{{$count3}}</span></a></li>
                         <li><a href="#label-tab4" data-toggle="tab">ถูกยกเลิก <span class="label bg-danger position-right">{{$count4}}</span></a></li>
                     </ul>
+                    <div class="tab-model">
+                        <!-- Modal01 -->
+                        
+                    </div>
 
                     <div class="tab-content">
                         <!-- Tab1 -->
@@ -405,7 +414,17 @@
                                                                                                         <span class="label label-lg label-<?php echo $room->room_status == '0'?'danger':''?><?php echo $room->room_status == '1'?'success':''?><?php echo $room->room_status == '2'?'warning':''?>"> {{ $room->room_status }}</span>
                                                                                                     </div>
                                                                                                     <h6 class="media-heading">{{ $room->room_name }}</h6>
-                                                                                                    <span class="text-muted countdown">00 : 00 : 00</span>
+                                                                                                    <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
+                                                                                                    <!-- <ul class="icons-list bottom-right-menu">
+                                                                                                        <li class="dropdown">
+                                                                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
+                                                                                                            <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
+                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#8e44ad;" show="$room->room_status==0" class="hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
+                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#2980b9;" show="$room->room_status==2" class="hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
+                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#D91E18;" show="$room->room_status==1 || $room->room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
+                                                                                                            </ul>
+                                                                                                        </li>
+                                                                                                    </ul> -->
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
@@ -564,7 +583,7 @@
                                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediagroup->book_starttime }}</p>                                                                        
                                                                             <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediagroup->book_endtime }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">ห้อง : <strong style="color:#F62459">{{ $confirmmediagroup->room_name }}</strong></p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                         </div>  
                                                                     </div>
                                                                 </div>
