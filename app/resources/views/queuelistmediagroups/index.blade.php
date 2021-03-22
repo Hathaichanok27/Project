@@ -405,25 +405,23 @@
                                                                     <div class="media">
                                                                         <input type="text" id="myText_{{ $confirmmediagroup->id }}" name="input" value="">
                                                                             <div class="selectroom">
-                                                                                <?php for($s=1; $s<=9; $s++){?>
+                                                                                @foreach($rooms as $room)  
                                                                                     <div class="col-md-4">
-                                                                                        <div class="panel panel-body room-item" id="div_media<?php echo $s?>_{{ $confirmmediagroup->id }}" onclick="myFunction(<?php echo $s?>,{{ $confirmmediagroup->id }})">
+                                                                                        <div class="panel panel-body room-item" id="div_media_{{ $confirmmediagroup->id }}" onclick="myFunction({{ $confirmmediagroup->id }})">
                                                                                             <div class="media">
                                                                                                 <div class="media-body">
-                                                                                                    <div class="media-right">
-                                                                                                        <span class="label label-lg label-success" class="{'label-danger':room.room_status == 0,
-                                                                                                                                                                'label-success':room.room_status == 1,
-                                                                                                                                                                'label-warning': room.room_status == 2}">ว่าง</span>
+                                                                                                    <div class="media-right media-middle">
+                                                                                                        <span class="label label-lg label-<?php echo $room->room_status == '0'?'danger':''?><?php echo $room->room_status == '1'?'success':''?><?php echo $room->room_status == '2'?'warning':''?>"> {{ $room->room_status }}</span>
                                                                                                     </div>
-                                                                                                    <h6 class="media-heading">STV-<?php echo $s?></h6>
+                                                                                                    <h6 class="media-heading">{{ $room->room_name }}</h6>
                                                                                                     <span class="text-muted countdown" data-endtime="2020-12-29 17:29:21">00 : 00 : 00</span>
                                                                                                     <ul class="icons-list bottom-right-menu">
                                                                                                         <li class="dropdown">
                                                                                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
                                                                                                             <ul class="dropdown-menu dropdown-menu-right border-grey dropdown-menu-xs">
-                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#8e44ad;" ng-show="room.room_status==0" class="ng-hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
-                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#2980b9;" ng-show="room.room_status==2" class="ng-hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
-                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#D91E18;" ng-show="room.room_status==1 || room.room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
+                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#8e44ad;" show="$room->room_status==0" class="hide"><i class="fas fa-random"></i> คืนสถานะ</a></li>
+                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#2980b9;" show="$room->room_status==2" class="hide"><i class="fas fa-sign-out-alt"></i> คืนห้อง</a></li>
+                                                                                                                <li><a href="" onclick="myFunction()" id="click" style="color:#D91E18;" show="$room->room_status==1 || $room->room_status==2"><i class="fas fa-ban"></i> งดใช้งาน</a></li>
                                                                                                             </ul>
                                                                                                         </li>
                                                                                                     </ul>
@@ -431,7 +429,7 @@
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                <?php }?>                                                                       
+                                                                                @endforeach                                                                       
                                                                             </div>
                                                                         </div>
                                                                     </div>

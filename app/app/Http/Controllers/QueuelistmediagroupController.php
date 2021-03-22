@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Confirmmediagroup;
+use App\Room;
 use Illuminate\Http\Request;
 
 class QueuelistmediagroupController extends Controller
@@ -14,8 +15,9 @@ class QueuelistmediagroupController extends Controller
         $confirmmediagroups2 = Confirmmediagroup::select("*")->where("book_status", "=", "1")->get();
         $confirmmediagroups3 = Confirmmediagroup::select("*")->where("book_status", "=", "3")->get();
         $confirmmediagroups4 = Confirmmediagroup::select("*")->where("book_status", "=", "2")->get();
+        $rooms = Room::select("*")->where("room_type", "=", "ห้องสื่อศึกษากลุ่ม")->get();
 
-        return view('queuelistmediagroups.index',compact(['confirmmediagroups1','confirmmediagroups2','confirmmediagroups3','confirmmediagroups4']))
+        return view('queuelistmediagroups.index',compact(['confirmmediagroups1','confirmmediagroups2','confirmmediagroups3','confirmmediagroups4','rooms']))
         ->with('i', (request()->input('page', 1) - 1) * 5);   
     }
 
