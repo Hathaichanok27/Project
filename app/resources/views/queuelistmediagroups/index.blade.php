@@ -476,7 +476,6 @@
                                                                                 <input type="hidden" name="book_starttime" value="{{ date('Y-m-d H:i', $book_starttime) }}">
                                                                                 <input type="hidden" name="book_endtime" value="{{ date('Y-m-d H:i', $book_endtime) }}">
                                                                                 <input type="hidden" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
-                                                                                <!-- 1 อนุมัติ -->
                                                                                 <input type="hidden" name="book_status" value="อนุมัติ">
                                                                             </div>
                                                                         </div>
@@ -513,7 +512,6 @@
                                                 <h2>Confirmation</h2>
                                                 <p>ยกเลิกการจองของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                                 <div class="sa-button-container">
-                                                    <!-- 2 ยกเลิกการจอง -->
                                                     <input type="hidden" name="book_status" value="ยกเลิกการจอง">
                                                     <!-- <form action="{{ route('queuelistmediagroups.destroy',$confirmmediagroup->id) }}" method="POST">
                                                         @csrf
@@ -598,7 +596,6 @@
                                                 <h2>Confirmation</h2>
                                                 <p>คืนห้องของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                                 <div class="sa-button-container">
-                                                    <!-- 3 คืนห้อง -->
                                                     <input type="hidden" name="book_status" value="คืนห้อง">
                                                     <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
                                                     <button type="submit" class="btn btn-info">ใช่, คืนห้อง</button>

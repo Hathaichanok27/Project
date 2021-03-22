@@ -12,8 +12,8 @@ class QueuelistmediagroupController extends Controller
     {
         $confirmmediagroups1 = Confirmmediagroup::select("*")->where("book_status", "=", "รอการอนุมัติ")->get();
         $confirmmediagroups2 = Confirmmediagroup::select("*")->where("book_status", "=", "อนุมัติ")->get();
-        $confirmmediagroups3 = Confirmmediagroup::select("*")->where("book_status", "=", "ยกเลิกการจอง")->get();
-        $confirmmediagroups4 = Confirmmediagroup::select("*")->where("book_status", "=", "คืนห้อง")->get();
+        $confirmmediagroups3 = Confirmmediagroup::select("*")->where("book_status", "=", "คืนห้อง")->get();
+        $confirmmediagroups4 = Confirmmediagroup::select("*")->where("book_status", "=", "ยกเลิกการจอง")->get();
         $count1 = count($confirmmediagroups1);
         $count2 = count($confirmmediagroups2);
         $count3 = count($confirmmediagroups3);
