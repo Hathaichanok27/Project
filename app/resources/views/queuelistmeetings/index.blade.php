@@ -51,7 +51,8 @@
                                                 <td>{{ $reservemeet->user_fullname }}</td>
                                                 <td>{{ $reservemeet->time_start }}</td>
                                                 <td>{{ $reservemeet->time_end }}</td>
-                                                <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == '1'?'#26A65B':'#ff8c00'?>">{{$reservemeet->book_status}}</b></td>    
+                                                <!-- 0 รออนุมัติ, 1 อนุมัติ, 2 ยกเลิกการจอง, 3 คืนห้อง -->
+                                                <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == '0'?'#f0ad4e':''?><?php echo $reservemeet->book_status == '1'?'#5cb85c':''?><?php echo $reservemeet->book_status == '2'?'#d9534f':''?><?php echo $reservemeet->book_status == '3'?'#0275d8':''?>">{{$reservemeet->book_status}}</b></td>
                                                 <td class="text-center">
                                                     <ul class="icons-list">
                                                         <li class="dropdown">

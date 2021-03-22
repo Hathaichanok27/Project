@@ -14,7 +14,7 @@ class MediagroupController extends Controller
         //         ->with('i', (request()->input('page', 1) - 1) * 5);
 
         $rooms = Room::select("*")
-                    ->where("room_floor", "=", "ชั้น 6 - ห้องสื่อศึกษากลุ่ม")
+                    ->where("room_type", "=", "ห้องสื่อศึกษากลุ่ม")
                     ->get();
         return view('mediagroups.index', ['rooms' => $rooms])
                 ->with('i', (request()->input('page', 1) - 1) * 5);
