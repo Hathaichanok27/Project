@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Manageadmin;
 use Illuminate\Http\Request;
+use App\Manageadmin;
 
 class ManageadminController extends Controller
 {
     public function index()
     {
         $manageadmins = Manageadmin::paginate();
+        
         return view('manageadmins.index',compact('manageadmins'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -29,6 +30,7 @@ class ManageadminController extends Controller
         ]);
 
         Manageadmin::create($request->all());
+        
         return redirect()->route('manageadmins.index')
                         ->with('success','Created admin successfully.');
     }
@@ -61,6 +63,7 @@ class ManageadminController extends Controller
     public function destroy(Manageadmin $manageadmin)
     {
         $manageadmin->delete();
+        
         return redirect()->route('manageadmins.index')
                         ->with('success','Deleted admin successfully');
     }

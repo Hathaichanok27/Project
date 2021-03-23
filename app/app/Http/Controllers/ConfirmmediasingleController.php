@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Confirmmediasingle;
 use Illuminate\Http\Request;
+use App\Confirmmediasingle;
 
 class ConfirmmediasingleController extends Controller
 {
@@ -32,26 +32,7 @@ class ConfirmmediasingleController extends Controller
         ]);
         
         Confirmmediasingle::create($request->all());
+        
         return redirect()->route('mybookings.index');
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

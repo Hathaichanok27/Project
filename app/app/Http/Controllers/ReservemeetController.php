@@ -11,6 +11,7 @@ class ReservemeetController extends Controller
     public function index()
     {
         $reservemeets = Reservemeet::paginate();
+        
         return view('reservemeets.index',compact('reservemeets'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -33,6 +34,7 @@ class ReservemeetController extends Controller
             'book_status' => 'required',
         ]);
         Reservemeet::create($request->all());
+        
         return redirect()->route('roommeetings.index');
     }
 
@@ -41,19 +43,10 @@ class ReservemeetController extends Controller
         return view('reservemeets.show',compact('reservemeet'));
     }
 
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
     public function destroy(Reservemeet $reservemeet)
     {
         $reservemeet->delete();
+        
         return redirect()->route('roommeetings.index');
     }
 }

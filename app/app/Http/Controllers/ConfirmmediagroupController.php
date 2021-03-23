@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Confirmmediagroup;
 use Illuminate\Http\Request;
+use App\Confirmmediagroup;
 
 class ConfirmmediagroupController extends Controller
 {
@@ -30,27 +30,9 @@ class ConfirmmediagroupController extends Controller
             'room_floor' => 'required',
             'book_status' => 'required',
         ]);
+        
         Confirmmediagroup::create($request->all());
+        
         return redirect()->route('mybookings.index');
-    }
-
-    public function show($id)
-    {
-        // return view('confirmmediagroup.show',compact('confirmmediagroup'));
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

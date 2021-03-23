@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Roommediasingle;
 use Illuminate\Http\Request;
+use App\Roommediasingle;
 
 class RoommediasingleController extends Controller
 {
     public function index()
     {
         $roommediasingles = Roommediasingle::paginate(10);
+        
         return view('roommediasingles.index', compact('roommediasingles'))
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
@@ -27,7 +28,9 @@ class RoommediasingleController extends Controller
             'room_name' => 'required',
             'room_status' => 'required',
         ]);
+        
         Roommediasingle::create($request->all());
+        
         return redirect()->route('roommediasingles.index')
                         ->with('success','Created room successfully.');
     }
@@ -52,6 +55,7 @@ class RoommediasingleController extends Controller
         ]);
 
         $roommediasingle->update($request->all());
+        
         return redirect()->route('roommediasingles.index')
                         ->with('success','Update room successfully');
     }
@@ -59,6 +63,7 @@ class RoommediasingleController extends Controller
     public function destroy(Roommediasingle $roommediasingle)
     {
         $roommediasingle->delete();
+        
         return redirect()->route('roommediasingles.index')
                         ->with('success','Deleted room successfully');
     }

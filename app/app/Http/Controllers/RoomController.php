@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Room;
 use Illuminate\Http\Request;
+use App\Room;
 
 class RoomController extends Controller
 {
     public function index()
     {
         $rooms = Room::paginate(10);
+        
         return view('rooms.index', compact('rooms'))
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
@@ -27,7 +28,9 @@ class RoomController extends Controller
             'room_name' => 'required',
             'room_status' => 'required',
         ]);
+        
         Room::create($request->all());
+        
         return redirect()->route('rooms.index')
                         ->with('success','Created room successfully.');
     }
@@ -52,6 +55,7 @@ class RoomController extends Controller
         ]);
 
         $room->update($request->all());
+        
         return redirect()->route('rooms.index')
                         ->with('success','Update room successfully');
     }
@@ -59,6 +63,7 @@ class RoomController extends Controller
     public function destroy(Room $room)
     {
         $room->delete();
+        
         return redirect()->route('rooms.index')
                         ->with('success','Deleted room successfully');
     }

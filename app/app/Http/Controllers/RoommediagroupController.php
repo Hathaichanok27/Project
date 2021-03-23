@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Roommediagroup;
 use Illuminate\Http\Request;
+use App\Roommediagroup;
 
 class RoommediagroupController extends Controller
 {
     public function index()
     {
         $roommediagroups = Roommediagroup::paginate(10);
+        
         return view('roommediagroups.index', compact('roommediagroups'))
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
@@ -27,7 +28,9 @@ class RoommediagroupController extends Controller
             'room_name' => 'required',
             'room_status' => 'required',
         ]);
+        
         Roommediagroup::create($request->all());
+        
         return redirect()->route('roommediagroups.index')
                         ->with('success','Created room successfully.');
     }
@@ -52,6 +55,7 @@ class RoommediagroupController extends Controller
         ]);
 
         $roommediagroup->update($request->all());
+        
         return redirect()->route('roommediagroups.index')
                         ->with('success','Update room successfully');
     }
@@ -59,6 +63,7 @@ class RoommediagroupController extends Controller
     public function destroy(Roommediagroup $roommediagroup)
     {
         $roommediagroup->delete();
+        
         return redirect()->route('roommediagroups.index')
                         ->with('success','Deleted room successfully');
     }
