@@ -49,6 +49,7 @@ class QueuelistmediagroupController extends Controller
         print_r($request->input());
         print_r($id);
         $where = array('id' => $id);
+        $where1 = array('room_name' => $request->input('room_name'));
         $updateArr = [
                         'room_name' => $request->input('room_name'),
                         'book_status' => $request->input('book_status'),
@@ -59,7 +60,7 @@ class QueuelistmediagroupController extends Controller
                         'room_status'  => $request->input('room_status'),
                      ];
         $booking  = Confirmmediagroup::where($where)->update($updateArr);
-        $booking  = Roommediagroup::where($where)->update($updateArr1);
+        $booking  = Roommediagroup::where($where1)->update($updateArr1);
         return redirect()->route('queuelistmediagroups.index');
     }
 
