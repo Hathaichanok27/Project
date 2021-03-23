@@ -8,7 +8,6 @@
                 <ul class="breadcrumb breadcrumb-caret position-right">
 					<li><a href="{{ route('adminroombookings.index') }}">หน้าแรก</a></li>
                     <li><a href="{{ route('adminroommediastaffs.index') }}">สำหรับเจ้าหน้าที่</a></li>
-                    <li><a href="">ห้องสื่อศึกษา</a></li>
                     <li><a href="">ห้องสื่อศึกษากลุ่ม</a></li>
                     <li class="active">รายการคิว</li>
 				</ul>
@@ -259,7 +258,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <h6 class="form-wizard-title text-semibold">
-                                                            <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                            <span class="form-wizard-count"><b>i</b></span>
                                                             ข้อมูลผู้จองห้อง
                                                             <small class="display-block">ข้อมูลการจอง</small>
                                                         </h6>
@@ -394,7 +393,7 @@
                                                             <div class="col-md-12">
                                                                 <div class="panel panel-body">
                                                                     <div class="media">
-                                                                        <input type="text" id="myText_{{ $confirmmediagroup->id }}" name="input" value="">
+                                                                        <input type="text" id="myText_{{ $confirmmediagroup->id }}" name="input" value="" hidden>
                                                                             <div class="selectroom">
                                                                                 @foreach($roommediagroups as $roommediagroup)  
                                                                                     <div class="col-md-4">
@@ -547,7 +546,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <h6 class="form-wizard-title text-semibold">
-                                                            <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                            <span class="form-wizard-count"><b>i</b></span>
                                                             ข้อมูลผู้จองห้อง
                                                             <small class="display-block">ข้อมูลการจอง</small>
                                                         </h6>
@@ -597,9 +596,11 @@
                                                 <h2>Confirmation</h2>
                                                 <p>คืนห้องของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                                 <div class="sa-button-container">
+                                                    <input type="hidden" name="room_name" value="{{ $confirmmediagroup->room_name }}">
+                                                    <input type="hidden" name="book_starttime" value="{{ $confirmmediagroup->book_starttime }}">
+                                                    <input type="hidden" name="book_endtime" value="{{ $confirmmediagroup->book_endtime }}">
                                                     <input type="hidden" name="book_status" value="คืนห้อง">
                                                     <input type="hidden" name="room_status" value="ว่าง">
-                                                    <input type="hidden" name="room_name" value="{{ $confirmmediagroup->room_name }}">
                                                     <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
                                                     <button type="submit" class="btn btn-info">ใช่, คืนห้อง</button>
                                                 </div>
@@ -629,7 +630,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <h6 class="form-wizard-title text-semibold">
-                                                            <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                            <span class="form-wizard-count"><b>i</b></span>
                                                             ข้อมูลผู้จองห้อง
                                                             <small class="display-block">ข้อมูลการจอง</small>
                                                         </h6>
@@ -661,7 +662,6 @@
                                 @endforeach
                             <?php }?>
 
-
                             <?php if($confirmmediagroups4){?>
                                 @foreach($confirmmediagroups4 as $confirmmediagroup)
                                 <?php 
@@ -682,7 +682,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <h6 class="form-wizard-title text-semibold">
-                                                            <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                            <span class="form-wizard-count"><b>i</b></span>
                                                             ข้อมูลผู้จองห้อง
                                                             <small class="display-block">ข้อมูลการจอง</small>
                                                         </h6>
@@ -722,15 +722,15 @@
 @endsection 
 
 <script>
-function myFunction(input,id) {
-    document.getElementById("myText_"+id).value = input;
-    document.getElementById("STV_media_"+id).innerHTML = 'STV-'+input;
-    document.getElementById("STV_room_name_"+id).value = 'STV-'+input;
-    document.getElementById("div_media_"+input+"_"+id).style.backgroundColor = "#00bcd46e";
-    <?php foreach($roommediagroups as $roommediagroup){ ?>
-        if(input != <?php echo $roommediagroup->id?>){ 
-            document.getElementById("div_media_<?php echo $roommediagroup->id?>_"+id).style.backgroundColor = "transparent";
-        }
-    <?php }?>
-}
+    function myFunction(input,id) {
+        document.getElementById("myText_"+id).value = input;
+        document.getElementById("STV_media_"+id).innerHTML = 'STV-'+input;
+        document.getElementById("STV_room_name_"+id).value = 'STV-'+input;
+        document.getElementById("div_media_"+input+"_"+id).style.backgroundColor = "#00bcd46e";
+        <?php foreach($roommediagroups as $roommediagroup){ ?>
+            if(input != <?php echo $roommediagroup->id?>){ 
+                document.getElementById("div_media_<?php echo $roommediagroup->id?>_"+id).style.backgroundColor = "transparent";
+            }
+        <?php }?>
+    }
 </script>

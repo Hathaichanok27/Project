@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Confirmmediagroup;
 use App\Roommediagroup;
-use Illuminate\Http\Request;
 
 class QueuelistmediagroupController extends Controller
 {
@@ -20,34 +20,12 @@ class QueuelistmediagroupController extends Controller
         $count4 = count($confirmmediagroups4);
         $roommediagroups = Roommediagroup::paginate();
 
-        return view('queuelistmediagroups.index',compact(['count1','count2','count3','count4','confirmmediagroups1','confirmmediagroups2','confirmmediagroups3','confirmmediagroups4','roommediagroups']))
-        ->with('i', (request()->input('page', 1) - 1) * 5);   
-    }
-
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
+        return view('queuelistmediagroups.index',compact(['confirmmediagroups1','confirmmediagroups2','confirmmediagroups3','confirmmediagroups4','count1','count2','count3','count4','roommediagroups']))
+                ->with('i', (request()->input('page', 1) - 1) * 5);   
     }
 
     public function update(Request $request, $id)
     {
-        print_r($request->input());
-        print_r($id);
         $where = array('id' => $id);
         $where1 = array('room_name' => $request->input('room_name'));
         $updateArr = [
@@ -60,7 +38,8 @@ class QueuelistmediagroupController extends Controller
                         'room_status'  => $request->input('room_status'),
                      ];
         $booking  = Confirmmediagroup::where($where)->update($updateArr);
-        $booking  = Roommediagroup::where($where1)->update($updateArr1);
+        $booking1  = Roommediagroup::where($where1)->update($updateArr1);
+        
         return redirect()->route('queuelistmediagroups.index');
     }
 
@@ -68,6 +47,7 @@ class QueuelistmediagroupController extends Controller
     {
         $where = array('id' => $id);
         $del_booking  = Confirmmediagroup::where($where)->delete();
+        
         return redirect()->route('queuelistmediagroups.index');
     }
 }

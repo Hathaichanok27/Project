@@ -258,7 +258,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <h6 class="form-wizard-title text-semibold">
-                                                            <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                            <span class="form-wizard-count"><b>i</b></span>
                                                             ข้อมูลผู้จองห้อง
                                                             <small class="display-block">ข้อมูลการจอง</small>
                                                         </h6>
@@ -393,11 +393,11 @@
                                                             <div class="col-md-12">
                                                                 <div class="panel panel-body">
                                                                     <div class="media">
-                                                                        <input type="text" id="myText1_{{ $confirmmediasingle->id }}" name="input" value="">
+                                                                        <input type="text" id="myText1_{{ $confirmmediasingle->id }}" name="input" value="" hidden>
                                                                             <div class="selectroom">
                                                                                 @foreach($roommediasingles as $roommediasingle)  
                                                                                     <div class="col-md-4">
-                                                                                        <div class="panel panel-body room-item" id="div_media1_{{$roommediasingle->id}}_{{ $confirmmediasingle->id }}" onclick="myFunction({{ $roommediasingle->id }}, {{ $confirmmediasingle->id }})">
+                                                                                        <div class="panel panel-body room-item" id="div_media1_{{$roommediasingle->id}}_{{ $confirmmediasingle->id }}" onclick="<?php echo $roommediasingle->room_status == "ว่าง"?'myFunction( '.$roommediasingle->id .', '. $confirmmediasingle->id .')':'' ?>">
                                                                                             <div class="media">
                                                                                                 <div class="media-body">
                                                                                                     <div class="media-right media-middle">
@@ -546,7 +546,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <h6 class="form-wizard-title text-semibold">
-                                                            <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                            <span class="form-wizard-count"><b>i</b></span>
                                                             ข้อมูลผู้จองห้อง
                                                             <small class="display-block">ข้อมูลการจอง</small>
                                                         </h6>
@@ -596,6 +596,9 @@
                                                 <h2>Confirmation</h2>
                                                 <p>คืนห้องของ {{ $confirmmediasingle->user_fullname }} ?</p>
                                                 <div class="sa-button-container">
+                                                    <input type="hidden" name="room_name" value="{{ $confirmmediasingle->room_name }}">
+                                                    <input type="hidden" name="book_starttime" value="{{ $confirmmediasingle->book_starttime }}">
+                                                    <input type="hidden" name="book_endtime" value="{{ $confirmmediasingle->book_endtime }}">
                                                     <input type="hidden" name="book_status" value="คืนห้อง">
                                                     <input type="hidden" name="room_status" value="ว่าง">
                                                     <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
@@ -627,7 +630,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <h6 class="form-wizard-title text-semibold">
-                                                            <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                            <span class="form-wizard-count"><b>i</b></span>
                                                             ข้อมูลผู้จองห้อง
                                                             <small class="display-block">ข้อมูลการจอง</small>
                                                         </h6>
@@ -659,7 +662,6 @@
                                 @endforeach
                             <?php }?>
 
-
                             <?php if($confirmmediasingles4){?>
                                 @foreach($confirmmediasingles4 as $confirmmediasingle)
                                 <?php 
@@ -680,7 +682,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <h6 class="form-wizard-title text-semibold">
-                                                            <span class="form-wizard-count"><i class="fa fa-info"></i></span>
+                                                            <span class="form-wizard-count"><b>i</b></span>
                                                             ข้อมูลผู้จองห้อง
                                                             <small class="display-block">ข้อมูลการจอง</small>
                                                         </h6>
@@ -720,15 +722,15 @@
 @endsection 
 
 <script>
-function myFunction(input,id) {
-    document.getElementById("myText1_"+id).value = input;
-    document.getElementById("room_media_"+id).innerHTML = 'ห้อง '+input;
-    document.getElementById("room_room_name_"+id).value = 'ห้อง '+input;
-    document.getElementById("div_media1_"+input+"_"+id).style.backgroundColor = "#00bcd46e";
-    <?php foreach($roommediasingles as $roommediasingle){ ?>
-        if(input != <?php echo $roommediasingle->id?>){ 
-            document.getElementById("div_media1_<?php echo $roommediasingle->id?>_"+id).style.backgroundColor = "transparent";
-        }
-    <?php }?>
-}
+    function myFunction(input,id) {
+        document.getElementById("myText1_"+id).value = input;
+        document.getElementById("room_media_"+id).innerHTML = 'ห้อง '+input;
+        document.getElementById("room_room_name_"+id).value = 'ห้อง '+input;
+        document.getElementById("div_media1_"+input+"_"+id).style.backgroundColor = "#00bcd46e";
+        <?php foreach($roommediasingles as $roommediasingle){ ?>
+            if(input != <?php echo $roommediasingle->id?>){ 
+                document.getElementById("div_media1_<?php echo $roommediasingle->id?>_"+id).style.backgroundColor = "transparent";
+            }
+        <?php }?>
+    }
 </script>
