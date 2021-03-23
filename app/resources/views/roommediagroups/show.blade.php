@@ -5,10 +5,10 @@
 		<div class="container">
             <div class="row">   
                 <div class="pull-left"> 
-                    <h2>ข้อมูลห้อง</h2>
+                    <h2>ข้อมูลห้องสื่อศึกษากลุ่ม</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('rooms.index') }}" title="Go back"><i class="fas fa-backward "></i></a>
+                    <a class="btn btn-primary" href="{{ route('roommediagroups.index') }}" title="Go back"><i class="fas fa-backward "></i></a>
                 </div>
             </div>
 
@@ -16,25 +16,25 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>ประเภท:</strong>
-                        {{ $room->room_type }}
+                        {{ $roommediagroup->room_type }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>ชั้น:</strong>
-                        {{ $room->room_floor }}
+                        {{ $roommediagroup->room_floor }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>ชื่อห้อง:</strong>
-                        {{ $room->room_name }}
+                        {{ $roommediagroup->room_name }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>สถานะ:</strong>
-                        <b style="color:<?php echo $room->room_status_name == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $room->room_status_name == 'ว่าง'?'#5cb85c':''?><?php echo $room->room_status_name == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$room->room_status_name}}</b>
+                        <b style="color:<?php echo $roommediagroup->room_status_name == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $roommediagroup->room_status_name == 'ว่าง'?'#5cb85c':''?><?php echo $roommediagroup->room_status_name == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$roommediagroup->room_status_name}}</b>
                     </div>
                 </div>
             </div>

@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Room;
+use App\Roommediagroup;
 use Illuminate\Http\Request;
 
 class MediagroupController extends Controller
 {
     public function index()
     {
-        // $rooms = Room::paginate();
-        // return view('mediagroups.index', compact('rooms'))
-        //         ->with('i', (request()->input('page', 1) - 1) * 5);
-
-        $rooms = Room::select("*")
-                    ->where("room_type", "=", "ห้องสื่อศึกษากลุ่ม")
-                    ->get();
-        return view('mediagroups.index', ['rooms' => $rooms])
+        $roommediagroups = Roommediagroup::paginate();
+        return view('mediagroups.index', compact('roommediagroups'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

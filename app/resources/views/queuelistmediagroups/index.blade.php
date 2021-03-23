@@ -396,15 +396,15 @@
                                                                     <div class="media">
                                                                         <input type="text" id="myText_{{ $confirmmediagroup->id }}" name="input" value="">
                                                                             <div class="selectroom">
-                                                                                @foreach($rooms as $room)  
+                                                                                @foreach($roommediagroups as $roommediagroup)  
                                                                                     <div class="col-md-4">
-                                                                                        <div class="panel panel-body room-item" id="div_media_{{$room->id}}_{{ $confirmmediagroup->id }}" onclick="myFunction({{ $room->id }}, {{ $confirmmediagroup->id }})">
+                                                                                        <div class="panel panel-body room-item" id="div_media_{{$roommediagroup->id}}_{{ $confirmmediagroup->id }}" onclick="myFunction({{ $roommediagroup->id }}, {{ $confirmmediagroup->id }})">
                                                                                             <div class="media">
                                                                                                 <div class="media-body">
                                                                                                     <div class="media-right media-middle">
-                                                                                                        <span class="label label-lg label-<?php echo $room->room_status == 'ไม่เปิดใช้งาน'?'danger':''?><?php echo $room->room_status == 'ว่าง'?'success':''?><?php echo $room->room_status == 'กำลังใช้งาน'?'warning':''?>"> {{ $room->room_status }}</span>
+                                                                                                        <span class="label label-lg label-<?php echo $roommediagroup->room_status_name == 'ไม่เปิดใช้งาน'?'danger':''?><?php echo $roommediagroup->room_status_name == 'ว่าง'?'success':''?><?php echo $roommediagroup->room_status_name == 'กำลังใช้งาน'?'warning':''?>"> {{ $roommediagroup->room_status_name }}</span>
                                                                                                     </div>
-                                                                                                    <h6 class="media-heading">{{ $room->room_name }}</h6>
+                                                                                                    <h6 class="media-heading">{{ $roommediagroup->room_name }}</h6>
                                                                                                     <span class="text-muted countdown">00 : 00 : 00</span>
                                                                                                 </div>
                                                                                             </div>
@@ -477,6 +477,7 @@
                                                                                 <input type="hidden" name="book_endtime" value="{{ date('Y-m-d H:i', $book_endtime) }}">
                                                                                 <input type="hidden" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
                                                                                 <input type="hidden" name="book_status" value="อนุมัติ">
+                                                                                <input type="hidden" name="room_status_name" value="กำลังใช้งาน">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -597,6 +598,7 @@
                                                 <p>คืนห้องของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                                 <div class="sa-button-container">
                                                     <input type="hidden" name="book_status" value="คืนห้อง">
+                                                    <input type="hidden" name="room_status_name" value="ว่าง">
                                                     <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
                                                     <button type="submit" class="btn btn-info">ใช่, คืนห้อง</button>
                                                 </div>
@@ -724,9 +726,9 @@ function myFunction(input,id) {
     document.getElementById("STV_media_"+id).innerHTML = 'STV-'+input;
     document.getElementById("STV_room_name_"+id).value = 'STV-'+input;
     document.getElementById("div_media_"+input+"_"+id).style.backgroundColor = "#00bcd46e";
-    <?php foreach($rooms as $room){ ?>
-        if(input != <?php echo $room->id?>){ 
-            document.getElementById("div_media_<?php echo $room->id?>_"+id).style.backgroundColor = "transparent";
+    <?php foreach($roommediagroups as $roommediagroup){ ?>
+        if(input != <?php echo $roommediagroup->id?>){ 
+            document.getElementById("div_media_<?php echo $roommediagroup->id?>_"+id).style.backgroundColor = "transparent";
         }
     <?php }?>
 }

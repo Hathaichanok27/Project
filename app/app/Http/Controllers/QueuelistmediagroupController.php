@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Confirmmediagroup;
-use App\Room;
+use App\Roommediagroup;
 use Illuminate\Http\Request;
 
 class QueuelistmediagroupController extends Controller
@@ -18,9 +18,9 @@ class QueuelistmediagroupController extends Controller
         $count2 = count($confirmmediagroups2);
         $count3 = count($confirmmediagroups3);
         $count4 = count($confirmmediagroups4);
-        $rooms = Room::select("*")->where("room_type", "=", "ห้องสื่อศึกษากลุ่ม")->get();
+        $roommediagroups = Roommediagroup::paginate();
 
-        return view('queuelistmediagroups.index',compact(['count1','count2','count3','count4','confirmmediagroups1','confirmmediagroups2','confirmmediagroups3','confirmmediagroups4','rooms']))
+        return view('queuelistmediagroups.index',compact(['count1','count2','count3','count4','confirmmediagroups1','confirmmediagroups2','confirmmediagroups3','confirmmediagroups4','roommediagroups']))
         ->with('i', (request()->input('page', 1) - 1) * 5);   
     }
 
@@ -55,7 +55,11 @@ class QueuelistmediagroupController extends Controller
                         'book_starttime' => $request->input('book_starttime'),
                         'book_endtime' => $request->input('book_endtime'),
                      ];
+        $updateArr1 = [
+                        'room_status_name'  => $request->input('room_status_name'),
+                     ];
         $booking  = Confirmmediagroup::where($where)->update($updateArr);
+        $booking  = Roommediagroup::where($where)->update($updateArr1);
         return redirect()->route('queuelistmediagroups.index');
     }
 

@@ -30,15 +30,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>ประเภท:</strong>
-                            <select class="form-control" id="room_type" name="room_type">
-                                @if($room->room_type)
-                                    <option value="{{ $room->room_type }}" selected>{{ $room->room_type }}</option>
-                                @else
-                                    <option value="ห้องประชุม">ห้องประชุม</option>
-                                    <option value="ห้องสื่อศึกษากลุ่ม">ห้องสื่อศึกษากลุ่ม</option>
-                                    <option value="ห้องสื่อศึกษาเดี่ยว">ห้องสื่อศึกษาเดี่ยว</option>
-                                @endif
-                            </select>  
+                            <input type="text" class="form-control" readonly="readonly" name="room_type" value="ห้องประชุม"> 
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -48,14 +40,13 @@
                                 @if($room->room_floor)
                                     <option value="{{ $room->room_floor }}" selected>{{ $room->room_floor }}</option>
                                 @else
-                                    <option value="3">ชั้น 3 (3rd Floor)</option>
-                                    <option value="4">ชั้น 4 (4th Floor)</option>
-                                    <option value="5">ชั้น 5 (5th Floor)</option>
-                                    <option value="5 - เฉพาะอาจารย์">ชั้น 5 - เฉพาะอาจารย์</option>
-                                    <option value="6 - มินิโฮมเธียเตอร์">ชั้น 6 - มินิโฮมเธียเตอร์</option>
-                                    <option value="6 - คาราโอเกะ">ชั้น 6 - คาราโอเกะ</option>
-                                    <option value="6 - ห้องสื่อศึกษากลุ่ม">ชั้น 6 - ห้องสื่อศึกษากลุ่ม</option>
-                                    <option value="6 - ห้องสื่อศึกษาเดี่ยว">ชั้น 6 - ห้องสื่อศึกษาเดี่ยว</option>
+                                <option value="3">ชั้น 3</option>
+                                <option value="4">ชั้น 4</option>
+                                <option value="5">ชั้น 5</option>
+                                <option value="5 - เฉพาะอาจารย์">ชั้น 5 - เฉพาะอาจารย์</option>
+                                <option value="6 - มินิโฮมเธียเตอร์">ชั้น 6 - มินิโฮมเธียเตอร์</option>
+                                <option value="6 - คาราโอเกะ">ชั้น 6 - คาราโอเกะ</option>
+                                <option value="6">ชั้น 6 - ห้องสื่อ</option>
                                 @endif
                             </select> 
                         </div>
@@ -70,13 +61,22 @@
                         <div class="form-group">
                             <strong>สถานะ:</strong>
                             <div class="form-check">
-                                <input type="radio" id="room_status0" name="room_status" value="0"> ไม่เปิดใช้งาน<br>
-                                <input type="radio" id="room_status1" name="room_status" value="1"> ว่าง<br>
-                                <input type="radio" id="room_status2" name="room_status" value="2"> กำลังใช้งาน<br>
+                                <input type="radio" name="room_status" value="0"> ไม่เปิดใช้งาน (0)<br>
+                                <input type="radio" name="room_status" value="1" checked> ว่าง (1)<br>
+                                <input type="radio" name="room_status" value="2"> กำลังใช้งาน (2)<br>
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>ชื่อสถานะ:</strong>
+                            <div class="form-check">
+                                <input type="radio" name="room_status_name" value="ไม่เปิดใช้งาน"> ไม่เปิดใช้งาน<br>
+                                <input type="radio" name="room_status_name" value="ว่าง" checked> ว่าง<br>
+                                <input type="radio" name="room_status_name" value="กำลังใช้งาน"> กำลังใช้งาน<br>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <button type="submit" class="btn btn-success">ยืนยัน</button>
                     </div>

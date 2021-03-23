@@ -18,6 +18,8 @@ Route::resource('superadminroombookings', SuperadminroombookingController::class
 Route::resource('superadminroommedias', SuperadminroommediaController::class);
 Route::resource('manageadmins', ManageadminController::class);
 Route::resource('rooms', RoomController::class);
+Route::resource('roommediagroups', RoommediagroupController::class);
+Route::resource('roommediasingles', RoommediasingleController::class);
 
 // Admin
 Route::resource('adminroombookings', AdminroombookingController::class)->middleware('auth')->middleware('is_admin');

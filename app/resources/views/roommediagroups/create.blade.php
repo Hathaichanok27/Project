@@ -5,10 +5,10 @@
 		<div class="container">
             <div class="row">
                 <div class="pull-left">
-                    <h2>เพิ่มห้อง</h2>
+                    <h2>เพิ่มห้องสื่อศึกษากลุ่ม</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('rooms.index') }}" title="Go back"><i class="fas fa-backward "></i> </a>
+                    <a class="btn btn-primary" href="{{ route('roommediagroups.index') }}" title="Go back"><i class="fas fa-backward "></i> </a>
                 </div>
             </div>
 
@@ -23,26 +23,19 @@
                 </div>
             @endif
             
-            <form action="{{ route('rooms.store') }}" method="POST" >
+            <form action="{{ route('roommediagroups.store') }}" method="POST" >
                 @csrf
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>ประเภท:</strong>
-                            <input type="text" class="form-control" readonly="readonly" name="room_type" value="ห้องประชุม"> 
+                            <input type="text" class="form-control" readonly="readonly" name="room_type" value="ห้องสื่อศึกษากลุ่ม">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>ชั้น:</strong>
-                            <select class="form-control" id="room_floor" name="room_floor">
-                                <option value="3">ชั้น 3</option>
-                                <option value="4">ชั้น 4</option>
-                                <option value="5">ชั้น 5</option>
-                                <option value="5 - เฉพาะอาจารย์">ชั้น 5 - เฉพาะอาจารย์</option>
-                                <option value="6 - มินิโฮมเธียเตอร์">ชั้น 6 - มินิโฮมเธียเตอร์</option>
-                                <option value="6 - คาราโอเกะ">ชั้น 6 - คาราโอเกะ</option>
-                            </select>  
+                            <input type="text" class="form-control" readonly="readonly" name="room_floor" value="6"> 
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">

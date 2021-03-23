@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Room;
+use App\Roommediagroup;
 use Illuminate\Http\Request;
 
-class RoomController extends Controller
+class RoommediagroupController extends Controller
 {
     public function index()
     {
-        $rooms = Room::paginate(10);
-        return view('rooms.index', compact('rooms'))
+        $roommediagroups = Roommediagroup::paginate(10);
+        return view('roommediagroups.index', compact('roommediagroups'))
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     public function create()
     {
-        return view('rooms.create');
+        return view('roommediagroups.create');
     }
 
     public function store(Request $request)
@@ -28,22 +28,22 @@ class RoomController extends Controller
             'room_status' => 'required',
             'room_status_name' => 'required',
         ]);
-        Room::create($request->all());
-        return redirect()->route('rooms.index')
+        Roommediagroup::create($request->all());
+        return redirect()->route('roommediagroups.index')
                         ->with('success','Created room successfully.');
     }
 
-    public function show(Room $room)
+    public function show(Roommediagroup $roommediagroup)
     {
-        return view('rooms.show',compact('room'));
+        return view('roommediagroups.show',compact('roommediagroup'));
     }
 
-    public function edit(Room $room)
+    public function edit(Roommediagroup $roommediagroup)
     {
-        return view('rooms.edit',compact('room'));
+        return view('roommediagroups.edit',compact('roommediagroup'));
     }
 
-    public function update(Request $request, Room $room)
+    public function update(Request $request, Roommediagroup $roommediagroup)
     {
         $request->validate([
             'room_type' => 'required',
@@ -53,15 +53,15 @@ class RoomController extends Controller
             'room_status_name' => 'required',
         ]);
 
-        $room->update($request->all());
-        return redirect()->route('rooms.index')
+        $roommediagroup->update($request->all());
+        return redirect()->route('roommediagroups.index')
                         ->with('success','Update room successfully');
     }
 
-    public function destroy(Room $room)
+    public function destroy(Roommediagroup $roommediagroup)
     {
-        $room->delete();
-        return redirect()->route('rooms.index')
+        $roommediagroup->delete();
+        return redirect()->route('roommediagroups.index')
                         ->with('success','Deleted room successfully');
     }
 }

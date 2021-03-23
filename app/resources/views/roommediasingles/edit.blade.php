@@ -3,52 +3,46 @@
 @section('content')
     <div class="page-container">
 		<div class="container">
-            <div class="row">
-                <div class="pull-left">
-                    <h2>เพิ่มห้อง</h2>
+            <div class="row">  
+                <div class="pull-left"> 
+                    <h2>แก้ไขห้องสื่อศึกษาเดี่ยว</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('rooms.index') }}" title="Go back"><i class="fas fa-backward "></i> </a>
+                    <a class="btn btn-primary" href="{{ route('roommediasingles.index') }}" title="Go back"><i class="fas fa-backward "></i> </a>
                 </div>
             </div>
 
             @if ($errors->any())
-                <div class="alert alert-danger">
-                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
-            
-            <form action="{{ route('rooms.store') }}" method="POST" >
+
+            <form action="{{ route('roommediasingles.update',$roommediasingle->id) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>ประเภท:</strong>
-                            <input type="text" class="form-control" readonly="readonly" name="room_type" value="ห้องประชุม"> 
+                            <input type="text" class="form-control" readonly="readonly" name="room_type" value="ห้องสื่อศึกษาเดี่ยว">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>ชั้น:</strong>
-                            <select class="form-control" id="room_floor" name="room_floor">
-                                <option value="3">ชั้น 3</option>
-                                <option value="4">ชั้น 4</option>
-                                <option value="5">ชั้น 5</option>
-                                <option value="5 - เฉพาะอาจารย์">ชั้น 5 - เฉพาะอาจารย์</option>
-                                <option value="6 - มินิโฮมเธียเตอร์">ชั้น 6 - มินิโฮมเธียเตอร์</option>
-                                <option value="6 - คาราโอเกะ">ชั้น 6 - คาราโอเกะ</option>
-                            </select>  
+                            <input type="text" class="form-control" readonly="readonly" name="room_floor" value="6">  
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>ชื่อห้อง:</strong>
-                            <input type="text" name="room_name" class="form-control" placeholder="ชื่อห้อง">
+                            <strong>ชื่่อห้อง:</strong>
+                            <input type="text" name="room_name" value="{{ $roommediasingle->room_name }}" class="form-control">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -71,7 +65,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <button type="submit" class="btn btn-success">ยืนยัน</button>
                     </div>

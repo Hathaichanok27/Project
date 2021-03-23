@@ -18,7 +18,7 @@
                 <h4><i class="fas fa-sync-alt"></i> จำนวนคิวที่รออยู่ <span class="ng-binding">0</span> คิว</h4>
             </div>
             <div class="row">
-                @foreach($rooms as $room)
+                @foreach($roommediasingles as $roommediasingle)
                     <div class="col-sm-4">
                         <div class="panel panel-body border-grey">
                             <div class="media">
@@ -26,11 +26,11 @@
                                     <img src="{{ asset('images/icon_color_tv.png') }}" class="img-circle img-lg" alt="">
                                 </a>
                                 <div class="media-body">
-                                    <h6 class="media-heading"><b>{{ $room->room_name }}</b></h6>
+                                    <h6 class="media-heading"><b>{{ $roommediasingle->room_name }}</b></h6>
                                     <span class="text-muted countdown">00 : 00 : 00</span>
                                 </div>
                                 <div class="media-right media-middle">
-                                    <span class="label label-lg label-<?php echo $room->room_status == 'ไม่เปิดใช้งาน'?'danger':''?><?php echo $room->room_status == 'ว่าง'?'success':''?><?php echo $room->room_status == 'กำลังใช้งาน'?'warning':''?>"> {{ $room->room_status }}</span>
+                                    <span class="label label-lg label-<?php echo $roommediasingle->room_status_name == 'ไม่เปิดใช้งาน'?'danger':''?><?php echo $roommediasingle->room_status_name == 'ว่าง'?'success':''?><?php echo $roommediasingle->room_status_name == 'กำลังใช้งาน'?'warning':''?>"> {{ $roommediasingle->room_status_name }}</span>
                                 </div>
                             </div>
                         </div>
