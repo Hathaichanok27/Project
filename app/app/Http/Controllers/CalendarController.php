@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Events;
 use App\Reservemeet;
 use Redirect,Response;
 
@@ -39,14 +38,12 @@ class CalendarController extends Controller
         $where = array('id' => $request->id);
         $updateArr = ['title' => $request->title,'start' => $request->start, 'end' => $request->end];
         $event  = Events::where($where)->update($updateArr);
- 
         return Response::json($event);
     } 
  
     public function destroy(Request $request)
     {
         $event = Events::where('id',$request->id)->delete();
-   
         return Response::json($event);
     }    
 }
