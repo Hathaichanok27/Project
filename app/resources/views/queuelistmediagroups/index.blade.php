@@ -398,7 +398,7 @@
                                                                             <div class="selectroom">
                                                                                 @foreach($roommediagroups as $roommediagroup)  
                                                                                     <div class="col-md-4">
-                                                                                        <div class="panel panel-body room-item" id="div_media_{{$roommediagroup->id}}_{{ $confirmmediagroup->id }}" onclick="myFunction({{ $roommediagroup->id }}, {{ $confirmmediagroup->id }})">
+                                                                                        <div class="panel panel-body room-item" id="div_media_{{$roommediagroup->id}}_{{ $confirmmediagroup->id }}" onclick="<?php echo $roommediagroup->room_status == "ว่าง"?'myFunction( '.$roommediagroup->id .', '. $confirmmediagroup->id .')':'' ?>">
                                                                                             <div class="media">
                                                                                                 <div class="media-body">
                                                                                                     <div class="media-right media-middle">
@@ -599,6 +599,7 @@
                                                 <div class="sa-button-container">
                                                     <input type="hidden" name="book_status" value="คืนห้อง">
                                                     <input type="hidden" name="room_status" value="ว่าง">
+                                                    <input type="hidden" name="room_name" value="{{ $confirmmediagroup->room_name }}">
                                                     <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
                                                     <button type="submit" class="btn btn-info">ใช่, คืนห้อง</button>
                                                 </div>
