@@ -142,12 +142,7 @@
                     <li><a href="{{ route('roombookings.index') }}"><i class="fas fa-home"></i> หน้าแรก</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-couch"></i> รายการห้อง <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">ชั้น 3 (3rd Floor)</a></li>
-                            <li><a href="#">ชั้น 4 (4th Floor)</a></li>
-                            <li><a href="#">ชั้น 5 (5th Floor)</a></li>
-                            <li><a href="#">ชั้น 5 - เฉพาะอาจารย์</a></li>
-                            <li><a href="#">ชั้น 6 - Mini Home Theatre</a></li>
-                            <li><a href="#">ชั้น 6 - Karaoke</a></li>
+                            <li><a href="{{ route('roommeetings.index') }}">ชั้น 3, 4, 5 - ห้องประชุม </a></li>
                             <li><a href="{{ route('mediagroups.index') }}">ชั้น 6 - ห้องสื่อศึกษากลุ่ม</a></li>
                             <li><a href="{{ route('mediasingles.index') }}">ชั้น 6 - ห้องสื่อศึกษาเดี่ยว</a></li>
                         </ul>
