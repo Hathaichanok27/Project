@@ -15,6 +15,58 @@
         <link href="{{ asset('icomoon/styles.css') }}" rel="stylesheet">
         <!-- <link href="{{ asset('fonts/roboto.css') }}" rel="stylesheet">  -->
 
+        <!-- fullcalendar -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var SITEURL = "{{url('/')}}";
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                var calendar = $('#calendar').fullCalendar({
+                    editable: true,
+                    events: SITEURL + '/fullcalendar',
+                    editable: true,
+                    eventRender: function (event, element, view) {
+                        if (event.allDay === 'true') {
+                            event.allDay = true;
+                        } else {
+                            event.allDay = false;
+                        }
+                    },
+                    selectable: true,
+                    selectHelper: true,
+                    select: function (start, end, allDay) {
+                        open('/reservemeets/create','_self');
+                    },
+                    eventDrop: function (event, delta) {
+                        var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+                        var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+                        $.ajax({
+                            url: SITEURL + '/fullcalendar/update',
+                            data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
+                            type: "POST",
+                            success: function (response) {
+                                displayMessage("Updated Successfully");
+                            }
+                        });
+                    },
+                    eventClick: function (event) {
+                        open('/reservemeets/'+ event.id ,'_self');
+                    }
+                });
+            });
+            function displayMessage(message) {
+                $(".response").html("<div class='success'>"+message+"</div>");
+                setInterval(function() { $(".success").fadeOut(); }, 1000);
+            }
+        </script>
+
         <!-- date time -->
         <script type="text/javascript"> 
             function display_c(){
@@ -90,12 +142,7 @@
                     <li><a href="{{ route('roombookings.index') }}"><i class="fas fa-home"></i> หน้าแรก</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-couch"></i> รายการห้อง <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">ชั้น 3 (3rd Floor)</a></li>
-                            <li><a href="#">ชั้น 4 (4th Floor)</a></li>
-                            <li><a href="#">ชั้น 5 (5th Floor)</a></li>
-                            <li><a href="#">ชั้น 5 - เฉพาะอาจารย์</a></li>
-                            <li><a href="#">ชั้น 6 - Mini Home Theatre</a></li>
-                            <li><a href="#">ชั้น 6 - Karaoke</a></li>
+                            <li><a href="{{ route('roommeetings.index') }}">ชั้น 3, 4, 5 - ห้องประชุม </a></li>
                             <li><a href="{{ route('mediagroups.index') }}">ชั้น 6 - ห้องสื่อศึกษากลุ่ม</a></li>
                             <li><a href="{{ route('mediasingles.index') }}">ชั้น 6 - ห้องสื่อศึกษาเดี่ยว</a></li>
                         </ul>

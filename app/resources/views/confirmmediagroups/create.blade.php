@@ -16,31 +16,12 @@
             @csrf
 				<div class="row">
 					<div class="col-12 col-md-6">
-						<div class="panel panel-primary bg-danger">
+						<div class="panel panel-primary bg-warning">
 							<div class="panel-body">
 								<h1 class="text-center"><i class="fas fa-users"></i> ห้องสื่อศึกษากลุ่ม</h1>
 								<h2 class="text-center">ชั้น 6</h2>
 							</div>
 						</div>
-
-						<div class="panel panel-flat border-top-primary border-bottom-primary bg-primary">
-							<div class="panel-heading" style="padding-top:5px; padding-bottom:5px;">
-								<h6 class="panel-title text-center"> จำนวนคิวที่ต้องรอ</h6>
-							</div>
-							<div class="panel-body text-center">
-								<h3 style="margin:2px;">1</h3>
-							</div>
-						</div>
-
-						<div class="panel panel-flat border-top-primary border-bottom-primary bg-primary">
-							<div class="panel-heading" style="padding-top:5px; padding-bottom:5px;">
-								<h6 class="panel-title text-center"> เวลาที่ต้องรอโดยประมาณ</h6>
-							</div>
-							<div class="panel-body text-center">
-								<h3 style="margin:2px;">ไม่สามารถดำเนินการได้</h3>
-							</div>
-						</div>
-							
 						<div class="panel panel-flat border-grey">
 							<div class="panel-heading" style="padding-bottom:0px;">
 								<h5 class="panel-title"><i class="fas fa-info-circle"></i> สื่อที่เลือกรับชม</h5>
