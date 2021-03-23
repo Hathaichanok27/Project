@@ -26,7 +26,6 @@ class RoomController extends Controller
             'room_floor' => 'required',
             'room_name' => 'required',
             'room_status' => 'required',
-            'room_status_name' => 'required',
         ]);
         Room::create($request->all());
         return redirect()->route('rooms.index')
@@ -50,7 +49,6 @@ class RoomController extends Controller
             'room_floor' => 'required',
             'room_name' => 'required',
             'room_status' => 'required',
-            'room_status_name' => 'required',
         ]);
 
         $room->update($request->all());

@@ -26,7 +26,6 @@ class RoommediasingleController extends Controller
             'room_floor' => 'required',
             'room_name' => 'required',
             'room_status' => 'required',
-            'room_status_name' => 'required',
         ]);
         Roommediasingle::create($request->all());
         return redirect()->route('roommediasingles.index')
@@ -50,7 +49,6 @@ class RoommediasingleController extends Controller
             'room_floor' => 'required',
             'room_name' => 'required',
             'room_status' => 'required',
-            'room_status_name' => 'required',
         ]);
 
         $roommediasingle->update($request->all());

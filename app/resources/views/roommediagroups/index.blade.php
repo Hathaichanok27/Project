@@ -38,7 +38,7 @@
                                 <td>{{ $roommediagroup->room_type }}</td>
                                 <td>{{ $roommediagroup->room_floor }}</td>
                                 <td>{{ $roommediagroup->room_name }}</td>
-                                <td class="text-center"><b style="color:<?php echo $roommediagroup->room_status_name == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $roommediagroup->room_status_name == 'ว่าง'?'#5cb85c':''?><?php echo $roommediagroup->room_status_name == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$roommediagroup->room_status_name}}</b></td>
+                                <td class="text-center"><b style="color:<?php echo $roommediagroup->room_status == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $roommediagroup->room_status == 'ว่าง'?'#5cb85c':''?><?php echo $roommediagroup->room_status == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$roommediagroup->room_status}}</b></td>
                                 <td>
                                     <form action="{{ route('roommediagroups.destroy',$roommediagroup->id) }}" method="POST">
                                         <a href="{{ route('roommediagroups.show',$roommediagroup->id) }}" class="btn btn-info" role="button" aria-pressed="true"><i class="far fa-sticky-note fa-lg"></i></a>

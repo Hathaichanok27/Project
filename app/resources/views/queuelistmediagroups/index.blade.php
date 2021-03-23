@@ -402,7 +402,7 @@
                                                                                             <div class="media">
                                                                                                 <div class="media-body">
                                                                                                     <div class="media-right media-middle">
-                                                                                                        <span class="label label-lg label-<?php echo $roommediagroup->room_status_name == 'ไม่เปิดใช้งาน'?'danger':''?><?php echo $roommediagroup->room_status_name == 'ว่าง'?'success':''?><?php echo $roommediagroup->room_status_name == 'กำลังใช้งาน'?'warning':''?>"> {{ $roommediagroup->room_status_name }}</span>
+                                                                                                        <span class="label label-lg label-<?php echo $roommediagroup->room_status == 'ไม่เปิดใช้งาน'?'danger':''?><?php echo $roommediagroup->room_status == 'ว่าง'?'success':''?><?php echo $roommediagroup->room_status == 'กำลังใช้งาน'?'warning':''?>"> {{ $roommediagroup->room_status }}</span>
                                                                                                     </div>
                                                                                                     <h6 class="media-heading">{{ $roommediagroup->room_name }}</h6>
                                                                                                     <span class="text-muted countdown">00 : 00 : 00</span>
@@ -477,7 +477,7 @@
                                                                                 <input type="hidden" name="book_endtime" value="{{ date('Y-m-d H:i', $book_endtime) }}">
                                                                                 <input type="hidden" name="room_name" id="STV_room_name_{{ $confirmmediagroup->id }}" value="STV_{{ $confirmmediagroup->id }}">
                                                                                 <input type="hidden" name="book_status" value="อนุมัติ">
-                                                                                <input type="hidden" name="room_status_name" value="กำลังใช้งาน">
+                                                                                <input type="hidden" name="room_status" value="กำลังใช้งาน">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -598,7 +598,7 @@
                                                 <p>คืนห้องของ {{ $confirmmediagroup->user_fullname }} ?</p>
                                                 <div class="sa-button-container">
                                                     <input type="hidden" name="book_status" value="คืนห้อง">
-                                                    <input type="hidden" name="room_status_name" value="ว่าง">
+                                                    <input type="hidden" name="room_status" value="ว่าง">
                                                     <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
                                                     <button type="submit" class="btn btn-info">ใช่, คืนห้อง</button>
                                                 </div>

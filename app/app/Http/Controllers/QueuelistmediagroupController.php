@@ -56,7 +56,7 @@ class QueuelistmediagroupController extends Controller
                         'book_endtime' => $request->input('book_endtime'),
                      ];
         $updateArr1 = [
-                        'room_status_name'  => $request->input('room_status_name'),
+                        'room_status'  => $request->input('room_status'),
                      ];
         $booking  = Confirmmediagroup::where($where)->update($updateArr);
         $booking  = Roommediagroup::where($where)->update($updateArr1);

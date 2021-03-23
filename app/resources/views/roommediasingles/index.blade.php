@@ -38,7 +38,7 @@
                                 <td>{{ $roommediasingle->room_type }}</td>
                                 <td>{{ $roommediasingle->room_floor }}</td>
                                 <td>{{ $roommediasingle->room_name }}</td>
-                                <td class="text-center"><b style="color:<?php echo $roommediasingle->room_status_name == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $roommediasingle->room_status_name == 'ว่าง'?'#5cb85c':''?><?php echo $roommediasingle->room_status_name == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$roommediasingle->room_status_name}}</b></td>
+                                <td class="text-center"><b style="color:<?php echo $roommediasingle->room_status == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $roommediasingle->room_status == 'ว่าง'?'#5cb85c':''?><?php echo $roommediasingle->room_status == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$roommediasingle->room_status}}</b></td>
                                 <td>
                                     <form action="{{ route('roommediasingles.destroy',$roommediasingle->id) }}" method="POST">
                                         <a href="{{ route('roommediasingles.show',$roommediasingle->id) }}" class="btn btn-info" role="button" aria-pressed="true"><i class="far fa-sticky-note fa-lg"></i></a>

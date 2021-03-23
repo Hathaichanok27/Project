@@ -19,7 +19,6 @@ class CreateRoomsTable extends Migration
             $table->string('room_floor');
             $table->string('room_name');
             $table->string('room_status');
-            $table->string('room_status_name');
             $table->timestamps();
         });
     }

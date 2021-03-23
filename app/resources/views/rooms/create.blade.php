@@ -55,19 +55,9 @@
                         <div class="form-group">
                             <strong>สถานะ:</strong>
                             <div class="form-check">
-                                <input type="radio" name="room_status" value="0"> ไม่เปิดใช้งาน (0)<br>
-                                <input type="radio" name="room_status" value="1" checked> ว่าง (1)<br>
-                                <input type="radio" name="room_status" value="2"> กำลังใช้งาน (2)<br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>ชื่อสถานะ:</strong>
-                            <div class="form-check">
-                                <input type="radio" name="room_status_name" value="ไม่เปิดใช้งาน"> ไม่เปิดใช้งาน<br>
-                                <input type="radio" name="room_status_name" value="ว่าง" checked> ว่าง<br>
-                                <input type="radio" name="room_status_name" value="กำลังใช้งาน"> กำลังใช้งาน<br>
+                                <input type="radio" name="room_status" value="ไม่เปิดใช้งาน"> ไม่เปิดใช้งาน<br>
+                                <input type="radio" name="room_status" value="ว่าง" checked> ว่าง<br>
+                                <input type="radio" name="room_status" value="กำลังใช้งาน"> กำลังใช้งาน<br>
                             </div>
                         </div>
                     </div>

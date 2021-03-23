@@ -30,7 +30,7 @@
                                     <span class="text-muted countdown">00 : 00 : 00</span>
                                 </div>
                                 <div class="media-right media-middle">
-                                    <span class="label label-lg label-<?php echo $roommediagroup->room_status_name == 'ไม่เปิดใช้งาน'?'danger':''?><?php echo $roommediagroup->room_status_name == 'ว่าง'?'success':''?><?php echo $roommediagroup->room_status_name == 'กำลังใช้งาน'?'warning':''?>"> {{ $roommediagroup->room_status_name }}</span>
+                                    <span class="label label-lg label-<?php echo $roommediagroup->room_status == 'ไม่เปิดใช้งาน'?'danger':''?><?php echo $roommediagroup->room_status == 'ว่าง'?'success':''?><?php echo $roommediagroup->room_status == 'กำลังใช้งาน'?'warning':''?>"> {{ $roommediagroup->room_status }}</span>
                                 </div>
                             </div>
                         </div>

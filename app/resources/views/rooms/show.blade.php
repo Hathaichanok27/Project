@@ -34,7 +34,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>สถานะ:</strong>
-                        <b style="color:<?php echo $room->room_status_name == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $room->room_status_name == 'ว่าง'?'#5cb85c':''?><?php echo $room->room_status_name == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$room->room_status_name}}</b>
+                        <b style="color:<?php echo $room->room_status == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $room->room_status == 'ว่าง'?'#5cb85c':''?><?php echo $room->room_status == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$room->room_status}}</b>
                     </div>
                 </div>
             </div>
