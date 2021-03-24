@@ -39,7 +39,7 @@
                                             <a href="{{ route('reservemeets.show',$reservemeet->id) }}" class="btn btn-info" role="button" aria-pressed="true">ข้อมูลการจอง</a>
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to Delete?');" id="btnDelete">ยกเลิก <i class="fas fa-times-circle"></i></button>
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('คุณต้องการยกเลิกการจองใช่หรือไม่ ?');" id="btnDelete">ยกเลิก <i class="fas fa-times-circle"></i></button>
                                         </form>
                                     </td>
                                 </tr>

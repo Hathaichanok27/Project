@@ -28,7 +28,6 @@
                     <th style="text-align:center">อีเมล</th>
                     <th style="text-align:center" width="280px">การกระทำ</th>
                 </tr>
-
                 @foreach ($manageadmins as $manageadmin)
                 <tr>
                     <td style="text-align:center">{{ ++$i }}</td>
@@ -36,13 +35,11 @@
                     <td>{{ $manageadmin->email }}</td>
                     <td style="text-align:center">
                         <form action="{{ route('manageadmins.destroy',$manageadmin->id) }}" method="POST">
-                            <a href="{{ route('manageadmins.show',$manageadmin->id) }}" class="btn btn-info" role="button" aria-pressed="true"><i class="far fa-sticky-note fa-lg"></i></a>
-                            <a href="{{ route('manageadmins.edit',$manageadmin->id) }}" class="btn btn-primary" role="button" aria-pressed="true"><i class="far fa-edit fa-lg"></i></a>
-
+                            <a href="{{ route('manageadmins.show',$manageadmin->id) }}" class="btn btn-info" role="button" aria-pressed="true">แสดง</a>
+                            <a href="{{ route('manageadmins.edit',$manageadmin->id) }}" class="btn btn-primary" role="button" aria-pressed="true">แก้ไข</a>
                             @csrf
                             @method('DELETE')
-
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to Delete?');" id="btnDelete"><i class="far fa-trash-alt fa-lg"></i></button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('ต้องการลบแอดมินคนนี้ใช่หรือไม่ ?');" id="btnDelete">ลบ</button>
                         </form>
                     </td>
                 </tr>

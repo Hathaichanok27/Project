@@ -5,10 +5,10 @@
 		<div class="container">
             <div class="row">
                 <div class="pull-left">
-                    <h2>เพิ่มห้องสื่อศึกษากลุ่ม - ชั้น 6</h2>
+                    <h2>เพิ่มห้องสื่อศึกษากลุ่ม</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('roommediagroups.index') }}" title="Go back"><i class="fas fa-backward "></i> </a>
+                    <a class="btn btn-primary" href="{{ route('roommediagroups.index') }}" title="Go back">ย้อนกลับ</a>
                 </div>
             </div>
 
@@ -54,7 +54,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <button type="submit" class="btn btn-success">ยืนยัน</button>
                     </div>

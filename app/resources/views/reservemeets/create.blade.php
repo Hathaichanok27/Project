@@ -3,14 +3,20 @@
 @section('content')
     <div class="page-container">    
 		<div class="container">
-			<div class="page-title">
-                <h4><i class="fas fa-id-card"></i> จองห้องประชุม</h4>
-                <ul class="breadcrumb breadcrumb-caret position-right">
-					<li><a href="{{ route('roombookings.index') }}">หน้าแรก</a></li>
-                    <li><a href="{{ route('roommeetings.index') }}">ห้องประชุม </a></li>
-                    <li class="active">จองห้องประชุม</li>
-                </ul>   
+			<div class="row">
+                <div class="pull-left">
+                    <h4><i class="fas fa-id-card"></i> จองห้องประชุม</h4>
+                    <ul class="breadcrumb breadcrumb-caret position-right">
+                        <li><a href="{{ route('roombookings.index') }}">หน้าแรก</a></li>
+                        <li><a href="{{ route('roommeetings.index') }}">ห้องประชุม </a></li>
+                        <li class="active">จองห้องประชุม</li>
+                    </ul>   
+                </div>
+                <div class="pull-right">
+                    <a class="btn btn-primary" href="{{ route('roommeetings.index') }}" title="Go back">ย้อนกลับ</a>
+                </div>
             </div>
+            <br>
             <form action="{{ route('reservemeets.store') }}" method="POST" >
             @csrf
             <div class="row">

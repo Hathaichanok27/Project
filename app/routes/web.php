@@ -17,6 +17,8 @@ Route::get('superadmin/home', 'HomeController@superadminHome')->name('superadmin
 Route::resource('superadminroombookings', SuperadminroombookingController::class)->middleware('auth')->middleware('is_superadmin');
 Route::resource('superadminroommedias', SuperadminroommediaController::class);
 Route::resource('manageadmins', ManageadminController::class);
+Route::resource('managerooms', ManageroomController::class);
+Route::resource('manageroommedias', ManageroommediaController::class);
 Route::resource('rooms', RoomController::class);
 Route::resource('roommediagroups', RoommediagroupController::class);
 Route::resource('roommediasingles', RoommediasingleController::class);

@@ -8,7 +8,7 @@
                     <h2>เพิ่มเจ้าหน้าที่</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('manageadmins.index') }}" title="Go back"><i class="fas fa-backward "></i></a>
+                    <a class="btn btn-primary" href="{{ route('manageadmins.index') }}" title="Go back">ย้อนกลับ</a>
                 </div>
             </div>
 
@@ -25,7 +25,6 @@
 
             <form action="{{ route('manageadmins.store') }}" method="POST">
                 @csrf
-
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
