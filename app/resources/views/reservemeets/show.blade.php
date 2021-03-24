@@ -39,14 +39,20 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
+                        <strong>วันที่จอง:</strong>
+                        {{ $reservemeet->book_date }}
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
                         <strong>เวลาเริ่มต้น:</strong>
-                        {{ $reservemeet->time_start }}
+                        {{ $reservemeet->book_starttime }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>เวลาสิ้นสุด:</strong>
-                        {{ $reservemeet->time_end }}
+                        {{ $reservemeet->book_endtime }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">

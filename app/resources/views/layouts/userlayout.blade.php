@@ -45,8 +45,8 @@
                         open('/reservemeets/create','_self');
                     },
                     eventDrop: function (event, delta) {
-                        var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-                        var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+                        var start = $.fullCalendar.formatDate(event.start, "HH:mm:ss");
+                        var end = $.fullCalendar.formatDate(event.end, "HH:mm:ss");
                         $.ajax({
                             url: SITEURL + '/fullcalendar/update',
                             data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,

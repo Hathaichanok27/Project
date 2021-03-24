@@ -15,7 +15,7 @@ class CalendarController extends Controller
             $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
             $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
             
-            $data = Reservemeet::whereDate('time_start', '>=', $start)->whereDate('time_end',   '<=', $end)->get(['id','time_end as title','time_start as start', 'time_end as end']);
+            $data = Reservemeet::whereDate('book_starttime', '>=', $start)->whereDate('book_date',   '<=', $end)->get(['id','book_date as title','book_starttime as start', 'book_date as end']);
             
             return Response::json($data);
             print_r($data);

@@ -26,11 +26,12 @@ class ReservemeetController extends Controller
         $request->validate([
             'username' => 'required',
             'user_fullname' => 'required',
-            'time_start' => 'required',
-            'time_end' => 'required',
             'room_type' => 'required',
             'room_floor' => 'required',
             'room_name' => 'required',
+            'book_date' => 'required',
+            'book_starttime' => 'required',
+            'book_endtime' => 'required',
             'book_status' => 'required',
         ]);
         Reservemeet::create($request->all());

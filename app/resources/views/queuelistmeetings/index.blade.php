@@ -26,7 +26,7 @@
                                     <div id="qTable_filter" class="dataTables_filter">
                                         <label>
                                             <span>Filter:</span> 
-                                            <input type="search" id="myInput" type="text" placeholder="Type to filter...">
+                                            <input type="search" id="myInput1" type="text" placeholder="Type to filter...">
                                         </label>
                                     </div>
                                 </div>
@@ -36,21 +36,27 @@
                                             <th class="text-center">คิวที่</th>
                                             <th class="text-center">บัญชีผู้ใช้</th>
                                             <th class="text-center">ชื่อ - นามสกุล</th>
+                                            <th class="text-center">ชั้น</th>
+                                            <th class="text-center">ห้อง</th>
+                                            <th class="text-center">วันที่จอง</th>
                                             <th class="text-center">เวลาเริ่มต้น</th>
                                             <th class="text-center">เวลาสิ้นสุด</th>
                                             <th class="text-center">สถานะ</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="myTable">
+                                    <tbody id="myTable1">
                                         @foreach($reservemeets as $reservemeet)
                                             <tr>
                                                 <td hidden>{{ ++$i }}</td>
                                                 <td style="text-align:center">{{ $reservemeet->id }}</td>
                                                 <td><a href="#myModal1_{{ $i }}" data-toggle="modal">{{ $reservemeet->username }}</td>
                                                 <td>{{ $reservemeet->user_fullname }}</td>
-                                                <td>{{ $reservemeet->time_start }}</td>
-                                                <td>{{ $reservemeet->time_end }}</td>
+                                                <td class="text-center">{{ $reservemeet->room_floor }}</td>
+                                                <td class="text-center">{{ $reservemeet->room_name }}</td>
+                                                <td class="text-center">{{ $reservemeet->book_date->format('d-m-Y') }}</td>
+                                                <td class="text-center">{{ $reservemeet->book_starttime }}</td>
+                                                <td class="text-center">{{ $reservemeet->book_endtime }}</td>
                                                 <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == 'รอการอนุมัติ'?'#f0ad4e':''?><?php echo $reservemeet->book_status == 'อนุมัติ'?'#5cb85c':''?><?php echo $reservemeet->book_status == 'ยกเลิกการจอง'?'#d9534f':''?><?php echo $reservemeet->book_status == 'คืนห้อง'?'#0275d8':''?>">{{$reservemeet->book_status}}</b></td>
                                                 <td class="text-center">
                                                     <ul class="icons-list">
@@ -104,10 +110,12 @@
                                                                     </div>
                                                                     <div class="media-body">
                                                                         <h5 class="media-heading text-bold" style="color:#D35400">{{ $reservemeet->user_fullname }}</h5>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $reservemeet->username }}</b></p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น : {{ $reservemeet->time_start }}</p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด : {{ $reservemeet->time_end }}</p>
-                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $reservemeet->id }}</strong></p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต: <b>{{ $reservemeet->username }}</b></p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">วันที่จอง: {{ $reservemeet->book_date->format('d-m-Y')}}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ชั้น: {{ $reservemeet->room_floor }} ห้อง: {{ $reservemeet->room_name }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ $reservemeet->book_starttime }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด: {{ $reservemeet->book_endtime }}</p>
+                                                                        <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่: <strong style="color:#F62459">{{ $reservemeet->id }}</strong></p>
                                                                     </div>  
                                                                 </div>
                                                             </div>
@@ -150,10 +158,11 @@
                                                                         </div>
                                                                         <div class="media-body">
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $reservemeet->user_fullname }}</h5>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $reservemeet->username }}</b></p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น : {{ $reservemeet->time_start }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด : {{ $reservemeet->time_end }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $reservemeet->id }}</strong></p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต: <b>{{ $reservemeet->username }}</b></p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">ชั้น: {{ $reservemeet->room_floor }} ห้อง: {{ $reservemeet->room_name }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ $reservemeet->book_starttime }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด: {{ $reservemeet->book_endtime }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่: <strong style="color:#F62459">{{ $reservemeet->id }}</strong></p>
                                                                             <input type="hidden" name="book_status" value="อนุมัติ">
                                                                         </div>
                                                                     </div>
@@ -189,8 +198,8 @@
                                             <h2>Confirmation</h2>
                                             <p>คืนห้องของ {{ $reservemeet->user_fullname }} ?</p>
                                             <div class="sa-button-container">
-                                                <input type="hidden" name="time_start" value="{{ $reservemeet->time_start }}">
-                                                <input type="hidden" name="time_end" value="{{ $reservemeet->time_end }}">
+                                                <input type="hidden" name="book_starttime" value="{{ $reservemeet->book_starttime }}">
+                                                <input type="hidden" name="book_endtime" value="{{ $reservemeet->book_endtime }}">
                                                 <input type="hidden" name="book_status" value="คืนห้อง"><button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
                                                 <button type="submit" class="btn btn-danger">ใช่, คืนห้อง</button>
                                             </div>

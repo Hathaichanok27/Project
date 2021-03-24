@@ -20,8 +20,9 @@ class CreateReservemeetsTable extends Migration
             $table->string('room_type');
             $table->string('room_floor');
             $table->string('room_name');
-            $table->dateTime('time_start');
-            $table->dateTime('time_end');
+            $table->date('book_date');
+            $table->time('book_starttime');
+            $table->time('book_endtime');
             $table->string('book_status');
             $table->timestamps();
         });

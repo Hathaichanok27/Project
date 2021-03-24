@@ -19,7 +19,7 @@
             <br>
             <form action="{{ route('reservemeets.store') }}" method="POST" >
             @csrf
-            <div class="row">
+            <div class="row">                
                 <div class="form-group">
                     <label class="col-sm-1 control-label">รหัสนิสิต: </label>
                     <div class="col-sm-6">
@@ -28,21 +28,6 @@
                     </div>
                 </div>
                 <br>
-                <div class="form-group">
-                    <label class="col-sm-1 control-label" for="time_start">เวลาเริ่มต้น: </label>
-                    <div class="col-sm-6">
-                        <input type="datetime-local" class="form-control" name="time_start">
-                    </div>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-1 control-label" for="time_end">เวลาสิ้นสุด: </label>
-                    <div class="col-sm-6">
-                        <input type="datetime-local" class="form-control" name="time_end">
-                    </div>
-                </div> 
-                <br>
-                <input type="hidden" class="form-control" name="room_type" value="ห้องประชุม">
                 <div class="form-group">
                     <label class="col-sm-1 control-label">ชั้น: </label>
                     <div class="col-sm-6">
@@ -70,7 +55,81 @@
                         </select>
                     </div>
                 </div>
-                <input type="hidden" name="book_status" value="รอการอนุมัติ">    
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label" for="book_date">วันที่จอง: </label>
+                    <div class="col-sm-6">
+                        <input type="date" class="form-control" name="book_date">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label" for="book_starttime">เวลาเริ่มต้น: </label>
+                    <div class="col-sm-6">
+                        <input type="time" class="form-control" name="book_starttime" list="book_starttime_list" min="08:00" max="20:00">
+                        <datalist id="book_starttime_list">
+                            <option value="08:00">
+                            <option value="08:30">
+                            <option value="09:00">
+                            <option value="09:30">
+                            <option value="10:00">
+                            <option value="10:30">
+                            <option value="11:00">
+                            <option value="11:30">
+                            <option value="12:00">
+                            <option value="12:30">
+                            <option value="13:00">
+                            <option value="13:30">
+                            <option value="14:00">
+                            <option value="14:30">
+                            <option value="15:00">
+                            <option value="15:30">
+                            <option value="16:00">
+                            <option value="16:30">
+                            <option value="17:00">
+                            <option value="17:30">
+                            <option value="18:00">
+                            <option value="18:30">
+                            <option value="19:00">
+                            <option value="19:30">
+                        </datalist>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label" for="book_endtime">เวลาสิ้นสุด: </label>
+                    <div class="col-sm-6">
+                        <input type="time" class="form-control" name="book_endtime" list="book_endtime_list" min="08:00" max="20:00"> 
+                        <datalist id="book_endtime_list">
+                            <option value="08:30">
+                            <option value="09:00">
+                            <option value="09:30">
+                            <option value="10:00">
+                            <option value="10:30">
+                            <option value="11:00">
+                            <option value="11:30">
+                            <option value="12:00">
+                            <option value="12:30">
+                            <option value="13:00">
+                            <option value="13:30">
+                            <option value="14:00">
+                            <option value="14:30">
+                            <option value="15:00">
+                            <option value="15:30">
+                            <option value="16:00">
+                            <option value="16:30">
+                            <option value="17:00">
+                            <option value="17:30">
+                            <option value="18:00">
+                            <option value="18:30">
+                            <option value="19:00">
+                            <option value="19:30">
+                            <option value="20:00">
+                        </datalist>
+                    </div>
+                </div> 
+                <input type="hidden" class="form-control" name="room_type" value="ห้องประชุม">
+                <input type="hidden" class="form-control" name="book_status" value="รอการอนุมัติ">    
                 <br><br>
                 <button type="submit" class="btn btn-success">ยืนยัน <i class="fas fa-check"></i></button>
                 </div>
