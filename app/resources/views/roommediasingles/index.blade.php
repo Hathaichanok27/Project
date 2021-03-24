@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-left">
-                        <h2>จัดการห้องสื่อศึกษาเดี่ยว</h2>
+                        <h2>จัดการห้องสื่อศึกษาเดี่ยว - ชั้น 6</h2>
                     </div>
                     <div class="pull-right">
                         <a class="btn btn-primary" href="{{ route('roommediasingles.create') }}">เพิ่มห้อง <i class="fas fa-plus-circle"></i></a>
@@ -24,8 +24,6 @@
                     <thead>
                         <tr>
                             <th style="text-align:center">ลำดับ</th>
-                            <th style="text-align:center">ประเภท</th>
-                            <th style="text-align:center">ชั้น</th>
                             <th style="text-align:center">ชื่่อห้อง</th> 
                             <th style="text-align:center">สถานะ</th>
                             <th style="text-align:center" width="280px">การกระทำ</th>
@@ -35,8 +33,6 @@
                         @foreach ($roommediasingles as $roommediasingle)
                             <tr style="text-align:center">
                                 <td>{{ ++$i }}</td>
-                                <td>{{ $roommediasingle->room_type }}</td>
-                                <td>{{ $roommediasingle->room_floor }}</td>
                                 <td>{{ $roommediasingle->room_name }}</td>
                                 <td class="text-center"><b style="color:<?php echo $roommediasingle->room_status == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $roommediasingle->room_status == 'ว่าง'?'#5cb85c':''?><?php echo $roommediasingle->room_status == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$roommediasingle->room_status}}</b></td>
                                 <td>

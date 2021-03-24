@@ -5,7 +5,7 @@
 		<div class="container">
             <div class="row">   
                 <div class="pull-left"> 
-                    <h2>ข้อมูลห้องสื่อศึกษาเดี่ยว</h2>
+                    <h2>ข้อมูลห้องสื่อศึกษาเดี่ยว - ชั้น 6</h2>
                 </div>
                 <div class="pull-right">
                     <a class="btn btn-primary" href="{{ route('roommediasingles.index') }}" title="Go back"><i class="fas fa-backward "></i></a>
