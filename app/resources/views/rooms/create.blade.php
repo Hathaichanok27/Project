@@ -40,7 +40,7 @@
                                 <option value="4">ชั้น 4</option>
                                 <option value="5">ชั้น 5</option>
                                 <option value="5 - เฉพาะอาจารย์">ชั้น 5 - เฉพาะอาจารย์</option>
-                                <option value="6 - มินิโฮมเธียเตอร์">ชั้น 6 - มินิโฮมเธียเตอร์</option>
+                                <option value="6 - Mini Home Theatre">ชั้น 6 - มินิโฮมเธียเตอร์</option>
                                 <option value="6 - คาราโอเกะ">ชั้น 6 - คาราโอเกะ</option>
                             </select>  
                         </div>

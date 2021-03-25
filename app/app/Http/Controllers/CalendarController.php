@@ -15,12 +15,12 @@ class CalendarController extends Controller
             $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
             $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
             
-            $data = Reservemeet::whereDate('book_starttime', '>=', $start)->whereDate('book_endtime',   '<=', $end)->get(['id','book_endtime as title','book_starttime as start', 'book_endtime as end']);
+            $data = Reservemeet::whereDate('book_starttime','>=',$start)->whereDate('book_endtime','<=',$end)
+                    ->get(['id','room_name as title','book_starttime as start', 'book_endtime as end']);
             
             return Response::json($data);
             print_r($data);
         }
-
         return view('roommeetings');
     }
 

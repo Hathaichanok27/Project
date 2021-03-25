@@ -22,110 +22,54 @@
             <div class="row">                
                 <div class="form-group">
                     <label class="col-sm-1 control-label">รหัสนิสิต: </label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <input type="text" class="form-control" readonly="readonly" name="username" value="{{ Auth::user()->username }}">
                         <input type="hidden" class="form-control" readonly="readonly" name="user_fullname" value="{{ Auth::user()->user_fullname }}">
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
-                    <label class="col-sm-1 control-label">ชั้น: </label>
-                    <div class="col-sm-6">
-                        <select class="form-control" name="room_floor">
-                            <option value="3">ชั้น 3</option>
-                            <option value="4">ชั้น 4</option>
-                            <option value="5">ชั้น 5</option>
-                            <option value="5 - เฉพาะอาจารย์">ชั้น 5 - เฉพาะอาจารย์</option>
-                            <option value="6 - มินิโฮมเธียเตอร์">ชั้น 6 - มินิโฮมเธียเตอร์</option>
-                            <option value="6 - คาราโอเกะ">ชั้น 6 - คาราโอเกะ</option>
-                        </select>
-                    </div>
-                </div>
-                <br>
-                <div class="form-group">
                     <label class="col-sm-1 control-label">ห้อง: </label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <select class="form-control" name="room_name">
-                            <option value="1">ห้อง 1</option>
-                            <option value="2">ห้อง 2</option>
-                            <option value="3">ห้อง 3</option>
-                            <option value="4">ห้อง 4</option>
-                            <option value="5">ห้อง 5</option>
-                            <option value="6">ห้อง 6</option>
+                            <option value="ชั้น 3 ห้อง 1">ชั้น 3 ห้อง 1 (Smart TV) (5)</option>
+                            <option value="ชั้น 3 ห้อง 2">ชั้น 3 ห้อง 2 (5)</option>
+                            <option value="ชั้น 3 ห้อง 3">ชั้น 3 ห้อง 3 (5)</option>
+                            <option value="ชั้น 3 ห้อง 4">ชั้น 3 ห้อง 4 (5)</option>
+                            <option value="ชั้น 3 ห้อง 5">ชั้น 3 ห้อง 5 (5)</option>
+                            <option value="ชั้น 3 ห้อง 6">ชั้น 3 ห้อง 6 (Smart TV) (5)</option>
+                            <option value="ชั้น 4 ห้อง 1">ชั้น 4 ห้อง 1 (5)</option>
+                            <option value="ชั้น 4 ห้อง 2">ชั้น 4 ห้อง 2 (5)</option>
+                            <option value="ชั้น 4 ห้อง 3">ชั้น 4 ห้อง 3 (5)</option>
+                            <option value="ชั้น 4 ห้อง 4">ชั้น 4 ห้อง 4 (Smart TV) (5)</option>
+                            <option value="ชั้น 4 ห้อง 5">ชั้น 4 ห้อง 5 (Smart TV) (5)</option>
+                            <option value="ชั้น 5 ห้อง 1">ชั้น 5 ห้อง 1 (5)</option>
+                            <option value="ชั้น 5 ห้อง 2">ชั้น 5 ห้อง 2 (5)</option>
+                            <option value="ชั้น 5 ห้อง 3">ชั้น 5 ห้อง 3 (5)</option>
+                            <option value="ชั้น 5 ห้อง 4">ชั้น 5 ห้อง 4 (Smart TV) (5)</option>
+                            <option value="ชั้น 5 ห้อง 5">ชั้น 5 ห้อง 5 (Smart TV) (5)</option>
+                            <option value="ชั้น 5 ห้องอาจารย์ 1">ชั้น 5 ห้องอาจารย์ 1 (3)</option>
+                            <option value="ชั้น 5 ห้องอาจารย์ 2">ชั้น 5 ห้องอาจารย์ 2 (3)</option>
+                            <option value="ชั้น 5 ห้องอาจารย์ 3">ชั้น 5 ห้องอาจารย์ 3 (3)</option>
+                            <option value="ชั้น 6 ห้อง 604">ชั้น 6 ห้อง 604 (Smart Board) (8)</option>
+                            <option value="ชั้น 6 ห้อง Mini Home Theatre">ชั้น 6 ห้อง Mini Home Theatre (30)</option>
+                            <option value="ชั้น 6 ห้องคาราโอเกะ01">ชั้น 6 ห้องคาราโอเกะ01 (5)</option>
+                            <option value="ชั้น 6 ห้องคาราโอเกะ02">ชั้น 6 ห้องคาราโอเกะ02 (5)</option>
                         </select>
-                    </div>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-1 control-label" for="book_date">วันที่จอง: </label>
-                    <div class="col-sm-6">
-                        <input type="date" class="form-control" name="book_date">
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_starttime">เวลาเริ่มต้น: </label>
-                    <div class="col-sm-6">
-                        <input type="time" class="form-control" name="book_starttime" list="book_starttime_list" min="08:00" max="20:00">
-                        <datalist id="book_starttime_list">
-                            <option value="08:00">
-                            <option value="08:30">
-                            <option value="09:00">
-                            <option value="09:30">
-                            <option value="10:00">
-                            <option value="10:30">
-                            <option value="11:00">
-                            <option value="11:30">
-                            <option value="12:00">
-                            <option value="12:30">
-                            <option value="13:00">
-                            <option value="13:30">
-                            <option value="14:00">
-                            <option value="14:30">
-                            <option value="15:00">
-                            <option value="15:30">
-                            <option value="16:00">
-                            <option value="16:30">
-                            <option value="17:00">
-                            <option value="17:30">
-                            <option value="18:00">
-                            <option value="18:30">
-                            <option value="19:00">
-                            <option value="19:30">
-                        </datalist>
+                    <div class="col-sm-3">
+                        <input type="datetime-local" class="form-control" name="book_starttime">  
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_endtime">เวลาสิ้นสุด: </label>
-                    <div class="col-sm-6">
-                        <input type="time" class="form-control" name="book_endtime" list="book_endtime_list" min="08:00" max="20:00"> 
-                        <datalist id="book_endtime_list">
-                            <option value="08:30">
-                            <option value="09:00">
-                            <option value="09:30">
-                            <option value="10:00">
-                            <option value="10:30">
-                            <option value="11:00">
-                            <option value="11:30">
-                            <option value="12:00">
-                            <option value="12:30">
-                            <option value="13:00">
-                            <option value="13:30">
-                            <option value="14:00">
-                            <option value="14:30">
-                            <option value="15:00">
-                            <option value="15:30">
-                            <option value="16:00">
-                            <option value="16:30">
-                            <option value="17:00">
-                            <option value="17:30">
-                            <option value="18:00">
-                            <option value="18:30">
-                            <option value="19:00">
-                            <option value="19:30">
-                            <option value="20:00">
-                        </datalist>
+                    <div class="col-sm-3">
+                        <input type="datetime-local" class="form-control" name="book_endtime">
                     </div>
                 </div> 
                 <input type="hidden" class="form-control" name="room_type" value="ห้องประชุม">

@@ -27,20 +27,8 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>ชั้น:</strong>
-                        {{ $reservemeet->room_floor }}
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
                         <strong>ห้อง:</strong>
                         {{ $reservemeet->room_name }}
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>วันที่จอง:</strong>
-                        {{ $reservemeet->book_date }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">

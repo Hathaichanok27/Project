@@ -15,9 +15,7 @@
                                     <th style="text-align:center">รายการ</th>
                                     <th style="text-align:center">รหัสนิสิต</th>
                                     <th style="text-align:center">ชื่อ-นามสกุล</th>
-                                    <th style="text-align:center">ชั้น</th>
                                     <th style="text-align:center">ห้อง</th>         
-                                    <th style="text-align:center">วันที่จอง</th>
                                     <th style="text-align:center">เวลาเริ่มต้น</th>
                                     <th style="text-align:center">เวลาเริ่มต้น</th>
                                     <th style="text-align:center">สถานะการจอง</th>
@@ -30,9 +28,7 @@
                                     <td style="text-align:center">{{ $reservemeet->id }}</td>
                                     <td>{{ $reservemeet->username }}</td>
                                     <td>{{ $reservemeet->user_fullname }}</td>
-                                    <td>{{ $reservemeet->room_floor }}</td>
                                     <td>{{ $reservemeet->room_name }}</td>
-                                    <td>{{ $reservemeet->book_date }}</td>
                                     <td>{{ $reservemeet->book_starttime }}</td>
                                     <td>{{ $reservemeet->book_endtime }}</td>
                                     <td style="text-align:center">{{ $reservemeet->book_status }}</td>
