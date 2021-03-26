@@ -48,8 +48,9 @@ Route::resource('reservemeets', ReservemeetController::class);
 
 // Show user all
 Route::resource('users', UserController::class);
-
 //fullcalender
+
+//Route::post('reservemeets/create','ReservemeetController@create');
 Route::get('fullcalendar','CalendarController@index');
 Route::post('fullcalendar/create','CalendarController@create');
 Route::post('fullcalendar/update','CalendarController@update');
