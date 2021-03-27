@@ -118,8 +118,8 @@
                                                     <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                     <td><a href="#myModal7_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                     <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                    <td>{{ $confirmmediagroup->book_starttime }}</td>
-                                                    <td>{{ $confirmmediagroup->book_endtime }}</td>
+                                                    <td>{{ $confirmmediagroup->book_starttime->format('d-m-Y H:i') }}</td>
+                                                    <td>{{ $confirmmediagroup->book_endtime->format('d-m-Y H:i') }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -560,8 +560,8 @@
                                                                         <div class="media-body">
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediagroup->book_starttime }}</p>                                                                        
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediagroup->book_endtime }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediagroup->book_starttime->format('d-m-Y H:i') }}</p>                                                                        
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediagroup->book_endtime->format('d-m-Y H:i') }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                         </div>  
                                                                     </div>
