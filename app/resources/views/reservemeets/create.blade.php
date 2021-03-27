@@ -19,7 +19,9 @@
             <br>
             <form action="{{ route('reservemeets.store') }}" method="POST" >
             @csrf
-  <?php echo date("d/m/Y H:i:s",strtotime($date))?>
+                <!-- <?php 
+                // echo date("d/m/Y H:i:s",strtotime($date))
+                ?> -->
             <div class="row">                
                 <div class="form-group">
                     <label class="col-sm-1 control-label">รหัสนิสิต: </label>
@@ -63,14 +65,34 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_starttime">เวลาเริ่มต้น: </label>
                     <div class="col-sm-3">
-                        <input type="datetime-local" class="form-control" name="book_starttime" id="book_starttime"  data-date-language="th-th" min="<?php echo date('Y-m-d\TH:i', strtotime($date)); ?>" max="<?php echo date('Y-m-d\TH:i', strtotime($date)+ (2*3600)); ?>" value="<?php echo date('Y-m-d\TH:i', strtotime($date)); ?>" >  
+                        <input type="datetime-local" class="form-control" name="book_starttime" id="book_starttime"  data-date-language="th-th"
+                            <!-- min="<?php 
+                                // echo date('Y-m-d\TH:i', strtotime($date)); 
+                                ?>" 
+                            max="<?php 
+                                // echo date('Y-m-d\TH:i', strtotime($date)+ (2*3600)); 
+                                ?>" 
+                            value="<?php 
+                                // echo date('Y-m-d\TH:i', strtotime($date)); 
+                                ?>"  -->
+                        >  
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_endtime">เวลาสิ้นสุด: </label>
                     <div class="col-sm-3">
-                        <input type="datetime-local" class="form-control" name="book_endtime" id="book_endtime" min="<?php echo date('Y-m-d\TH:i', strtotime($date)); ?>" max="<?php echo date('Y-m-d\TH:i', strtotime($date)+ (2*3600)); ?>" value="<?php echo date('Y-m-d\TH:i', strtotime($date) + (2*3600)); ?>">
+                        <input type="datetime-local" class="form-control" name="book_endtime" id="book_endtime" 
+                            <!-- min="<?php 
+                                // echo date('Y-m-d\TH:i', strtotime($date)); 
+                                ?>" 
+                            max="<?php 
+                                // echo date('Y-m-d\TH:i', strtotime($date)+ (2*3600)); 
+                                ?>" 
+                            value="<?php 
+                                // echo date('Y-m-d\TH:i', strtotime($date) + (2*3600)); 
+                                ?>" -->
+                        >
                     </div>
                 </div> 
                 <input type="hidden" class="form-control" name="room_type" value="ห้องประชุม">

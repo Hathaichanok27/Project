@@ -33,6 +33,8 @@ Route::resource('queuelistmeetings', QueuelistmeetingController::class);
 Route::resource('reports', ReportController::class);
 
 // User
+Route::resource('users', UserController::class);
+
 // Mediaroom
 Route::resource('roombookings', RoombookingController::class);
 Route::resource('roommedias', RoommediaController::class);
@@ -45,13 +47,11 @@ Route::resource('mybookings', MybookingController::class);
 // Meetingroom
 Route::resource('roommeetings', RoommeetingController::class);
 Route::resource('reservemeets', ReservemeetController::class);
+Route::resource('fullcalendar', CalendarController::class);
 
-// Show user all
-Route::resource('users', UserController::class);
 //fullcalender
-
 //Route::post('reservemeets/create','ReservemeetController@create');
-Route::get('fullcalendar','CalendarController@index');
-Route::post('fullcalendar/create','CalendarController@create');
-Route::post('fullcalendar/update','CalendarController@update');
-Route::post('fullcalendar/delete','CalendarController@destroy');
+// Route::get('fullcalendar','CalendarController@index');
+// Route::post('fullcalendar/create','CalendarController@create');
+// Route::post('fullcalendar/update','CalendarController@update');
+// Route::post('fullcalendar/delete','CalendarController@destroy');

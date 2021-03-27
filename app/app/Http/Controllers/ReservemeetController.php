@@ -18,10 +18,11 @@ class ReservemeetController extends Controller
 
     public function create()
     {
-        date_default_timezone_set('Asia/Bangkok');
-        print($_GET['start']);
-        $date = $_GET['start'];
-        return view('reservemeets.create',compact('date'));
+        return view('reservemeets.create');
+        // date_default_timezone_set('Asia/Bangkok');
+        // print($_GET['start']);
+        // $date = $_GET['start'];
+        // return view('reservemeets.create',compact('date'));
     }
 
     public function store(Request $request)

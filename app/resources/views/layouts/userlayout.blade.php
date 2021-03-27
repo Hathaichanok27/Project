@@ -21,16 +21,16 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="https://github.com/xdan/datetimepicker/blob/master/jquery.datetimepicker.css"/ >
-<script src="https://github.com/xdan/datetimepicker/blob/master/jquery.js"></script>
-<script src="https://github.com/xdan/datetimepicker/blob/master/build/jquery.datetimepicker.full.min.js"></script>
+        <!-- <link rel="stylesheet" type="text/css" href="https://github.com/xdan/datetimepicker/blob/master/jquery.datetimepicker.css"/ >
+        <script src="https://github.com/xdan/datetimepicker/blob/master/jquery.js"></script>
+        <script src="https://github.com/xdan/datetimepicker/blob/master/build/jquery.datetimepicker.full.min.js"></script> -->
 
 
         <script type="text/javascript">
-        $('#book_starttime').datetimepicker({
- // format:'d.m.Y H:i',
-  lang:'TH'
-});
+            // $('#book_starttime').datetimepicker({
+            //     format:'d-m-Y H:i',
+            //     lang:'TH'
+            // });
             $(document).ready(function () {
                 var SITEURL = "{{url('/')}}";
                 $.ajaxSetup({

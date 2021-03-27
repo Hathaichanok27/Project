@@ -14,6 +14,9 @@ class CalendarController extends Controller
         {
             $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
             $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
+
+            // $data = Reservemeet::whereDate('book_starttime','>=',$start)->whereDate('book_endtime','<=',$end)
+            //         ->get(['id','room_name as title','book_starttime as start', 'book_endtime as end']);
             
             $data = Reservemeet::selectRaw('CONCAT(room_name, " - ", user_fullname) as title, id,book_starttime as start,book_endtime as end')
                     ->whereDate('book_starttime','>=',$start)->whereDate('book_endtime','<=',$end)
