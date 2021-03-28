@@ -84,13 +84,13 @@
                     Roombooking
                 </div>
 
-                <div class="links">
+                <!-- <div class="links">
                     <a href="{{ route('superadminroombookings.index') }}">superadmin</a>
                     <a href="{{ route('adminroombookings.index') }}">admin</a>
                     <a href="{{ route('roombookings.index') }}">user</a>
                     <a href="{{ route('roommedias.index') }}">mediaroom</a>
                     <a href="{{ route('roommeetings.index') }}">meetingroom</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </body>
