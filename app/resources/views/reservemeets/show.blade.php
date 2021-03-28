@@ -34,13 +34,13 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>เวลาเริ่มต้น:</strong>
-                        {{ $reservemeet->book_starttime }}
+                        {{ $reservemeet->book_starttime->format('d-m-Y H:i') }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>เวลาสิ้นสุด:</strong>
-                        {{ $reservemeet->book_endtime }}
+                        {{ $reservemeet->book_endtime->format('d-m-Y H:i') }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -49,10 +49,16 @@
                         {{ $reservemeet->book_status }}
                     </div>
                 </div>
+                <!-- <form action="{{ route('reservemeets.update',$reservemeet->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <input type="hidden" name="book_status" value="ยกเลิกการจอง">
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('คุณต้องการยกเลิกการจองใช่หรือไม่ ?');">ยกเลิกการจอง <i class="fas fa-times-circle"></i></button>
+                </form> -->
                 <form action="{{ route('reservemeets.destroy',$reservemeet->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to Delete?');" id="btnDelete">ยกเลิก <i class="fas fa-times-circle"></i></button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('คุณต้องการยกเลิกการจองใช่หรือไม่ ?');" id="btnDelete">ยกเลิกการจอง <i class="fas fa-times-circle"></i></button>
                 </form>
             </div>
         </div>

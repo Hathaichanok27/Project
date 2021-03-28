@@ -41,6 +41,16 @@ class ReservemeetController extends Controller
         return redirect()->route('roommeetings.index');
     }
 
+    public function update(Request $request, Reservemeet $reservemeet)
+    {
+        $request->validate([
+            'book_status' => 'required'
+        ]);
+        $reservemeet->update($request->all());
+        
+        return redirect()->route('roommeetings.index');
+    }
+
     public function show(Reservemeet $reservemeet)
     {
         return view('reservemeets.show',compact('reservemeet'));
