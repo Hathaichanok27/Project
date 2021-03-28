@@ -41,11 +41,11 @@
                                 <td class="text-center"><b style="color:<?php echo $room->room_status == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $room->room_status == 'ว่าง'?'#5cb85c':''?><?php echo $room->room_status == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$room->room_status}}</b></td>
                                 <td>
                                     <form action="{{ route('rooms.destroy',$room->id) }}" method="POST">
-                                        <a href="{{ route('rooms.show',$room->id) }}" class="btn btn-info" role="button" aria-pressed="true"><i class="far fa-sticky-note fa-lg"></i></a>
-                                        <a href="{{ route('rooms.edit',$room->id) }}" class="btn btn-primary" role="button" aria-pressed="true"><i class="far fa-edit fa-lg"></i></a>
+                                        <a href="{{ route('rooms.show',$room->id) }}" class="btn btn-info" role="button" aria-pressed="true">แสดง</a>
+                                        <a href="{{ route('rooms.edit',$room->id) }}" class="btn btn-primary" role="button" aria-pressed="true">แก้ไข</a>
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to Delete?');" id="btnDelete"><i class="far fa-trash-alt fa-lg"></i></button>
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('ต้องการลบห้องนี้ใช่หรือไม่ ?');" id="btnDelete">ลบ</button>
                                     </form>
                                 </td>
                             </tr>
