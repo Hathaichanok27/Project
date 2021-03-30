@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\User;  
 class LoginController extends Controller
 {
@@ -50,10 +51,11 @@ class LoginController extends Controller
         $password = $input['password'];
          // check LDAP
         $result = $this->check_with_ad ($login, $password);
-          print_r($result);
-        if ($result <> "notfound")
-         { echo  print_r($result);
-         }else 
+   /*     if ($result <> "notfound"){
+              print_r(session("username"));
+              print_r(session("user_fullname"));
+              print_r(session("email"));
+         }else */
          if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
         {
             if (auth()->user()->is_admin == 1) {
@@ -90,6 +92,14 @@ class LoginController extends Controller
 				$result = ldap_search($ad, AD_BASEDN, $filter);
 				$entries = ldap_get_entries($ad, $result);
 				$retval = trim($entries[0]["givenname"][0]." ".$entries[0]["sn"][0]);
+                session(['username'=>$entries[0]["cn"][0]]);
+                session(['user_fullname'=>$entries[0]["displayname"][0]]);
+                session(['email'=>$entries[0]["description"][0]]);
+              //  print_r($filter);
+                echo "<pre>";
+                  print_r($entries);
+                echo "</pre>";
+             //   print_r($retval);
 			} 
 			ldap_unbind($ad); 
 		}
