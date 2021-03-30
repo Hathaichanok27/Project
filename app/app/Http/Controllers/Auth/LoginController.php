@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\User; 
- 
+
 class LoginController extends Controller
 {
 
@@ -36,7 +36,10 @@ class LoginController extends Controller
         if ($result <> "notfound") {
             print_r(session("username"));
             print_r(session("user_fullname"));
-            print_r(session("email"));
+            print_r(session("user_email"));
+            $sql = "INSERT INTO users (username, user_fullname, user_email)
+            VALUES ('username', 'user_fullname', 'user_email')";
+
         } else if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password']))) {
             if (auth()->user()->is_admin == 1) {
                 return redirect()->route('admin.home');
@@ -71,7 +74,7 @@ class LoginController extends Controller
 				$retval = trim($entries[0]["givenname"][0]." ".$entries[0]["sn"][0]);
                 session(['username'=>$entries[0]["cn"][0]]);
                 session(['user_fullname'=>$entries[0]["displayname"][0]]);
-                session(['email'=>$entries[0]["description"][0]]);
+                session(['user_email'=>$entries[0]["description"][0]]);
                 // print_r($filter);
                 echo "<pre>";
                 print_r($entries);
