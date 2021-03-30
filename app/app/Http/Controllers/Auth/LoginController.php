@@ -6,34 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use App\User;  
+use App\User; 
+ 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-  
+
     use AuthenticatesUsers;
-  
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
+
     protected $redirectTo = '/home';
-   
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -42,22 +23,21 @@ class LoginController extends Controller
     public function login(Request $request)
     {   
         $input = $request->all();
-        print(phpversion());
+
         $this->validate($request, [
             'username' => 'required',
             'password' => 'required',
         ]);
         $login = $input['username'];
         $password = $input['password'];
-         // check LDAP
+        
+        // check LDAP
         $result = $this->check_with_ad ($login, $password);
-   /*     if ($result <> "notfound"){
-              print_r(session("username"));
-              print_r(session("user_fullname"));
-              print_r(session("email"));
-         }else */
-         if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
-        {
+        if ($result <> "notfound") {
+            print_r(session("username"));
+            print_r(session("user_fullname"));
+            print_r(session("email"));
+        } else if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password']))) {
             if (auth()->user()->is_admin == 1) {
                 return redirect()->route('admin.home');
             }else if (auth()->user()->is_superadmin == 1){
@@ -69,7 +49,6 @@ class LoginController extends Controller
             return redirect()->route('login')
                 ->with('error','Email-Address And Password Are Wrong.');
         }
-          
     }
     function check_with_ad ($user, $key) 
 	{
@@ -82,12 +61,10 @@ class LoginController extends Controller
 		$vlan_no = 1; 
 		$network_id = 0; 
 		$ad = @ldap_connect("ldap://" . AD_SERVER);
-		if ($ad && $user != "" && $key != "")
-		{
+		if ($ad && $user != "" && $key != "") {
 			ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
 			ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
-			if (@ldap_bind($ad,"$user@buu.ac.th","$key")) 
-			{
+			if (@ldap_bind($ad,"$user@buu.ac.th","$key")) {
 				$filter = preg_replace("/XUID/", "$user", AD_FILTER);
 				$result = ldap_search($ad, AD_BASEDN, $filter);
 				$entries = ldap_get_entries($ad, $result);
@@ -95,16 +72,14 @@ class LoginController extends Controller
                 session(['username'=>$entries[0]["cn"][0]]);
                 session(['user_fullname'=>$entries[0]["displayname"][0]]);
                 session(['email'=>$entries[0]["description"][0]]);
-              //  print_r($filter);
+                // print_r($filter);
                 echo "<pre>";
-                  print_r($entries);
+                print_r($entries);
                 echo "</pre>";
-             //   print_r($retval);
+                // print_r($retval);
 			} 
 			ldap_unbind($ad); 
 		}
 		return $retval;
 	}
-
-
 }
