@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Reservemeet;
-use App\Room;
 use Redirect,Response;
 
 class ReservemeetController extends Controller
@@ -12,16 +11,14 @@ class ReservemeetController extends Controller
     public function index()
     {
         $reservemeets = Reservemeet::paginate();
-        $rooms = Room::paginate();
-
-        return view('reservemeets.index',compact('reservemeets','rooms'))
+        
+        return view('reservemeets.index',compact('reservemeets'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
-        $rooms = Room::paginate();
-        return view('reservemeets.create',compact('rooms'));
+        return view('reservemeets.create');
         // date_default_timezone_set('Asia/Bangkok');
         // print($_GET['start']);
         // $date = $_GET['start'];

@@ -46,20 +46,20 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>สถานะการจอง:</strong>
-                        <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == 'รอการอนุมัติ'?'#f0ad4e':''?><?php echo $reservemeet->book_status == 'อนุมัติ'?'#5cb85c':''?><?php echo $reservemeet->book_status == 'ยกเลิกการจอง'?'#d9534f':''?><?php echo $reservemeet->book_status == 'คืนห้อง'?'#0275d8':''?>">{{$reservemeet->book_status}}</b></td>
+                        {{ $reservemeet->book_status }}
                     </div>
                 </div>
-                <form action="{{ route('reservemeets.update',$reservemeet->id) }}" method="POST">
+                <!-- <form action="{{ route('reservemeets.update',$reservemeet->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="book_status" value="ยกเลิกการจอง">
                     <button type="submit" class="btn btn-danger" onclick="return confirm('คุณต้องการยกเลิกการจองใช่หรือไม่ ?');">ยกเลิกการจอง <i class="fas fa-times-circle"></i></button>
-                </form>
-                <!-- <form action="{{ route('reservemeets.destroy',$reservemeet->id) }}" method="POST">
+                </form> -->
+                <form action="{{ route('reservemeets.destroy',$reservemeet->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger" onclick="return confirm('คุณต้องการยกเลิกการจองใช่หรือไม่ ?');" id="btnDelete">ยกเลิกการจอง <i class="fas fa-times-circle"></i></button>
-                </form> -->
+                </form>
             </div>
         </div>
     </div>
