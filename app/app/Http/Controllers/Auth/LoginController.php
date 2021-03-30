@@ -49,11 +49,11 @@ class LoginController extends Controller
         $login = $input['username'];
         $password = $input['password'];
          // check LDAP
-      /*  $result = $this->check_with_ad ($login, $password);
+        $result = $this->check_with_ad ($login, $password);
           print_r($result);
         if ($result <> "notfound")
-         { echo text;
-         }else */
+         { echo  print_r($result);
+         }else 
          if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
         {
             if (auth()->user()->is_admin == 1) {
@@ -69,12 +69,12 @@ class LoginController extends Controller
         }
           
     }
-   /* function check_with_ad ($user, $key) 
+    function check_with_ad ($user, $key) 
 	{
-		define ("AD_ENABLED", 1, true);
-		define ("AD_SERVER", "10.4.1.82", true);
-		define ("AD_BASEDN", "ou=People,dc=buu,dc=ac,dc=th", true);
-		define ("AD_FILTER", "(cn=XUID)", true);	
+		define ("AD_ENABLED", 1);
+		define ("AD_SERVER", "10.4.1.82");
+		define ("AD_BASEDN", "ou=People,dc=buu,dc=ac,dc=th");
+		define ("AD_FILTER", "(cn=XUID)");	
 	
 		$retval = "notfound"; 
 		$vlan_no = 1; 
@@ -94,7 +94,7 @@ class LoginController extends Controller
 			ldap_unbind($ad); 
 		}
 		return $retval;
-	}*/
+	}
 
 
 }

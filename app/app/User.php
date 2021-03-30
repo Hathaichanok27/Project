@@ -27,7 +27,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    public static function check_with_ad ($user, $key) 
+ /*   public static function check_with_ad ($user, $key) 
 	{
 		define ("AD_ENABLED", 1, true);
 		define ("AD_SERVER", "10.4.1.82", true);
@@ -52,5 +52,5 @@ class User extends Authenticatable
 			ldap_unbind($ad); 
 		}
 		return $retval;
-	}
+	}*/
 }
