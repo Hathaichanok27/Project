@@ -62,13 +62,7 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_starttime">เวลาเริ่มต้น: </label>
                     <div class="col-sm-3">
-                        <!-- <input type="datetime-local" class="form-control" name="book_starttime" id="book_starttime"> -->
-                        <div class='input-group date' id='datetimepicker'>
-                            <input type='text' class="form-control" />
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
+                        <input type="datetime-local" class="form-control" name="book_starttime" id="book_starttime">
                     </div>
                 </div>
                 <br>
@@ -87,17 +81,3 @@
         </div>
     </div>
 @endsection 
-
-<script type="text/javascript" src="/path/to/jquery.js"></script>
-<script type="text/javascript" src="/path/to/moment.js"></script>
-<script type="text/javascript" src="/path/to/bootstrap/js/transition.js"></script>
-<script type="text/javascript" src="/path/to/bootstrap/js/collapse.js"></script>
-<script type="text/javascript" src="/path/to/bootstrap/dist/bootstrap.min.js"></script>
-<script type="text/javascript" src="/path/to/bootstrap-datetimepicker.min.js"></script>
-<link rel="stylesheet" href="/path/to/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker').datetimepicker();
-    });
-</script>
