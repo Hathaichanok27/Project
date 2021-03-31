@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 use App\User; 
 use DB;
 
@@ -35,16 +36,50 @@ class LoginController extends Controller
         // check LDAP
         $result = $this->check_with_ad ($login, $password);
         if ($result <> "notfound") {
-            print_r(session("username"));
+        /*    print_r(session("username"));
             print_r(session("user_fullname"));
-            print_r(session("user_email"));
+            print_r(session("user_email"));*/
             
-            $username = session(['username']);
-            $user_fullname = session(['user_fullname']);
-            $user_email =session(['user_email']);
-            DB::insert('insert into users (username, user_fullname, user_email) values (?, ?)', [$username],[$user_fullname],[$user_email]);
+            $username = session("username");
+            $user_fullname = session("user_fullname");
+            $user_email = session("user_email");
+            $checkuser = User::select("*")->where("username", "=", $username)->get();
+            $checkuser1 = json_decode(json_encode($checkuser), True);
+         //   print_r($checkuser1);
+            if($checkuser1){
+                $where = array('username' => $username);
+                $updateArr = [
+                    'username' => session("username"),
+                    'user_fullname' => session("user_fullname"),
+                    'user_email' => session("user_email"),
+                    'password' => bcrypt($password),
+                 ];
+                $checkpass  = User::where($where)->update($updateArr);
+              //  return 1;
+                }else {
+                    User::create([
+                        'username' => $username,
+                        'user_fullname' => $user_fullname,
+                        'user_email' => $user_email,
+                        'password' => bcrypt($password),
+                ]); 
+            }
+                if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password']))) {
+                    if (auth()->user()->is_admin == 1) {
+                        return redirect()->route('admin.home');
+                    }else if (auth()->user()->is_superadmin == 1){
+                        return redirect()->route('superadmin.home');
+                    }else{
+                        return redirect()->route('home');
+                    }
+                }else{
+                    return redirect()->route('login')
+                        ->with('error','Email-Address And Password Are Wrong.');
+                }
+    
+        //    DB::insert('insert into users (username, user_fullname, user_email) values (?, ?)', [$username],[$user_fullname],[$user_email]);
 
-        } else if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password']))) {
+        } else if(auth()->attempt(array('username' => $login, 'password' => $password))) {
             if (auth()->user()->is_admin == 1) {
                 return redirect()->route('admin.home');
             }else if (auth()->user()->is_superadmin == 1){
@@ -80,20 +115,14 @@ class LoginController extends Controller
                 session(['user_fullname'=>$entries[0]["displayname"][0]]);
                 session(['user_email'=>$entries[0]["description"][0]]);
                 // print_r($filter);
-                echo "<pre>";
-                print_r($entries);
-                echo "</pre>";
+             //   echo "<pre>";
+            //    print_r($entries);
+            //    echo "</pre>";
                 // print_r($retval);
 			} 
 			ldap_unbind($ad); 
 		}
 		return $retval;
 	}
-    // public function insert(Request $request) {
-    //     $username = $request->input('username');
-    //     $user_fullname = $request->input('user_fullname');
-    //     $user_email = $request->input('user_email');
-    //     DB::insert('insert into user (name) values(?)',[$username],[$user_fullname],[$user_email]);
-    //     echo "Record inserted successfully.<br/>";
-    //  }
+
 }

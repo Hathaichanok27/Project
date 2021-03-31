@@ -15,6 +15,11 @@
         <link href="{{ asset('icomoon/styles.css') }}" rel="stylesheet">
         <!-- <link href="{{ asset('fonts/roboto.css') }}" rel="stylesheet">  -->
 
+        <!-- datepicker -->
+   <!--     <link href="{{ asset('css/ui-lightness/jquery-ui-1.8.10.custom.css') }}" rel="stylesheet">
+        <script src="{{ asset('js/jquery-1.4.4.min.js') }}"></script>
+        <script src="{{ asset('js/jquery-ui-1.8.10.offset.datepicker.min.js') }}"></script>-->
+
         <!-- fullcalendar -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" />

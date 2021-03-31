@@ -19,6 +19,8 @@ class CreateReservemeetsTable extends Migration
             $table->string('user_fullname');
             $table->string('room_type');
             $table->string('room_name');
+            $table->dateTime('book_startdate');
+            $table->dateTime('book_enddate');
             $table->dateTime('book_starttime');
             $table->dateTime('book_endtime');
             $table->string('book_status');

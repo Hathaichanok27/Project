@@ -8,7 +8,7 @@ class Reservemeet extends Model
 {
     protected $fillable = [
         'username', 'user_fullname',
-        'room_type', 'room_name', 'book_starttime', 'book_endtime', 'book_status'
+        'room_type', 'room_name', 'book_starttime', 'book_endtime', 'book_startdate', 'book_enddate', 'book_status'
     ];
     
     protected $dates = [

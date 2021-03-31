@@ -34,10 +34,23 @@ class ReservemeetController extends Controller
             'room_name' => 'required',
             'book_starttime' => 'required',
             'book_endtime' => 'required',
+            'book_startdate' => 'required',
+            'book_enddate' => 'required',
             'book_status' => 'required',
         ]);
-        Reservemeet::create($request->all());
-        
+        $updateArr = [
+            'username' => $request->input("username"),
+            'user_fullname' => $request->input("user_fullname"),
+            'room_type' => $request->input("room_type"),
+            'room_name' => $request->input("username"),
+            'book_starttime' =>$request->input("book_startdate")." ". $request->input("book_starttime"),
+            'book_endtime' => $request->input("book_enddate") ." ". $request->input("book_endtime"),
+            'book_startdate' => $request->input("book_startdate"),
+            'book_enddate' => $request->input("book_enddate"),
+            'book_status' => $request->input("book_status"),
+         ];
+        Reservemeet::create($updateArr);
+        print_r($updateArr);
         return redirect()->route('roommeetings.index');
     }
 
