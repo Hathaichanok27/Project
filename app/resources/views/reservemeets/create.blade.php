@@ -63,7 +63,6 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_startdate">วันเริ่มต้น: </label>
                     <div class="col-sm-3">
-                        <!-- <input type="datetime-local" class="form-control" name="book_starttime" id="book_starttime"> -->
                         <input type="text" class="form-control" size="10" id="datepicker-th" name="book_startdate" />
                     </div>
                 </div>
@@ -78,6 +77,24 @@
                             <option value="09:30">09:30</option>
                             <option value="10:00">10:00</option>
                             <option value="10:30">10:30</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:30">11:30</option>
+                            <option value="12:00">12:00</option>
+                            <option value="12:30">12:30</option>
+                            <option value="13:00">13:00</option>
+                            <option value="13:30">13:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:30">14:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:00">16:00</option>
+                            <option value="16:30">16:30</option>
+                            <option value="17:00">17:00</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:00">18:00</option>
+                            <option value="18:30">18:30</option>
+                            <option value="19:00">19:00</option>
+                            <option value="19:30">19:30</option>
                         </select>
                     </div>
                 </div>
@@ -85,7 +102,6 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_enddate">วันสิ้นสุด: </label>
                     <div class="col-sm-3">
-                        <!-- <input type="datetime-local" class="form-control" name="book_endtime" id="book_endtime"> -->
                         <input type="text" class="form-control" size="10" id="datepicker-th-2" name="book_enddate" />
                     </div>
                 </div> 
@@ -99,6 +115,25 @@
                             <option value="09:30">09:30</option>
                             <option value="10:00">10:00</option>
                             <option value="10:30">10:30</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:30">11:30</option>
+                            <option value="12:00">12:00</option>
+                            <option value="12:30">12:30</option>
+                            <option value="13:00">13:00</option>
+                            <option value="13:30">13:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:30">14:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:00">16:00</option>
+                            <option value="16:30">16:30</option>
+                            <option value="17:00">17:00</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:00">18:00</option>
+                            <option value="18:30">18:30</option>
+                            <option value="19:00">19:00</option>
+                            <option value="19:30">19:30</option>
+                            <option value="20:00">20:00</option>
                         </select>
                     </div>
                 </div>
@@ -112,32 +147,34 @@
         </div>
     </div>
 
-        <link href="{{ asset('css/ui-lightness/jquery-ui-1.8.10.custom.css') }}" rel="stylesheet">
-        <script src="{{ asset('js/jquery-1.4.4.min.js') }}"></script>
-        <script src="{{ asset('js/jquery-ui-1.8.10.offset.datepicker.min.js') }}"></script>
-<script type="text/javascript">
-		  $(function () {
+    <!-- datepicker -->
+    <link href="{{ asset('css/ui-lightness/jquery-ui-1.8.10.custom.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/jquery-1.4.4.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui-1.8.10.offset.datepicker.min.js') }}"></script>
+    
+    <script type="text/javascript">
+        $(function () {
 		    var d = new Date();
 		    var toDay = d.getDate() + '-' + (d.getMonth() + 1) + '-' + (d.getFullYear() + 543);
 
 
 		    // กรณีต้องการใส่ปฏิทินลงไปมากกว่า 1 อันต่อหน้า ก็ให้มาเพิ่ม Code ที่บรรทัดด้านล่างด้วยครับ (1 ชุด = 1 ปฏิทิน)
 
-		    $("#datepicker-th").datepicker({ dateFormat: 'yy-mm-dd', isBuddhist: true, defaultDate: toDay, dayNames: ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'],
-              dayNamesMin: ['อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.'],
-              monthNames: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
-              monthNamesShort: ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.']});
+		    $("#datepicker-th").datepicker({ dateFormat: 'yy-mm-dd', defaultDate: toDay, 
+                dayNames: ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'],
+                dayNamesMin: ['อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.'],
+                monthNames: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
+                monthNamesShort: ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.']});
 
-		    $("#datepicker-th-2").datepicker({ changeMonth: true, changeYear: true,dateFormat: 'yy-mm-dd', isBuddhist: true, defaultDate: toDay,dayNames: ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์'],
-              dayNamesMin: ['อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.'],
-              monthNames: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
-              monthNamesShort: ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.']});
+		    $("#datepicker-th-2").datepicker({ changeMonth: true, changeYear: true,dateFormat: 'yy-mm-dd', defaultDate: toDay,
+                dayNames: ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์'],
+                dayNamesMin: ['อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.'],
+                monthNames: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
+                monthNamesShort: ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.']});
 
      		$("#datepicker-en").datepicker({ dateFormat: 'yy-mm-dd'});
 
 		    $("#inline").datepicker({ dateFormat: 'yy-mm-dd', inline: true });
-
-
-			});
-		</script>
+		});
+	</script>
 @endsection 

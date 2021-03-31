@@ -44,31 +44,7 @@ class CreateUsersSeeder extends Seeder
                 'username'=>'user003',
                 'user_email'=>'user3@user.com',
                 'password'=> bcrypt('123456'),
-            ],
-            [
-                'user_fullname'=>'60160039',
-                'username'=>'60160039',
-                'user_email'=>'60160039@go.buu.ac.th',
-                'password'=> bcrypt('Mark_imt1998'),
-            ],
-            [
-                'user_fullname'=>'60160008',
-                'username'=>'60160008',
-                'user_email'=>'60160008@go.buu.ac.th',
-                'password'=> bcrypt('HAthaimild27.'),
-            ],
-            [
-                'user_fullname'=>'60160009',
-                'username'=>'60160009',
-                'user_email'=>'60160009@go.buu.ac.th',
-                'password'=> bcrypt('9988_7766.'),
-            ],
-            [
-                'user_fullname'=>'60160010',
-                'username'=>'60160010',
-                'user_email'=>'60160010@go.buu.ac.th',
-                'password'=> bcrypt('Mark'),
-            ],
+            ]
         ];
   
         foreach ($user as $key => $value) {

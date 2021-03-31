@@ -42,7 +42,7 @@ class ReservemeetController extends Controller
             'username' => $request->input("username"),
             'user_fullname' => $request->input("user_fullname"),
             'room_type' => $request->input("room_type"),
-            'room_name' => $request->input("username"),
+            'room_name' => $request->input("room_name"),
             'book_starttime' =>$request->input("book_startdate")." ". $request->input("book_starttime"),
             'book_endtime' => $request->input("book_enddate") ." ". $request->input("book_endtime"),
             'book_startdate' => $request->input("book_startdate"),
@@ -50,7 +50,6 @@ class ReservemeetController extends Controller
             'book_status' => $request->input("book_status"),
          ];
         Reservemeet::create($updateArr);
-        print_r($updateArr);
         return redirect()->route('roommeetings.index');
     }
 
