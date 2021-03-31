@@ -38,6 +38,7 @@ class LoginController extends Controller
         if ($result <> "notfound") {
         /*    print_r(session("username"));
             print_r(session("user_fullname"));
+<<<<<<< HEAD
             print_r(session("user_email"));*/
             
             $username = session("username");
@@ -80,6 +81,10 @@ class LoginController extends Controller
         //    DB::insert('insert into users (username, user_fullname, user_email) values (?, ?)', [$username],[$user_fullname],[$user_email]);
 
         } else if(auth()->attempt(array('username' => $login, 'password' => $password))) {
+=======
+            print_r(session("user_email"));
+        } else if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password']))) {
+>>>>>>> 785ca41d6292d36e09954ea6cd88b8ca7890e666
             if (auth()->user()->is_admin == 1) {
                 return redirect()->route('admin.home');
             }else if (auth()->user()->is_superadmin == 1){
@@ -124,5 +129,15 @@ class LoginController extends Controller
 		}
 		return $retval;
 	}
+<<<<<<< HEAD
 
+=======
+    public function insert(Request $request) {
+        $username = session(['username']);
+        $user_fullname = session(['user_fullname']);
+        $user_email =session(['user_email']);
+        DB::insert('insert into users (username, user_fullname, user_email) values (?, ?)', [$username],[$user_fullname],[$user_email]);
+        echo "Record inserted successfully.<br/>";
+     }
+>>>>>>> 785ca41d6292d36e09954ea6cd88b8ca7890e666
 }
