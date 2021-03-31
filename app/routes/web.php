@@ -48,10 +48,3 @@ Route::resource('mybookings', MybookingController::class);
 Route::resource('roommeetings', RoommeetingController::class);
 Route::resource('reservemeets', ReservemeetController::class);
 Route::resource('fullcalendar', CalendarController::class);
-
-//fullcalender
-//Route::post('reservemeets/create','ReservemeetController@create');
-// Route::get('fullcalendar','CalendarController@index');
-// Route::post('fullcalendar/create','CalendarController@create');
-// Route::post('fullcalendar/update','CalendarController@update');
-// Route::post('fullcalendar/delete','CalendarController@destroy');
