@@ -38,12 +38,6 @@ class LoginController extends Controller
             print_r(session("username"));
             print_r(session("user_fullname"));
             print_r(session("user_email"));
-            
-            $username = session(['username']);
-            $user_fullname = session(['user_fullname']);
-            $user_email =session(['user_email']);
-            DB::insert('insert into users (username, user_fullname, user_email) values (?, ?)', [$username],[$user_fullname],[$user_email]);
-
         } else if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password']))) {
             if (auth()->user()->is_admin == 1) {
                 return redirect()->route('admin.home');
@@ -89,11 +83,11 @@ class LoginController extends Controller
 		}
 		return $retval;
 	}
-    // public function insert(Request $request) {
-    //     $username = $request->input('username');
-    //     $user_fullname = $request->input('user_fullname');
-    //     $user_email = $request->input('user_email');
-    //     DB::insert('insert into user (name) values(?)',[$username],[$user_fullname],[$user_email]);
-    //     echo "Record inserted successfully.<br/>";
-    //  }
+    public function insert(Request $request) {
+        $username = session(['username']);
+        $user_fullname = session(['user_fullname']);
+        $user_email =session(['user_email']);
+        DB::insert('insert into users (username, user_fullname, user_email) values (?, ?)', [$username],[$user_fullname],[$user_email]);
+        echo "Record inserted successfully.<br/>";
+     }
 }
