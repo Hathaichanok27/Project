@@ -1,6 +1,7 @@
 @extends('layouts.userlayout')
 
 @section('content')
+    
     <div class="page-container">    
 		<div class="container">
 			<div class="row">

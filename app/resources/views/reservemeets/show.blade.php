@@ -34,13 +34,13 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>เวลาเริ่มต้น:</strong>
-                        {{ $reservemeet->book_starttime->format('d-m-Y H:i') }}
+                        {{ date("d-m-",strtotime($reservemeet->book_starttime)) }}{{ date("Y",strtotime($reservemeet->book_starttime))+543 }} {{ date("H:i",strtotime($reservemeet->book_starttime)) }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>เวลาสิ้นสุด:</strong>
-                        {{ $reservemeet->book_endtime->format('d-m-Y H:i') }}
+                        {{ date("d-m-",strtotime($reservemeet->book_endtime)) }}{{ date("Y",strtotime($reservemeet->book_endtime))+543 }} {{ date("H:i",strtotime($reservemeet->book_endtime)) }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">

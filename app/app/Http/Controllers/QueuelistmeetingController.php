@@ -10,10 +10,21 @@ class QueuelistmeetingController extends Controller
 {
     public function index()
     {
-        $reservemeets = Reservemeet::paginate();
+        $reservemeets1 = Reservemeet::select("*")->where("book_status", "=", "รอการอนุมัติ")->get();
+        $reservemeets2 = Reservemeet::select("*")->where("book_status", "=", "อนุมัติ")->get();
+        $reservemeets3 = Reservemeet::select("*")->where("book_status", "=", "คืนห้อง")->get();
+        $reservemeets4 = Reservemeet::select("*")->where("book_status", "=", "ยกเลิกการจอง")->get();
+        $count1 = count($reservemeets1);
+        $count2 = count($reservemeets2);
+        $count3 = count($reservemeets3);
+        $count4 = count($reservemeets4);
+
+        return view('queuelistmeetings.index',compact(['reservemeets1','reservemeets2','reservemeets3','reservemeets4','count1','count2','count3','count4']))
+                ->with('i', (request()->input('page', 1) - 1) * 5); 
+        // $reservemeets = Reservemeet::paginate();
         
-        return view('queuelistmeetings.index',compact('reservemeets'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        // return view('queuelistmeetings.index',compact('reservemeets'))
+        //     ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function update(Request $request, $id)

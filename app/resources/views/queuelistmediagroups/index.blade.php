@@ -17,7 +17,7 @@
 			<div class="content-wrapper">
 			    <div class="tabbable">   
                     <ul class="nav nav-tabs nav-tabs-highlight" style="margin-bottom: 0px;">
-                        <li class="active"><a href="#label-tab1" data-toggle="tab">รอคิว <span class="label label-warning position-right">{{$count1}}</span> </a></li>
+                        <li class="active"><a href="#label-tab1" data-toggle="tab">รอคิว <span class="label label-warning position-right">{{$count1}}</span></a></li>
                         <li><a href="#label-tab2" data-toggle="tab">ใช้งานอยู่ <span class="label bg-success position-right">{{$count2}}</span></a></li>
                         <li><a href="#label-tab3" data-toggle="tab">คืนห้องแล้ว <span class="label bg-blue position-right">{{$count3}}</span></a></li>
                         <li><a href="#label-tab4" data-toggle="tab">ถูกยกเลิก <span class="label bg-danger position-right">{{$count4}}</span></a></li>
@@ -55,7 +55,7 @@
                                                     <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                     <td><a href="#myModal1_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                     <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                    <td>
+                                                    <td class="text-center">
                                                         <?php 
                                                             $origin = date_create($confirmmediagroup->created_at->format('d-m-Y H:i'));
                                                             $target = date_create('now');
@@ -118,8 +118,8 @@
                                                     <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                     <td><a href="#myModal7_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                     <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                    <td>{{ $confirmmediagroup->book_starttime->format('d-m-Y H:i') }}</td>
-                                                    <td>{{ $confirmmediagroup->book_endtime->format('d-m-Y H:i') }}</td>
+                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediagroup->book_starttime)) }}{{ date("Y",strtotime($confirmmediagroup->book_starttime))+543 }} {{ date("H:i",strtotime($confirmmediagroup->book_starttime)) }}</td>
+                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediagroup->book_endtime)) }}{{ date("Y",strtotime($confirmmediagroup->book_endtime))+543 }} {{ date("H:i",strtotime($confirmmediagroup->book_endtime)) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -169,7 +169,7 @@
                                                     <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                     <td><a href="#myModal9_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                     <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                    <td>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}</td>
+                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediagroup->created_at)) }}{{ date("Y",strtotime($confirmmediagroup->created_at))+543 }} {{ date("H:i",strtotime($confirmmediagroup->created_at)) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -209,6 +209,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="myTable4">
+                                        <?php $i = 0; ?>
                                         <?php if($confirmmediagroups4){?>
                                             @foreach($confirmmediagroups4 as $confirmmediagroup)
                                                 <tr>
@@ -216,7 +217,7 @@
                                                     <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                     <td><a href="#myModal10_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                     <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                    <td>{{ $confirmmediagroup->created_at->format('d-m-Y H:i') }}</td>
+                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediagroup->created_at)) }}{{ date("Y",strtotime($confirmmediagroup->created_at))+543 }} {{ date("H:i",strtotime($confirmmediagroup->created_at)) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -245,7 +246,7 @@
                                         $target = date_create('now');
                                         $interval = date_diff($origin, $target);
                                     ?>
-                                    <!-- Modal1 -->
+                                    <!-- Tab1 Modal1 -->
                                     <div class="modal" id="myModal1_{{ $confirmmediagroup->id }}" role="dialog">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -560,8 +561,8 @@
                                                                         <div class="media-body">
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediagroup->book_starttime->format('d-m-Y H:i') }}</p>                                                                        
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediagroup->book_endtime->format('d-m-Y H:i') }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ date("d-m-",strtotime($confirmmediagroup->book_starttime)) }}{{ date("Y",strtotime($confirmmediagroup->book_starttime))+543 }} {{ date("H:i",strtotime($confirmmediagroup->book_starttime)) }}</p>                                                                        
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ date("d-m-",strtotime($confirmmediagroup->book_endtime)) }}{{ date("Y",strtotime($confirmmediagroup->book_endtime))+543 }} {{ date("H:i",strtotime($confirmmediagroup->book_endtime)) }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                         </div>  
                                                                     </div>

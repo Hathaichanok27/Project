@@ -55,7 +55,7 @@
                                                     <td style="text-align:center">{{ $confirmmediasingle->id }}</td>
                                                     <td><a href="#myModal1_{{ $confirmmediasingle->id }}" data-toggle="modal">{{ $confirmmediasingle->username }}</td>
                                                     <td>{{ $confirmmediasingle->user_fullname }}</td>
-                                                    <td>
+                                                    <td class="text-center">
                                                         <?php 
                                                             $origin = date_create($confirmmediasingle->created_at->format('d-m-Y H:i'));
                                                             $target = date_create('now');
@@ -118,8 +118,8 @@
                                                     <td style="text-align:center">{{ $confirmmediasingle->id }}</td>
                                                     <td><a href="#myModal7_{{ $confirmmediasingle->id }}" data-toggle="modal">{{ $confirmmediasingle->username }}</td>
                                                     <td>{{ $confirmmediasingle->user_fullname }}</td>
-                                                    <td>{{ $confirmmediasingle->book_starttime->format('d-m-Y H:i') }}</td>
-                                                    <td>{{ $confirmmediasingle->book_endtime->format('d-m-Y H:i') }}</td>
+                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediasingle->book_starttime)) }}{{ date("Y",strtotime($confirmmediasingle->book_starttime))+543 }} {{ date("H:i",strtotime($confirmmediasingle->book_starttime)) }}</td>
+                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediasingle->book_endtime)) }}{{ date("Y",strtotime($confirmmediasingle->book_endtime))+543 }} {{ date("H:i",strtotime($confirmmediasingle->book_endtime)) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -169,7 +169,7 @@
                                                     <td style="text-align:center">{{ $confirmmediasingle->id }}</td>
                                                     <td><a href="#myModal9_{{ $confirmmediasingle->id }}" data-toggle="modal">{{ $confirmmediasingle->username }}</td>
                                                     <td>{{ $confirmmediasingle->user_fullname }}</td>
-                                                    <td>{{ $confirmmediasingle->created_at->format('d-m-Y H:i') }}</td>
+                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediasingle->created_at)) }}{{ date("Y",strtotime($confirmmediasingle->created_at))+543 }} {{ date("H:i",strtotime($confirmmediasingle->created_at)) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -209,6 +209,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="myTable4">
+                                        <?php $i = 0; ?>
                                         <?php if($confirmmediasingles4){?>
                                             @foreach($confirmmediasingles4 as $confirmmediasingle)
                                                 <tr>
@@ -216,7 +217,7 @@
                                                     <td style="text-align:center">{{ $confirmmediasingle->id }}</td>
                                                     <td><a href="#myModal10_{{ $confirmmediasingle->id }}" data-toggle="modal">{{ $confirmmediasingle->username }}</td>
                                                     <td>{{ $confirmmediasingle->user_fullname }}</td>
-                                                    <td>{{ $confirmmediasingle->created_at->format('d-m-Y H:i') }}</td>
+                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediasingle->created_at)) }}{{ date("Y",strtotime($confirmmediasingle->created_at))+543 }} {{ date("H:i",strtotime($confirmmediasingle->created_at)) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -245,7 +246,7 @@
                                         $target = date_create('now');
                                         $interval = date_diff($origin, $target);
                                     ?>
-                                    <!-- Modal1 -->
+                                    <!-- Tab1 Modal1 -->
                                     <div class="modal" id="myModal1_{{ $confirmmediasingle->id }}" role="dialog">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -560,8 +561,8 @@
                                                                         <div class="media-body">
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediasingle->user_fullname }}</h5>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediasingle->username }}</b></p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediasingle->book_starttime->format('d-m-Y H:i') }}</p>                                                                        
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ $confirmmediasingle->book_endtime->format('d-m-Y H:i') }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ date("d-m-",strtotime($confirmmediasingle->book_starttime)) }}{{ date("Y",strtotime($confirmmediasingle->book_starttime))+543 }} {{ date("H:i",strtotime($confirmmediasingle->book_starttime)) }}</p>                                                                        
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ date("d-m-",strtotime($confirmmediasingle->book_endtime)) }}{{ date("Y",strtotime($confirmmediasingle->book_endtime))+543 }} {{ date("H:i",strtotime($confirmmediasingle->book_endtime)) }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediasingle->id }}</strong></p>
                                                                         </div>  
                                                                     </div>
