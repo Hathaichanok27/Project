@@ -47,7 +47,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>สถานะการจอง:</strong>
-                        {{ $reservemeet->book_status }}
+                        <b style="color:<?php echo $reservemeet->book_status == 'รอการอนุมัติ'?'#f0ad4e':''?><?php echo $reservemeet->book_status == 'อนุมัติ'?'#5cb85c':''?><?php echo $reservemeet->book_status == 'ยกเลิกการจอง'?'#d9534f':''?><?php echo $reservemeet->book_status == 'คืนห้อง'?'#0275d8':''?>">{{$reservemeet->book_status}}</b>
                     </div>
                 </div>
                 <!-- <form action="{{ route('reservemeets.update',$reservemeet->id) }}" method="POST">
