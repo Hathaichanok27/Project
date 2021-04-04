@@ -17,7 +17,6 @@ services:
      restart: always
      volumes:
        - D:\Project\app:/app
-      #  - D:\Project\app\conf\php.ini:/opt/bitnami/php/conf/php.ini:ro
 
    laravel-db:
      container_name: laravel-db
