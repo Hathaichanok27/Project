@@ -23,10 +23,10 @@ class ManageadminController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required',
-            'confirm_password' => 'required',
+            'admin_username' => 'required',
+            'admin_fullname' => 'required',
+            'admin_email' => 'required|email',
+            'admin_telnum' => 'required',
         ]);
 
         Manageadmin::create($request->all());
@@ -48,10 +48,10 @@ class ManageadminController extends Controller
     public function update(Request $request, Manageadmin $manageadmin)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required',
-            'confirm_password' => 'required',
+            'admin_username' => 'required',
+            'admin_fullname' => 'required',
+            'admin_email' => 'required|email',
+            'admin_telnum' => 'required',
         ]);
 
         $manageadmin->update($request->all());

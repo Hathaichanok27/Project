@@ -24,15 +24,19 @@
             <table class="table table-bordered">
                 <tr>
                     <th style="text-align:center">ลำดับ</th>
-                    <th style="text-align:center">ชื่อ</th>
+                    <th style="text-align:center">รหัสผู้ใช้</th>
+                    <th style="text-align:center">ชื่อ-นามสกุล</th>
                     <th style="text-align:center">อีเมล</th>
+                    <th style="text-align:center">เบอร์โทร</th>
                     <th style="text-align:center" width="280px">การกระทำ</th>
                 </tr>
                 @foreach ($manageadmins as $manageadmin)
                 <tr>
                     <td style="text-align:center">{{ ++$i }}</td>
-                    <td>{{ $manageadmin->name }}</td>
-                    <td>{{ $manageadmin->email }}</td>
+                    <td>{{ $manageadmin->admin_username }}</td>
+                    <td>{{ $manageadmin->admin_fullname }}</td>
+                    <td>{{ $manageadmin->admin_email }}</td>
+                    <td>{{ $manageadmin->admin_telnum }}</td>
                     <td style="text-align:center">
                         <form action="{{ route('manageadmins.destroy',$manageadmin->id) }}" method="POST">
                             <a href="{{ route('manageadmins.show',$manageadmin->id) }}" class="btn btn-info" role="button" aria-pressed="true">แสดง</a>

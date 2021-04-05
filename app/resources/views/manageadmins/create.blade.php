@@ -28,26 +28,26 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>ชื่อ:</strong>
-                            <input type="text" name="name" class="form-control" placeholder="ชื่อ นามสกุล">
+                            <strong>รหัสผู้ใช้:</strong>
+                            <input type="text" name="admin_username" class="form-control" placeholder="username">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>ชื่อ-นามสกุล:</strong>
+                            <input type="text" name="admin_fullname" class="form-control" placeholder="ชื่อ นามสกุล">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>อีเมล:</strong>
-                            <input type="email" name="email" class="form-control" placeholder="example@email.com">
+                            <input type="email" name="admin_email" class="form-control" placeholder="example@email.com">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>รหัสผ่าน:</strong>
-                            <input type="password" name="password" class="form-control" placeholder="******">
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>ยืนยันรหัสผ่าน:</strong>
-                            <input type="password" name="confirm_password" class="form-control" placeholder="******">
+                            <strong>เบอร์โทร:</strong>
+                            <input type="text" name="admin_telnum" class="form-control" placeholder="0xx-xxx-xxxx">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -15,14 +15,26 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>ชื่อ:</strong>
-                        {{ $manageadmin->name }}
+                        <strong>รหัสผู้ใช้:</strong>
+                        {{ $manageadmin->admin_username }}
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>ชื่อ-นามสกุล:</strong>
+                        {{ $manageadmin->admin_fullname }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>อีเมล:</strong>
-                        {{ $manageadmin->email }}
+                        {{ $manageadmin->admin_email }}
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>เบอร์โทร:</strong>
+                        {{ $manageadmin->admin_telnum }}
                     </div>
                 </div>
             </div>

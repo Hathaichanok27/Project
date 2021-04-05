@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Manageadmin extends Model
 {
     protected $fillable = [
-        'name', 'email', 'password', 'confirm_password'
-    ];
-
-    protected $hidden = [
-        'password', 'confirm_password',
+        'admin_username', 'admin_fullname', 'admin_email', 'admin_telnum'
     ];
 }
