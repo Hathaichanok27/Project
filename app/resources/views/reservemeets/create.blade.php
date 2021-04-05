@@ -30,35 +30,27 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label class="col-sm-1 control-label">ห้อง: </label>
-                    <div class="col-sm-3">
-                        <select class="form-control" name="room_name">
-                            <option value="ชั้น 3 ห้อง 1">ชั้น 3 ห้อง 1 (Smart TV) (5)</option>
-                            <option value="ชั้น 3 ห้อง 2">ชั้น 3 ห้อง 2 (5)</option>
-                            <option value="ชั้น 3 ห้อง 3">ชั้น 3 ห้อง 3 (5)</option>
-                            <option value="ชั้น 3 ห้อง 4">ชั้น 3 ห้อง 4 (5)</option>
-                            <option value="ชั้น 3 ห้อง 5">ชั้น 3 ห้อง 5 (5)</option>
-                            <option value="ชั้น 3 ห้อง 6">ชั้น 3 ห้อง 6 (Smart TV) (5)</option>
-                            <option value="ชั้น 4 ห้อง 1">ชั้น 4 ห้อง 1 (5)</option>
-                            <option value="ชั้น 4 ห้อง 2">ชั้น 4 ห้อง 2 (5)</option>
-                            <option value="ชั้น 4 ห้อง 3">ชั้น 4 ห้อง 3 (5)</option>
-                            <option value="ชั้น 4 ห้อง 4">ชั้น 4 ห้อง 4 (Smart TV) (5)</option>
-                            <option value="ชั้น 4 ห้อง 5">ชั้น 4 ห้อง 5 (Smart TV) (5)</option>
-                            <option value="ชั้น 5 ห้อง 1">ชั้น 5 ห้อง 1 (5)</option>
-                            <option value="ชั้น 5 ห้อง 2">ชั้น 5 ห้อง 2 (5)</option>
-                            <option value="ชั้น 5 ห้อง 3">ชั้น 5 ห้อง 3 (5)</option>
-                            <option value="ชั้น 5 ห้อง 4">ชั้น 5 ห้อง 4 (Smart TV) (5)</option>
-                            <option value="ชั้น 5 ห้อง 5">ชั้น 5 ห้อง 5 (Smart TV) (5)</option>
-                            <option value="ชั้น 5 ห้องอาจารย์ 1">ชั้น 5 ห้องอาจารย์ 1 (3)</option>
-                            <option value="ชั้น 5 ห้องอาจารย์ 2">ชั้น 5 ห้องอาจารย์ 2 (3)</option>
-                            <option value="ชั้น 5 ห้องอาจารย์ 3">ชั้น 5 ห้องอาจารย์ 3 (3)</option>
-                            <option value="ชั้น 6 ห้อง 604">ชั้น 6 ห้อง 604 (Smart Board) (8)</option>
-                            <option value="ชั้น 6 ห้อง Mini Home Theatre">ชั้น 6 ห้อง Mini Home Theatre (30)</option>
-                            <option value="ชั้น 6 ห้องคาราโอเกะ01">ชั้น 6 ห้องคาราโอเกะ01 (5)</option>
-                            <option value="ชั้น 6 ห้องคาราโอเกะ02">ชั้น 6 ห้องคาราโอเกะ02 (5)</option>
-                        </select>
-                    </div>
+                    <label class="col-sm-1 control-label">ชั้น: </label>
+                    @foreach($rooms as $room)
+                        <div class="col-sm-3">
+                            <select class="form-control" name="room_floor">
+                                <option value="{{ $room->room_floor }}">ชั้น {{ $room->room_floor }}</option>
+                            </select>
+                        </div>
+                    @endforeach
                 </div>
+                <br>
+                
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">ห้อง: </label>
+                    @foreach($rooms as $room)
+                        <div class="col-sm-3">
+                            <select class="form-control" name="room_name">
+                                <option value="{{ $room->room_name }}">{{ $room->room_name }}</option> 
+                            </select>  
+                        </div> 
+                    @endforeach 
+                    </div>
                 <br>
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_startdate">วันเริ่มต้น: </label>
@@ -156,10 +148,6 @@
         $(function () {
 		    var d = new Date();
 		    var toDay = d.getDate() + '-' + (d.getMonth() + 1) + '-' + (d.getFullYear() + 543);
-
-
-		    // กรณีต้องการใส่ปฏิทินลงไปมากกว่า 1 อันต่อหน้า ก็ให้มาเพิ่ม Code ที่บรรทัดด้านล่างด้วยครับ (1 ชุด = 1 ปฏิทิน)
-
 		    $("#datepicker-th").datepicker({ dateFormat: 'yy-mm-dd', defaultDate: toDay, 
                 dayNames: ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'],
                 dayNamesMin: ['อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.'],
@@ -171,9 +159,8 @@
                 dayNamesMin: ['อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.'],
                 monthNames: ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],
                 monthNamesShort: ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.']});
-
-     		$("#datepicker-en").datepicker({ dateFormat: 'yy-mm-dd'});
-
+     		
+             $("#datepicker-en").datepicker({ dateFormat: 'yy-mm-dd'});
 		    $("#inline").datepicker({ dateFormat: 'yy-mm-dd', inline: true });
 		});
 	</script>

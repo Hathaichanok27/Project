@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Reservemeet;
+use App\Room;
 use Redirect,Response;
 
 class ReservemeetController extends Controller
@@ -11,14 +12,16 @@ class ReservemeetController extends Controller
     public function index()
     {
         $reservemeets = Reservemeet::paginate();
-        
-        return view('reservemeets.index',compact('reservemeets'))
+        $rooms = Room::paginate();
+
+        return view('reservemeets.index',compact('reservemeets','rooms'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
-        return view('reservemeets.create');
+        $rooms = Room::paginate();
+        return view('reservemeets.create',compact('rooms'));
     }
 
     public function store(Request $request)

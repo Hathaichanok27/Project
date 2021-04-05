@@ -188,7 +188,7 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="button" class="cancel" data-dismiss="modal">ไม่ใช่</button>
-                                                    <button type="submit" class="btn btn-danger">ใช่, ลบห้อง</button>
+                                                    <button type="submit" class="btn btn-danger">ใช่, ลบเจ้าหน้าที่</button>
                                                 </form>
                                             </div>
                                         </div>
