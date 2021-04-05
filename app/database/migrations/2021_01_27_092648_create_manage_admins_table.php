@@ -18,7 +18,8 @@ class CreateManageAdminsTable extends Migration
             $table->string('admin_username');
             $table->string('admin_fullname');
             $table->string('admin_email')->unique();
-            $table->string('admin_telnum');
+            $table->string('admin_telnum')->nullable();
+            $table->boolean('is_admin');
             $table->timestamps();
         });
     }

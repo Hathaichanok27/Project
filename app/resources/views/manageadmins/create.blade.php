@@ -50,6 +50,7 @@
                             <input type="text" name="admin_telnum" class="form-control" placeholder="0xx-xxx-xxxx">
                         </div>
                     </div>
+                    <input type="hidden" name="is_admin" value="1">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <button type="submit" class="btn btn-success">ยืนยัน</button>
                     </div>

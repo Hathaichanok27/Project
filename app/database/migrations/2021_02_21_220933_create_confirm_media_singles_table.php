@@ -22,7 +22,6 @@ class CreateConfirmMediaSinglesTable extends Migration
             $table->string('room_type');
             $table->string('room_floor');
             $table->string('room_name')->nullable();
-            $table->dateTime('book_createtime')->useCurrent();
             $table->dateTime('book_starttime')->nullable();
             $table->dateTime('book_endtime')->nullable();
             $table->string('book_status');
