@@ -36,6 +36,7 @@
                                     <thead>
                                         <tr class="bg-grey">
                                             <th class="text-center">ลำดับ</th>
+                                            <th class="text-center">ชั้น</th>
                                             <th class="text-center">ชื่อห้อง</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
@@ -46,6 +47,7 @@
                                                 <tr>
                                                     <td hidden>{{ ++$i }}</td>
                                                     <td style="text-align:center">{{ $roommediagroup->id }}</td>
+                                                    <td style="text-align:center">{{ $roommediagroup->room_floor }}</td>
                                                     <td><a href="#myModal1_{{ $roommediagroup->id }}" data-toggle="modal">{{ $roommediagroup->room_name }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
@@ -83,6 +85,7 @@
                                     <thead>
                                         <tr class="bg-grey">
                                             <th class="text-center">ลำดับ</th>
+                                            <th class="text-center">ชั้น</th>
                                             <th class="text-center">ชื่อห้อง</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
@@ -94,6 +97,7 @@
                                                 <tr>
                                                     <td hidden>{{ ++$i }}</td>
                                                     <td style="text-align:center">{{ $roommediagroup->id }}</td>
+                                                    <td style="text-align:center">{{ $roommediagroup->room_floor }}</td>
                                                     <td><a href="#myModal4_{{ $roommediagroup->id }}" data-toggle="modal">{{ $roommediagroup->room_name }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
@@ -131,6 +135,7 @@
                                     <thead>
                                         <tr class="bg-grey">
                                             <th class="text-center">ลำดับ</th>
+                                            <th class="text-center">ชั้น</th>
                                             <th class="text-center">ชื่อห้อง</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
@@ -142,6 +147,7 @@
                                                 <tr>
                                                     <td hidden>{{ ++$i }}</td>
                                                     <td style="text-align:center">{{ $roommediagroup->id }}</td>
+                                                    <td style="text-align:center">{{ $roommediagroup->room_floor }}</td>
                                                     <td><a href="#myModal7_{{ $roommediagroup->id }}" data-toggle="modal">{{ $roommediagroup->room_name }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
@@ -196,6 +202,7 @@
                                                                         </div>
                                                                         <div class="media-body">
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $roommediagroup->room_name }}</h5>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">ชั้น : {{ $roommediagroup->room_floor }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">สถานะ : <b style="color:<?php echo $roommediagroup->room_status == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $roommediagroup->room_status == 'ว่าง'?'#5cb85c':''?><?php echo $roommediagroup->room_status == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$roommediagroup->room_status}}</b></p>
                                                                         </div>  
                                                                     </div>
@@ -239,6 +246,7 @@
                                                                             </div>
                                                                             <div class="media-body">
                                                                                 <h5 class="media-heading text-bold" style="color:#D35400">{{ $roommediagroup->room_name }}</h5>
+                                                                                <p class="text-semibold" style="margin-bottom:2px;">ชั้น : {{ $roommediagroup->room_floor }}</p>
                                                                                 <div class="form-group">
                                                                                     <strong>สถานะ:</strong>
                                                                                     <div class="form-check">
@@ -276,7 +284,7 @@
                                             </div>
                                             <div class="sa-icon sa-custom" style="display: none;"></div>
                                             <h2>Confirmation</h2>
-                                            <p>ลบห้อง {{ $roommediagroup->room_name }} ?</p>
+                                            <p>ลบชั้น {{ $roommediagroup->room_floor }} ห้อง {{ $roommediagroup->room_name }} ?</p>
                                             <div class="sa-button-container">
                                                 <form action="{{ route('roommediagroups.destroy',$roommediagroup->id) }}" method="POST">
                                                     @csrf
@@ -318,6 +326,7 @@
                                                                         </div>
                                                                         <div class="media-body">
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $roommediagroup->room_name }}</h5>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">ชั้น : {{ $roommediagroup->room_floor }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">สถานะ : <b style="color:<?php echo $roommediagroup->room_status == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $roommediagroup->room_status == 'ว่าง'?'#5cb85c':''?><?php echo $roommediagroup->room_status == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$roommediagroup->room_status}}</b></p>
                                                                         </div>  
                                                                     </div>
@@ -361,6 +370,7 @@
                                                                             </div>
                                                                             <div class="media-body">
                                                                                 <h5 class="media-heading text-bold" style="color:#D35400">{{ $roommediagroup->room_name }}</h5>
+                                                                                <p class="text-semibold" style="margin-bottom:2px;">ชั้น : {{ $roommediagroup->room_floor }}</p>
                                                                                 <div class="form-group">
                                                                                     <strong>สถานะ:</strong>
                                                                                     <div class="form-check">
@@ -398,7 +408,7 @@
                                             </div>
                                             <div class="sa-icon sa-custom" style="display: none;"></div>
                                             <h2>Confirmation</h2>
-                                            <p>ลบห้อง {{ $roommediagroup->room_name }} ?</p>
+                                            <p>ลบชั้น {{ $roommediagroup->room_floor }} ห้อง {{ $roommediagroup->room_name }} ?</p>
                                             <div class="sa-button-container">
                                                 <form action="{{ route('roommediagroups.destroy',$roommediagroup->id) }}" method="POST">
                                                     @csrf
@@ -440,6 +450,7 @@
                                                                         </div>
                                                                         <div class="media-body">
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $roommediagroup->room_name }}</h5>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">ชั้น : {{ $roommediagroup->room_floor }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">สถานะ : <b style="color:<?php echo $roommediagroup->room_status == 'ไม่เปิดใช้งาน'?'#d9534f':''?><?php echo $roommediagroup->room_status == 'ว่าง'?'#5cb85c':''?><?php echo $roommediagroup->room_status == 'กำลังใช้งาน'?'#f0ad4e':''?>">{{$roommediagroup->room_status}}</b></p>
                                                                         </div>  
                                                                     </div>
@@ -483,6 +494,7 @@
                                                                             </div>
                                                                             <div class="media-body">
                                                                                 <h5 class="media-heading text-bold" style="color:#D35400">{{ $roommediagroup->room_name }}</h5>
+                                                                                <p class="text-semibold" style="margin-bottom:2px;">ชั้น : {{ $roommediagroup->room_floor }}</p>
                                                                                 <div class="form-group">
                                                                                     <strong>สถานะ:</strong>
                                                                                     <div class="form-check">
@@ -520,7 +532,7 @@
                                             </div>
                                             <div class="sa-icon sa-custom" style="display: none;"></div>
                                             <h2>Confirmation</h2>
-                                            <p>ลบห้อง {{ $roommediagroup->room_name }} ?</p>
+                                            <p>ลบชั้น {{ $roommediagroup->room_floor }} ห้อง {{ $roommediagroup->room_name }} ?</p>
                                             <div class="sa-button-container">
                                                 <form action="{{ route('roommediagroups.destroy',$roommediagroup->id) }}" method="POST">
                                                     @csrf

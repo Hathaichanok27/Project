@@ -9,10 +9,16 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $rooms = Room::paginate(10);
-        
-        return view('rooms.index', compact('rooms'))
-            ->with('i', (request()->input('page', 1) - 1) * 10);
+        $rooms1 = Room::select("*")->where("room_status", "=", "ว่าง")->get();
+        $rooms2 = Room::select("*")->where("room_status", "=", "กำลังใช้งาน")->get();
+        $rooms3 = Room::select("*")->where("room_status", "=", "ไม่เปิดใช้งาน")->get();
+        $count1 = count($rooms1);
+        $count2 = count($rooms2);
+        $count3 = count($rooms3);
+        $rooms = Room::paginate();
+
+        return view('rooms.index',compact(['rooms1','rooms2','rooms3','count1','count2','count3','rooms']))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
@@ -31,40 +37,23 @@ class RoomController extends Controller
         
         Room::create($request->all());
         
-        return redirect()->route('rooms.index')
-                        ->with('success','Created room successfully.');
+        return redirect()->route('rooms.index');
     }
 
-    public function show(Room $room)
+    public function update(Request $request, $id)
     {
-        return view('rooms.show',compact('room'));
+        $where = array('id' => $id);
+        $updateArr = ['room_status' => $request->input('room_status')];
+        $update_room  = Room::where($where)->update($updateArr);
+
+        return redirect()->route('rooms.index');
     }
 
-    public function edit(Room $room)
+    public function destroy($id)
     {
-        return view('rooms.edit',compact('room'));
-    }
+        $where = array('id' => $id);
+        $del_room  = Room::where($where)->delete();
 
-    public function update(Request $request, Room $room)
-    {
-        $request->validate([
-            'room_type' => 'required',
-            'room_floor' => 'required',
-            'room_name' => 'required',
-            'room_status' => 'required',
-        ]);
-
-        $room->update($request->all());
-        
-        return redirect()->route('rooms.index')
-                        ->with('success','Update room successfully');
-    }
-
-    public function destroy(Room $room)
-    {
-        $room->delete();
-        
-        return redirect()->route('rooms.index')
-                        ->with('success','Deleted room successfully');
+        return redirect()->route('rooms.index');
     }
 }

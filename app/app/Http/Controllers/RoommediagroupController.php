@@ -37,8 +37,7 @@ class RoommediagroupController extends Controller
         
         Roommediagroup::create($request->all());
         
-        return redirect()->route('roommediagroups.index')
-                        ->with('success','Created room successfully.');
+        return redirect()->route('roommediagroups.index');
     }
 
     public function update(Request $request, $id)
