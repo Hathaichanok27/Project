@@ -545,8 +545,6 @@
                                     </div>
                                 @endforeach
                             <?php }?>
-
-
                         <?php $o++;?>
                     </div>
                 </div>
