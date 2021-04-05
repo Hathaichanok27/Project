@@ -21,16 +21,12 @@ class QueuelistmeetingController extends Controller
 
         return view('queuelistmeetings.index',compact(['reservemeets1','reservemeets2','reservemeets3','reservemeets4','count1','count2','count3','count4']))
                 ->with('i', (request()->input('page', 1) - 1) * 5); 
-        // $reservemeets = Reservemeet::paginate();
-        
-        // return view('queuelistmeetings.index',compact('reservemeets'))
-        //     ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function update(Request $request, $id)
     {
         $where = array('id' => $id);
-        $updateArr = ['book_status' => $request->input('book_status'),];
+        $updateArr = ['book_status' => $request->input('book_status')];
         $booking  = Reservemeet::where($where)->update($updateArr);
         
         return redirect()->route('queuelistmeetings.index');

@@ -9,10 +9,16 @@ class RoommediasingleController extends Controller
 {
     public function index()
     {
-        $roommediasingles = Roommediasingle::paginate(10);
-        
-        return view('roommediasingles.index', compact('roommediasingles'))
-            ->with('i', (request()->input('page', 1) - 1) * 10);
+        $roommediasingles1 = Roommediasingle::select("*")->where("room_status", "=", "ว่าง")->get();
+        $roommediasingles2 = Roommediasingle::select("*")->where("room_status", "=", "กำลังใช้งาน")->get();
+        $roommediasingles3 = Roommediasingle::select("*")->where("room_status", "=", "ไม่เปิดใช้งาน")->get();
+        $count1 = count($roommediasingles1);
+        $count2 = count($roommediasingles2);
+        $count3 = count($roommediasingles3);
+        $roommediasingles = Roommediasingle::paginate();
+
+        return view('roommediasingles.index',compact(['roommediasingles1','roommediasingles2','roommediasingles3','count1','count2','count3','roommediasingles']))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
@@ -35,36 +41,20 @@ class RoommediasingleController extends Controller
                         ->with('success','Created room successfully.');
     }
 
-    public function show(Roommediasingle $roommediasingle)
+    public function update(Request $request, $id)
     {
-        return view('roommediasingles.show',compact('roommediasingle'));
+        $where = array('id' => $id);
+        $updateArr = ['room_status' => $request->input('room_status')];
+        $update_room  = Roommediasingle::where($where)->update($updateArr);
+
+        return redirect()->route('roommediasingles.index');
     }
 
-    public function edit(Roommediasingle $roommediasingle)
+    public function destroy($id)
     {
-        return view('roommediasingles.edit',compact('roommediasingle'));
-    }
+        $where = array('id' => $id);
+        $del_room  = Roommediasingle::where($where)->delete();
 
-    public function update(Request $request, Roommediasingle $roommediasingle)
-    {
-        $request->validate([
-            'room_type' => 'required',
-            'room_floor' => 'required',
-            'room_name' => 'required',
-            'room_status' => 'required',
-        ]);
-
-        $roommediasingle->update($request->all());
-        
-        return redirect()->route('roommediasingles.index')
-                        ->with('success','Update room successfully');
-    }
-
-    public function destroy(Roommediasingle $roommediasingle)
-    {
-        $roommediasingle->delete();
-        
-        return redirect()->route('roommediasingles.index')
-                        ->with('success','Deleted room successfully');
+        return redirect()->route('roommediasingles.index');
     }
 }
