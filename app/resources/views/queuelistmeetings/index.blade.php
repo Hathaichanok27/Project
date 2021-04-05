@@ -56,8 +56,8 @@
                                                     <td><a href="#myModal1_{{ $reservemeet->id }}" data-toggle="modal">{{ $reservemeet->username }}</td>
                                                     <td>{{ $reservemeet->user_fullname }}</td>
                                                     <td class="text-center">{{ $reservemeet->room_name }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($reservemeet->book_starttime)) }}{{ date("Y",strtotime($reservemeet->book_starttime))+543 }} {{ date("H:i",strtotime($reservemeet->book_starttime)) }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($reservemeet->book_endtime)) }}{{ date("Y",strtotime($reservemeet->book_endtime))+543 }} {{ date("H:i",strtotime($reservemeet->book_endtime)) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($reservemeet->book_starttime) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($reservemeet->book_endtime) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -112,8 +112,8 @@
                                                     <td><a href="#myModal4_{{ $reservemeet->id }}" data-toggle="modal">{{ $reservemeet->username }}</td>
                                                     <td>{{ $reservemeet->user_fullname }}</td>
                                                     <td class="text-center">{{ $reservemeet->room_name }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($reservemeet->book_starttime)) }}{{ date("Y",strtotime($reservemeet->book_starttime))+543 }} {{ date("H:i",strtotime($reservemeet->book_starttime)) }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($reservemeet->book_endtime)) }}{{ date("Y",strtotime($reservemeet->book_endtime))+543 }} {{ date("H:i",strtotime($reservemeet->book_endtime)) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($reservemeet->book_starttime) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($reservemeet->book_endtime) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -166,8 +166,8 @@
                                                     <td><a href="#myModal6_{{ $reservemeet->id }}" data-toggle="modal">{{ $reservemeet->username }}</td>
                                                     <td>{{ $reservemeet->user_fullname }}</td>
                                                     <td class="text-center">{{ $reservemeet->room_name }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($reservemeet->book_starttime)) }}{{ date("Y",strtotime($reservemeet->book_starttime))+543 }} {{ date("H:i",strtotime($reservemeet->book_starttime)) }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($reservemeet->book_endtime)) }}{{ date("Y",strtotime($reservemeet->book_endtime))+543 }} {{ date("H:i",strtotime($reservemeet->book_endtime)) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($reservemeet->book_starttime) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($reservemeet->book_endtime) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -218,8 +218,8 @@
                                                     <td><a href="#myModal7_{{ $reservemeet->id }}" data-toggle="modal">{{ $reservemeet->username }}</td>
                                                     <td>{{ $reservemeet->user_fullname }}</td>
                                                     <td class="text-center">{{ $reservemeet->room_name }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($reservemeet->book_starttime)) }}{{ date("Y",strtotime($reservemeet->book_starttime))+543 }} {{ date("H:i",strtotime($reservemeet->book_starttime)) }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($reservemeet->book_endtime)) }}{{ date("Y",strtotime($reservemeet->book_endtime))+543 }} {{ date("H:i",strtotime($reservemeet->book_endtime)) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($reservemeet->book_starttime) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($reservemeet->book_endtime) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -276,8 +276,8 @@
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $reservemeet->user_fullname }}</h5>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต: <b>{{ $reservemeet->username }}</b></p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ห้อง: {{ $reservemeet->room_name }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ date("d-m-",strtotime($reservemeet->book_starttime)) }}{{ date("Y",strtotime($reservemeet->book_starttime))+543 }} {{ date("H:i",strtotime($reservemeet->book_starttime)) }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด: {{ date("d-m-",strtotime($reservemeet->book_endtime)) }}{{ date("Y",strtotime($reservemeet->book_endtime))+543 }} {{ date("H:i",strtotime($reservemeet->book_endtime)) }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ formatDateThat($reservemeet->book_starttime) }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด: {{ formatDateThat($reservemeet->book_endtime) }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่: <strong style="color:#F62459">{{ $reservemeet->id }}</strong></p>
                                                                         </div>  
                                                                     </div>
@@ -323,7 +323,7 @@
                                                                                 <h5 class="media-heading text-bold" style="color:#D35400">{{ $reservemeet->user_fullname }}</h5>
                                                                                 <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต: <b>{{ $reservemeet->username }}</b></p>
                                                                                 <p class="text-semibold" style="margin-bottom:2px;">ห้อง: {{ $reservemeet->room_name }}</p>
-                                                                                <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ date("d-m-",strtotime($reservemeet->book_starttime)) }}{{ date("Y",strtotime($reservemeet->book_starttime))+543 }} {{ date("H:i",strtotime($reservemeet->book_starttime)) }}</p>
+                                                                                <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ formatDateThat($reservemeet->book_starttime) }}</p>
                                                                                 <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด: {{ $reservemeet->book_endtime }}</p>
                                                                                 <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่: <strong style="color:#F62459">{{ $reservemeet->id }}</strong></p>
                                                                                 <input type="hidden" name="book_status" value="อนุมัติ">
@@ -418,8 +418,8 @@
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $reservemeet->user_fullname }}</h5>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต: <b>{{ $reservemeet->username }}</b></p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ห้อง: {{ $reservemeet->room_name }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ date("d-m-",strtotime($reservemeet->book_starttime)) }}{{ date("Y",strtotime($reservemeet->book_starttime))+543 }} {{ date("H:i",strtotime($reservemeet->book_starttime)) }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด: {{ date("d-m-",strtotime($reservemeet->book_endtime)) }}{{ date("Y",strtotime($reservemeet->book_endtime))+543 }} {{ date("H:i",strtotime($reservemeet->book_endtime)) }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ formatDateThat($reservemeet->book_starttime) }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด: {{ formatDateThat($reservemeet->book_endtime) }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่: <strong style="color:#F62459">{{ $reservemeet->id }}</strong></p>
                                                                         </div>  
                                                                     </div>
@@ -500,8 +500,8 @@
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $reservemeet->user_fullname }}</h5>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต: <b>{{ $reservemeet->username }}</b></p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ห้อง: {{ $reservemeet->room_name }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ date("d-m-",strtotime($reservemeet->book_starttime)) }}{{ date("Y",strtotime($reservemeet->book_starttime))+543 }} {{ date("H:i",strtotime($reservemeet->book_starttime)) }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด: {{ date("d-m-",strtotime($reservemeet->book_endtime)) }}{{ date("Y",strtotime($reservemeet->book_endtime))+543 }} {{ date("H:i",strtotime($reservemeet->book_endtime)) }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ formatDateThat($reservemeet->book_starttime) }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด: {{ formatDateThat($reservemeet->book_endtime) }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่: <strong style="color:#F62459">{{ $reservemeet->id }}</strong></p>
                                                                         </div>  
                                                                     </div>
@@ -554,8 +554,8 @@
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $reservemeet->user_fullname }}</h5>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต: <b>{{ $reservemeet->username }}</b></p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ห้อง: {{ $reservemeet->room_name }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ date("d-m-",strtotime($reservemeet->book_starttime)) }}{{ date("Y",strtotime($reservemeet->book_starttime))+543 }} {{ date("H:i",strtotime($reservemeet->book_starttime)) }}</p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด: {{ date("d-m-",strtotime($reservemeet->book_endtime)) }}{{ date("Y",strtotime($reservemeet->book_endtime))+543 }} {{ date("H:i",strtotime($reservemeet->book_endtime)) }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาเริ่มต้น: {{ formatDateThat($reservemeet->book_starttime) }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เวลาสิ้นสุด: {{ formatDateThat($reservemeet->book_endtime) }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่: <strong style="color:#F62459">{{ $reservemeet->id }}</strong></p>
                                                                         </div>  
                                                                     </div>
