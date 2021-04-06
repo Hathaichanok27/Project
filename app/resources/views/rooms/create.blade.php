@@ -35,13 +35,10 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>ชั้น:</strong>
-                            <select class="form-control" id="room_floor" name="room_floor">
-                                <option value="3">ชั้น 3</option>
-                                <option value="4">ชั้น 4</option>
-                                <option value="5">ชั้น 5</option>
-                                <option value="5 - เฉพาะอาจารย์">ชั้น 5 - เฉพาะอาจารย์</option>
-                                <option value="6 - Mini Home Theatre">ชั้น 6 - มินิโฮมเธียเตอร์</option>
-                                <option value="6 - คาราโอเกะ">ชั้น 6 - คาราโอเกะ</option>
+                            <select class="form-control" id="room_floor_id" name="room_floor_id">
+                                @foreach($roomfloors as $roomfloor)
+                                    <option value="{{ $roomfloor->id }}">{{ $roomfloor->room_floor }}</option>
+                                @endforeach 
                             </select>  
                         </div>
                     </div>

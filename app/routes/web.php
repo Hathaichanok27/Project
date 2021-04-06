@@ -12,7 +12,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin/home', 'HomeController@adminhome')->name('admin.home')->middleware('is_admin');
 Route::get('superadmin/home', 'HomeController@superadminHome')->name('superadmin.home')->middleware('is_superadmin');
-
 // Superadmin
 Route::resource('superadminroombookings', SuperadminroombookingController::class)->middleware('auth')->middleware('is_superadmin');
 Route::resource('superadminroommedias', SuperadminroommediaController::class);
@@ -48,3 +47,6 @@ Route::resource('mybookings', MybookingController::class);
 Route::resource('roommeetings', RoommeetingController::class);
 Route::resource('reservemeets', ReservemeetController::class);
 Route::resource('fullcalendar', CalendarController::class);
+
+Route::resource('selectrooms', SelectroomController::class);
+Route::resource('selecttimes', SelecttimeController::class);

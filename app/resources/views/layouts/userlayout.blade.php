@@ -42,8 +42,9 @@
                     },
                     selectable: true,
                     selectHelper: true,
-                    select: function (event,start, end, allDay) { 
+                    select: function (start, end, allDay) { 
                         var starts = $.fullCalendar.formatDate(start, "MM/DD/Y HH:mm:ss");
+                      //  alert(start);
                         open('/reservemeets/create?start='+starts,'_self');
                     },
                     eventDrop: function (event, delta) {

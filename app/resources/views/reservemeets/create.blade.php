@@ -31,38 +31,41 @@
                 <br>
                 <div class="form-group">
                     <label class="col-sm-1 control-label">ชั้น: </label>
-                    @foreach($rooms as $room)
                         <div class="col-sm-3">
-                            <select class="form-control" name="room_floor">
-                                <option value="{{ $room->room_floor }}">ชั้น {{ $room->room_floor }}</option>
+                            <select onchange="showroom()"class="form-control" name="room_floor" id="room_floor">
+                                <option>กรุณาเลือกชั้น</option>
+                                @foreach($roomfloors as $roomfloor)
+                                <option value="{{ $roomfloor->id }}">{{ $roomfloor->room_floor }}</option>
+                                @endforeach
                             </select>
                         </div>
-                    @endforeach
                 </div>
                 <br>
-                
-                <div class="form-group">
+                <div class="form-group" id=div_room_name>
                     <label class="col-sm-1 control-label">ห้อง: </label>
-                    @foreach($rooms as $room)
                         <div class="col-sm-3">
-                            <select class="form-control" name="room_name">
-                                <option value="{{ $room->room_name }}">{{ $room->room_name }}</option> 
+                            <select onchange="showview()" class="form-control" name="room_name" id="room_name" disabled>
+                                <option>กรุณาเลือกห้อง</option>
+                                @foreach($rooms as $room)
+                                    <option value="{{ $room->id }}">{{ $room->room_name }}</option>
+                                @endforeach 
                             </select>  
                         </div> 
-                    @endforeach 
                     </div>
+                </div>
                 <br>
+            <div id = "content">
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_startdate">วันเริ่มต้น: </label>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" size="10" id="datepicker-th" name="book_startdate" />
+                        <input type="text" class="form-control" size="10" id="datepicker-th" name="book_startdate" value="{{date('Y-m-d',strtotime($start))}}" disabled />
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_starttime">เวลาเริ่มต้น: </label>
                     <div class="col-sm-3">
-                        <select class="form-control" name="book_starttime">
+                        <select class="form-control" name="book_starttime" disabled>
                             <option value="08:00">08:00</option>
                             <option value="08:30">08:30</option>
                             <option value="09:00">09:00</option>
@@ -94,14 +97,14 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_enddate">วันสิ้นสุด: </label>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" size="10" id="datepicker-th-2" name="book_enddate" />
+                        <input type="text" class="form-control" size="10" id="datepicker-th-2" name="book_enddate" value="{{date('Y-m-d',strtotime($start))}}" disabled/>
                     </div>
                 </div> 
                 <br>
                 <div class="form-group">
                     <label class="col-sm-1 control-label" for="book_endtime">เวลาสิ้นสุด: </label>
                     <div class="col-sm-3">
-                        <select class="form-control" name="book_endtime">
+                        <select class="form-control" name="book_endtime" disabled>
                             <option value="08:30">08:30</option>
                             <option value="09:00">09:00</option>
                             <option value="09:30">09:30</option>
@@ -128,6 +131,7 @@
                             <option value="20:00">20:00</option>
                         </select>
                     </div>
+                </div>
                 </div>
                 <br>
                 <input type="hidden" class="form-control" name="room_type" value="ห้องประชุม">
@@ -163,5 +167,38 @@
              $("#datepicker-en").datepicker({ dateFormat: 'yy-mm-dd'});
 		    $("#inline").datepicker({ dateFormat: 'yy-mm-dd', inline: true });
 		});
-	</script>
+	</script><script type="text/javascript">
+        function showroom() {
+            var xhttp;
+            var y = document.getElementById("room_floor").value;
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("div_room_name").innerHTML = this.responseText;
+                }
+            };
+            var protocol = location.protocol;
+            var slashes = protocol.concat("//");
+            var host = slashes.concat(window.location.hostname);
+            xhttp.open("GET", host + ":8080/selectrooms?id=" + y, true);
+            xhttp.send();
+        }
+        function showview() {
+            var xhttp;
+            var x = document.getElementById("room_name").value;
+            //var y = document.getElementById("room_floor").value;
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("content").innerHTML = this.responseText;
+                    // $('#view_'+str).modal('show');
+                }
+            };
+            var protocol = location.protocol;
+            var slashes = protocol.concat("//");
+            var host = slashes.concat(window.location.hostname);
+            xhttp.open("GET", host + ":8080/selecttimes?name=" + x+"&date=<?php echo date('Y-m-d',strtotime($start))?>", true);
+            xhttp.send();
+        }
+    </script>
 @endsection 

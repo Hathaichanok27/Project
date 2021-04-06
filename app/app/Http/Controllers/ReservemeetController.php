@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Reservemeet;
 use App\Room;
+use App\Roomfloor;
 use Redirect,Response;
 
 class ReservemeetController extends Controller
@@ -18,10 +19,20 @@ class ReservemeetController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        $rooms = Room::paginate();
-        return view('reservemeets.create',compact('rooms'));
+        $rooms = Room::paginate();$start = $request->start;
+        /*$reservemeets = Reservemeet::select("*")->whereDate("book_startdate", "like", date('Y-m-d',strtotime($request->start)))->get()->toArray();
+        
+        $timestart = Array_column($reservemeets,"book_starttime");
+        $timeend = Array_column($reservemeets,"book_endtime");
+        print_r($timestart);
+        print_r($timeend);
+        echo "<pre>";
+        print_r($reservemeets);
+        echo "</pre>";*/
+        $roomfloors = Roomfloor::paginate();
+        return view('reservemeets.create',compact('rooms','roomfloors','start'));
     }
 
     public function store(Request $request)
@@ -73,4 +84,5 @@ class ReservemeetController extends Controller
         
         return redirect()->route('roommeetings.index');
     }
+   
 }
