@@ -81,8 +81,22 @@
                 var month = x.getMonth() + 1;
                 var day = x.getDate();
                 var year = x.getFullYear() + 543;
-                if (month < 10 ){month = '0' + month;}
-                if (day < 10 ){day = '0' + day;}
+                if (month < 10 ){
+                     if(month == 1){month = "มกราคม";}
+                else if(month == 2){month = "กุมภาพันธ์";}
+                else if(month == 3){month = "มีนาคม";}
+                else if(month == 4){month = "เมษายน";}
+                else if(month == 5){month = "พฤษภาคม";}
+                else if(month == 6){month = "มิถุนายน";}
+                else if(month == 7){month = "กรกฎาคม";}
+                else if(month == 8){month = "สิงหาคม";}
+                else if(month == 9){month = "กันยายน";}
+                else if(month == 10){month = "ตุลาคม";}
+                else if(month == 11){month = "พฤศจิกายน";}
+                else if(month == 12){month = "ธันวาคม";}    
+                }
+               
+                if (day < 10 ){day = day;}
                 var x1 = day + '-' + month + '-' + year;
                 
                 // time part 
