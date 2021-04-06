@@ -4,7 +4,7 @@
     <div class="page-container">
 		<div class="container">
 			<div class="page-title">
-				<h5><i class="fa fa-home"></i> <span class="text-semibold"> รายการคิว</span></h5>  
+				<h4><i class="fa fa-home"></i> <span class="text-semibold"> รายการคิว</span></h4>  
                 <ul class="breadcrumb breadcrumb-caret position-right">
 					<li><a href="{{ route('adminroombookings.index') }}">หน้าแรก</a></li>
                     <li><a href="{{ route('adminroommediastaffs.index') }}">สำหรับเจ้าหน้าที่</a></li>
@@ -118,8 +118,8 @@
                                                     <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                     <td><a href="#myModal7_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                     <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediagroup->book_starttime)) }}{{ date("Y",strtotime($confirmmediagroup->book_starttime))+543 }} {{ date("H:i",strtotime($confirmmediagroup->book_starttime)) }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediagroup->book_endtime)) }}{{ date("Y",strtotime($confirmmediagroup->book_endtime))+543 }} {{ date("H:i",strtotime($confirmmediagroup->book_endtime)) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($confirmmediagroup->book_starttime) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($confirmmediagroup->book_endtime) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -169,7 +169,7 @@
                                                     <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                     <td><a href="#myModal9_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                     <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediagroup->created_at)) }}{{ date("Y",strtotime($confirmmediagroup->created_at))+543 }} {{ date("H:i",strtotime($confirmmediagroup->created_at)) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($confirmmediagroup->created_at) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -217,7 +217,7 @@
                                                     <td style="text-align:center">{{ $confirmmediagroup->id }}</td>
                                                     <td><a href="#myModal10_{{ $confirmmediagroup->id }}" data-toggle="modal">{{ $confirmmediagroup->username }}</td>
                                                     <td>{{ $confirmmediagroup->user_fullname }}</td>
-                                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediagroup->created_at)) }}{{ date("Y",strtotime($confirmmediagroup->created_at))+543 }} {{ date("H:i",strtotime($confirmmediagroup->created_at)) }}</td>
+                                                    <td class="text-center">{{ formatDateThat($confirmmediagroup->created_at) }}</td>
                                                     <td class="text-center">
                                                         <ul class="icons-list">
                                                             <li class="dropdown">
@@ -561,8 +561,8 @@
                                                                         <div class="media-body">
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $confirmmediagroup->user_fullname }}</h5>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">บัญชีผู้ใช้/รหัสนิสิต : <b>{{ $confirmmediagroup->username }}</b></p>
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ date("d-m-",strtotime($confirmmediagroup->book_starttime)) }}{{ date("Y",strtotime($confirmmediagroup->book_starttime))+543 }} {{ date("H:i",strtotime($confirmmediagroup->book_starttime)) }}</p>                                                                        
-                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ date("d-m-",strtotime($confirmmediagroup->book_endtime)) }}{{ date("Y",strtotime($confirmmediagroup->book_endtime))+543 }} {{ date("H:i",strtotime($confirmmediagroup->book_endtime)) }}</p>
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ formatDateThat($confirmmediagroup->book_starttime) }}</p>                                                                        
+                                                                            <p class="text-semibold" style="margin-bottom:2px;">เริ่มใช้งานเมื่อ : {{ formatDateThat($confirmmediagroup->book_endtime) }}</p>
                                                                             <p class="text-semibold" style="margin-bottom:2px;">ลำดับคิวที่ : <strong style="color:#F62459">{{ $confirmmediagroup->id }}</strong></p>
                                                                         </div>  
                                                                     </div>

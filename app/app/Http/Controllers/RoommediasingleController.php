@@ -37,8 +37,7 @@ class RoommediasingleController extends Controller
         
         Roommediasingle::create($request->all());
         
-        return redirect()->route('roommediasingles.index')
-                        ->with('success','Created room successfully.');
+        return redirect()->route('roommediasingles.index');
     }
 
     public function update(Request $request, $id)

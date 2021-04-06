@@ -10,9 +10,10 @@ class ManageadminController extends Controller
     public function index()
     {
         $manageadmins = Manageadmin::paginate();
+        $count = count($manageadmins);
         
-        return view('manageadmins.index',compact('manageadmins'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('manageadmins.index',compact(['manageadmins','count']))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
@@ -31,40 +32,28 @@ class ManageadminController extends Controller
 
         Manageadmin::create($request->all());
         
-        return redirect()->route('manageadmins.index')
-                        ->with('success','Created admin successfully.');
+        return redirect()->route('manageadmins.index');
     }
 
-    public function show(Manageadmin $manageadmin)
+    public function update(Request $request, $id)
     {
-        return view('manageadmins.show',compact('manageadmin'));
+        $where = array('id' => $id);
+        $updateArr = [
+                        'admin_fullname' => $request->input('admin_fullname'),
+                        'admin_email' => $request->input('admin_email'),
+                        'admin_telnum' => $request->input('admin_telnum'),
+                     ];
+        $update_admin  = Manageadmin::where($where)->update($updateArr);
+
+        return redirect()->route('manageadmins.index');
     }
 
-    public function edit(Manageadmin $manageadmin)
+    public function destroy($id)
     {
-        return view('manageadmins.edit',compact('manageadmin'));
+        $where = array('id' => $id);
+        $del_admin  = Manageadmin::where($where)->delete();
+
+        return redirect()->route('manageadmins.index');
     }
 
-    public function update(Request $request, Manageadmin $manageadmin)
-    {
-        $request->validate([
-            'admin_username' => 'required',
-            'admin_fullname' => 'required',
-            'admin_email' => 'required|email',
-            'admin_telnum' => 'required',
-        ]);
-
-        $manageadmin->update($request->all());
-
-        return redirect()->route('manageadmins.index')
-                        ->with('success','Updated admin successfully');
-    }
-
-    public function destroy(Manageadmin $manageadmin)
-    {
-        $manageadmin->delete();
-        
-        return redirect()->route('manageadmins.index')
-                        ->with('success','Deleted admin successfully');
-    }
 }

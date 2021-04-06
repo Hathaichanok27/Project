@@ -34,9 +34,9 @@
                                 <td>{{ $reservemeet->room_type }}</td>
                                 <td class="text-center"></td>
                                 <td class="text-center">{{ $reservemeet->room_name }}</td>
-                                <td class="text-center">{{ date("d-m-",strtotime($reservemeet->created_at)) }}{{ date("Y",strtotime($reservemeet->created_at))+543 }} {{ date("H:i",strtotime($reservemeet->created_at)) }}</td>
-                                <td class="text-center">{{ date("d-m-",strtotime($reservemeet->book_starttime)) }}{{ date("Y",strtotime($reservemeet->book_starttime))+543 }} {{ date("H:i",strtotime($reservemeet->book_starttime)) }}</td>
-                                <td class="text-center">{{ date("d-m-",strtotime($reservemeet->book_endtime)) }}{{ date("Y",strtotime($reservemeet->book_endtime))+543 }} {{ date("H:i",strtotime($reservemeet->book_endtime)) }}</td>
+                                <td class="text-center">{{ formatDateThat($reservemeet->created_at) }}</td>
+                                <td class="text-center">{{ formatDateThat($reservemeet->book_starttime) }}</td>
+                                <td class="text-center">{{ formatDateThat($reservemeet->book_endtime) }}</td>
                                 <td class="text-center">{{ $reservemeet->username }}</td>
                                 <td class="text-center"><b style="color:<?php echo $reservemeet->book_status == 'รอการอนุมัติ'?'#f0ad4e':''?><?php echo $reservemeet->book_status == 'อนุมัติ'?'#5cb85c':''?><?php echo $reservemeet->book_status == 'ยกเลิกการจอง'?'#d9534f':''?><?php echo $reservemeet->book_status == 'คืนห้อง'?'#0275d8':''?>">{{$reservemeet->book_status}}</b></td>
                             </tr>
@@ -51,13 +51,13 @@
                                 <td>{{ $confirmmediagroup->room_type }}</td>
                                 <td class="text-center">{{ $confirmmediagroup->room_floor }}</td>
                                 <td class="text-center">{{ $confirmmediagroup->room_name }}</td>
-                                <td class="text-center">{{ date("d-m-",strtotime($confirmmediagroup->created_at)) }}{{ date("Y",strtotime($confirmmediagroup->created_at))+543 }} {{ date("H:i",strtotime($confirmmediagroup->created_at)) }}</td>                               
+                                <td class="text-center">{{ formatDateThat($confirmmediagroup->created_at) }}</td>                               
                                 @if (empty($confirmmediagroup->book_starttime))
                                 <td class="text-center"></td>
                                 <td class="text-center"></td>
                                 @else
-                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediagroup->book_starttime)) }}{{ date("Y",strtotime($confirmmediagroup->book_starttime))+543 }} {{ date("H:i",strtotime($confirmmediagroup->book_starttime)) }}</td>
-                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediagroup->book_endtime)) }}{{ date("Y",strtotime($confirmmediagroup->book_endtime))+543 }} {{ date("H:i",strtotime($confirmmediagroup->book_endtime)) }}</td>
+                                    <td class="text-center">{{ formatDateThat($confirmmediagroup->book_starttime) }}</td>
+                                    <td class="text-center">{{ formatDateThat($confirmmediagroup->book_endtime) }}</td>
                                 @endif
                                 
                                 <td class="text-center">{{ $confirmmediagroup->username }}</td>
@@ -74,13 +74,13 @@
                                 <td>{{ $confirmmediasingle->room_type }}</td>
                                 <td class="text-center">{{ $confirmmediasingle->room_floor }}</td>
                                 <td class="text-center">{{ $confirmmediasingle->room_name }}</td>
-                                <td class="text-center">{{ date("d-m-",strtotime($confirmmediasingle->created_at)) }}{{ date("Y",strtotime($confirmmediasingle->created_at))+543 }} {{ date("H:i",strtotime($confirmmediasingle->created_at)) }}</td>
+                                <td class="text-center">{{ formatDateThat($confirmmediasingle->created_at) }}</td>
                                 @if (empty($confirmmediasingle->book_starttime))
                                 <td class="text-center"></td>
                                 <td class="text-center"></td>
                                 @else
-                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediasingle->book_starttime)) }}{{ date("Y",strtotime($confirmmediasingle->book_starttime))+543 }} {{ date("H:i",strtotime($confirmmediasingle->book_starttime)) }}</td>
-                                    <td class="text-center">{{ date("d-m-",strtotime($confirmmediasingle->book_endtime)) }}{{ date("Y",strtotime($confirmmediasingle->book_endtime))+543 }} {{ date("H:i",strtotime($confirmmediasingle->book_endtime)) }}</td>
+                                    <td class="text-center">{{ formatDateThat($confirmmediasingle->book_starttime) }}</td>
+                                    <td class="text-center">{{ formatDateThat($confirmmediasingle->book_endtime) }}</td>
                                 @endif
                                 <td class="text-center">{{ $confirmmediasingle->username }}</td>
                                 <td class="text-center"><b style="color:<?php echo $confirmmediasingle->book_status == 'รอการอนุมัติ'?'#f0ad4e':''?><?php echo $confirmmediasingle->book_status == 'อนุมัติ'?'#5cb85c':''?><?php echo $confirmmediasingle->book_status == 'ยกเลิกการจอง'?'#d9534f':''?><?php echo $confirmmediasingle->book_status == 'คืนห้อง'?'#0275d8':''?>">{{$confirmmediasingle->book_status}}</b></td>
