@@ -54,84 +54,84 @@
                     </div>
                 </div>
                 <br>
-            <div id = "content">
-                <div class="form-group">
-                    <label class="col-sm-1 control-label" for="book_startdate">วันเริ่มต้น: </label>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" size="10" id="datepicker-th" name="book_startdate" value="{{date('Y-m-d',strtotime($start))}}" disabled />
+                <div id = "content">
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label" for="book_startdate">วันเริ่มต้น: </label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" size="10" id="datepicker-th" name="book_startdate" value="{{date('Y-m-d',strtotime($start))}}" disabled />
+                        </div>
                     </div>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-1 control-label" for="book_starttime">เวลาเริ่มต้น: </label>
-                    <div class="col-sm-3">
-                        <select class="form-control" name="book_starttime" disabled>
-                            <option value="08:00">08:00</option>
-                            <option value="08:30">08:30</option>
-                            <option value="09:00">09:00</option>
-                            <option value="09:30">09:30</option>
-                            <option value="10:00">10:00</option>
-                            <option value="10:30">10:30</option>
-                            <option value="11:00">11:00</option>
-                            <option value="11:30">11:30</option>
-                            <option value="12:00">12:00</option>
-                            <option value="12:30">12:30</option>
-                            <option value="13:00">13:00</option>
-                            <option value="13:30">13:30</option>
-                            <option value="14:00">14:00</option>
-                            <option value="14:30">14:30</option>
-                            <option value="15:00">15:00</option>
-                            <option value="15:30">15:30</option>
-                            <option value="16:00">16:00</option>
-                            <option value="16:30">16:30</option>
-                            <option value="17:00">17:00</option>
-                            <option value="17:30">17:30</option>
-                            <option value="18:00">18:00</option>
-                            <option value="18:30">18:30</option>
-                            <option value="19:00">19:00</option>
-                            <option value="19:30">19:30</option>
-                        </select>
+                    <br>
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label" for="book_starttime">เวลาเริ่มต้น: </label>
+                        <div class="col-sm-3">
+                            <select class="form-control" name="book_starttime" disabled>
+                                <option value="08:00">08:00</option>
+                                <option value="08:30">08:30</option>
+                                <option value="09:00">09:00</option>
+                                <option value="09:30">09:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-1 control-label" for="book_enddate">วันสิ้นสุด: </label>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" size="10" id="datepicker-th-2" name="book_enddate" value="{{date('Y-m-d',strtotime($start))}}" disabled/>
+                    <br>
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label" for="book_enddate">วันสิ้นสุด: </label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" size="10" id="datepicker-th-2" name="book_enddate" value="{{date('Y-m-d',strtotime($start))}}" disabled/>
+                        </div>
+                    </div> 
+                    <br>
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label" for="book_endtime">เวลาสิ้นสุด: </label>
+                        <div class="col-sm-3">
+                            <select class="form-control" name="book_endtime" disabled>
+                                <option value="08:30">08:30</option>
+                                <option value="09:00">09:00</option>
+                                <option value="09:30">09:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                            </select>
+                        </div>
                     </div>
-                </div> 
-                <br>
-                <div class="form-group">
-                    <label class="col-sm-1 control-label" for="book_endtime">เวลาสิ้นสุด: </label>
-                    <div class="col-sm-3">
-                        <select class="form-control" name="book_endtime" disabled>
-                            <option value="08:30">08:30</option>
-                            <option value="09:00">09:00</option>
-                            <option value="09:30">09:30</option>
-                            <option value="10:00">10:00</option>
-                            <option value="10:30">10:30</option>
-                            <option value="11:00">11:00</option>
-                            <option value="11:30">11:30</option>
-                            <option value="12:00">12:00</option>
-                            <option value="12:30">12:30</option>
-                            <option value="13:00">13:00</option>
-                            <option value="13:30">13:30</option>
-                            <option value="14:00">14:00</option>
-                            <option value="14:30">14:30</option>
-                            <option value="15:00">15:00</option>
-                            <option value="15:30">15:30</option>
-                            <option value="16:00">16:00</option>
-                            <option value="16:30">16:30</option>
-                            <option value="17:00">17:00</option>
-                            <option value="17:30">17:30</option>
-                            <option value="18:00">18:00</option>
-                            <option value="18:30">18:30</option>
-                            <option value="19:00">19:00</option>
-                            <option value="19:30">19:30</option>
-                            <option value="20:00">20:00</option>
-                        </select>
-                    </div>
-                </div>
                 </div>
                 <br>
                 <input type="hidden" class="form-control" name="room_type" value="ห้องประชุม">
@@ -167,7 +167,9 @@
              $("#datepicker-en").datepicker({ dateFormat: 'yy-mm-dd'});
 		    $("#inline").datepicker({ dateFormat: 'yy-mm-dd', inline: true });
 		});
-	</script><script type="text/javascript">
+	</script>
+    
+    <script type="text/javascript">
         function showroom() {
             var xhttp;
             var y = document.getElementById("room_floor").value;
