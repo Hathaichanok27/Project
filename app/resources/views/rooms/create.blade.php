@@ -35,7 +35,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>ชั้น:</strong>
-                            <select class="form-control" id="room_floor_id" name="room_floor_id">
+                            <select class="form-control" id="room_floor" name="room_floor">
                                 @foreach($roomfloors as $roomfloor)
                                     <option value="{{ $roomfloor->id }}">{{ $roomfloor->room_floor }}</option>
                                 @endforeach 
