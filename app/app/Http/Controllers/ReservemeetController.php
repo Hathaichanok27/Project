@@ -22,14 +22,15 @@ class ReservemeetController extends Controller
     public function create(Request $request)
     {
         $rooms = Room::paginate();$start = $request->start;
-        // $reservemeets = Reservemeet::select("*")->whereDate("book_startdate", "like", date('Y-m-d',strtotime($request->start)))->get()->toArray();
-        // $timestart = Array_column($reservemeets,"book_starttime");
-        // $timeend = Array_column($reservemeets,"book_endtime");
-        // print_r($timestart);
-        // print_r($timeend);
-        // echo "<pre>";
-        // print_r($reservemeets);
-        // echo "</pre>";
+        /*$reservemeets = Reservemeet::select("*")->whereDate("book_startdate", "like", date('Y-m-d',strtotime($request->start)))->get()->toArray();
+        
+        $timestart = Array_column($reservemeets,"book_starttime");
+        $timeend = Array_column($reservemeets,"book_endtime");
+        print_r($timestart);
+        print_r($timeend);
+        echo "<pre>";
+        print_r($reservemeets);
+        echo "</pre>";*/
         $roomfloors = Roomfloor::paginate();
         return view('reservemeets.create',compact('rooms','roomfloors','start'));
     }

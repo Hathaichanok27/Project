@@ -33,7 +33,7 @@ class RoomController extends Controller
         $request->validate([
             'room_type' => 'required',
             'room_floor_id' => 'required',
-            // 'room_floor' => 'required',
+         //   'room_floor' => 'required',
             'room_name' => 'required',
             'room_status' => 'required',
         ]);
