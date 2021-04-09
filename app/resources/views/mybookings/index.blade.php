@@ -32,7 +32,7 @@
                             <tr>
                                 <td class="text-center">{{ ++$i }}</td>
                                 <td>{{ $reservemeet->room_type }}</td>
-                                <td class="text-center"></td>
+                                <td class="text-center">{{ $reservemeet->room_floor }}</td>
                                 <td class="text-center">{{ $reservemeet->room_name }}</td>
                                 <td class="text-center">{{ formatDateThat($reservemeet->created_at) }}</td>
                                 <td class="text-center">{{ formatDateThat($reservemeet->book_starttime) }}</td>

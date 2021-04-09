@@ -54,6 +54,7 @@
                     </div>
                 </div>
                 <br>
+            </div>
                 <div id = "content">
                     <div class="form-group">
                         <label class="col-sm-1 control-label" for="book_startdate">วันเริ่มต้น: </label>
