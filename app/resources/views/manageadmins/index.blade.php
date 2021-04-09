@@ -100,7 +100,7 @@
                                                                 <div class="panel panel-body">
                                                                     <div class="media">
                                                                         <div class="media-left">
-                                                                            <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                            <img src="{{ asset('images/icon_color_tv.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
                                                                         </div>
                                                                         <div class="media-body">
                                                                             <h5 class="media-heading text-bold" style="color:#D35400">{{ $manageadmin->admin_username }}</h5>
@@ -145,7 +145,7 @@
                                                                     <div class="panel panel-body">
                                                                         <div class="media">
                                                                             <div class="media-left">
-                                                                                <img src="{{ asset('images/unknown_user.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
+                                                                                <img src="{{ asset('images/icon_color_tv.png') }}" style="width: 70px; height: 70px;" class="img-circle" alt="">  
                                                                             </div>
                                                                             <div class="media-body">
                                                                                 <h5 class="media-heading text-bold" style="color:#D35400">{{ $manageadmin->admin_username }}</h5>
